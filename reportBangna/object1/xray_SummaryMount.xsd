@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="xray_SummaryMount" targetNamespace="http://tempuri.org/xray_SummaryMount.xsd" xmlns:mstns="http://tempuri.org/xray_SummaryMount.xsd" xmlns="http://tempuri.org/xray_SummaryMount.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="xray_SummaryMount" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="xray_SummaryMount" msprop:Generator_UserDSName="xray_SummaryMount">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="xray_SummaryMount" msprop:Generator_TableClassName="xray_SummaryMountDataTable" msprop:Generator_TableVarName="tablexray_SummaryMount" msprop:Generator_TablePropName="_xray_SummaryMount" msprop:Generator_RowDeletingName="xray_SummaryMountRowDeleting" msprop:Generator_RowChangingName="xray_SummaryMountRowChanging" msprop:Generator_RowEvHandlerName="xray_SummaryMountRowChangeEventHandler" msprop:Generator_RowDeletedName="xray_SummaryMountRowDeleted" msprop:Generator_UserTableName="xray_SummaryMount" msprop:Generator_RowChangedName="xray_SummaryMountRowChanged" msprop:Generator_RowEvArgName="xray_SummaryMountRowChangeEvent" msprop:Generator_RowClassName="xray_SummaryMountRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MNC_PH_CD" msprop:Generator_ColumnVarNameInTable="columnMNC_PH_CD" msprop:Generator_ColumnPropNameInRow="MNC_PH_CD" msprop:Generator_ColumnPropNameInTable="MNC_PH_CDColumn" msprop:Generator_UserColumnName="MNC_PH_CD" type="xs:string" minOccurs="0" />
+              <xs:element name="MNC_PH_TN" msprop:Generator_ColumnVarNameInTable="columnMNC_PH_TN" msprop:Generator_ColumnPropNameInRow="MNC_PH_TN" msprop:Generator_ColumnPropNameInTable="MNC_PH_TNColumn" msprop:Generator_UserColumnName="MNC_PH_TN" type="xs:string" minOccurs="0" />
+              <xs:element name="MNC_XR_USE" msprop:Generator_ColumnVarNameInTable="columnMNC_XR_USE" msprop:Generator_ColumnPropNameInRow="MNC_XR_USE" msprop:Generator_ColumnPropNameInTable="MNC_XR_USEColumn" msprop:Generator_UserColumnName="MNC_XR_USE" type="xs:string" minOccurs="0" />
+              <xs:element name="MNC_XR_BAD" msprop:Generator_ColumnVarNameInTable="columnMNC_XR_BAD" msprop:Generator_ColumnPropNameInRow="MNC_XR_BAD" msprop:Generator_ColumnPropNameInTable="MNC_XR_BADColumn" msprop:Generator_UserColumnName="MNC_XR_BAD" type="xs:string" minOccurs="0" />
+              <xs:element name="cnt" msprop:Generator_ColumnVarNameInTable="columncnt" msprop:Generator_ColumnPropNameInRow="cnt" msprop:Generator_ColumnPropNameInTable="cntColumn" msprop:Generator_UserColumnName="cnt" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

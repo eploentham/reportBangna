@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DailySummaryDoctor" targetNamespace="http://tempuri.org/DailySummaryDoctor.xsd" xmlns:mstns="http://tempuri.org/DailySummaryDoctor.xsd" xmlns="http://tempuri.org/DailySummaryDoctor.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DailySummaryDoctor" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="_DailySummaryDoctor" msprop:Generator_UserDSName="DailySummaryDoctor">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DailySummaryDoctor" msprop:Generator_TableClassName="DailySummaryDoctorDataTable" msprop:Generator_TableVarName="tableDailySummaryDoctor" msprop:Generator_TablePropName="DailySummaryDoctor" msprop:Generator_RowDeletingName="DailySummaryDoctorRowDeleting" msprop:Generator_RowChangingName="DailySummaryDoctorRowChanging" msprop:Generator_RowEvHandlerName="DailySummaryDoctorRowChangeEventHandler" msprop:Generator_RowDeletedName="DailySummaryDoctorRowDeleted" msprop:Generator_UserTableName="DailySummaryDoctor" msprop:Generator_RowChangedName="DailySummaryDoctorRowChanged" msprop:Generator_RowEvArgName="DailySummaryDoctorRowChangeEvent" msprop:Generator_RowClassName="DailySummaryDoctorRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Doctor_id" msprop:Generator_ColumnVarNameInTable="columnDoctor_id" msprop:Generator_ColumnPropNameInRow="Doctor_id" msprop:Generator_ColumnPropNameInTable="Doctor_idColumn" msprop:Generator_UserColumnName="Doctor_id" type="xs:string" minOccurs="0" />
+              <xs:element name="Prefix" msprop:Generator_ColumnVarNameInTable="columnPrefix" msprop:Generator_ColumnPropNameInRow="Prefix" msprop:Generator_ColumnPropNameInTable="PrefixColumn" msprop:Generator_UserColumnName="Prefix" type="xs:string" minOccurs="0" />
+              <xs:element name="Fname" msprop:Generator_ColumnVarNameInTable="columnFname" msprop:Generator_ColumnPropNameInRow="Fname" msprop:Generator_ColumnPropNameInTable="FnameColumn" msprop:Generator_UserColumnName="Fname" type="xs:string" minOccurs="0" />
+              <xs:element name="Lname" msprop:Generator_ColumnVarNameInTable="columnLname" msprop:Generator_ColumnPropNameInRow="Lname" msprop:Generator_ColumnPropNameInTable="LnameColumn" msprop:Generator_UserColumnName="Lname" type="xs:string" minOccurs="0" />
+              <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

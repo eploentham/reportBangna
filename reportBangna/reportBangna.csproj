@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{331CEE7A-AD5C-437E-B321-E8DC225EBDC3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>reportBangna</RootNamespace>
+    <AssemblyName>reportBangna</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\source\Payroll\Setup\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>AEF5D6B13C9A419CF41DC7A81585B4FF1330772F</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>reportBangna_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmCertificatesAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmCertificatesAdd.Designer.cs">
+      <DependentUpon>FrmCertificatesAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmCertificatesView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmCertificatesView.Designer.cs">
+      <DependentUpon>FrmCertificatesView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmChkStaffNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmChkStaffNote.Designer.cs">
+      <DependentUpon>FrmChkStaffNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmDailypatientsumpaid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmDailypatientsumpaid.Designer.cs">
+      <DependentUpon>FrmDailypatientsumpaid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmReport.Designer.cs">
+      <DependentUpon>FrmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmRptXarySummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmRptXarySummary.Designer.cs">
+      <DependentUpon>FrmRptXarySummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="objdb\CertificatesChildDB.cs" />
+    <Compile Include="objdb\ChkStaffNoteDB.cs" />
+    <Compile Include="objdb\ConnectDB.cs" />
+    <Compile Include="objdb\employeedb.cs" />
+    <Compile Include="objdb\FinanceT01DB.cs" />
+    <Compile Include="objdb\reportDB.cs" />
+    <Compile Include="objdb\RmonthlyGroupIdDB.cs" />
+    <Compile Include="object1\ChkStaffNote.cs" />
+    <Compile Include="object1\DailyCheckup.cs">
+      <DependentUpon>DailyCheckup.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="object1\DailypatientsumPaidDay.cs">
+      <DependentUpon>DailypatientsumPaidDay.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="object1\DailypatientsumPaidDay.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DailypatientsumPaidDay.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="object1\DailyCheckup.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DailyCheckup.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="object1\DailySummaryDoctor.cs">
+      <DependentUpon>DailySummaryDoctor.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="object1\DailySummaryDoctor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DailySummaryDoctor.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="object1\RmonthlyGroupId.cs" />
+    <Compile Include="object1\CertificatesChild.cs" />
+    <Compile Include="object1\Config1.cs" />
+    <Compile Include="object1\DailypatientsumPaid.cs">
+      <DependentUpon>DailypatientsumPaid.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="object1\DailypatientsumPaid.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DailypatientsumPaid.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="object1\employee.cs" />
+    <Compile Include="object1\FinanceT01.cs" />
+    <Compile Include="object1\Persistent.cs" />
+    <Compile Include="object1\xraySummary.cs">
+      <DependentUpon>xraySummary.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="object1\xraySummary.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>xraySummary.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="object1\xray_SummaryMount.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>xray_SummaryMount.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmCertificatesAdd.resx">
+      <DependentUpon>FrmCertificatesAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmCertificatesView.resx">
+      <DependentUpon>FrmCertificatesView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmChkStaffNote.resx">
+      <DependentUpon>FrmChkStaffNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmDailypatientsumpaid.resx">
+      <DependentUpon>FrmDailypatientsumpaid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmReport.resx">
+      <DependentUpon>FrmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmRptXarySummary.resx">
+      <DependentUpon>FrmRptXarySummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="report\DailypatientsumPaidDay.rdlc" />
+    <EmbeddedResource Include="report\DailypatientsumPaidDay2.rdlc" />
+    <EmbeddedResource Include="report\Report1.rdlc" />
+    <EmbeddedResource Include="report\Report2.rdlc" />
+    <EmbeddedResource Include="report\DailypatientsumPaid.rdlc" />
+    <EmbeddedResource Include="report\DailyCheckup.rdlc" />
+    <EmbeddedResource Include="report\DailySummaryDoctor.rdlc" />
+    <EmbeddedResource Include="report\xraysummary.rdlc" />
+    <EmbeddedResource Include="report\xray_SummaryMount.rdlc" />
+    <None Include="object1\DailypatientsumPaid.xsc">
+      <DependentUpon>DailypatientsumPaid.xsd</DependentUpon>
+    </None>
+    <None Include="object1\DailypatientsumPaid.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DailypatientsumPaid.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="object1\DailypatientsumPaid.xss">
+      <DependentUpon>DailypatientsumPaid.xsd</DependentUpon>
+    </None>
+    <None Include="object1\DailypatientsumPaidDay.xsc">
+      <DependentUpon>DailypatientsumPaidDay.xsd</DependentUpon>
+    </None>
+    <None Include="object1\DailypatientsumPaidDay.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DailypatientsumPaidDay.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="object1\DailypatientsumPaidDay.xss">
+      <DependentUpon>DailypatientsumPaidDay.xsd</DependentUpon>
+    </None>
+    <None Include="object1\DailyCheckup.xsc">
+      <DependentUpon>DailyCheckup.xsd</DependentUpon>
+    </None>
+    <None Include="object1\DailyCheckup.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DailyCheckup.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="object1\DailyCheckup.xss">
+      <DependentUpon>DailyCheckup.xsd</DependentUpon>
+    </None>
+    <None Include="object1\DailySummaryDoctor.xsc">
+      <DependentUpon>DailySummaryDoctor.xsd</DependentUpon>
+    </None>
+    <None Include="object1\DailySummaryDoctor.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DailySummaryDoctor.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="object1\DailySummaryDoctor.xss">
+      <DependentUpon>DailySummaryDoctor.xsd</DependentUpon>
+    </None>
+    <None Include="object1\xraySummary.xsc">
+      <DependentUpon>xraySummary.xsd</DependentUpon>
+    </None>
+    <None Include="object1\xraySummary.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>xraySummary.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="object1\xraySummary.xss">
+      <DependentUpon>xraySummary.xsd</DependentUpon>
+    </None>
+    <None Include="object1\xray_SummaryMount.xsc">
+      <DependentUpon>xray_SummaryMount.xsd</DependentUpon>
+    </None>
+    <None Include="object1\xray_SummaryMount.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>xray_SummaryMount.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="object1\xray_SummaryMount.xss">
+      <DependentUpon>xray_SummaryMount.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\reportBangna.object1.xrayPhSummary.datasource" />
+    <None Include="Properties\DataSources\reportBangna.object1.xraySummary.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="reportBangna_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="database\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

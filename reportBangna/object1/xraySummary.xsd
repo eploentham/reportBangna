@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="xraySummary" targetNamespace="http://tempuri.org/xraySummary.xsd" xmlns:mstns="http://tempuri.org/xraySummary.xsd" xmlns="http://tempuri.org/xraySummary.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="xraySummary" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="xraySummary" msprop:Generator_UserDSName="xraySummary">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="xraysummary" msprop:Generator_TableClassName="xraysummaryDataTable" msprop:Generator_TableVarName="tablexraysummary" msprop:Generator_RowChangedName="xraysummaryRowChanged" msprop:Generator_TablePropName="xraysummary" msprop:Generator_RowDeletingName="xraysummaryRowDeleting" msprop:Generator_RowChangingName="xraysummaryRowChanging" msprop:Generator_RowEvHandlerName="xraysummaryRowChangeEventHandler" msprop:Generator_RowDeletedName="xraysummaryRowDeleted" msprop:Generator_RowClassName="xraysummaryRow" msprop:Generator_UserTableName="xraysummary" msprop:Generator_RowEvArgName="xraysummaryRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MNC_HN_NO" msprop:Generator_ColumnVarNameInTable="columnMNC_HN_NO" msprop:Generator_ColumnPropNameInRow="MNC_HN_NO" msprop:Generator_ColumnPropNameInTable="MNC_HN_NOColumn" msprop:Generator_UserColumnName="MNC_HN_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="MNC_FNAME_T" msprop:Generator_ColumnVarNameInTable="columnMNC_FNAME_T" msprop:Generator_ColumnPropNameInRow="MNC_FNAME_T" msprop:Generator_ColumnPropNameInTable="MNC_FNAME_TColumn" msprop:Generator_UserColumnName="MNC_FNAME_T" type="xs:string" minOccurs="0" />
+              <xs:element name="MNC_PH_CD" msprop:Generator_ColumnVarNameInTable="columnMNC_PH_CD" msprop:Generator_ColumnPropNameInRow="MNC_PH_CD" msprop:Generator_ColumnPropNameInTable="MNC_PH_CDColumn" msprop:Generator_UserColumnName="MNC_PH_CD" type="xs:string" minOccurs="0" />
+              <xs:element name="MNC_PFIX_DSC" msprop:Generator_ColumnVarNameInTable="columnMNC_PFIX_DSC" msprop:Generator_ColumnPropNameInRow="MNC_PFIX_DSC" msprop:Generator_ColumnPropNameInTable="MNC_PFIX_DSCColumn" msprop:Generator_UserColumnName="MNC_PFIX_DSC" type="xs:string" minOccurs="0" />
+              <xs:element name="MNC_LNAME_T" msprop:Generator_ColumnVarNameInTable="columnMNC_LNAME_T" msprop:Generator_ColumnPropNameInRow="MNC_LNAME_T" msprop:Generator_ColumnPropNameInTable="MNC_LNAME_TColumn" msprop:Generator_UserColumnName="MNC_LNAME_T" type="xs:string" minOccurs="0" />
+              <xs:element name="MNC_PH_TN" msprop:Generator_ColumnVarNameInTable="columnMNC_PH_TN" msprop:Generator_ColumnPropNameInRow="MNC_PH_TN" msprop:Generator_ColumnPropNameInTable="MNC_PH_TNColumn" msprop:Generator_UserColumnName="MNC_PH_TN" type="xs:string" minOccurs="0" />
+              <xs:element name="MNC_XR_DSC" msprop:Generator_ColumnVarNameInTable="columnMNC_XR_DSC" msprop:Generator_ColumnPropNameInRow="MNC_XR_DSC" msprop:Generator_ColumnPropNameInTable="MNC_XR_DSCColumn" msprop:Generator_UserColumnName="MNC_XR_DSC" type="xs:string" minOccurs="0" />
+              <xs:element name="MNC_REQ_STS" msprop:Generator_ColumnVarNameInTable="columnMNC_REQ_STS" msprop:Generator_ColumnPropNameInRow="MNC_REQ_STS" msprop:Generator_ColumnPropNameInTable="MNC_REQ_STSColumn" msprop:Generator_UserColumnName="MNC_REQ_STS" type="xs:string" minOccurs="0" />
+              <xs:element name="MNC_FN_TYP_DSC" msprop:Generator_ColumnVarNameInTable="columnMNC_FN_TYP_DSC" msprop:Generator_ColumnPropNameInRow="MNC_FN_TYP_DSC" msprop:Generator_ColumnPropNameInTable="MNC_FN_TYP_DSCColumn" msprop:Generator_UserColumnName="MNC_FN_TYP_DSC" type="xs:string" minOccurs="0" />
+              <xs:element name="MNC_XR_USE" msprop:Generator_ColumnVarNameInTable="columnMNC_XR_USE" msprop:Generator_ColumnPropNameInRow="MNC_XR_USE" msprop:Generator_ColumnPropNameInTable="MNC_XR_USEColumn" msprop:Generator_UserColumnName="MNC_XR_USE" type="xs:string" minOccurs="0" />
+              <xs:element name="MNC_XR_BAD" msprop:Generator_ColumnVarNameInTable="columnMNC_XR_BAD" msprop:Generator_ColumnPropNameInRow="MNC_XR_BAD" msprop:Generator_ColumnPropNameInTable="MNC_XR_BADColumn" msprop:Generator_UserColumnName="MNC_XR_BAD" type="xs:string" minOccurs="0" />
+              <xs:element name="MNC_REQ_DAT" msprop:Generator_ColumnVarNameInTable="columnMNC_REQ_DAT" msprop:Generator_ColumnPropNameInRow="MNC_REQ_DAT" msprop:Generator_ColumnPropNameInTable="MNC_REQ_DATColumn" msprop:Generator_UserColumnName="MNC_REQ_DAT" type="xs:string" minOccurs="0" />
+              <xs:element name="MNC_REQ_TIM" msprop:Generator_ColumnVarNameInTable="columnMNC_REQ_TIM" msprop:Generator_ColumnPropNameInRow="MNC_REQ_TIM" msprop:Generator_ColumnPropNameInTable="MNC_REQ_TIMColumn" msprop:Generator_UserColumnName="MNC_REQ_TIM" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
