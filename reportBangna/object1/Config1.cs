@@ -24,7 +24,7 @@ namespace reportBangna.object1
             c.Items.Add("กุมภาพันธ์");
             c.Items.Add("มีนาคม");
             c.Items.Add("เมษายน");
-            c.Items.Add("พฤษาคม");
+            c.Items.Add("พฤษภาคม");
             c.Items.Add("มิถุนายน");
             c.Items.Add("กรกฎาคม");
             c.Items.Add("สิงหาคม");
@@ -43,6 +43,48 @@ namespace reportBangna.object1
             c.Items.Add("นายแพทย์ ชุตินันท์ พรหมมินทร์");
             
             //c.Items.Add("พ.ญ. อรวรรณ  แซ่เฉิน");
+            return c;
+        }
+        public ComboBox setCboBranch(ComboBox c)
+        {
+            var items = new[]{
+                new{Text = "bangna1", Value="001"},
+                new{Text = "bangna2", Value="002"},
+                new{Text = "bangna5", Value="005"}
+            };
+            c.Items.Clear();
+            c.DataSource = items;
+            c.DisplayMember = "Text";
+
+            c.ValueMember = "Value";
+            return c;
+        }
+        public ComboBox setCboLab(ComboBox c)
+        {
+            var items = new[] { 
+                new { Text = "", Value = "" }, 
+                new { Text = "SUGAR (FBS)", Value = "ch002" }, 
+                new { Text = "Sugar <BS> : NaF tube 2.5 ml", Value = "ch250" }, 
+                new { Text = "BUN", Value = "ch003" },
+                new { Text = "CREATININE", Value = "ch004" },
+                new { Text = "Free T3(FT3) (Outlab/Medica lab)", Value = "ch040" },
+                new { Text = "Free T4(FT4) (Out lab/Medica LAB)", Value = "ch037" },
+                new { Text = "TSH (Out lab/ MEDICA LAB)", Value = "ch039" },
+                new { Text = "T4 (Outlab/Medica)", Value = "ch036" },
+                new { Text = "T3 (Outlab/Medica)", Value = "ch038" },
+                new { Text = "ANTI HIV  (Screening  Method)", Value = "se005" },
+                new { Text = "HBsAg", Value = "se038" },
+                new { Text = "ANTI HCV", Value = "se047" },
+                new { Text = "CHOLESTEROL", Value = "ch006" },
+                new { Text = "TRIGLYCERIDE", Value = "ch007" },
+                new { Text = "HDL-C", Value = "ch008" },
+                new { Text = "LDL-C", Value = "ch009" },
+                new { Text = "CD4 (Out lab / MEDICA LAB)", Value = "se165" }
+            };
+            c.Items.Clear();
+            c.DataSource = items;
+            c.DisplayMember = "Text";
+            c.ValueMember = "Value";
             return c;
         }
         public String getMonth(String monthId)
@@ -65,7 +107,7 @@ namespace reportBangna.object1
             }
             else if (monthId == "05")
             {
-                return "พฤษาคม";
+                return "พฤษภาคม";
             }
             else if (monthId == "06")
             {
@@ -111,6 +153,17 @@ namespace reportBangna.object1
                 return txt;
             }
         }
+        public String stringNull1(Object txt)
+        {
+            if (txt == null)
+            {
+                return "";
+            }
+            else
+            {
+                return txt.ToString();
+            }
+        }
         public String datetoDB(object dt)
         {
             DateTime dt1 = new DateTime();
@@ -149,6 +202,17 @@ namespace reportBangna.object1
             if (dt != "")
             {
                 return dt.Substring(8,2)+"-"+dt.Substring(5,2) + "-" + String.Concat(Int16.Parse(dt.Substring(0, 4))+543);
+            }
+            else
+            {
+                return dt;
+            }
+        }
+        public String dateDBtoShow25(String dt)
+        {
+            if (dt != "")
+            {
+                return dt.Substring(8, 2) + "-" + dt.Substring(5, 2) + "-" + dt.Substring(0, 4);
             }
             else
             {

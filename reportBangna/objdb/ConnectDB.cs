@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using reportBangna.object1;
 
 namespace reportBangna.objdb
 {
@@ -23,9 +24,30 @@ namespace reportBangna.objdb
         public Boolean _isDisposed = false;
         public SqlConnection connMainHIS;
         private String hostname = "";
-
+        private IniFile iniFile;
+        public String databaseNameMainHIS = "";
+        public String hostNameMainHIS = "";
+        public String userNameMainHIS = "";
+        public String passwordMainHIS = "";
+        public String databaseNameBua = "";
+        public String hostNameBua = "";
+        public String userNameBua = "";
+        public String passwordBua = "";
+        public String server = "";
+        public String isBranch = "";
         public ConnectDB()
         {
+            iniFile = new IniFile("reportbangna.ini");
+            
+            databaseNameMainHIS = iniFile.Read("database_name");
+            hostNameMainHIS = iniFile.Read("host_name");
+            userNameMainHIS = iniFile.Read("user_password");
+            passwordMainHIS = iniFile.Read("password");
+            databaseNameBua = iniFile.Read("database_name_bua");
+            hostNameBua = iniFile.Read("host_name_bua");
+            userNameBua = iniFile.Read("user_password_bua");
+            passwordBua = iniFile.Read("password_bua");
+
             _mainConnection = new OleDbConnection();
             //_mainConnection.ConnectionString = GetConfig("Main.ConnectionString");
             _mainConnection.ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\\reportBangna\\reportBangna\\DataBase\\reportBangna.mdb;Persist Security Info=False";
@@ -33,25 +55,60 @@ namespace reportBangna.objdb
         }
         public ConnectDB(String hostName)
         {
+            iniFile = new IniFile("reportbangna.ini");
+
+            //iniFile.Write("aaaa", "bbbb");
+            hostNameMainHIS = iniFile.Read("host_name");
+            userNameMainHIS = iniFile.Read("user_name");
+            passwordMainHIS = iniFile.Read("password");
+            databaseNameMainHIS = iniFile.Read("database_name");
+
+            databaseNameBua = iniFile.Read("database_name_bua");
+            hostNameBua = iniFile.Read("host_name_bua");
+            userNameBua = iniFile.Read("user_name_bua");
+            passwordBua = iniFile.Read("password_bua");
+            server = iniFile.Read("server");
+            isBranch = iniFile.Read("clientisbranch");
             if (hostName == "mainhis")
             {
                 hostname = "mainhis";
                 connMainHIS = new SqlConnection();
                 //connMainHIS.ConnectionString = GetConfig(hostName);
-                connMainHIS.ConnectionString = "Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;";
+                connMainHIS.ConnectionString = "Server="+hostNameMainHIS+";Database="+databaseNameMainHIS.ToString()+";Uid="+userNameMainHIS+";Pwd="+passwordMainHIS+";";
+                //if (server.Equals("bangna1"))
+                //{
+                //    connMainHIS.ConnectionString = "Server=172.1.1.1;Database=bng1_front_dbms;Uid=sa;Pwd=;";
+                //}
+                //else if (server.Equals("bangna2"))
+                //{
+                //    connMainHIS.ConnectionString = "Server=172.1.1.1;Database=bng2_front_dbms;Uid=sa;Pwd=;";
+                //}
+                //else
+                //{
+                //    //connMainHIS.ConnectionString = "Server=172.25.10.5;Database=bng5_front_dbms;Uid=sa;Pwd=;";
+                //    connMainHIS.ConnectionString = "Server=172.25.10.5;Database=BNG5_DBMS_FRONT;Uid=sa;Pwd=;";
+                //}
             }
             else if (hostName == "bangna")
             {
                 hostname = "bangna";
                 connMainHIS = new SqlConnection();
                 //connMainHIS.ConnectionString = GetConfig(hostName);
-                connMainHIS.ConnectionString = "Server=172.25.10.5;Database=bua;Uid=pop;Pwd=pop;";
+                connMainHIS.ConnectionString = "Server="+hostNameBua+";Database="+databaseNameBua+";Uid="+userNameBua+";Pwd="+passwordBua+";";
             }
             else
             {
                 _mainConnection = new OleDbConnection();
                 //_mainConnection.ConnectionString = GetConfig("Main.ConnectionString");
-                _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\\reportBangna\\reportBangna\\DataBase\\reportBangna.mdb;Persist Security Info=False";
+                if (Environment.Is64BitOperatingSystem)
+                {
+                    _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=D:\\source\\reportBangna\\reportBangna\\DataBase\\reportBangna.mdb;Persist Security Info=False";
+                }
+                else
+                {
+                    _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\\reportBangna\\reportBangna\\DataBase\\reportBangna.mdb;Persist Security Info=False";
+                }
+                //_mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\reportBangna\\reportBangna\\DataBase\\reportBangna.mdb;Persist Security Info=False";
                 _isDisposed = false;
             }
         }

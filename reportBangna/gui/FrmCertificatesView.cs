@@ -45,7 +45,7 @@ namespace reportBangna.gui
                 dgvView.Columns[2].Width = 200;
                 dgvView.Columns[3].Width = 200;
                 dgvView.Columns[4].Width = 200;
-                dgvView.Columns[5].Width = 120;
+                dgvView.Columns[5].Width = 140;
                 dgvView.Columns[6].Width = 80;
                 dgvView.Columns[7].Width = 80;
                 dgvView.Columns[0].HeaderText = "ลำดับ";
@@ -73,6 +73,8 @@ namespace reportBangna.gui
                     }
                 }
             }
+            Font font = new Font("Microsoft Sans Serif", 10);
+            dgvView.Font = font;
         }
         private void setResize()
         {
@@ -118,6 +120,11 @@ namespace reportBangna.gui
         private void FrmCertificatesView_FormClosing(object sender, FormClosingEventArgs e)
         {
 
+        }
+
+        private void cboMonth_Click(object sender, EventArgs e)
+        {
+            setData(cboYear.Text, cboMonth.Text);
         }
 
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using reportBangna.gui;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,9 +15,12 @@ namespace reportBangna
         [STAThread]
         static void Main()
         {
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmMain());
+            //Application.Run(new FrmCheckNHSO());
+            //Application.Run(new FrmCertificatesView());
         }
     }
 }

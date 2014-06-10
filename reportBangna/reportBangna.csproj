@@ -61,6 +61,9 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -94,6 +97,18 @@
     <Compile Include="gui\FrmCertificatesView.Designer.cs">
       <DependentUpon>FrmCertificatesView.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\FrmCheckNHSO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmCheckNHSO.Designer.cs">
+      <DependentUpon>FrmCheckNHSO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmCheckNHSOAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmCheckNHSOAdd.Designer.cs">
+      <DependentUpon>FrmCheckNHSOAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\FrmChkStaffNote.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +138,7 @@
     <Compile Include="objdb\ConnectDB.cs" />
     <Compile Include="objdb\employeedb.cs" />
     <Compile Include="objdb\FinanceT01DB.cs" />
+    <Compile Include="objdb\CheckNhso1DB.cs" />
     <Compile Include="objdb\reportDB.cs" />
     <Compile Include="objdb\RmonthlyGroupIdDB.cs" />
     <Compile Include="object1\ChkStaffNote.cs" />
@@ -153,6 +169,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DailySummaryDoctor.xsd</DependentUpon>
     </Compile>
+    <Compile Include="object1\CheckNhso1.cs" />
+    <Compile Include="object1\IniFile.cs" />
     <Compile Include="object1\RmonthlyGroupId.cs" />
     <Compile Include="object1\CertificatesChild.cs" />
     <Compile Include="object1\Config1.cs" />
@@ -168,6 +186,7 @@
     <Compile Include="object1\employee.cs" />
     <Compile Include="object1\FinanceT01.cs" />
     <Compile Include="object1\Persistent.cs" />
+    <Compile Include="object1\WriteText.cs" />
     <Compile Include="object1\xraySummary.cs">
       <DependentUpon>xraySummary.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -192,6 +211,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmCertificatesView.resx">
       <DependentUpon>FrmCertificatesView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmCheckNHSO.resx">
+      <DependentUpon>FrmCheckNHSO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmCheckNHSOAdd.resx">
+      <DependentUpon>FrmCheckNHSOAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmChkStaffNote.resx">
       <DependentUpon>FrmChkStaffNote.cs</DependentUpon>

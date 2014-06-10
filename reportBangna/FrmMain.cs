@@ -81,6 +81,12 @@ namespace reportBangna
                 //frm.setData("","");
                 frm.Show(this);
             }
+            else if (nodeSelect == "nCheckNHSO")
+            {
+                FrmCheckNHSO frm = new FrmCheckNHSO();
+                //frm.setData("","");
+                frm.Show(this);
+            }
         }
 
         private void tv1_AfterSelect(object sender, TreeViewEventArgs e)

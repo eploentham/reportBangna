@@ -49,6 +49,9 @@
             System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("ป้อนเกียรติบัตรเด็กแรกเกิด");
             System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("แผนกห้องคลอด", new System.Windows.Forms.TreeNode[] {
             treeNode12});
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Checkยอดผู้ป่วยประกันสังคม");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("ประกันสังคม", new System.Windows.Forms.TreeNode[] {
+            treeNode14});
             this.tv1 = new System.Windows.Forms.TreeView();
             this.SuspendLayout();
             // 
@@ -59,7 +62,8 @@
             this.tv1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.tv1.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.tv1.ItemHeight = 40;
-            this.tv1.Location = new System.Drawing.Point(15, 17);
+            this.tv1.Location = new System.Drawing.Point(20, 21);
+            this.tv1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tv1.Name = "tv1";
             treeNode1.Name = "nMisDailypatientsumPaid";
             treeNode1.Text = "รายงานยอดคนไข้แยกตามสิทธิ์";
@@ -87,26 +91,32 @@
             treeNode12.Text = "ป้อนเกียรติบัตรเด็กแรกเกิด";
             treeNode13.Name = "nLabor";
             treeNode13.Text = "แผนกห้องคลอด";
+            treeNode14.Name = "nCheckNHSO";
+            treeNode14.Text = "Checkยอดผู้ป่วยประกันสังคม";
+            treeNode15.Name = "nNHSO";
+            treeNode15.Text = "ประกันสังคม";
             this.tv1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode5,
             treeNode6,
             treeNode9,
             treeNode11,
-            treeNode13});
-            this.tv1.Size = new System.Drawing.Size(539, 474);
+            treeNode13,
+            treeNode15});
+            this.tv1.Size = new System.Drawing.Size(719, 583);
             this.tv1.TabIndex = 5;
             this.tv1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tv1_AfterSelect);
             this.tv1.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tv1_NodeMouseDoubleClick);
             // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
-            this.ClientSize = new System.Drawing.Size(569, 509);
+            this.ClientSize = new System.Drawing.Size(759, 626);
             this.Controls.Add(this.tv1);
             this.ForeColor = System.Drawing.SystemColors.Window;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FrmMain_Load);
