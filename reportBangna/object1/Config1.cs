@@ -20,19 +20,25 @@ namespace reportBangna.object1
         public ComboBox setCboMonth(ComboBox c)
         {
             c.Items.Clear();
-            c.Items.Add("มกราคม");
-            c.Items.Add("กุมภาพันธ์");
-            c.Items.Add("มีนาคม");
-            c.Items.Add("เมษายน");
-            c.Items.Add("พฤษภาคม");
-            c.Items.Add("มิถุนายน");
-            c.Items.Add("กรกฎาคม");
-            c.Items.Add("สิงหาคม");
-            c.Items.Add("กันยายน");
-            c.Items.Add("ตุลาคม");
-            c.Items.Add("พฤศจิกายน");
-            c.Items.Add("ธันวาคม");
-            c.SelectedIndex = c.FindStringExact(getMonth(System.DateTime.Now.Month.ToString("00")));
+            var items = new[]{
+                new{Text = "มกราคม", Value="01"},
+                new{Text = "กุมภาพันธ์", Value="02"},
+                new{Text = "มีนาคม", Value="03"},
+                new{Text = "เมษายน", Value="04"},
+                new{Text = "พฤษภาคม", Value="05"},
+                new{Text = "มิถุนายน", Value="06"},
+                new{Text = "กรกฎาคม", Value="07"},
+                new{Text = "สิงหาคม", Value="08"},
+                new{Text = "กันยายน", Value="09"},
+                new{Text = "ตุลาคม", Value="10"},
+                new{Text = "พฤศจิกายน", Value="11"},
+                new{Text = "ธันวาคม", Value="12"}
+            };
+            c.DataSource = items;
+            c.DisplayMember = "Text";
+
+            c.ValueMember = "Value";
+            //c.SelectedIndex = c.FindStringExact(getMonth(System.DateTime.Now.Month.ToString("00")));
             return c;
         }
         public ComboBox setCboDoctor(ComboBox c)

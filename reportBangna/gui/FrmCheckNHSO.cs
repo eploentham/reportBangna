@@ -307,7 +307,6 @@ namespace reportBangna.gui
                                     {
                                         cell1.ToolTipText = dt.Rows[i][cNhso1db.cNhso1.dia5Ori].ToString() + "\r\n";
                                     }
-                                        
                                     //}
                                 }
                             }
@@ -766,12 +765,12 @@ namespace reportBangna.gui
             if (chkDrug.Checked)
             {
                 setData1(dtpStart.Value.Year.ToString() + "-" + dtpStart.Value.ToString("MM-dd"),
-                dtpStart.Value.Year.ToString() + "-" + dtpEnd.Value.ToString("MM-dd"),"1", chkLabError.Checked, chkDoctorEdit.Checked, cboBranch.SelectedValue.ToString());
+                dtpEnd.Value.Year.ToString() + "-" + dtpEnd.Value.ToString("MM-dd"), "1", chkLabError.Checked, chkDoctorEdit.Checked, cboBranch.SelectedValue.ToString());
             }
             else
             {
                 setData1(dtpStart.Value.Year.ToString() + "-" + dtpStart.Value.ToString("MM-dd"),
-                dtpStart.Value.Year.ToString() + "-" + dtpEnd.Value.ToString("MM-dd"), "", chkLabError.Checked, chkDoctorEdit.Checked, cboBranch.SelectedValue.ToString());
+                dtpEnd.Value.Year.ToString() + "-" + dtpEnd.Value.ToString("MM-dd"), "", chkLabError.Checked, chkDoctorEdit.Checked, cboBranch.SelectedValue.ToString());
             }
             btnExport.Enabled = true;
             //dtView = 

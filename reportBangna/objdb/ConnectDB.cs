@@ -137,7 +137,7 @@ namespace reportBangna.objdb
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("", ex);
+                    throw new Exception(ex.Message, ex);
                 }
                 finally
                 {
@@ -173,6 +173,61 @@ namespace reportBangna.objdb
             }
             return toReturn;
             
+        }
+        public DataTable selectDataNoClose(String sql)
+        {
+            DataTable toReturn = new DataTable();
+            if ((hostname == "mainhis") || (hostname == "bangna"))
+            {
+                SqlCommand comMainhis = new SqlCommand();
+                comMainhis.CommandText = sql;
+                comMainhis.CommandType = CommandType.Text;
+                comMainhis.Connection = connMainHIS;
+                SqlDataAdapter adapMainhis = new SqlDataAdapter(comMainhis);
+                try
+                {
+                    //connMainHIS.Open();
+                    adapMainhis.Fill(toReturn);
+                    //return toReturn;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("", ex);
+                }
+                finally
+                {
+                    //connMainHIS.Close();
+                    //comMainhis.Dispose();
+                    //adapMainhis.Dispose();
+                }
+            }
+            else
+            {
+                OleDbCommand cmdToExecute = new OleDbCommand();
+                cmdToExecute.CommandText = sql;
+                cmdToExecute.CommandType = CommandType.Text;
+
+                OleDbDataAdapter adapter = new OleDbDataAdapter(cmdToExecute);
+                cmdToExecute.Connection = _mainConnection;
+                try
+                {
+                    //_mainConnection.Open();
+                    adapter.Fill(toReturn);
+                    //return toReturn;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("", ex);
+                }
+                finally
+                {
+                    //_mainConnection.Close();
+                    //cmdToExecute.Dispose();
+                    //adapter.Dispose();
+                }
+            }
+            return toReturn;
+
         }
         public String ExecuteNonQuery(String sql)
         {

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using reportBangna.gui;
+using System.Diagnostics;
 
 namespace reportBangna
 {
@@ -26,7 +27,8 @@ namespace reportBangna
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-
+            this.Text = "Last Update " + System.IO.File.GetLastWriteTime(System.Environment.CurrentDirectory + "\\" + Process.GetCurrentProcess().ProcessName + ".exe");
+            //this.Text += " hostNameMainHIS=" + cNhso1db.conn.hostNameMainHIS + " databaseMainHIS=" + cNhso1db.conn.databaseNameMainHIS;
         }
 
         private void tv1_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -84,6 +86,12 @@ namespace reportBangna
             else if (nodeSelect == "nCheckNHSO")
             {
                 FrmCheckNHSO frm = new FrmCheckNHSO();
+                //frm.setData("","");
+                frm.Show(this);
+            }
+            else if (nodeSelect == "nReAdmit")
+            {
+                FrmReAdmit frm = new FrmReAdmit();
                 //frm.setData("","");
                 frm.Show(this);
             }

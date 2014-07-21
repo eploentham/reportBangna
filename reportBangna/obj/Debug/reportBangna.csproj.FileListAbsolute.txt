@@ -41,4 +41,8 @@ D:\source\bangna\reportBangna\reportBangna\obj\Debug\reportBangna.application
 D:\source\bangna\reportBangna\reportBangna\obj\Debug\reportBangna.csprojResolveAssemblyReference.cache
 D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmCheckNHSO.resources
 D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmCheckNHSOAdd.resources
+D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmReAdmit.resources
+D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmHosRiskAdd.resources
+D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmHosRiskView.resources
+D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmHosRiskViewEvaluation.resources
 D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.csprojResolveAssemblyReference.cache

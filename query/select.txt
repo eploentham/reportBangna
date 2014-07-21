@@ -1,0 +1,6 @@
+select * 
+From checknhso
+Where branch_id = '002' and visit_date >= '2557-05-01' and visit_date <= '2557-05-31'
+
+delete From checknhso
+Where branch_id = '002' and visit_date >= '2557-05-01' and visit_date <= '2557-05-31'

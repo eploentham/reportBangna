@@ -18,8 +18,10 @@ namespace reportBangna
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMain());
+            //Application.Run(new FrmMain());
+            //Application.Run(new FrmReAdmit());
             //Application.Run(new FrmCheckNHSO());
+            Application.Run(new FrmHosRiskAdd());
             //Application.Run(new FrmCertificatesView());
         }
     }

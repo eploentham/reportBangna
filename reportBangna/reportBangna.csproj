@@ -121,6 +121,30 @@
     <Compile Include="gui\FrmDailypatientsumpaid.Designer.cs">
       <DependentUpon>FrmDailypatientsumpaid.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\FrmHosRiskAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmHosRiskAdd.Designer.cs">
+      <DependentUpon>FrmHosRiskAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmHosRiskView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmHosRiskView.Designer.cs">
+      <DependentUpon>FrmHosRiskView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmHosRiskViewEvaluation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmHosRiskViewEvaluation.Designer.cs">
+      <DependentUpon>FrmHosRiskViewEvaluation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmReAdmit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmReAdmit.Designer.cs">
+      <DependentUpon>FrmReAdmit.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\FrmReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,9 +163,12 @@
     <Compile Include="objdb\employeedb.cs" />
     <Compile Include="objdb\FinanceT01DB.cs" />
     <Compile Include="objdb\CheckNhso1DB.cs" />
+    <Compile Include="objdb\HosRiskDB.cs" />
+    <Compile Include="objdb\ReadmitDB.cs" />
     <Compile Include="objdb\reportDB.cs" />
     <Compile Include="objdb\RmonthlyGroupIdDB.cs" />
     <Compile Include="object1\ChkStaffNote.cs" />
+    <Compile Include="object1\ComboBoxItem.cs" />
     <Compile Include="object1\DailyCheckup.cs">
       <DependentUpon>DailyCheckup.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -170,6 +197,7 @@
       <DependentUpon>DailySummaryDoctor.xsd</DependentUpon>
     </Compile>
     <Compile Include="object1\CheckNhso1.cs" />
+    <Compile Include="object1\HosRisk.cs" />
     <Compile Include="object1\IniFile.cs" />
     <Compile Include="object1\RmonthlyGroupId.cs" />
     <Compile Include="object1\CertificatesChild.cs" />
@@ -205,9 +233,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmCertificatesAdd.resx">
       <DependentUpon>FrmCertificatesAdd.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmCertificatesView.resx">
       <DependentUpon>FrmCertificatesView.cs</DependentUpon>
@@ -223,6 +253,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmDailypatientsumpaid.resx">
       <DependentUpon>FrmDailypatientsumpaid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmHosRiskAdd.resx">
+      <DependentUpon>FrmHosRiskAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmHosRiskView.resx">
+      <DependentUpon>FrmHosRiskView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmHosRiskViewEvaluation.resx">
+      <DependentUpon>FrmHosRiskViewEvaluation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmReAdmit.resx">
+      <DependentUpon>FrmReAdmit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmReport.resx">
       <DependentUpon>FrmReport.cs</DependentUpon>

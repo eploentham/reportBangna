@@ -44,11 +44,11 @@ namespace reportBangna.gui
             reportdb.conn = conn;
             return reportdb.xraySummaryMount(dateStart, dateEnd);
         }
-        public DataTable getDailypatientsumPaidView(DateTime dateStart, DateTime dateEnd)
+        public DataTable getDailypatientsumPaidView(DateTime dateStart, DateTime dateEnd, ProgressBar pb)
         {
             conn = new ConnectDB("mainhis");
             reportdb.conn = conn;
-            return reportdb.dailypatientsumpaid(dateStart, dateEnd);
+            return reportdb.dailypatientsumpaid(dateStart, dateEnd, pb);
         }
         public DataTable getDailypatientsumPaidDayView(DateTime dateStart, DateTime dateEnd, ProgressBar pb)
         {
@@ -122,15 +122,15 @@ namespace reportBangna.gui
                 MessageBox.Show("error " + ex.Message);
             }
         }
-        public void setRptDailypatientsumPaidView(DateTime dateStart, DateTime dateEnd)
+        public void setRptDailypatientsumPaidView(DateTime dateStart, DateTime dateEnd, ProgressBar pb)
         {
             try
             {
-                ReportDataSource rds = new ReportDataSource("Dailypatientsumpaid", getDailypatientsumPaidView(dateStart, dateEnd));
+                ReportDataSource rds = new ReportDataSource("Dailypatientsumpaid", getDailypatientsumPaidView(dateStart, dateEnd, pb));
                 //MessageBox.Show("bbbb");
                 rV1.LocalReport.DataSources.Add(rds);
-                rV1.LocalReport.ReportPath = "d:\\source\\reportBangna\\reportBangna\\report\\xray_SummaryMount.rdlc";
-                //rV1.LocalReport.ReportPath = System.Environment.CurrentDirectory + "\\report\\DailypatientsumPaid.rdlc";
+                //rV1.LocalReport.ReportPath = "d:\\source\\reportBangna\\reportBangna\\report\\xray_SummaryMount.rdlc";
+                rV1.LocalReport.ReportPath = System.Environment.CurrentDirectory + "\\report\\DailypatientsumPaid.rdlc";
                 ReportParameter reportParaHeader1 = new ReportParameter();
                 reportParaHeader1.Name = "header1";
                 reportParaHeader1.Values.Add("โรงพยาบาล บางนา5");
@@ -157,7 +157,7 @@ namespace reportBangna.gui
                 //MessageBox.Show("bbbb");
                 rV1.LocalReport.DataSources.Add(rds);
                 rV1.LocalReport.ReportPath = "d:\\source\\bangna\\reportBangna\\reportBangna\\report\\DailypatientsumPaidDay.rdlc";
-                //rV1.LocalReport.ReportPath = System.Environment.CurrentDirectory + "\\report\\DailypatientsumPaidDay.rdlc";
+                rV1.LocalReport.ReportPath = System.Environment.CurrentDirectory + "\\report\\DailypatientsumPaidDay.rdlc";
                 ReportParameter reportParaHeader1 = new ReportParameter();
                 reportParaHeader1.Name = "header1";
                 reportParaHeader1.Values.Add("โรงพยาบาล บางนา5");

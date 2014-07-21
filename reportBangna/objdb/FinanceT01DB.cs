@@ -94,7 +94,14 @@ namespace reportBangna.objdb
             sql = "Select * From Finance_t04 "+
                 "Where mnc_dat_end >= '"+dateStart +"' and mnc_dat_end <='" + dateEnd + 
                 "' and MNC_close_STS = 'Y' Order By mnc_dat_end, mnc_job_cd, mnc_job_no";
-            dt = conn.selectData(sql);
+            try
+            {
+                dt = conn.selectData(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("error "+ex.Message, "selectByMncDateEnd");
+            }            
             return dt;
         }
         public DataTable selectByMncJobNo(String jobYear,String jobNo, String jobCd)
@@ -157,8 +164,8 @@ namespace reportBangna.objdb
         private String deleteAll(ConnectDB c)
         {
             String sql = "", chk="";
-            //sql = "Delete From " + ft01.table;
-            sql = "Update " + ft01.table +" Set "+ft01.ft01Active+"='3'";
+            sql = "Delete From " + ft01.table;
+            //sql = "Update " + ft01.table + " Set " + ft01.ft01Active + "='3'";
             chk = c.ExecuteNonQueryNoClose(sql);
             return chk;
         }
@@ -244,7 +251,9 @@ namespace reportBangna.objdb
             DateTime mncDated = new DateTime();
             DateTime mncDocDated = new DateTime();
             DateTime mncStampDated = new DateTime();
+            //MessageBox.Show("insertFT01ByDateEndFormCloseDay1", "insertFT01ByDateEndFormCloseDay");
             dtFt04 = selectByMncDateEnd(dateStart,dateEnd);
+            //MessageBox.Show("insertFT01ByDateEndFormCloseDay22", "insertFT01ByDateEndFormCloseDay");
             connBua.OpenConnection();
             if (dtFt04.Rows.Count > 0)
             {
@@ -352,6 +361,7 @@ namespace reportBangna.objdb
                 
             }
             connBua.CloseConnection();
+            pb.Hide();
             return chk;
         }
         private string setGroupId(String paidId)

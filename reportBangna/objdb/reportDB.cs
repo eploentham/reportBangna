@@ -108,14 +108,14 @@ namespace reportBangna.objdb
             dt = conn.selectData(sql);
             return dt;
         }
-        public DataTable dailypatientsumpaid(DateTime dateStart, DateTime dateEnd)
+        public DataTable dailypatientsumpaid(DateTime dateStart, DateTime dateEnd, ProgressBar pb)
         {
             ConnectDB connBua = new ConnectDB("bangna");
             DataTable dt = new DataTable();
             String sql = "", datestart = "", dateend = "";
             datestart = dateStart.Year.ToString() + "-" + dateStart.ToString("MM-dd");
             dateend = dateEnd.Year.ToString() + "-" + dateEnd.ToString("MM-dd");
-
+            //MessageBox.Show("dailypatientsumpaid", "dailypatientsumpaid");
          //   sql = "select  count(ft01.MNC_FN_TYP_CD) as MNC_FN_TYP_CD,finance_m02.MNC_FN_TYP_DSC " +
 
          //       "from finance_t01 as ft01 "+
@@ -148,22 +148,22 @@ namespace reportBangna.objdb
     
       //"  group by Finance_T01.mnc_fn_typ_cd,Finance_m02.MNC_FN_TYP_DSC, "+
       // " Finance_m02.MNC_FN_STS ";
-            ft01db.insertFT01ByDateEndFormCloseDay(datestart,dateend, new ProgressBar());
+            ft01db.insertFT01ByDateEndFormCloseDay(datestart, dateend, pb);
             sql = " select group_id as MNC_FN_TYP_DSC ,count(*) as NO " +
             ",sum(mnc_PAY_CASH) as SUMAMT " +
             ",sum(MNC_PAY_CARD) as paycard " +
             ",sum(mnc_dis_tot) as DISAMT " +
 
-            " from r_finance_t01 " +        
-            " where r_finance_t01.mnc_job_yr = '2556' " +
+            " from r_finance_t01 " +
+            " where  " +
 
-            " and mnc_doc_sts = 'F'" +
-            " and r_finance_t01.MNC_DAT_END >= '" + dateend + "' " +
-            " and r_finance_t01.mnc_dat_end <='" + dateend + "' " +
+            "  mnc_doc_sts = 'F'" +
+            //" and r_finance_t01.MNC_DAT_END >= '" + dateend + "' " +
+            //" and r_finance_t01.mnc_dat_end <='" + dateend + "' " +
             " and r_finance_t01.ft01_active = '1' "+
 
             "  group by group_id ";
-
+            //MessageBox.Show("dailypatientsumpaid", "dailypatientsumpaid");
            dt = connBua.selectData(sql);
             return dt;
         }

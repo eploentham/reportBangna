@@ -37,6 +37,8 @@ namespace reportBangna.gui
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             FrmReport frm = new FrmReport();
             if (reportName == "MisMonthlypatientsumPaidDay")
             {
@@ -67,10 +69,10 @@ namespace reportBangna.gui
             else
             {
                 frm.reportName = "DailypatientsumPaid";
-                frm.setRptDailypatientsumPaidView(dtpStart.Value, dtpEnd.Value);
+                frm.setRptDailypatientsumPaidView(dtpStart.Value, dtpEnd.Value, pB1);
             }
-            
-                frm.Show(this);
+            Cursor.Current = cursor;
+            frm.Show(this);
         }
 
         private void button1_Click(object sender, EventArgs e)
