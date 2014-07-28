@@ -741,6 +741,7 @@ namespace reportBangna.objdb
                     //"left join PATIENT_T09 t09 on t01.MNC_PRE_NO = t09.MNC_PRE_NO and t01.MNC_date = t09.MNC_date " +
                 "where t01.MNC_DATE BETWEEN '" + dateStart + "' AND '" + dateEnd + "' " +
                 "and t01.MNC_FN_TYP_CD in ('44','45','46','47','48','49') " +
+                "and t01.mnc_hn_no = '2179721 ' "+
                 "Order by t01.MNC_HN_NO";
             }
             

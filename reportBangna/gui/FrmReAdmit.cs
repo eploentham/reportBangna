@@ -49,6 +49,7 @@ namespace reportBangna.gui
             dgv1.Columns[colDia1].Width = 200;
             dgv1.Columns[colDia24].Width = 150;
             dgv1.Columns[colDia48].Width = 150;
+            dgv1.Columns[colDia28D].Width = 150;
 
             dgv1.Columns[colDia2].Visible = false;
             dgv1.Columns[colDia3].Visible = false;
@@ -76,7 +77,7 @@ namespace reportBangna.gui
             dgv1.Columns[colDia5].HeaderText = "vn no9";
             dgv1.Columns[colDia24].HeaderText = "DIA CD เก่า24";
             dgv1.Columns[colDia48].HeaderText = "DIA CD เก่า48";
-            dgv1.Columns[colDia28D].HeaderText = "DIA CD เก่า28D";
+            dgv1.Columns[colDia28D].HeaderText = "DIA CD เก่า28Day";
             Font font = new Font("Microsoft Sans Serif", 10);
             dgv1.Font = font;
         }
