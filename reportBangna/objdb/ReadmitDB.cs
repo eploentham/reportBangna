@@ -71,7 +71,7 @@ namespace reportBangna.objdb
             dt1 = conn.selectDataNoClose(sql);
             return dt1;
         }
-        public DataTable SelectReadmit48(String hn, String dateAdmit, String an)
+        public DataTable SelectReadmit48(String hn, String dateAdmit, String an, String preno)
         {
             String date24 = "";
 
@@ -84,7 +84,7 @@ namespace reportBangna.objdb
                         "PATIENT_T08 as t08 on t08.MNC_HN_NO = t09.MNC_HN_NO and t08.mnc_an_no = t09.mnc_an_no " +
                         //"FINANCE_M02 as f02 on t08.MNC_FN_TYP_CD = f02.mnc_fn_typ_cd " +
                         "WHERE  (t09.MNC_HN_NO = '" + hn + "') and (t08.MNC_DS_DATE >= dateadd(hour, -48,'" + dateAdmit + "'))  and (t08.MNC_DS_DATE < '" + dateAdmit + "') " +
-                        //" and t08.MNC_AN_no <> '" + an + "' " +
+                        " and t09.MNC_pre_no <> '" + preno + "' " +
                         "Order By  t09.MNC_HN_NO";
             //DataTable dt = new DataTable();
             dt1.Clear();
@@ -136,6 +136,26 @@ namespace reportBangna.objdb
                 }
             }
             return dia;
+        }
+        public DataTable SelectReVisit48H(String hn, String dateAdmit, String an)
+        {
+            String date24 = "";
+
+            String sql = "SELECT  t01.MNC_HN_NO, t01.MNC_pre_no,t01.mnc_vn_no, " +
+                        "t01.MNC_DATE,t09.MNC_DIA_CD  " +
+                        "  " +
+                        "FROM    patient_t01 AS t01  " +
+                        " left join PATIENT_t09 AS t09 ON t01.MNC_DATE = t09.MNC_DATE and t01.MNC_PRE_NO = t09.MNC_PRE_NO " +
+                //"PATIENT_M02 AS m02 ON m02.MNC_PFIX_CD = m01.MNC_PFIX_CDT inner join " +
+                        //"PATIENT_T08 as t08 on t08.MNC_HN_NO = t09.MNC_HN_NO and t08.mnc_an_no = t09.mnc_an_no " +
+                //"FINANCE_M02 as f02 on t08.MNC_FN_TYP_CD = f02.mnc_fn_typ_cd " +
+                        "WHERE  (t01.MNC_HN_NO = '" + hn + "') and (t01.MNC_DATE <= dateadd(hour, +48,'" + dateAdmit + "'))  and (t01.MNC_DATE > '" + dateAdmit + "') and t01.MNC_STS = 'F' " +
+                //" and t08.MNC_AN_no <> '" + an + "' " +
+                        "Order By  t01.MNC_HN_NO";
+            //DataTable dt = new DataTable();
+            dt1.Clear();
+            dt1 = conn.selectDataNoClose(sql);
+            return dt1;
         }
     }
 }

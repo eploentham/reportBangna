@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace reportBangna.object1
 {
-    class Config1
+    public class Config1
     {
         public ComboBox setCboYear(ComboBox c)
         {
@@ -212,6 +212,17 @@ namespace reportBangna.object1
             else
             {
                 return dt;
+            }
+        }
+        public String dateDBtoShow(DateTime dt)
+        {
+            if (dt != null)
+            {
+                return dt.Day.ToString("00") + "-" + dt.Month.ToString("00") + "-" + String.Concat(dt.Year+543);
+            }
+            else
+            {
+                return "";
             }
         }
         public String dateDBtoShow25(String dt)

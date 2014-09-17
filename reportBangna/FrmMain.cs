@@ -91,7 +91,7 @@ namespace reportBangna
             }
             else if (nodeSelect == "nReAdmit")
             {
-                FrmReAdmit frm = new FrmReAdmit();
+                FrmReVisit frm = new FrmReVisit();
                 //frm.setData("","");
                 frm.Show(this);
             }

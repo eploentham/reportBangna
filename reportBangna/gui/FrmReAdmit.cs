@@ -61,6 +61,9 @@ namespace reportBangna.gui
             dgv1.Columns[colDia9].Visible = false;
             dgv1.Columns[colDia10].Visible = false;
 
+            dgv1.Columns[colDia24].Visible = false;
+            dgv1.Columns[colDia48].Visible = false;
+
             dgv1.Columns[colRow].HeaderText = "ลำดับ";
             dgv1.Columns[colHN].HeaderText = "HN";
             dgv1.Columns[colAN].HeaderText = "AN";
@@ -75,6 +78,7 @@ namespace reportBangna.gui
             dgv1.Columns[colDia3].HeaderText = "vn no8";
             dgv1.Columns[colDia4].HeaderText = "pre no9";
             dgv1.Columns[colDia5].HeaderText = "vn no9";
+            dgv1.Columns[colDia6].HeaderText = "chk";
             dgv1.Columns[colDia24].HeaderText = "DIA CD เก่า24";
             dgv1.Columns[colDia48].HeaderText = "DIA CD เก่า48";
             dgv1.Columns[colDia28D].HeaderText = "DIA CD เก่า28Day";
@@ -88,7 +92,7 @@ namespace reportBangna.gui
             pB1.Minimum = 0;
             DateTime dt1 = new DateTime();
             List<String> lHn = new List<String>();
-            String visitDate = "", visitTime="", admitDate="", visitDate1="", dsDate="";
+            String visitDate = "", visitTime="", admitDate="", visitDate1="", dsDate="", sql="", hn="";
             radb.conn.OpenConnection();
             DataTable dt = radb.selectReadmit(dtpStart.Value.Year.ToString() + "-" + dtpStart.Value.ToString("MM-dd"),
                 dtpEnd.Value.Year.ToString() + "-" + dtpEnd.Value.ToString("MM-dd"));
@@ -134,16 +138,291 @@ namespace reportBangna.gui
                     dgv1[colDia24, i].Value="";
                     dgv1[colDia48, i].Value="";
                     dgv1[colDia28D, i].Value = "";
+                    //DataTable dt24 = radb.SelectReadmit24(dt.Rows[i]["MNC_HN_NO"].ToString(), admitDate, dt.Rows[i]["MNC_AN_no"].ToString());
+                    //if ((dt24 != null) && (dt24.Rows.Count>0))
+                    //{
+                    //    //lHn.Add(dt.Rows[i]["MNC_HN_NO"].ToString());
+                    //    dgv1[colDia4, i].Value = "1";
+                    //    for (int j = 0; j < dt24.Rows.Count; j++)
+                    //    {
+                    //        dgv1[colDia24, i].Value += dt24.Rows[j]["MNC_DIA_CD"].ToString()+",";
+                    //    }
+                    //    for (int j = (i-1); j >= 0; j--)
+                    //    {
+                    //        if (dgv1[colHN, j].Value == null)
+                    //        {
+                    //            continue;
+                    //        }
+                    //        if (dgv1[colHN, j].Value.ToString().Equals(dt.Rows[i]["MNC_HN_NO"].ToString()))
+                    //        {
+                    //            dgv1[colDia4, j].Value = "1";
+                    //            j = 0;
+                    //        }
+                    //    }
+                    //    dgv1.Rows[i].DefaultCellStyle.BackColor = Color.LightGreen;
+                    //}
+                    //DataTable dt48 = radb.SelectReadmit48(dt.Rows[i]["MNC_HN_NO"].ToString(), admitDate, dt.Rows[i]["MNC_AN_no"].ToString(), dt.Rows[i]["MNC_pre_no"].ToString());
+                    //if ((dt48 != null) && (dt48.Rows.Count > 0))
+                    //{
+                    //    //lHn.Add(dt.Rows[i]["MNC_HN_NO"].ToString());
+                    //    if (dt.Rows[i]["MNC_HN_NO"].ToString().Equals("5053007"))
+                    //    {
+                    //        sql = "";
+                    //    }
+                    //    dgv1[colDia4, i].Value = "1";
+                    //    for (int j = 0; j < dt48.Rows.Count; j++)
+                    //    {
+                    //        dgv1[colDia48, i].Value += dt48.Rows[j]["MNC_DIA_CD"].ToString() + ",";
+                    //    }
+                    //    for (int j = (i - 1); j >= 0; j--)
+                    //    {
+                    //        if (dgv1[colHN, j].Value == null)
+                    //        {
+                    //            continue;
+                    //        }
+                    //        if (dgv1[colHN, j].Value.ToString().Equals(dt.Rows[i]["MNC_HN_NO"].ToString()))
+                    //        {
+                    //            dgv1[colDia4, j].Value = "1";
+                    //            j = 0;
+                    //        }
+                    //    }
+                    //    //dgv1[colDia48, i].Value = dt48.Rows[0]["MNC_DIA_CD"].ToString();
+                    //    dgv1.Rows[i].DefaultCellStyle.BackColor = Color.LightGreen;
+                    //}
+                    DataTable dt28 = radb.SelectReadmit28D(dt.Rows[i]["MNC_HN_NO"].ToString(), admitDate, dt.Rows[i]["MNC_AN_no"].ToString());
+                    if ((dt28 != null) && (dt28.Rows.Count > 0))
+                    {
+                        //lHn.Add(dt.Rows[i]["MNC_HN_NO"].ToString());
+                        dgv1[colDia4, i].Value = "1";
+                        for (int j = 0; j < dt28.Rows.Count; j++)
+                        {
+                            dgv1[colDia28D, i].Value += dt28.Rows[j]["MNC_DIA_CD"].ToString() + ",";
+                        }
+                        for (int j = (i - 1); j >= 0; j--)
+                        {
+                            if (dgv1[colHN, j].Value == null)
+                            {
+                                continue;
+                            }
+                            if (dgv1[colHN, j].Value.ToString().Equals(dt.Rows[i]["MNC_HN_NO"].ToString()))
+                            {
+                                dgv1[colDia4, j].Value = "1";
+                                j = 0;
+                            }
+                        }
+                        //dgv1[colDia48, i].Value = dt48.Rows[0]["MNC_DIA_CD"].ToString();
+                        dgv1.Rows[i].DefaultCellStyle.BackColor = Color.LightGreen;
+                    }
+                    dgv1[colRow, i].Value = (i+1);
+                    dgv1[colHN, i].Value = dt.Rows[i]["MNC_HN_NO"].ToString();
+                    dgv1[colAN, i].Value = dt.Rows[i]["MNC_AN_no"].ToString();
+                    dgv1[colDia2, i].Value = dt.Rows[i]["mnc_pre_no"].ToString();
+                    dgv1[colDia3, i].Value = dt.Rows[i]["mnc_vn_no"].ToString();
+                    //dgv1[colDateDS, i].Value = dt.Rows[i]["MNC_DS_DATE"].ToString();
+                    //dgv1[colTimeDS, i].Value = dt.Rows[i]["MNC_DS_TIME"].ToString();
+                    dgv1[colPName, i].Value = dt.Rows[i]["MNC_PFIX_DSC"].ToString() + " " + dt.Rows[i]["MNC_FNAME_T"].ToString() + " " + dt.Rows[i]["MNC_LNAME_T"].ToString();
+                    dgv1[colFNTY, i].Value = dt.Rows[i]["MNC_FN_TYP_dsc"].ToString();
+                    dgv1[colDia1, i].Value = radb.SelectReadmitDia(dt.Rows[i]["MNC_HN_NO"].ToString(), visitDate1, dt.Rows[i]["mnc_pre_no"].ToString());
+                    //dgv1[colDia4, i].Value = "";
+                    //dgv1[colDia24, i].Value = radb.SelectReadmit24(dt.Rows[i]["MNC_HN_NO"].ToString(), dt.Rows[i]["mnc_an_no"].ToString());
+                    pB1.Value = i;
+                }
+            }
+            radb.conn.CloseConnection();
+            pB1.Visible = false;
+            //dgv1.
+            //for (int i = 0; i < dgv1.RowCount; i++)
+            //{
+            //    if ((dgv1[colDia24, i].Value == null) || (dgv1[colDia48, i].Value == null))
+            //    {
+            //        continue;
+            //    }
+            //    for (int j = 0; j < lHn.Count; j++)
+            //    {
+            //        if (dgv1[colHN, i].Value.ToString().Equals(lHn[j]))
+            //        {
+            //            dgv1[colDia4, i].Value = "1";
+            //        }
+            //    }
+            //}
+            for (int i = 0; i < dgv1.RowCount; i++)
+            {
+                if (dgv1[colDia4, i].Value == null)
+                {
+                    continue;
+                }
+                if (!dgv1[colDia4, i].Value.ToString().Equals("1"))
+                {
+                    dgv1.Rows.RemoveAt(i);
+                    i--;
+                }
+            }
+            //string[] dia1 = new string[] { };
+            for (int i = 0; i < dgv1.RowCount; i++)
+            {
+                if (dgv1[colDia1, i].Value == null)
+                {
+                    continue;
+                }
+                if (dgv1[colDia48, i].Value == null)
+                {
+                    continue;
+                }
+                dgv1[colDia6, i].Value = "";
+                string[] dia1 = dgv1[colDia1, i].Value.ToString().Split(',');
+                string[] dia48 = dgv1[colDia48, i].Value.ToString().Split(',');
+                sql = "";
+                for (int j = 0; j < dia48.Length; j++)
+                {
+                    sql = dia48[j];
+                    int chk = Array.IndexOf(dia1, sql);
+                    if (chk >= 0)
+                    {
+                        dgv1[colDia6, i].Value = "1";
+                    }
+                }
+            }
+            for (int i = 0; i < dgv1.RowCount; i++)
+            {
+                if (dgv1[colDia6, i].Value == null)
+                {
+                    continue;
+                }
+                if (dgv1[colDia6, i].Value.ToString().Equals("1"))
+                {
+                    hn = dgv1[colHN, i].Value.ToString();
+                    for (int j = i; j >= 0; j--)
+                    {
+                        if (j != 0)
+                        {
+                            sql = dgv1[colHN, j - 1].Value.ToString();
+                            if (sql.Equals(hn))
+                            {
+                                dgv1[colDia6, (j-1)].Value = "1";
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (int i = 0; i < dgv1.RowCount; i++)
+            {
+                if (dgv1[colDia6, i].Value == null)
+                {
+                    continue;
+                }
+                if (!dgv1[colDia6, i].Value.ToString().Equals("1"))
+                {
+                    dgv1.Rows.RemoveAt(i);
+                    i--;
+                }
+            }            
+            dgv1.Sort(dgv1.Columns[colHN], ListSortDirection.Ascending);
+            DateTime dtrow = new DateTime();
+            DateTime dtrow1 = new DateTime();
+            for (int i = 0; i < dgv1.RowCount; i++)
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                DataGridViewRow row1 = new DataGridViewRow();
+                DataGridViewRow rowTemp = new DataGridViewRow();
+                row = dgv1.Rows[i];
+                if ((i + 1) < dgv1.RowCount)
+                {
+                    row1 = dgv1.Rows[(i + 1)];
+                    if (row.Cells[colHN].Value == null)
+                    {
+                        continue;
+                    }
+                    if (row.Cells[colHN].Value.ToString().Equals(row1.Cells[colHN].Value.ToString()))
+                    {
+                        dtrow = DateTime.Parse(row.Cells[colDateAdmit].Value.ToString());
+                        dtrow1 = DateTime.Parse(row1.Cells[colDateAdmit].Value.ToString());
+                        System.TimeSpan ts = dtrow1.Subtract(dtrow);
+                        if (!(ts.TotalMinutes > 0))
+                        {
+                            if (int.Parse(row.Cells[colDia2].Value.ToString()) < int.Parse(row1.Cells[colDia2].Value.ToString()))
+                            {
+                                rowTemp = row1;
+                                row = row1;
+                                row1 = rowTemp;
+                            }
+                        }
+                    }
+                }
+                
+            }
+            for (int i = 0; i < dgv1.RowCount; i++)
+            {
+                if ((dgv1[colHN, i].Value != null))
+                {
+                    dgv1[colRow, i].Value = (i + 1);
+                }
+            }
+            label4.Text = System.DateTime.Now.ToString();
+        }
+        private void getReadmitV2()
+        {
+            label3.Text = System.DateTime.Now.ToString();
+            pB1.Visible = true;
+            pB1.Minimum = 0;
+            DateTime dt1 = new DateTime();
+            List<String> lHn = new List<String>();
+            String visitDate = "", visitTime = "", admitDate = "", visitDate1 = "", dsDate = "";
+            radb.conn.OpenConnection();
+            DataTable dt = radb.selectReadmit(dtpStart.Value.Year.ToString() + "-" + dtpStart.Value.ToString("MM-dd"),
+                dtpEnd.Value.Year.ToString() + "-" + dtpEnd.Value.ToString("MM-dd"));
+            if (dt.Rows.Count > 0)
+            {
+                pB1.Maximum = dt.Rows.Count;
+                dgv1.RowCount = dt.Rows.Count;
+                setGrd1(dt.Rows.Count);
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    if (dt.Rows[i]["MNC_DATE"] != null)
+                    {
+                        dt1 = DateTime.Parse(dt.Rows[i]["MNC_DATE"].ToString());
+                        visitDate1 = dt1.Year.ToString() + "-" + dt1.Month.ToString("00") + "-" + dt1.Day.ToString("00");
+                    }
+                    if (dt.Rows[i]["MNC_AD_DATE"] != null)
+                    {
+                        dt1 = DateTime.Parse(dt.Rows[i]["MNC_AD_DATE"].ToString());
+                        visitDate = dt1.ToString("dd-MM-yyyy");
+                        admitDate = dt1.Year.ToString() + "-" + dt1.Month.ToString("00") + "-" + dt1.Day.ToString("00");
+                        dgv1[colDateAdmit, i].Value = visitDate;
+                        visitTime = "0000" + dt.Rows[i]["MNC_AD_TIME"].ToString();
+                        visitTime = visitTime.Substring(visitTime.Length - 4);
+                        dgv1[colTimeAdmit, i].Value = visitTime.Substring(0, 2) + ":" + visitTime.Substring(2);
+                    }
+                    if (dt.Rows[i]["MNC_DS_DATE"] != null)
+                    {
+                        try
+                        {
+                            dt1 = DateTime.Parse(dt.Rows[i]["MNC_DS_DATE"].ToString());
+                            visitDate = dt1.ToString("dd-MM-yyyy");
+                            dsDate = dt1.Year.ToString() + "-" + dt1.Month.ToString("00") + "-" + dt1.Day.ToString("00");
+                            dgv1[colDateDS, i].Value = visitDate;
+                            visitTime = "0000" + dt.Rows[i]["MNC_DS_TIME"].ToString();
+                            visitTime = visitTime.Substring(visitTime.Length - 4);
+                            dgv1[colTimeDS, i].Value = visitTime.Substring(0, 2) + ":" + visitTime.Substring(2);
+                        }
+                        catch (Exception ex)
+                        {
+                        }
+                    }
+                    dgv1[colDia4, i].Value = "";
+                    dgv1[colDia24, i].Value = "";
+                    dgv1[colDia48, i].Value = "";
+                    dgv1[colDia28D, i].Value = "";
                     DataTable dt24 = radb.SelectReadmit24(dt.Rows[i]["MNC_HN_NO"].ToString(), admitDate, dt.Rows[i]["MNC_AN_no"].ToString());
-                    if ((dt24 != null) && (dt24.Rows.Count>0))
+                    if ((dt24 != null) && (dt24.Rows.Count > 0))
                     {
                         //lHn.Add(dt.Rows[i]["MNC_HN_NO"].ToString());
                         dgv1[colDia4, i].Value = "1";
                         for (int j = 0; j < dt24.Rows.Count; j++)
                         {
-                            dgv1[colDia24, i].Value += dt24.Rows[j]["MNC_DIA_CD"].ToString()+",";
+                            dgv1[colDia24, i].Value += dt24.Rows[j]["MNC_DIA_CD"].ToString() + ",";
                         }
-                        for (int j = (i-1); j >= 0; j--)
+                        for (int j = (i - 1); j >= 0; j--)
                         {
                             if (dgv1[colHN, j].Value == null)
                             {
@@ -157,7 +436,7 @@ namespace reportBangna.gui
                         }
                         dgv1.Rows[i].DefaultCellStyle.BackColor = Color.LightGreen;
                     }
-                    DataTable dt48 = radb.SelectReadmit48(dt.Rows[i]["MNC_HN_NO"].ToString(), admitDate, dt.Rows[i]["MNC_AN_no"].ToString());
+                    DataTable dt48 = radb.SelectReadmit48(dt.Rows[i]["MNC_HN_NO"].ToString(), admitDate, dt.Rows[i]["MNC_AN_no"].ToString(), dt.Rows[i]["MNC_pre_no"].ToString());
                     if ((dt48 != null) && (dt48.Rows.Count > 0))
                     {
                         //lHn.Add(dt.Rows[i]["MNC_HN_NO"].ToString());
@@ -205,7 +484,7 @@ namespace reportBangna.gui
                         //dgv1[colDia48, i].Value = dt48.Rows[0]["MNC_DIA_CD"].ToString();
                         dgv1.Rows[i].DefaultCellStyle.BackColor = Color.LightGreen;
                     }
-                    dgv1[colRow, i].Value = (i+1);
+                    dgv1[colRow, i].Value = (i + 1);
                     dgv1[colHN, i].Value = dt.Rows[i]["MNC_HN_NO"].ToString();
                     dgv1[colAN, i].Value = dt.Rows[i]["MNC_AN_no"].ToString();
                     dgv1[colDia2, i].Value = dt.Rows[i]["mnc_pre_no"].ToString();

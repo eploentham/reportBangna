@@ -14,15 +14,16 @@ namespace reportBangna
         /// </summary>
         [STAThread]
         static void Main()
-        {
-            
+        {            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FrmMain());
-            //Application.Run(new FrmReAdmit());
-            Application.Run(new FrmCheckNHSO());
+            Application.Run(new FrmReAdmit());
+            //Application.Run(new FrmCheckNHSO());
             //Application.Run(new FrmHosRiskAdd());
             //Application.Run(new FrmCertificatesView());
+            //Application.Run(new FrmChangeBed());
+            //Application.Run(new FrmReVisit());
         }
     }
 }
