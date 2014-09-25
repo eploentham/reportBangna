@@ -87,6 +87,39 @@ namespace reportBangna
 
             return dt;
         }
+        public DataTable selectPatientDead(String dateStart, String dateEnd)
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select patient_t08.MNC_AD_DATE,PATIENT_T08.MNC_DS_DATE,patient_t08.MNC_HN_NO, " +
+                "m02.MNC_PFIX_DSC, m01.MNC_FNAME_T, m01.MNC_LNAME_T, " +
+                "patient_t08.MNC_AN_NO,patient_t08.MNC_AN_yr, " +
+                "PATIENT_T08.MNC_DIA_DEAD ,PATIENT_M18.MNC_DIA_DSC_E, 'IPD' AS flag " +
+
+                "from PATIENT_T08 " +
+
+                "left join PATIENT_M18 on PATIENT_T08.MNC_DIA_DEAD = PATIENT_M18.MNC_DIA_CD " +
+                "left JOIN PATIENT_M01 AS m01 ON PATIENT_T08.MNC_HN_NO = m01.MNC_HN_NO " +
+                "left JOIn  PATIENT_M02 AS m02 ON m02.MNC_PFIX_CD = m01.MNC_PFIX_CDT " +
+
+                "where PATIENT_T08.MNC_DEAD_FLG = 'y' and patient_t08.MNC_AD_DATE >='" + dateStart + "' and patient_t08.MNC_AD_DATE <='" + dateEnd+"' " +
+                //"order by PATIENT_T08.MNC_AD_DATE  " +
+                "Union " +
+                "Select patient_t01.MNC_DATE,patient_t01.MNC_STAMP_DAT,patient_t01.MNC_HN_NO, " +
+                "m02.MNC_PFIX_DSC, m01.MNC_FNAME_T, m01.MNC_LNAME_T,  '' AS asMNC_AN_NO, '' AS MNC_AN_YR," +
+                "patient_t01.MNC_DIA_DEAD ,PATIENT_M18.MNC_DIA_DSC_E, 'OPD' AS flag " +
+                "from patient_t01 " +
+
+                "left join PATIENT_M18 on patient_t01.MNC_DIA_DEAD = PATIENT_M18.MNC_DIA_CD " +
+                "left JOIN PATIENT_M01 AS m01 ON PATIENT_T01.MNC_HN_NO = m01.MNC_HN_NO " +
+                "left JOIn  PATIENT_M02 AS m02 ON m02.MNC_PFIX_CD = m01.MNC_PFIX_CDT " +
+
+                "where patient_t01.MNC_DEAD_FLG = 'y' and patient_t01.MNC_DATE >='" + dateStart + "' and patient_t01.MNC_DATE <='" + dateEnd + "'";
+                //"order by patient_t01.MNC_DATE";
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
         public String getValueCboItem(ComboBox c)
         {
             ComboBoxItem iSale;

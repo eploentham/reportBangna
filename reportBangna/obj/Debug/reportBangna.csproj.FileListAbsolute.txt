@@ -26,4 +26,6 @@ D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.exe.manifest
 D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.application
 D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.exe
 D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.pdb
+D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmPatientDead.resources
+D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmReport1.resources
 D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.csprojResolveAssemblyReference.cache

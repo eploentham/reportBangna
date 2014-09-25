@@ -203,6 +203,17 @@ namespace reportBangna.object1
             }
             
         }
+        public String dateShowtoDB(String dt)
+        {
+            if (dt != "")
+            {
+                return dt.Substring(6, 4) + "-" + dt.Substring(3, 2) + "-" + dt.Substring(0, 2);
+            }
+            else
+            {
+                return dt;
+            }
+        }
         public String dateDBtoShow(String dt)
         {
             if (dt != "")

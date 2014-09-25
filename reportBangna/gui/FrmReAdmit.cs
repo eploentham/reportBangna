@@ -16,7 +16,8 @@ namespace reportBangna.gui
     {
         int colRow = 0, colHN = 1, colAN = 2, colPName = 3, colDateAdmit = 4, colTimeAdmit = 5, colDateDS = 6, colTimeDS = 7, colFNTY = 8, colDia1 = 9;
         int colDia2 = 10, colDia3 = 11, colDia4 = 12, colDia5 = 13, colDia6 = 14, colDia7 = 15, colDia8 = 16, colDia9 = 17, colDia10 = 18, colDia24 = 19, colDia48 = 20, colDia28D = 21;
-        int colCnt = 22;
+        int colDateAdmit1 = 22;
+        int colCnt = 23;
         ReadmitDB radb;
         Config1 cf;
         public FrmReAdmit()
@@ -98,6 +99,7 @@ namespace reportBangna.gui
                 dtpEnd.Value.Year.ToString() + "-" + dtpEnd.Value.ToString("MM-dd"));
             if (dt.Rows.Count > 0)
             {
+                dgv1.Rows.Clear();
                 pB1.Maximum = dt.Rows.Count;
                 dgv1.RowCount = dt.Rows.Count;
                 setGrd1(dt.Rows.Count);
@@ -114,6 +116,7 @@ namespace reportBangna.gui
                         visitDate = dt1.ToString("dd-MM-yyyy");
                         admitDate = dt1.Year.ToString() + "-" + dt1.Month.ToString("00") + "-" + dt1.Day.ToString("00");
                         dgv1[colDateAdmit, i].Value = visitDate;
+                        dgv1[colDateAdmit1, i].Value = dt1.Year.ToString() + dt1.Month.ToString("00")+ dt1.Day.ToString("00");
                         visitTime = "0000" + dt.Rows[i]["MNC_AD_TIME"].ToString();
                         visitTime = visitTime.Substring(visitTime.Length - 4);
                         dgv1[colTimeAdmit, i].Value = visitTime.Substring(0, 2) + ":" + visitTime.Substring(2);
@@ -138,57 +141,7 @@ namespace reportBangna.gui
                     dgv1[colDia24, i].Value="";
                     dgv1[colDia48, i].Value="";
                     dgv1[colDia28D, i].Value = "";
-                    //DataTable dt24 = radb.SelectReadmit24(dt.Rows[i]["MNC_HN_NO"].ToString(), admitDate, dt.Rows[i]["MNC_AN_no"].ToString());
-                    //if ((dt24 != null) && (dt24.Rows.Count>0))
-                    //{
-                    //    //lHn.Add(dt.Rows[i]["MNC_HN_NO"].ToString());
-                    //    dgv1[colDia4, i].Value = "1";
-                    //    for (int j = 0; j < dt24.Rows.Count; j++)
-                    //    {
-                    //        dgv1[colDia24, i].Value += dt24.Rows[j]["MNC_DIA_CD"].ToString()+",";
-                    //    }
-                    //    for (int j = (i-1); j >= 0; j--)
-                    //    {
-                    //        if (dgv1[colHN, j].Value == null)
-                    //        {
-                    //            continue;
-                    //        }
-                    //        if (dgv1[colHN, j].Value.ToString().Equals(dt.Rows[i]["MNC_HN_NO"].ToString()))
-                    //        {
-                    //            dgv1[colDia4, j].Value = "1";
-                    //            j = 0;
-                    //        }
-                    //    }
-                    //    dgv1.Rows[i].DefaultCellStyle.BackColor = Color.LightGreen;
-                    //}
-                    //DataTable dt48 = radb.SelectReadmit48(dt.Rows[i]["MNC_HN_NO"].ToString(), admitDate, dt.Rows[i]["MNC_AN_no"].ToString(), dt.Rows[i]["MNC_pre_no"].ToString());
-                    //if ((dt48 != null) && (dt48.Rows.Count > 0))
-                    //{
-                    //    //lHn.Add(dt.Rows[i]["MNC_HN_NO"].ToString());
-                    //    if (dt.Rows[i]["MNC_HN_NO"].ToString().Equals("5053007"))
-                    //    {
-                    //        sql = "";
-                    //    }
-                    //    dgv1[colDia4, i].Value = "1";
-                    //    for (int j = 0; j < dt48.Rows.Count; j++)
-                    //    {
-                    //        dgv1[colDia48, i].Value += dt48.Rows[j]["MNC_DIA_CD"].ToString() + ",";
-                    //    }
-                    //    for (int j = (i - 1); j >= 0; j--)
-                    //    {
-                    //        if (dgv1[colHN, j].Value == null)
-                    //        {
-                    //            continue;
-                    //        }
-                    //        if (dgv1[colHN, j].Value.ToString().Equals(dt.Rows[i]["MNC_HN_NO"].ToString()))
-                    //        {
-                    //            dgv1[colDia4, j].Value = "1";
-                    //            j = 0;
-                    //        }
-                    //    }
-                    //    //dgv1[colDia48, i].Value = dt48.Rows[0]["MNC_DIA_CD"].ToString();
-                    //    dgv1.Rows[i].DefaultCellStyle.BackColor = Color.LightGreen;
-                    //}
+                    
                     DataTable dt28 = radb.SelectReadmit28D(dt.Rows[i]["MNC_HN_NO"].ToString(), admitDate, dt.Rows[i]["MNC_AN_no"].ToString());
                     if ((dt28 != null) && (dt28.Rows.Count > 0))
                     {
@@ -316,48 +269,153 @@ namespace reportBangna.gui
                     dgv1.Rows.RemoveAt(i);
                     i--;
                 }
-            }            
-            dgv1.Sort(dgv1.Columns[colHN], ListSortDirection.Ascending);
-            DateTime dtrow = new DateTime();
-            DateTime dtrow1 = new DateTime();
+            }
+            //String sql = "";
+            sql = "Delete From r_readmit";
+            ConnectDB cbua = new ConnectDB("bangna");
+            cbua.ExecuteNonQuery(sql);
             for (int i = 0; i < dgv1.RowCount; i++)
             {
-                DataGridViewRow row = new DataGridViewRow();
-                DataGridViewRow row1 = new DataGridViewRow();
-                DataGridViewRow rowTemp = new DataGridViewRow();
-                row = dgv1.Rows[i];
-                if ((i + 1) < dgv1.RowCount)
-                {
-                    row1 = dgv1.Rows[(i + 1)];
-                    if (row.Cells[colHN].Value == null)
-                    {
-                        continue;
-                    }
-                    if (row.Cells[colHN].Value.ToString().Equals(row1.Cells[colHN].Value.ToString()))
-                    {
-                        dtrow = DateTime.Parse(row.Cells[colDateAdmit].Value.ToString());
-                        dtrow1 = DateTime.Parse(row1.Cells[colDateAdmit].Value.ToString());
-                        System.TimeSpan ts = dtrow1.Subtract(dtrow);
-                        if (!(ts.TotalMinutes > 0))
-                        {
-                            if (int.Parse(row.Cells[colDia2].Value.ToString()) < int.Parse(row1.Cells[colDia2].Value.ToString()))
-                            {
-                                rowTemp = row1;
-                                row = row1;
-                                row1 = rowTemp;
-                            }
-                        }
-                    }
-                }
+                sql = "Insert Into r_readmit(id, hn, date_admit, time_admit, date_ds, time_ds, name, fn_type, dia1, dia28) Values('" + dgv1[colDia6, i].Value.ToString() + "')";
+            }
+
+
+
+            //String dateTmp = "", dateTmp1 = "";
+            //for (int i = 0; i < dgv1.RowCount; i++)
+            //{
+            //    if (dgv1[colDateAdmit1, i].Value == null)
+            //    {
+            //        continue;
+            //    }
+            //    for (int j = 0; j < dgv1.RowCount - 1; j++)
+            //    {
+            //        if (dgv1[colDateAdmit1, (j + 1)].Value == null)
+            //        {
+            //            continue;
+            //        }
+            //        //String sRow = "", sHN = "", sAN = "", sPName = "", sDateAdmit = "", sTimeAdmit = "", SDateDS = "", sTimeDS = "", sFNTY = "", sDia1 = "";
+            //        //String sDia2 = "", sDia3 = "", sDia4 = "", sDia5 = "", sDia6 = "", sDia7 = "", sDia8 = "", sDia9 = "", sDia10 = "", sDia24 = "", sDia48 = "", sDia28D = "";
+            //        //String sDateAdmit1 = "";
+
+            //        //String sRow1 = "", sHN1 = "", sAN1 = "", sPName1 = "", sDateAdmit1 = "", sTimeAdmit1 = "", SDateDS1 = "", sTimeDS1 = "", sFNTY1 = "", sDia11 = "";
+            //        //String sDia21 = "", sDia31 = "", sDia41 = "", sDia5 = "", sDia6 = "", sDia7 = "", sDia8 = "", sDia9 = "", sDia10 = "", sDia24 = "", sDia48 = "", sDia28D = "";
+            //        //String sDateAdmit1 = "";
+            //        //List<String> s = new List<string>();
+            //        List<String> s1 = new List<string>();
+            //        dateTmp1 = dgv1[colDateAdmit1, (j + 1)].Value.ToString();
+            //        if ((int.Parse(dgv1[colDateAdmit1, j].Value.ToString()) > int.Parse(dateTmp1)))
+            //        {
+            //            for (int k = 0; k < colCnt; k++)
+            //            {
+            //                s1.Add(dgv1[k,(j+1)].Value.ToString());
+            //            }
+            //            for (int k = 0; k < colCnt; k++)
+            //            {
+            //                dgv1[k, (j + 1)].Value = dgv1[k, j].Value;
+            //            }
+            //            for (int k = 0; k < colCnt; k++)
+            //            {
+            //                dgv1[k, j].Value = s1[k];
+            //            }
+            //        }
+            //        //if (int.Parse(cc.cf.datetoDB(dgvAdd[colDatePlaceRecord, j].Value).Replace("-", "")) > int.Parse(datePlaceRecordTemp.Replace("-", "")))
+            //        //datePlaceRecordTemp = cc.cf.NumberNull1(datePlaceRecordTemp);
+            //    }
+            //}
+            //for (int i = 0; i < dgv1.RowCount; i++)
+            //{
+            //    if (dgv1[colHN, i].Value == null)
+            //    {
+            //        continue;
+            //    }
+            //    if (dgv1[colHN, (i+1)].Value == null)
+            //    {
+            //        continue;
+            //    }
+            //    String hn1 = "", hn2="";
+            //    hn1 = dgv1[colHN, i].Value.ToString();
+            //    hn2 = dgv1[colHN, (i+1)].Value.ToString();
+            //    if (hn1.Equals(hn2))
+            //    {
+            //        continue;
+            //    }
+            //    else
+            //    {
+            //        for (int j = (i + 1); j < dgv1.RowCount - 1; j++)
+            //        {
+            //            if (dgv1[colHN, (j + 1)].Value == null)
+            //            {
+            //                continue;
+            //            }
+            //            if (hn1.Equals(dgv1[colHN, (j+1)].Value.ToString()))
+            //            {
+            //                List<String> s1 = new List<string>();
+            //                for (int k = 0; k < colCnt; k++)
+            //                {
+            //                    if (dgv1[k, j].Value == null)
+            //                    {
+            //                        s1.Add("");
+            //                    }
+            //                    else
+            //                    {
+            //                        s1.Add(dgv1[k, j].Value.ToString());
+            //                    }
+            //                }
+            //                for (int k = 0; k < colCnt; k++)
+            //                {
+            //                    dgv1[k, j].Value = dgv1[k, (j+1)].Value;
+            //                }
+            //                for (int k = 0; k < colCnt; k++)
+            //                {
+            //                    dgv1[k, (j+1)].Value = s1[k];
+            //                }
+            //            }
+            //        }
+            //    }
                 
-            }
-            for (int i = 0; i < dgv1.RowCount; i++)
-            {
-                if ((dgv1[colHN, i].Value != null))
-                {
-                    dgv1[colRow, i].Value = (i + 1);
-                }
-            }
+            //}
+            //dgv1.Sort(dgv1.Columns[colHN], ListSortDirection.Ascending);
+            //DateTime dtrow = new DateTime();
+            //DateTime dtrow1 = new DateTime();
+            //for (int i = 0; i < dgv1.RowCount; i++)
+            //{
+            //    DataGridViewRow row = new DataGridViewRow();
+            //    DataGridViewRow row1 = new DataGridViewRow();
+            //    DataGridViewRow rowTemp = new DataGridViewRow();
+            //    row = dgv1.Rows[i];
+            //    if ((i + 1) < dgv1.RowCount)
+            //    {
+            //        row1 = dgv1.Rows[(i + 1)];
+            //        if (row.Cells[colHN].Value == null)
+            //        {
+            //            continue;
+            //        }
+            //        if (row.Cells[colHN].Value.ToString().Equals(row1.Cells[colHN].Value.ToString()))
+            //        {
+            //            dtrow = DateTime.Parse(row.Cells[colDateAdmit].Value.ToString());
+            //            dtrow1 = DateTime.Parse(row1.Cells[colDateAdmit].Value.ToString());
+            //            System.TimeSpan ts = dtrow1.Subtract(dtrow);
+            //            if (!(ts.TotalMinutes > 0))
+            //            {
+            //                if (int.Parse(row.Cells[colDia2].Value.ToString()) < int.Parse(row1.Cells[colDia2].Value.ToString()))
+            //                {
+            //                    rowTemp = row1;
+            //                    row = row1;
+            //                    row1 = rowTemp;
+            //                }
+            //            }
+            //        }
+            //    }
+                
+            ////}
+            //for (int i = 0; i < dgv1.RowCount; i++)
+            //{
+            //    if ((dgv1[colHN, i].Value != null))
+            //    {
+            //        dgv1[colRow, i].Value = (i + 1);
+            //    }
+            //}
             label4.Text = System.DateTime.Now.ToString();
         }
         private void getReadmitV2()
