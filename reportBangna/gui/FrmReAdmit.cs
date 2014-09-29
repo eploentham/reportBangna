@@ -64,6 +64,7 @@ namespace reportBangna.gui
 
             dgv1.Columns[colDia24].Visible = false;
             dgv1.Columns[colDia48].Visible = false;
+            dgv1.Columns[colDateAdmit1].Visible = false;
 
             dgv1.Columns[colRow].HeaderText = "ลำดับ";
             dgv1.Columns[colHN].HeaderText = "HN";
@@ -141,12 +142,13 @@ namespace reportBangna.gui
                     dgv1[colDia24, i].Value="";
                     dgv1[colDia48, i].Value="";
                     dgv1[colDia28D, i].Value = "";
-                    
+                    dgv1[colDia5, i].Value = "1";
                     DataTable dt28 = radb.SelectReadmit28D(dt.Rows[i]["MNC_HN_NO"].ToString(), admitDate, dt.Rows[i]["MNC_AN_no"].ToString());
                     if ((dt28 != null) && (dt28.Rows.Count > 0))
                     {
                         //lHn.Add(dt.Rows[i]["MNC_HN_NO"].ToString());
                         dgv1[colDia4, i].Value = "1";
+                        dgv1[colDia5, i].Value = "2";
                         for (int j = 0; j < dt28.Rows.Count; j++)
                         {
                             dgv1[colDia28D, i].Value += dt28.Rows[j]["MNC_DIA_CD"].ToString() + ",";
@@ -271,16 +273,107 @@ namespace reportBangna.gui
                 }
             }
             //String sql = "";
+            pB1.Minimum = 0;
+            pB1.Maximum=(dgv1.RowCount*2);
             sql = "Delete From r_readmit";
             ConnectDB cbua = new ConnectDB("bangna");
             cbua.ExecuteNonQuery(sql);
+            String dateds = "", name="",timeds="", statusfirst="";
             for (int i = 0; i < dgv1.RowCount; i++)
             {
-                sql = "Insert Into r_readmit(id, hn, date_admit, time_admit, date_ds, time_ds, name, fn_type, dia1, dia28) Values('" + dgv1[colDia6, i].Value.ToString() + "')";
+                if (dgv1[colHN, i].Value == null)
+                {
+                    continue;
+                }
+                if (dgv1[colDateDS, i].Value == null)
+                {
+                    dateds = "";
+                }
+                else
+                {
+                    dateds = dgv1[colDateDS, i].Value.ToString();
+                }
+                if (dgv1[colTimeDS, i].Value == null)
+                {
+                    timeds = "";
+                }
+                else
+                {
+                    timeds = dgv1[colTimeDS, i].Value.ToString();
+                }
+                if (dgv1[colDia5, i].Value == null)
+                {
+                    statusfirst = "0";
+                }
+                else if (dgv1[colDia5, i].Value.ToString().Equals(""))
+                {
+                    statusfirst = "0";
+                }
+                else
+                {
+                    statusfirst = "1";
+                }
+                //if (statusfirst.Equals(""))
+                //{
+                //    statusfirst = "0";
+                //}
+                sql = "Insert Into r_readmit(" + radb.ra.pkField + ", " + radb.ra.Hn + ", " + radb.ra.DateAdmit + ", " +
+                    radb.ra.TimeAdmit + ", " + radb.ra.DateDS + ", " + radb.ra .TimeDS+ ", " +
+                    radb.ra.PName + ", " + radb.ra.FnType + ", " + radb.ra.Dia1 + ", " +
+                    radb.ra.Dia28 + ", " + radb.ra.StatusFirst + ") " +
+                    "Values('" + radb.ra.getGenID() + "','" + dgv1[colHN, i].Value.ToString() + "','" + cf.dateShowtoDB(dgv1[colDateAdmit, i].Value.ToString()) + "','" +
+                    dgv1[colTimeAdmit, i].Value.ToString() + "','" + dateds + "','" + timeds + "','" +
+                    dgv1[colPName, i].Value.ToString().Replace("'","''") + "','" + dgv1[colFNTY, i].Value.ToString() + "','" + dgv1[colDia1, i].Value.ToString() + "','" +
+                    dgv1[colDia28D, i].Value.ToString() + "','" + statusfirst + "')";
+                cbua.ExecuteNonQuery(sql);
+                pB1.Value = i;
             }
+            int k = dgv1.RowCount;
+            sql = "Select Distinct "+radb.ra.Hn+" From "+radb.ra.table+" Order By "+radb.ra.Hn;
+            dt = cbua.selectData(sql);
+            if (dt.Rows.Count > 0)
+            {
+                dgv1.Rows.Clear();
+                //dgv1.RowCount = dt.Rows.Count;
+                int row = 0;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    sql = "Select * From " + radb.ra.table + " Where " + radb.ra.Hn + "='" + dt.Rows[i][radb.ra.Hn].ToString()+"' Order By "+radb.ra.DateAdmit;
+                    DataTable dt2 = cbua.selectData(sql);
+                    if (dt2.Rows.Count > 0)
+                    {
+                        for (int j = 0; j < dt2.Rows.Count; j++)
+                        {
+                            row = dgv1.Rows.Add();
+                            dgv1[colRow, row].Value = (row + 1);
+                            dgv1[colHN, row].Value = dt2.Rows[j][radb.ra.Hn].ToString();
+                            dgv1[colDateAdmit, row].Value = cf.dateDBtoShow1(dt2.Rows[j][radb.ra.DateAdmit].ToString());
+                            dgv1[colTimeAdmit, row].Value = dt2.Rows[j][radb.ra.TimeAdmit].ToString();
+                            dgv1[colDateDS, row].Value = dt2.Rows[j][radb.ra.DateDS].ToString();
+                            dgv1[colTimeDS, row].Value = dt2.Rows[j][radb.ra.TimeDS].ToString();
+                            dgv1[colPName, row].Value = dt2.Rows[j][radb.ra.PName].ToString();
+                            dgv1[colFNTY, row].Value = dt2.Rows[j][radb.ra.FnType].ToString();
+                            dgv1[colDia1, row].Value = dt2.Rows[j][radb.ra.Dia1].ToString();
+                            dgv1[colDia28D, row].Value = dt2.Rows[j][radb.ra.Dia28].ToString();
+                            if (!dt2.Rows[j][radb.ra.Dia28].ToString().Equals(""))
+                            {
+                                dgv1.Rows[row].DefaultCellStyle.BackColor = Color.LightGreen;
+                            }
+                            //row++;
+                        }
+                    }
 
 
 
+                    
+                    //if (!dt.Rows[i][radb.ra.StatusFirst].ToString().Equals("0"))
+                    //{
+                    //    dgv1.Rows[i].DefaultCellStyle.BackColor = Color.LightGreen;
+                    //}
+                    //pB1.Value = (k+i);
+                }
+            }
+            pB1.Visible = false;
             //String dateTmp = "", dateTmp1 = "";
             //for (int i = 0; i < dgv1.RowCount; i++)
             //{

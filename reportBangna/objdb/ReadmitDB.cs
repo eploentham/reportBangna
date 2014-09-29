@@ -12,6 +12,7 @@ namespace reportBangna.objdb
         Config1 cf;
         public ConnectDB conn;
         DataTable dt1 = new DataTable();
+        public ReAdmit ra;
         public ReadmitDB()
         {
             initConfig();
@@ -19,6 +20,21 @@ namespace reportBangna.objdb
         private void initConfig()
         {
             cf = new Config1();
+            ra = new ReAdmit();
+            ra.DateAdmit = "date_admit";
+            ra.DateDS = "date_ds";
+            ra.Dia1 = "dia1";
+            ra.Dia28 = "dia28";
+            ra.FnType = "fn_type";
+            ra.Hn = "hn";
+            ra.Id = "id";
+            ra.PName = "name";
+            ra.TimeAdmit = "time_admit";
+            ra.TimeDS = "time_ds";
+            ra.StatusFirst = "status_first";
+
+            ra.pkField = "id";
+            ra.table = "r_readmit";
             conn = new ConnectDB("mainhis");
         }
         public DataTable selectReadmit(String dateStart, String dateEnd)

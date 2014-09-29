@@ -225,6 +225,17 @@ namespace reportBangna.object1
                 return dt;
             }
         }
+        public String dateDBtoShow1(String dt)
+        {
+            if (dt != "")
+            {
+                return dt.Substring(8, 2) + "-" + dt.Substring(5, 2) + "-" +dt.Substring(0, 4);
+            }
+            else
+            {
+                return dt;
+            }
+        }
         public String dateDBtoShow(DateTime dt)
         {
             if (dt != null)

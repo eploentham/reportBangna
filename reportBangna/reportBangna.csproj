@@ -231,6 +231,7 @@
     <Compile Include="object1\Font1.cs" />
     <Compile Include="object1\HosRisk.cs" />
     <Compile Include="object1\IniFile.cs" />
+    <Compile Include="object1\ReAdmit.cs" />
     <Compile Include="object1\RmonthlyGroupId.cs" />
     <Compile Include="object1\CertificatesChild.cs" />
     <Compile Include="object1\Config1.cs" />
