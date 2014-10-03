@@ -730,47 +730,47 @@ namespace reportBangna.gui
                     {
                         continue;
                     }
-                    worksheet.Cells[i, colHN] = dgv1[colHN, i].Value.ToString();
-                    worksheet.Cells[i, colAN] = dgv1[colAN, i].Value.ToString();
+                    worksheet.Cells[(i+1), colHN] = dgv1[colHN, i].Value.ToString();
+                    worksheet.Cells[(i + 1), colAN] = cf.stringNull1(dgv1[colAN, i].Value);
                     err = "001 " + dgv1[colHN, i].Value.ToString();
                     //worksheet.Cells[i, colDate] = dgvAdd[colDate, i].Value.ToString();
                     //worksheet.Cells[i, colTime] = dgvAdd[colTime, i].Value.ToString();
-                    worksheet.Cells[i, colPName] = cf.stringNull(dgv1[colPName, i].Value.ToString());
+                    worksheet.Cells[(i + 1), colPName] = cf.stringNull(dgv1[colPName, i].Value.ToString());
                     if (dgv1[colDateAdmit, i].Value == null)
                     {
-                        worksheet.Cells[i, colDateAdmit].Value = "";
+                        worksheet.Cells[(i + 1), colDateAdmit].Value = "";
                     }
                     else
                     {
                         visitDate = dgv1[colDateAdmit, i].Value.ToString();
-                        worksheet.Cells[i, colDateAdmit] = visitDate;
+                        worksheet.Cells[(i + 1), colDateAdmit] = visitDate;
                         visitTime = dgv1[colTimeAdmit, i].Value.ToString();
-                        worksheet.Cells[i, colTimeAdmit] = visitTime;
+                        worksheet.Cells[(i + 1), colTimeAdmit] = visitTime;
                     }
                     if (dgv1[colDateDS, i].Value == null)
                     {
-                        worksheet.Cells[i, colDateDS].Value = "";
+                        worksheet.Cells[(i + 1), colDateDS].Value = "";
                     }
                     else
                     {
                         visitDate = dgv1[colDateDS, i].Value.ToString();
-                        worksheet.Cells[i, colDateDS] = visitDate;
+                        worksheet.Cells[(i + 1), colDateDS] = visitDate;
                         visitTime = dgv1[colTimeDS, i].Value.ToString();
-                        worksheet.Cells[i, colTimeDS] = visitTime;
+                        worksheet.Cells[(i + 1), colTimeDS] = visitTime;
                     }
                     err = "002 Dia";
                     if (dgv1[colDia1, i].Value == null)
                     {
-                        worksheet.Cells[i, colDia1] = "";
+                        worksheet.Cells[(i + 1), colDia1] = "";
                     }
                     else
                     {
-                        worksheet.Cells[i, colDia1] = cf.stringNull1(dgv1[colDia1, i].Value.ToString());
+                        worksheet.Cells[(i + 1), colDia1] = cf.stringNull1(dgv1[colDia1, i].Value);
                     }
                     err = "003 Chronic ";
-                    worksheet.Cells[i, colFNTY] = cf.stringNull1(dgv1[colFNTY, i].Value);
-                    worksheet.Cells[i, colDia24] = cf.stringNull1(dgv1[colDia24, i].Value);
-                    worksheet.Cells[i, colDia48] = cf.stringNull1(dgv1[colDia48, i].Value);
+                    worksheet.Cells[(i + 1), colFNTY] = cf.stringNull1(dgv1[colFNTY, i].Value);
+                    worksheet.Cells[(i + 1), colDia24] = cf.stringNull1(dgv1[colDia24, i].Value);
+                    worksheet.Cells[(i + 1), colDia48] = cf.stringNull1(dgv1[colDia48, i].Value);
                     
                     pB1.Value = i;
                 }

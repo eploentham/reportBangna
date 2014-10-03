@@ -7,6 +7,6 @@ namespace reportBangna.object1
 {
     public class ReAdmit:Persistent
     {
-        public String Id = "",Hn="", DateAdmit="", TimeAdmit="", DateDS="", TimeDS="", PName="", FnType="", Dia1="", Dia28="", StatusFirst="";
+        public String Id = "",Hn="", DateAdmit="", TimeAdmit="", DateDS="", TimeDS="", PName="", FnType="", Dia1="", Dia28="", StatusFirst="", Dia48H;
     }
 }
