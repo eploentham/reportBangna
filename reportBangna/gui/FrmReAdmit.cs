@@ -200,6 +200,8 @@ namespace reportBangna.gui
             //        }
             //    }
             //}
+
+            //เอา รายการที่ไม่ใช่ ออกจาก grd
             for (int i = 0; i < dgv1.RowCount; i++)
             {
                 if (dgv1[colDia4, i].Value == null)
@@ -213,19 +215,21 @@ namespace reportBangna.gui
                 }
             }
             //string[] dia1 = new string[] { };
+
+            //label1 comment ไปก่อน มันทำให้ ข้อมูลเก่าๆ ถูกremove ไปด้วย
             for (int i = 0; i < dgv1.RowCount; i++)
             {
                 if (dgv1[colDia1, i].Value == null)
                 {
                     continue;
                 }
-                if (dgv1[colDia48, i].Value == null)
+                if (dgv1[colDia28D, i].Value == null)
                 {
                     continue;
                 }
                 dgv1[colDia6, i].Value = "";
                 string[] dia1 = dgv1[colDia1, i].Value.ToString().Split(',');
-                string[] dia48 = dgv1[colDia48, i].Value.ToString().Split(',');
+                string[] dia48 = dgv1[colDia28D, i].Value.ToString().Split(',');
                 sql = "";
                 for (int j = 0; j < dia48.Length; j++)
                 {
@@ -253,7 +257,7 @@ namespace reportBangna.gui
                             sql = dgv1[colHN, j - 1].Value.ToString();
                             if (sql.Equals(hn))
                             {
-                                dgv1[colDia6, (j-1)].Value = "1";
+                                dgv1[colDia6, (j - 1)].Value = "1";
                             }
                         }
                     }
@@ -272,6 +276,7 @@ namespace reportBangna.gui
                     i--;
                 }
             }
+            //label1
             //String sql = "";
             pB1.Minimum = 0;
             pB1.Maximum=(dgv1.RowCount*2);
@@ -771,7 +776,8 @@ namespace reportBangna.gui
                     worksheet.Cells[(i + 1), colFNTY] = cf.stringNull1(dgv1[colFNTY, i].Value);
                     worksheet.Cells[(i + 1), colDia24] = cf.stringNull1(dgv1[colDia24, i].Value);
                     worksheet.Cells[(i + 1), colDia48] = cf.stringNull1(dgv1[colDia48, i].Value);
-                    
+                    //worksheet.Cells[(i + 1), colDia28D] = cf.stringNull1(dgv1[colDia28D, i].Value);
+                    worksheet.Cells[(i + 1), 9] = cf.stringNull1(dgv1[colDia28D, i].Value);
                     pB1.Value = i;
                 }
                 catch (Exception ex)
@@ -782,6 +788,7 @@ namespace reportBangna.gui
             pB1.Hide();
             excelapp.UserControl = true;
             excelapp.Visible = true;
+            //excelapp.Quit();
         }
     }
 }
