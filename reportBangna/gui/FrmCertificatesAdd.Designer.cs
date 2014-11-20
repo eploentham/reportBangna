@@ -132,7 +132,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(892, 590);
+            this.groupBox1.Size = new System.Drawing.Size(1030, 670);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -631,7 +631,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(920, 614);
+            this.ClientSize = new System.Drawing.Size(1054, 688);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmCertificatesAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
