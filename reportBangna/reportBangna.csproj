@@ -60,6 +60,10 @@
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -85,7 +89,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Control\BangnaControl.cs" />
+    <Compile Include="Service References\Control\BangnaControl.cs" />
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,9 +223,12 @@
     <Compile Include="objdb\FinanceT01DB.cs" />
     <Compile Include="objdb\CheckNhso1DB.cs" />
     <Compile Include="objdb\HosRiskDB.cs" />
+    <Compile Include="objdb\LabExDB.cs" />
+    <Compile Include="objdb\PatientDB.cs" />
     <Compile Include="objdb\ReadmitDB.cs" />
     <Compile Include="objdb\reportDB.cs" />
     <Compile Include="objdb\RmonthlyGroupIdDB.cs" />
+    <Compile Include="objdb\VisitDB.cs" />
     <Compile Include="object1\ChkStaffNote.cs" />
     <Compile Include="object1\ComboBoxItem.cs" />
     <Compile Include="object1\DailyCheckup.cs">
@@ -255,6 +262,8 @@
     <Compile Include="object1\Font1.cs" />
     <Compile Include="object1\HosRisk.cs" />
     <Compile Include="object1\IniFile.cs" />
+    <Compile Include="object1\LabEx.cs" />
+    <Compile Include="object1\Patient.cs" />
     <Compile Include="object1\ReAdmit.cs" />
     <Compile Include="object1\RmonthlyGroupId.cs" />
     <Compile Include="object1\CertificatesChild.cs" />
@@ -271,6 +280,7 @@
     <Compile Include="object1\employee.cs" />
     <Compile Include="object1\FinanceT01.cs" />
     <Compile Include="object1\Persistent.cs" />
+    <Compile Include="object1\Visit.cs" />
     <Compile Include="object1\WriteText.cs" />
     <Compile Include="object1\xraySummary.cs">
       <DependentUpon>xraySummary.xsd</DependentUpon>

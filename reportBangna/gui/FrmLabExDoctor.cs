@@ -11,9 +11,15 @@ namespace reportBangna.gui
 {
     public partial class FrmLabExDoctor : Form
     {
-        public FrmLabExDoctor()
+        BangnaControl bc;
+        public FrmLabExDoctor(BangnaControl b)
         {
             InitializeComponent();
+        }
+
+        private void FrmLabExDoctor_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

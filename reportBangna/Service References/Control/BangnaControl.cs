@@ -15,10 +15,16 @@ namespace reportBangna
         public Config1 cf;
         public ComboBox cboWard, cboSale, cboThoo;
         public List<Font1> thoColor = new List<Font1>();
+        public String vnSearch = "", hnSearch="";
+        public Patient pa;
+        public Visit vs;
+
         public BangnaControl()
         {
             conn = new ConnectDB("mainhis");
             cf = new Config1();
+            pa = new Patient();
+            vs = new Visit();
         }
         public String getTextCboItem(ComboBox c, String valueId)
         {
@@ -203,6 +209,11 @@ namespace reportBangna
                 }
             }
             return aa;
+        }
+        public void DeleteFileImage(String fileName)
+        {
+            //String file1 = fileName.Replace("_0", "_1");
+            System.IO.File.Delete(fileName);
         }
         //public String getThooBackColorByThoId(String thoId)
         //{
