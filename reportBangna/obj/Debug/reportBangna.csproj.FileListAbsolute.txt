@@ -61,4 +61,3 @@ D:\source\reportBangna\reportBangna\bin\Debug\reportBangna.exe
 D:\source\reportBangna\reportBangna\bin\Debug\reportBangna.pdb
 D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.exe.manifest
 D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.application
-D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.csprojResolveAssemblyReference.cache

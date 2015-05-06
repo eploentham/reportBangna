@@ -42,7 +42,7 @@ namespace reportBangna.gui
             dgv1.Columns[colHN].Width = 80;
             dgv1.Columns[colVn].Width = 80;
             dgv1.Columns[colName].Width = 220;
-            dgv1.Columns[colVisitDate].Width = 80;
+            dgv1.Columns[colVisitDate].Width = 120;
             dgv1.Columns[colDescription].Width = 120;
             dgv1.Columns[colRemark].Width = 120;
 
@@ -50,7 +50,7 @@ namespace reportBangna.gui
             dgv1.Columns[colHN].HeaderText = "HN";
             dgv1.Columns[colVn].HeaderText = "VN";
             dgv1.Columns[colName].HeaderText = "ชื่อ นามสกุล";
-            dgv1.Columns[colVisitDate].HeaderText = "อายุ";
+            dgv1.Columns[colVisitDate].HeaderText = "วันที่visit";
             dgv1.Columns[colDescription].HeaderText = "รายละเอียด";
             dgv1.Columns[colRemark].HeaderText = "หมายเหตุ";
             //dgv1.Columns[colPEWeight].HeaderText = "น้ำหนัก";
@@ -61,7 +61,7 @@ namespace reportBangna.gui
                 dgv1.RowCount = dt.Rows.Count;
                 for (int i = 0; i < dgv1.RowCount; i++)
                 {
-                    dgv1[colRow, i].Value = i;
+                    dgv1[colRow, i].Value = (i+1);
                     dgv1[colHN, i].Value = dt.Rows[i][labexdb.labex.Hn].ToString();
                     dgv1[colVn, i].Value = dt.Rows[i][labexdb.labex.Vn].ToString();
                     dgv1[colName, i].Value = dt.Rows[i][labexdb.labex.PatientName].ToString();

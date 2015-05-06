@@ -53,6 +53,8 @@ namespace reportBangna.gui
             txtLabDate.Text = le.LabDate;
             txtLabExDate.Text = le.LabExDate;
             txtYearId.Text = le.YearId;
+            txtRowNumber.Text = le.RowNumber;
+            txtName.Text = le.PatientName;
             String fileEx = "\\\\172.25.10.5\\image\\labex\\" + txtYearId.Text + "\\";
             if (!le.RowNumber.Equals(""))
             {
@@ -119,7 +121,7 @@ namespace reportBangna.gui
             le.Remark = txtRemark.Text;
             le.Vn = txtVN.Text;
             le.VisitDate = txtVisitDate.Text;
-            le.RowNumber = "";
+            le.RowNumber = txtRowNumber.Text;
             le.YearId = txtYearId.Text;
         }
         public FrmLabExAdd(BangnaControl b,String labexId)
@@ -174,6 +176,9 @@ namespace reportBangna.gui
                 {
                     Image im = Image.FromFile(fileName);
                     fileEx += rowNumber + ".jpg";
+                    bool isExists1 = System.IO.File.Exists(fileEx);
+                    if (isExists1)
+                        System.IO.File.Delete(fileEx);
                     im.Save(fileEx);
                     MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
                     this.Dispose();

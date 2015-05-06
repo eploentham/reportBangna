@@ -164,6 +164,7 @@ namespace reportBangna.objdb
 
                     "Where " + labex.pkField + "='" + p.Id + "'";
                 chk = connBua.ExecuteNonQuery(sql);
+                chk = p.RowNumber;
             }
             catch (Exception ex)
             {

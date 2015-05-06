@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtVisitTime = new System.Windows.Forms.TextBox();
             this.txtYearId = new System.Windows.Forms.TextBox();
             this.btnUnActive = new System.Windows.Forms.Button();
             this.ChkUnActive = new System.Windows.Forms.RadioButton();
@@ -57,7 +58,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.pic1 = new System.Windows.Forms.PictureBox();
-            this.txtVisitTime = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic1)).BeginInit();
             this.SuspendLayout();
@@ -92,11 +92,19 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtDescription);
-            this.groupBox1.Location = new System.Drawing.Point(806, 12);
+            this.groupBox1.Location = new System.Drawing.Point(789, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(228, 602);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // txtVisitTime
+            // 
+            this.txtVisitTime.Location = new System.Drawing.Point(93, 164);
+            this.txtVisitTime.Name = "txtVisitTime";
+            this.txtVisitTime.Size = new System.Drawing.Size(55, 20);
+            this.txtVisitTime.TabIndex = 69;
+            this.txtVisitTime.Text = "01/01/2558";
             // 
             // txtYearId
             // 
@@ -341,17 +349,9 @@
             // 
             this.pic1.Location = new System.Drawing.Point(12, 12);
             this.pic1.Name = "pic1";
-            this.pic1.Size = new System.Drawing.Size(788, 864);
+            this.pic1.Size = new System.Drawing.Size(770, 864);
             this.pic1.TabIndex = 1;
             this.pic1.TabStop = false;
-            // 
-            // txtVisitTime
-            // 
-            this.txtVisitTime.Location = new System.Drawing.Point(93, 164);
-            this.txtVisitTime.Name = "txtVisitTime";
-            this.txtVisitTime.Size = new System.Drawing.Size(55, 20);
-            this.txtVisitTime.TabIndex = 69;
-            this.txtVisitTime.Text = "01/01/2558";
             // 
             // FrmLabExAdd
             // 
