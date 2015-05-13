@@ -35,6 +35,8 @@ namespace reportBangna.objdb
         public String passwordBua = "";
         public String server = "";
         public String isBranch = "";
+        private LogWriter lw;
+        public String pathLabEx = "";
         public ConnectDB()
         {
             iniFile = new IniFile("reportbangna.ini");
@@ -55,6 +57,7 @@ namespace reportBangna.objdb
         }
         public ConnectDB(String hostName)
         {
+            lw = new LogWriter();
             iniFile = new IniFile("reportbangna.ini");
 
             //iniFile.Write("aaaa", "bbbb");
@@ -69,6 +72,7 @@ namespace reportBangna.objdb
             passwordBua = iniFile.Read("password_bua");
             server = iniFile.Read("server");
             isBranch = iniFile.Read("clientisbranch");
+            pathLabEx = "\\\\"+hostNameMainHIS+"\\image\\labex\\";
             if (hostName == "mainhis")
             {
                 hostname = "mainhis";

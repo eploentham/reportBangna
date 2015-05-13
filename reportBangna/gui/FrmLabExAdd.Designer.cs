@@ -44,7 +44,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.txtLabExDate = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtLabDate = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -58,12 +57,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.pic1 = new System.Windows.Forms.PictureBox();
+            this.dtpLabEx = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dtpLabEx);
             this.groupBox1.Controls.Add(this.txtVisitTime);
             this.groupBox1.Controls.Add(this.txtYearId);
             this.groupBox1.Controls.Add(this.btnUnActive);
@@ -79,7 +80,6 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.btnSave);
             this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.txtLabExDate);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtLabDate);
             this.groupBox1.Controls.Add(this.label6);
@@ -92,7 +92,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtDescription);
-            this.groupBox1.Location = new System.Drawing.Point(789, 12);
+            this.groupBox1.Location = new System.Drawing.Point(774, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(228, 602);
             this.groupBox1.TabIndex = 0;
@@ -238,13 +238,6 @@
             this.comboBox1.Size = new System.Drawing.Size(203, 21);
             this.comboBox1.TabIndex = 13;
             // 
-            // txtLabExDate
-            // 
-            this.txtLabExDate.Location = new System.Drawing.Point(11, 242);
-            this.txtLabExDate.Name = "txtLabExDate";
-            this.txtLabExDate.Size = new System.Drawing.Size(76, 20);
-            this.txtLabExDate.TabIndex = 12;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -274,6 +267,7 @@
             // 
             this.txtVisitDate.Location = new System.Drawing.Point(11, 164);
             this.txtVisitDate.Name = "txtVisitDate";
+            this.txtVisitDate.ReadOnly = true;
             this.txtVisitDate.Size = new System.Drawing.Size(76, 20);
             this.txtVisitDate.TabIndex = 8;
             this.txtVisitDate.Text = "01/01/2558";
@@ -349,9 +343,17 @@
             // 
             this.pic1.Location = new System.Drawing.Point(12, 12);
             this.pic1.Name = "pic1";
-            this.pic1.Size = new System.Drawing.Size(770, 864);
+            this.pic1.Size = new System.Drawing.Size(755, 793);
             this.pic1.TabIndex = 1;
             this.pic1.TabStop = false;
+            // 
+            // dtpLabEx
+            // 
+            this.dtpLabEx.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpLabEx.Location = new System.Drawing.Point(11, 242);
+            this.dtpLabEx.Name = "dtpLabEx";
+            this.dtpLabEx.Size = new System.Drawing.Size(98, 20);
+            this.dtpLabEx.TabIndex = 70;
             // 
             // FrmLabExAdd
             // 
@@ -382,7 +384,6 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtHN;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtLabExDate;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtLabDate;
         private System.Windows.Forms.Label label6;
@@ -403,5 +404,6 @@
         private System.Windows.Forms.RadioButton chkActive;
         private System.Windows.Forms.TextBox txtYearId;
         private System.Windows.Forms.TextBox txtVisitTime;
+        private System.Windows.Forms.DateTimePicker dtpLabEx;
     }
 }

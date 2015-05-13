@@ -87,9 +87,12 @@ namespace reportBangna.gui
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FrmLabExAdd frm = new FrmLabExAdd(bc,"");
             frm.ShowDialog();
+            
             setGrd(txtHN.Text);
+            this.Show();
         }
 
         private void btnDoctor_Click(object sender, EventArgs e)
@@ -118,15 +121,17 @@ namespace reportBangna.gui
             {
                 return;
             }
+            bc.lw.WriteLog("FrmLabExView.dgv1_CellDoubleClick ");
             //bc.vnSearch = dgv1[colVn, e.RowIndex].Value.ToString();
             //bc.hnSearch = dgv1[colHN, e.RowIndex].Value.ToString();
             //bc.vs.HN = dgv1[colHN, e.RowIndex].Value.ToString();
             //bc.vs.VN = dgv1[colVn, e.RowIndex].Value.ToString();
             //bc.vs.PatientName = dgv1[colName, e.RowIndex].Value.ToString();
-
+            
             FrmLabExAdd frm = new FrmLabExAdd(bc, dgv1[colId, e.RowIndex].Value.ToString());
+            this.Hide();
             frm.ShowDialog();
-
+            this.Show();
             //this.Dispose();
         }
 

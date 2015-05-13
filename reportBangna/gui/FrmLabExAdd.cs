@@ -5,8 +5,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 
@@ -27,7 +29,7 @@ namespace reportBangna.gui
         {
             ofd = new OpenFileDialog();
             labexdb = new LabExDB();
-            le = labexdb.selectByPk(ID);
+            //le = labexdb.selectByPk(ID);
             padb = new PatientDB();
             pa = new Patient();
             le = new LabEx();
@@ -37,12 +39,13 @@ namespace reportBangna.gui
             chkActive.Checked = true;
             ChkUnActive.Checked = false;
             btnUnActive.Visible = false;
-            
+            bc.lw.WriteLog("FrmLabExAdd.initConfig ID=" + ID);
             setControl(ID);
 
         }
         private void setControl(String id)
         {
+            bc.lw.WriteLog("FrmLabExAdd.initConfig setControl id"+id);
             le = labexdb.selectByPk(id);
             txtId.Text = le.Id;
             txtDescription.Text = le.Description;
@@ -51,7 +54,12 @@ namespace reportBangna.gui
             txtVN.Text = le.Vn;
             txtVisitDate.Text = le.VisitDate;
             txtLabDate.Text = le.LabDate;
-            txtLabExDate.Text = le.LabExDate;
+            bc.lw.WriteLog("FrmLabExAdd.initConfig setControl 1");
+            //txtLabExDate.Text = le.LabExDate;
+            if (le.LabExDate != "")
+            {
+                dtpLabEx.Value = DateTime.Parse(le.LabExDate);
+            }
             txtYearId.Text = le.YearId;
             txtRowNumber.Text = le.RowNumber;
             txtName.Text = le.PatientName;
@@ -83,6 +91,7 @@ namespace reportBangna.gui
                 ChkUnActive.Checked = false;
                 btnUnActive.Visible = false;
             }
+            bc.lw.WriteLog("FrmLabExAdd.initConfig setControl End");
         }
         private void setControlBySearch()
         {
@@ -93,11 +102,12 @@ namespace reportBangna.gui
             txtVN.Text = bc.vs.VN;
             txtVisitDate.Text = "";
             txtLabDate.Text = "";
-            txtLabExDate.Text = "";
+            //txtLabExDate.Text = "";
+            dtpLabEx.Value = System.DateTime.Now;
             txtName.Text = bc.vs.PatientName;
             txtVisitDate.Text = bc.vs.VisitDate;
             txtVisitTime.Text = bc.vs.VisitTime;
-            txtLabExDate.Text = System.DateTime.Now.Day.ToString("00") + "-" + System.DateTime.Now.Month.ToString("00") + "-" + String.Concat(System.DateTime.Now.Year+543);
+            //txtLabExDate.Text = System.DateTime.Now.Day.ToString("00") + "-" + System.DateTime.Now.Month.ToString("00") + "-" + String.Concat(System.DateTime.Now.Year+543);
         }
         private void setVisit()
         {
@@ -116,7 +126,7 @@ namespace reportBangna.gui
             le.Description = txtDescription.Text;
             le.Hn = txtHN.Text;
             le.LabDate = txtLabDate.Text;
-            le.LabExDate = txtLabExDate.Text;
+            le.LabExDate = (dtpLabEx.Value.Year+543) + "-" + dtpLabEx.Value.ToString("MM-dd");
             le.PatientName = txtName.Text;
             le.Remark = txtRemark.Text;
             le.Vn = txtVN.Text;
@@ -158,10 +168,26 @@ namespace reportBangna.gui
         {
             pic1.Image = Image.FromFile(filename);
             pic1.SizeMode = PictureBoxSizeMode.StretchImage;
-            fileName = ofd.FileName;
+            fileName = filename;
             btnSave.Enabled = true;
         }
+        public byte[] HashImage(Bitmap image)
+        {
+            var sha256 = SHA256.Create();
 
+            var rect = new Rectangle(0, 0, image.Width, image.Height);
+            var data = image.LockBits(rect, ImageLockMode.ReadOnly, image.PixelFormat);
+
+            var dataPtr = data.Scan0;
+
+            var totalBytes = (int)Math.Abs(data.Stride) * data.Height;
+            var rawData = new byte[totalBytes];
+            System.Runtime.InteropServices.Marshal.Copy(dataPtr, rawData, 0, totalBytes);
+
+            image.UnlockBits(data);
+
+            return sha256.ComputeHash(rawData);
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             String fileEx = "\\\\172.25.10.5\\image\\labex\\"+txtYearId.Text+"\\";
@@ -175,11 +201,26 @@ namespace reportBangna.gui
                 if (rowNumber.Length == 6)
                 {
                     Image im = Image.FromFile(fileName);
-                    fileEx += rowNumber + ".jpg";
-                    bool isExists1 = System.IO.File.Exists(fileEx);
+
+                    bool isExists1 = System.IO.File.Exists(fileEx+"\\" + le.RowNumber + ".jpg");
                     if (isExists1)
-                        System.IO.File.Delete(fileEx);
-                    im.Save(fileEx);
+                    {
+                        Image im2 = Image.FromFile(fileEx + "\\" + le.RowNumber + ".jpg");
+                        if (Convert.ToBase64String(HashImage((Bitmap)pic1.Image)) != Convert.ToBase64String(HashImage((Bitmap)im2)))
+                        {
+                            le.RowNumber = labexdb.selectMaxRowNumber(le.YearId);
+                            labexdb.UpdateRowNumber(le.Id, le.RowNumber);
+                            fileEx += le.RowNumber + ".jpg";
+                            im.Save(fileEx);
+                        }
+                        //System.IO.File.Delete(fileEx);                        
+                    }
+                    else
+                    {
+                        fileEx += rowNumber + ".jpg";
+                        im.Save(fileEx);
+                    }
+                    
                     MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
                     this.Dispose();
                 }

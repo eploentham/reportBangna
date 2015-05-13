@@ -137,5 +137,10 @@ namespace reportBangna.gui
             //FrmLabExAdd frm = new FrmLabExAdd(bc, dgv1[colId, e.RowIndex].Value.ToString());
             //frm.ShowDialog();
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            setGrd(txtHN.Text);
+        }
     }
 }

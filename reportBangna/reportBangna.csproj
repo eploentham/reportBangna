@@ -91,7 +91,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Service References\Control\BangnaControl.cs" />
+    <Compile Include="object1\LogWriter.cs" />
+    <Compile Include="Control\BangnaControl.cs" />
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -495,9 +496,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="database\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">

@@ -202,6 +202,21 @@ namespace reportBangna.objdb
 
             return chk;
         }
+        public String UpdateRowNumber(String Id, String rowNumber)
+        {
+            String sql = "", chk = "";
+            sql = "Update " + labex.table + " Set " + labex.RowNumber + " = '" + rowNumber + "' " +
+                "Where " + labex.pkField + "='" + Id + "'";
+            try
+            {
+                chk = connBua.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+            }
+
+            return chk;
+        }
         public DataTable selectVisitByHn(String hn)
         {
             DataTable dt = new DataTable();

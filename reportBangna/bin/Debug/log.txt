@@ -1,0 +1,28 @@
+12/5/2558 16:21->FrmLabExAdd.initConfig 
+12/5/2558 16:21->FrmLabExAdd.initConfig setControl
+12/5/2558 16:21->FrmLabExAdd.initConfig setControl End
+12/5/2558 16:30->FrmLabExAdd.initConfig ID=
+12/5/2558 16:30->FrmLabExAdd.initConfig setControl
+12/5/2558 16:30->FrmLabExAdd.initConfig setControl End
+12/5/2558 16:30->FrmLabExView.dgv1_CellDoubleClick 
+12/5/2558 16:30->FrmLabExAdd.initConfig ID=1387687593
+12/5/2558 16:30->FrmLabExAdd.initConfig setControl
+12/5/2558 16:30->FrmLabExAdd.initConfig setControl End
+12/5/2558 16:30->FrmLabExAdd.initConfig ID=
+12/5/2558 16:30->FrmLabExAdd.initConfig setControl
+12/5/2558 16:30->FrmLabExAdd.initConfig setControl End
+12/5/2558 16:30->FrmLabExView.dgv1_CellDoubleClick 
+12/5/2558 16:30->FrmLabExAdd.initConfig ID=299867348
+12/5/2558 16:30->FrmLabExAdd.initConfig setControl
+12/5/2558 16:30->FrmLabExAdd.initConfig setControl End
+12/5/2558 16:31->FrmLabExView.dgv1_CellDoubleClick 
+12/5/2558 16:31->FrmLabExAdd.initConfig ID=1387687593
+12/5/2558 16:31->FrmLabExAdd.initConfig setControl
+12/5/2558 16:31->FrmLabExAdd.initConfig setControl End
+12/5/2558 16:44->FrmLabExAdd.initConfig ID=
+12/5/2558 16:44->FrmLabExAdd.initConfig setControl
+12/5/2558 16:44->FrmLabExAdd.initConfig setControl End
+12/5/2558 16:45->FrmLabExView.dgv1_CellDoubleClick 
+12/5/2558 16:45->FrmLabExAdd.initConfig ID=986571181
+12/5/2558 16:45->FrmLabExAdd.initConfig setControl
+12/5/2558 16:45->FrmLabExAdd.initConfig setControl End

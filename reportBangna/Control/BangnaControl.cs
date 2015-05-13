@@ -18,13 +18,16 @@ namespace reportBangna
         public String vnSearch = "", hnSearch="";
         public Patient pa;
         public Visit vs;
-
+        public LogWriter lw;
+        public String pathLabEx = "";
         public BangnaControl()
         {
             conn = new ConnectDB("mainhis");
             cf = new Config1();
             pa = new Patient();
             vs = new Visit();
+            lw = new LogWriter();
+
         }
         public String getTextCboItem(ComboBox c, String valueId)
         {
