@@ -19,15 +19,20 @@ namespace reportBangna
         public Patient pa;
         public Visit vs;
         public LogWriter lw;
-        public String pathLabEx = "";
+        public String pathLabEx = "", FileName="";
+        public LabExDB labexdb;
+        public VisitDB vsdb;
         public BangnaControl()
         {
             conn = new ConnectDB("mainhis");
+            labexdb = new LabExDB();
+            vsdb = new VisitDB();
+
             cf = new Config1();
             pa = new Patient();
             vs = new Visit();
             lw = new LogWriter();
-
+            pathLabEx = "\\\\" + conn.hostNameMainHIS + "\\image\\labex\\";
         }
         public String getTextCboItem(ComboBox c, String valueId)
         {

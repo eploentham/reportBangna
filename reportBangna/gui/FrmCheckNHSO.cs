@@ -261,12 +261,63 @@ namespace reportBangna.gui
         public void setData1(String dateStart, String dateEnd, String chkDrug, Boolean StatusLabError, Boolean StatusDoctorEdit, String branchId)
         {
             String visitDate = "", dateStart1="", dateEnd1="";
-            String[] edit;
+            String[] edit, drug1;
             pB1.Show();
             DataTable dt = new DataTable();
             dateStart1 = (int.Parse(dateStart.Substring(0, 4))+543) + dateStart.Substring(4);
             dateEnd1 = (int.Parse(dateEnd.Substring(0, 4)) + 543) + dateEnd.Substring(4);
-            dt = cNhso1db.selectByDate(dateStart1, dateEnd1, chkDrug, txtSearch.Text, txtLabSearch1.Text, txtLabSearch2.Text, cboLab.Text, StatusLabError, StatusDoctorEdit, branchId);
+            drug1 = txtSearch.Text.Split(',');
+            dt = cNhso1db.selectByDate(dateStart1, dateEnd1, chkDrug, "*****", txtLabSearch1.Text, txtLabSearch2.Text, cboLab.Text, StatusLabError, StatusDoctorEdit, branchId);
+            if (drug1.Length == 1)
+            {
+                dt = cNhso1db.selectByDate(dateStart1, dateEnd1, chkDrug, txtSearch.Text, txtLabSearch1.Text, txtLabSearch2.Text, cboLab.Text, StatusLabError, StatusDoctorEdit, branchId);
+            }
+            else
+            {
+                DataTable dt1 = new DataTable();
+                foreach (String aa in drug1)
+                {
+                    dt1 = cNhso1db.selectByDate(dateStart1, dateEnd1, chkDrug, aa.Trim(), txtLabSearch1.Text, txtLabSearch2.Text, cboLab.Text, StatusLabError, StatusDoctorEdit, branchId);
+                    for (int i = 0; i < dt1.Rows.Count; i++)
+                    {
+                        DataRow r = dt.NewRow();
+                        r = cNhso1db.setDataRow(dt1, r, i);
+                        dt.Rows.Add(r);
+                    }
+                }
+                dt.AcceptChanges();
+                String col = cNhso1db.cNhso1.drug1;
+                String col1 = "";
+                col = col.Substring(0,col.Length - 1);
+                foreach (String aa in drug1)
+                {
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        //String drugname = dr[cNhso1db.cNhso1.drug1].ToString();
+                        Boolean del = false;
+                        for (int i = 1; i <= 30; i++)
+                        {
+                            col1 = col + i;
+                            if (aa.IndexOf(dr[col1].ToString()) == -1)
+                            {
+                                del = true;
+                            }
+                            else
+                            {
+                                del = false;
+                                break;
+                            }
+                        }
+                        if (del)
+                        {
+                            dr.Delete();
+                        }
+                    }
+                    dt.AcceptChanges();
+                }
+                
+            }
+            
             pB1.Minimum = 0;
             pB1.Maximum = dt.Rows.Count;
             setGrid(dt.Rows.Count);
@@ -929,7 +980,6 @@ namespace reportBangna.gui
                     }
                 }
             }
-            
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -1154,6 +1204,20 @@ namespace reportBangna.gui
             //{
             //    this.Dispose();
             //}
+        }
+
+        private void dgvAdd_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
+            if (dgvAdd[colId, e.RowIndex].Value == null)
+            {
+                return;
+            }
+            FrmCheckNHSODetail frm = new FrmCheckNHSODetail(dgvAdd[colId, e.RowIndex].Value.ToString());
+            frm.ShowDialog();
         }
     }
 }

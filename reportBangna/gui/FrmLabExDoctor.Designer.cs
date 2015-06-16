@@ -71,7 +71,6 @@
             this.txtHN.Name = "txtHN";
             this.txtHN.Size = new System.Drawing.Size(94, 20);
             this.txtHN.TabIndex = 6;
-            this.txtHN.Text = "5099999";
             this.txtHN.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtHN_KeyUp);
             // 
             // label3

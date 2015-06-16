@@ -17,6 +17,7 @@ namespace reportBangna.object1
         public LogWriter()
         {
             //LogWrite(logMessage);
+
         }
         public void LogWrite(string logMessage)
         {

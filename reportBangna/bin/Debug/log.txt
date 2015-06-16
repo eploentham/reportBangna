@@ -26,3 +26,414 @@
 12/5/2558 16:45->FrmLabExAdd.initConfig ID=986571181
 12/5/2558 16:45->FrmLabExAdd.initConfig setControl
 12/5/2558 16:45->FrmLabExAdd.initConfig setControl End
+14/5/2558 10:01->FrmLabExView.dgv1_CellDoubleClick 
+14/5/2558 10:01->FrmLabExAdd.initConfig ID=807481050
+14/5/2558 10:01->FrmLabExAdd.initConfig setControl id807481050
+14/5/2558 10:01->FrmLabExAdd.initConfig setControl 1
+14/5/2558 10:01->FrmLabExAdd.initConfig setControl End
+14/5/2558 10:11->FrmLabExAdd.initConfig ID=
+14/5/2558 10:11->FrmLabExAdd.initConfig setControl id
+14/5/2558 10:11->FrmLabExAdd.initConfig setControl 1
+14/5/2558 10:11->FrmLabExAdd.initConfig setControl End
+14/5/2558 10:14->FrmLabExAdd.initConfig ID=
+14/5/2558 10:14->FrmLabExAdd.initConfig setControl id
+14/5/2558 10:14->FrmLabExAdd.initConfig setControl 1
+14/5/2558 10:14->FrmLabExAdd.initConfig setControl End
+14/5/2558 10:31->FrmLabExAdd.initConfig ID=
+14/5/2558 10:31->FrmLabExAdd.initConfig setControl id
+14/5/2558 10:31->FrmLabExAdd.initConfig setControl 1
+14/5/2558 10:31->FrmLabExAdd.initConfig setControl End
+14/5/2558 10:33->FrmLabExAdd.initConfig ID=
+14/5/2558 10:33->FrmLabExAdd.initConfig setControl id
+14/5/2558 10:33->FrmLabExAdd.initConfig setControl 1
+14/5/2558 10:33->FrmLabExAdd.initConfig setControl End
+14/5/2558 10:40->FrmLabExAdd.initConfig ID=
+14/5/2558 10:40->FrmLabExAdd.initConfig setControl id
+14/5/2558 10:40->FrmLabExAdd.initConfig setControl 1
+14/5/2558 10:40->FrmLabExAdd.initConfig setControl End
+14/5/2558 10:48->FrmLabExAdd.initConfig ID=
+14/5/2558 10:48->FrmLabExAdd.initConfig setControl id
+14/5/2558 10:48->LabExDB.selectByPk  sqlSelect * From labex Where labex_id=''
+14/5/2558 10:48->LabExDB.selectByPk  connBua.hostNameBua172.25.10.5 connBua.databaseNameBua bua
+14/5/2558 10:48->LabExDB.selectByPk  EndFalse
+14/5/2558 10:48->FrmLabExAdd.initConfig setControl 1
+14/5/2558 10:48->FrmLabExAdd.initConfig setControl End
+14/5/2558 10:48->FrmLabExView.dgv1_CellDoubleClick 
+14/5/2558 10:48->FrmLabExAdd.initConfig ID=807481050
+14/5/2558 10:48->FrmLabExAdd.initConfig setControl id807481050
+14/5/2558 10:48->LabExDB.selectByPk  sqlSelect * From labex Where labex_id='807481050'
+14/5/2558 10:48->LabExDB.selectByPk  connBua.hostNameBua172.25.10.5 connBua.databaseNameBua bua
+14/5/2558 10:48->LabExDB.selectByPk  EndFalse
+14/5/2558 10:48->FrmLabExAdd.initConfig setControl 1
+14/5/2558 10:48->FrmLabExAdd.initConfig setControl End
+14/5/2558 10:51->FrmLabExView.dgv1_CellDoubleClick 
+14/5/2558 10:51->FrmLabExAdd.initConfig ID=807481050
+14/5/2558 10:51->FrmLabExAdd.initConfig setControl id807481050
+14/5/2558 10:51->LabExDB.selectByPk  sqlSelect * From labex Where labex_id='807481050'
+14/5/2558 10:51->LabExDB.selectByPk  connBua.hostNameBua172.25.10.5 connBua.databaseNameBua bua
+14/5/2558 10:51->LabExDB.selectByPk  EndClosed
+14/5/2558 10:51->FrmLabExAdd.initConfig setControl 1
+14/5/2558 10:51->FrmLabExAdd.initConfig setControl End
+14/5/2558 13:44->FrmLabExAdd.initConfig ID=
+14/5/2558 13:44->FrmLabExAdd.initConfig setControl id
+14/5/2558 13:44->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+14/5/2558 13:44->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+14/5/2558 13:44->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+14/5/2558 13:44->FrmLabExAdd.initConfig setControl 1
+14/5/2558 13:44->FrmLabExAdd.initConfig setControl End
+14/5/2558 13:45->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+14/5/2558 13:45->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+14/5/2558 13:45->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+14/5/2558 13:45->FrmLabExView.dgv1_CellDoubleClick 
+14/5/2558 13:45->FrmLabExAdd.initConfig ID=484118743
+14/5/2558 13:45->FrmLabExAdd.initConfig setControl id484118743
+14/5/2558 13:45->LabExDB.selectByPk  sql Select * From labex Where labex_id='484118743'
+14/5/2558 13:45->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+14/5/2558 13:45->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+14/5/2558 13:45->FrmLabExAdd.initConfig setControl 1
+14/5/2558 13:46->FrmLabExAdd.initConfig ID=
+14/5/2558 13:46->FrmLabExAdd.initConfig setControl id
+14/5/2558 13:46->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+14/5/2558 13:46->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+14/5/2558 13:46->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+14/5/2558 13:46->FrmLabExAdd.initConfig setControl 1
+14/5/2558 13:46->FrmLabExAdd.initConfig setControl End
+14/5/2558 13:46->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+14/5/2558 13:46->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+14/5/2558 13:46->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+14/5/2558 13:47->FrmLabExView.dgv1_CellDoubleClick 
+14/5/2558 13:47->FrmLabExAdd.initConfig ID=1518363252
+14/5/2558 13:47->FrmLabExAdd.initConfig setControl id1518363252
+14/5/2558 13:47->LabExDB.selectByPk  sql Select * From labex Where labex_id='1518363252'
+14/5/2558 13:47->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+14/5/2558 13:47->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+14/5/2558 13:47->FrmLabExAdd.initConfig setControl 1
+14/5/2558 13:47->FrmLabExAdd.initConfig setControl End
+14/5/2558 13:47->FrmLabExAdd.initConfig ID=
+14/5/2558 13:47->FrmLabExAdd.initConfig setControl id
+14/5/2558 13:47->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+14/5/2558 13:47->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+14/5/2558 13:47->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+14/5/2558 13:47->FrmLabExAdd.initConfig setControl 1
+14/5/2558 13:47->FrmLabExAdd.initConfig setControl End
+14/5/2558 16:08->FrmLabExAdd.initConfig ID=
+14/5/2558 16:08->FrmLabExAdd.initConfig setControl id
+14/5/2558 16:08->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+14/5/2558 16:08->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+14/5/2558 16:08->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+14/5/2558 16:08->FrmLabExAdd.initConfig setControl 1
+14/5/2558 16:08->FrmLabExAdd.initConfig setControl End
+14/5/2558 16:09->FrmLabExAdd.initConfig ID=
+14/5/2558 16:09->FrmLabExAdd.initConfig setControl id
+14/5/2558 16:09->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+14/5/2558 16:09->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+14/5/2558 16:09->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+14/5/2558 16:09->FrmLabExAdd.initConfig setControl 1
+14/5/2558 16:09->FrmLabExAdd.initConfig setControl End
+14/5/2558 16:11->FrmLabExAdd.initConfig ID=
+14/5/2558 16:11->FrmLabExAdd.initConfig setControl id
+14/5/2558 16:11->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+14/5/2558 16:11->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+14/5/2558 16:11->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+14/5/2558 16:11->FrmLabExAdd.initConfig setControl 1
+14/5/2558 16:11->FrmLabExAdd.initConfig setControl End
+15/5/2558 8:58->FrmLabExAdd.initConfig ID=
+15/5/2558 8:58->FrmLabExAdd.initConfig setControl id
+15/5/2558 8:58->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+15/5/2558 8:58->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+15/5/2558 8:58->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+15/5/2558 8:58->FrmLabExAdd.initConfig setControl 1
+15/5/2558 8:58->FrmLabExAdd.initConfig setControl End
+15/5/2558 8:59->FrmLabExAdd.initConfig ID=
+15/5/2558 8:59->FrmLabExAdd.initConfig setControl id
+15/5/2558 8:59->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+15/5/2558 8:59->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+15/5/2558 8:59->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+15/5/2558 8:59->FrmLabExAdd.initConfig setControl 1
+15/5/2558 8:59->FrmLabExAdd.initConfig setControl End
+15/5/2558 9:03->FrmLabExAdd.initConfig ID=
+15/5/2558 9:03->FrmLabExAdd.initConfig setControl id
+15/5/2558 9:03->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+15/5/2558 9:03->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+15/5/2558 9:03->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+15/5/2558 9:03->FrmLabExAdd.initConfig setControl 1
+15/5/2558 9:03->FrmLabExAdd.initConfig setControl End
+15/5/2558 9:22->FrmLabExAdd.initConfig ID=
+15/5/2558 9:22->FrmLabExAdd.initConfig setControl id
+15/5/2558 9:22->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+15/5/2558 9:22->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+15/5/2558 9:22->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+15/5/2558 9:22->FrmLabExAdd.initConfig setControl 1
+15/5/2558 9:22->FrmLabExAdd.initConfig setControl End
+15/5/2558 9:25->FrmLabExAdd.initConfig ID=
+15/5/2558 9:25->FrmLabExAdd.initConfig setControl id
+15/5/2558 9:25->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+15/5/2558 9:25->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+15/5/2558 9:25->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+15/5/2558 9:25->FrmLabExAdd.initConfig setControl 1
+15/5/2558 9:25->FrmLabExAdd.initConfig setControl End
+15/5/2558 10:51->FrmLabExView.dgv1_CellDoubleClick 
+15/5/2558 10:51->FrmLabExAdd.initConfig ID=1802158999
+15/5/2558 10:51->FrmLabExAdd.initConfig setControl id1802158999
+15/5/2558 10:51->LabExDB.selectByPk  sql Select * From labex Where labex_id='1802158999'
+15/5/2558 10:51->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+15/5/2558 10:51->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+15/5/2558 10:51->FrmLabExAdd.initConfig setControl 1
+15/5/2558 10:51->FrmLabExAdd.initConfig setControl End
+15/5/2558 10:52->FrmLabExView.dgv1_CellDoubleClick 
+15/5/2558 10:52->FrmLabExAdd.initConfig ID=1802158999
+15/5/2558 10:52->FrmLabExAdd.initConfig setControl id1802158999
+15/5/2558 10:52->LabExDB.selectByPk  sql Select * From labex Where labex_id='1802158999'
+15/5/2558 10:52->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+15/5/2558 10:52->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+15/5/2558 10:52->FrmLabExAdd.initConfig setControl 1
+15/5/2558 10:52->FrmLabExAdd.initConfig setControl End
+15/5/2558 10:53->FrmLabExView.dgv1_CellDoubleClick 
+15/5/2558 10:53->FrmLabExAdd.initConfig ID=1802158999
+15/5/2558 10:53->FrmLabExAdd.initConfig setControl id1802158999
+15/5/2558 10:53->LabExDB.selectByPk  sql Select * From labex Where labex_id='1802158999'
+15/5/2558 10:53->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+15/5/2558 10:53->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+15/5/2558 10:53->FrmLabExAdd.initConfig setControl 1
+15/5/2558 10:53->FrmLabExAdd.initConfig setControl End
+15/5/2558 11:11->FrmLabExAdd.initConfig ID=
+15/5/2558 11:11->FrmLabExAdd.initConfig setControl id
+15/5/2558 11:11->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+15/5/2558 11:11->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+15/5/2558 11:11->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+15/5/2558 11:11->FrmLabExAdd.initConfig setControl 1
+15/5/2558 11:11->FrmLabExAdd.initConfig setControl End
+15/5/2558 11:11->FrmLabExAdd.initConfig ID=
+15/5/2558 11:11->FrmLabExAdd.initConfig setControl id
+15/5/2558 11:11->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+15/5/2558 11:11->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+15/5/2558 11:11->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+15/5/2558 11:11->FrmLabExAdd.initConfig setControl 1
+15/5/2558 11:11->FrmLabExAdd.initConfig setControl End
+15/5/2558 11:12->FrmLabExView.dgv1_CellDoubleClick 
+15/5/2558 11:12->FrmLabExAdd.initConfig ID=1802158999
+15/5/2558 11:12->FrmLabExAdd.initConfig setControl id1802158999
+15/5/2558 11:12->LabExDB.selectByPk  sql Select * From labex Where labex_id='1802158999'
+15/5/2558 11:12->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+15/5/2558 11:12->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+15/5/2558 11:12->FrmLabExAdd.initConfig setControl 1
+15/5/2558 11:12->FrmLabExAdd.initConfig setControl End
+15/5/2558 11:12->FrmLabExView.dgv1_CellDoubleClick 
+15/5/2558 11:12->FrmLabExAdd.initConfig ID=1802158999
+15/5/2558 11:12->FrmLabExAdd.initConfig setControl id1802158999
+15/5/2558 11:12->LabExDB.selectByPk  sql Select * From labex Where labex_id='1802158999'
+15/5/2558 11:12->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+15/5/2558 11:12->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+15/5/2558 11:12->FrmLabExAdd.initConfig setControl 1
+15/5/2558 11:12->FrmLabExAdd.initConfig setControl End
+26/5/2558 11:30->FrmLabExAdd.initConfig ID=
+26/5/2558 11:30->FrmLabExAdd.initConfig setControl id
+26/5/2558 11:30->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+26/5/2558 11:30->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+26/5/2558 11:30->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+26/5/2558 11:30->FrmLabExAdd.initConfig setControl 1
+26/5/2558 11:30->FrmLabExAdd.initConfig setControl End
+26/5/2558 11:31->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+26/5/2558 11:31->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+26/5/2558 11:31->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+26/5/2558 11:31->FrmLabExView.dgv1_CellDoubleClick 
+26/5/2558 11:31->FrmLabExAdd.initConfig ID=1782886810
+26/5/2558 11:31->FrmLabExAdd.initConfig setControl id1782886810
+26/5/2558 11:31->LabExDB.selectByPk  sql Select * From labex Where labex_id='1782886810'
+26/5/2558 11:31->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+26/5/2558 11:31->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+26/5/2558 11:31->FrmLabExAdd.initConfig setControl 1
+26/5/2558 11:31->FrmLabExAdd.initConfig setControl End
+26/5/2558 11:31->LabExDB.selectByPk  sql Select * From labex Where labex_id='1782886810'
+26/5/2558 11:31->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+26/5/2558 11:31->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+26/5/2558 11:37->FrmLabExAdd.initConfig ID=
+26/5/2558 11:37->FrmLabExAdd.initConfig setControl id
+26/5/2558 11:37->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+26/5/2558 11:37->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+26/5/2558 11:37->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+26/5/2558 11:37->FrmLabExAdd.initConfig setControl 1
+26/5/2558 11:37->FrmLabExAdd.initConfig setControl End
+26/5/2558 11:37->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+26/5/2558 11:37->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+26/5/2558 11:37->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+26/5/2558 11:37->FrmLabExView.dgv1_CellDoubleClick 
+26/5/2558 11:37->FrmLabExAdd.initConfig ID=1417240282
+26/5/2558 11:37->FrmLabExAdd.initConfig setControl id1417240282
+26/5/2558 11:37->LabExDB.selectByPk  sql Select * From labex Where labex_id='1417240282'
+26/5/2558 11:37->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+26/5/2558 11:37->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+26/5/2558 11:37->FrmLabExAdd.initConfig setControl 1
+26/5/2558 11:37->FrmLabExAdd.initConfig setControl End
+26/5/2558 11:37->LabExDB.selectByPk  sql Select * From labex Where labex_id='1417240282'
+26/5/2558 11:37->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+26/5/2558 11:37->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+4/6/2558 10:11->FrmLabExAdd.initConfig ID=
+4/6/2558 10:11->FrmLabExAdd.initConfig setControl id
+4/6/2558 10:11->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+4/6/2558 10:11->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+4/6/2558 10:11->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+4/6/2558 10:11->FrmLabExAdd.initConfig setControl 1
+4/6/2558 10:11->FrmLabExAdd.initConfig setControl End
+4/6/2558 10:12->FrmLabExAdd.initConfig ID=
+4/6/2558 10:12->FrmLabExAdd.initConfig setControl id
+4/6/2558 10:12->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+4/6/2558 10:12->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+4/6/2558 10:12->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+4/6/2558 10:12->FrmLabExAdd.initConfig setControl 1
+4/6/2558 10:12->FrmLabExAdd.initConfig setControl End
+4/6/2558 10:14->FrmLabExAdd.initConfig ID=
+4/6/2558 10:14->FrmLabExAdd.initConfig setControl id
+4/6/2558 10:14->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+4/6/2558 10:14->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+4/6/2558 10:14->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+4/6/2558 10:14->FrmLabExAdd.initConfig setControl 1
+4/6/2558 10:14->FrmLabExAdd.initConfig setControl End
+4/6/2558 10:18->FrmLabExAdd.initConfig ID=
+4/6/2558 10:18->FrmLabExAdd.initConfig setControl id
+4/6/2558 10:18->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+4/6/2558 10:18->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+4/6/2558 10:18->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+4/6/2558 10:18->FrmLabExAdd.initConfig setControl 1
+4/6/2558 10:18->FrmLabExAdd.initConfig setControl End
+4/6/2558 10:18->FrmLabExAdd.initConfig ID=
+4/6/2558 10:18->FrmLabExAdd.initConfig setControl id
+4/6/2558 10:18->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+4/6/2558 10:18->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+4/6/2558 10:18->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+4/6/2558 10:18->FrmLabExAdd.initConfig setControl 1
+4/6/2558 10:18->FrmLabExAdd.initConfig setControl End
+4/6/2558 11:25->FrmLabExAdd.initConfig ID=
+4/6/2558 11:25->FrmLabExAdd.initConfig setControl id
+4/6/2558 11:25->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+4/6/2558 11:25->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+4/6/2558 11:25->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+4/6/2558 11:25->FrmLabExAdd.initConfig setControl 1
+4/6/2558 11:25->FrmLabExAdd.initConfig setControl End
+9/6/2558 14:33->FrmLabExAdd.initConfig ID=
+9/6/2558 14:33->FrmLabExAdd.initConfig setControl id
+9/6/2558 14:33->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+9/6/2558 14:33->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+9/6/2558 14:33->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+9/6/2558 14:33->FrmLabExAdd.initConfig setControl 1
+9/6/2558 14:33->FrmLabExAdd.initConfig setControl End
+9/6/2558 14:36->FrmLabExAdd.initConfig ID=
+9/6/2558 14:36->FrmLabExAdd.initConfig setControl id
+9/6/2558 14:36->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+9/6/2558 14:36->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+9/6/2558 14:36->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+9/6/2558 14:36->FrmLabExAdd.initConfig setControl 1
+9/6/2558 14:36->FrmLabExAdd.initConfig setControl End
+9/6/2558 14:37->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+9/6/2558 14:37->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+9/6/2558 14:37->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+9/6/2558 14:38->FrmLabExAdd.initConfig ID=
+9/6/2558 14:38->FrmLabExAdd.initConfig setControl id
+9/6/2558 14:38->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+9/6/2558 14:38->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+9/6/2558 14:38->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+9/6/2558 14:38->FrmLabExAdd.initConfig setControl 1
+9/6/2558 14:38->FrmLabExAdd.initConfig setControl End
+9/6/2558 14:38->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+9/6/2558 14:38->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+9/6/2558 14:38->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+9/6/2558 14:39->LabExDB.selectByPk  sql Select * From labex Where labex_id='598750093'
+9/6/2558 14:39->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+9/6/2558 14:39->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+9/6/2558 14:39->FrmLabExAdd.initConfig ID=
+9/6/2558 14:39->FrmLabExAdd.initConfig setControl id
+9/6/2558 14:39->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+9/6/2558 14:39->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+9/6/2558 14:39->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+9/6/2558 14:39->FrmLabExAdd.initConfig setControl 1
+9/6/2558 14:39->FrmLabExAdd.initConfig setControl End
+9/6/2558 14:39->FrmLabExAdd.initConfig ID=
+9/6/2558 14:39->FrmLabExAdd.initConfig setControl id
+9/6/2558 14:39->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+9/6/2558 14:39->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+9/6/2558 14:39->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+9/6/2558 14:39->FrmLabExAdd.initConfig setControl 1
+9/6/2558 14:39->FrmLabExAdd.initConfig setControl End
+9/6/2558 14:40->LabExDB.selectByPk  sql Select * From labex Where labex_id=''
+9/6/2558 14:40->LabExDB.selectByPk  connBua.hostNameBua 172.25.10.5 connBua.databaseNameBua bua
+9/6/2558 14:40->LabExDB.selectByPk  End connBua.connMainHIS.State Closed
+9/6/2558 14:41->FrmLabExAdd.initConfig ID=
+9/6/2558 14:41->FrmLabExAdd.initConfig setControl id
+9/6/2558 14:41->FrmLabExAdd.initConfig setControl 1
+9/6/2558 14:41->FrmLabExAdd.initConfig setControl End
+9/6/2558 14:42->FrmLabExView.dgv1_CellDoubleClick 
+9/6/2558 14:42->FrmLabExAdd.initConfig ID=157073293
+9/6/2558 14:42->FrmLabExAdd.initConfig setControl id157073293
+9/6/2558 14:42->FrmLabExAdd.initConfig setControl 1
+9/6/2558 14:42->FrmLabExAdd.initConfig setControl End
+9/6/2558 14:49->FrmLabExView.dgv1_CellDoubleClick 
+9/6/2558 14:49->FrmLabExAdd.initConfig ID=157073293
+9/6/2558 14:49->FrmLabExAdd.initConfig setControl id157073293
+9/6/2558 14:49->FrmLabExAdd.initConfig setControl 1
+9/6/2558 14:49->FrmLabExAdd.initConfig setControl End
+9/6/2558 14:51->FrmLabExView.dgv1_CellDoubleClick 
+9/6/2558 14:51->FrmLabExAdd.initConfig ID=157073293
+9/6/2558 14:51->FrmLabExAdd.initConfig setControl id157073293
+9/6/2558 14:51->FrmLabExAdd.initConfig setControl 1
+9/6/2558 14:51->FrmLabExAdd.initConfig setControl End
+9/6/2558 14:55->FrmLabExAdd.initConfig ID=
+9/6/2558 14:55->FrmLabExAdd.initConfig setControl id
+9/6/2558 14:55->FrmLabExAdd.initConfig setControl 1
+9/6/2558 14:55->FrmLabExAdd.initConfig setControl End
+9/6/2558 15:14->FrmLabExAdd.initConfig ID=
+9/6/2558 15:14->FrmLabExAdd.initConfig setControl id
+9/6/2558 15:14->FrmLabExAdd.initConfig setControl 1
+9/6/2558 15:14->FrmLabExAdd.initConfig setControl End
+9/6/2558 15:16->FrmLabExAdd.initConfig ID=
+9/6/2558 15:16->FrmLabExAdd.initConfig setControl id
+9/6/2558 15:16->FrmLabExAdd.initConfig setControl 1
+9/6/2558 15:16->FrmLabExAdd.initConfig setControl End
+9/6/2558 15:21->FrmLabExAdd.initConfig ID=
+9/6/2558 15:21->FrmLabExAdd.initConfig setControl id
+9/6/2558 15:21->FrmLabExAdd.initConfig setControl 1
+9/6/2558 15:21->FrmLabExAdd.initConfig setControl End
+9/6/2558 15:27->FrmLabExView.dgv1_CellDoubleClick 
+9/6/2558 15:27->FrmLabExAdd.initConfig ID=307010223
+9/6/2558 15:27->FrmLabExAdd.initConfig setControl id307010223
+9/6/2558 15:27->FrmLabExAdd.initConfig setControl 1
+9/6/2558 15:27->FrmLabExAdd.initConfig setControl End
+9/6/2558 15:41->FrmLabExAdd.initConfig ID=
+9/6/2558 15:41->FrmLabExAdd.initConfig setControl id
+9/6/2558 15:41->FrmLabExAdd.initConfig setControl 1
+9/6/2558 15:41->FrmLabExAdd.initConfig setControl End
+9/6/2558 15:42->FrmLabExAdd.initConfig ID=
+9/6/2558 15:42->FrmLabExAdd.initConfig setControl id
+9/6/2558 15:42->FrmLabExAdd.initConfig setControl 1
+9/6/2558 15:42->FrmLabExAdd.initConfig setControl End
+9/6/2558 15:46->FrmLabExAdd.initConfig ID=
+9/6/2558 15:46->FrmLabExAdd.initConfig setControl id
+9/6/2558 15:46->FrmLabExAdd.initConfig setControl 1
+9/6/2558 15:46->FrmLabExAdd.initConfig setControl End
+9/6/2558 15:51->FrmLabExView.dgv1_CellDoubleClick 
+9/6/2558 15:51->FrmLabExAdd.initConfig ID=307010223
+9/6/2558 15:51->FrmLabExAdd.initConfig setControl id307010223
+9/6/2558 15:51->FrmLabExAdd.initConfig setControl 1
+9/6/2558 15:51->FrmLabExAdd.initConfig setControl End
+9/6/2558 15:51->FrmLabExView.dgv1_CellDoubleClick 
+9/6/2558 15:51->FrmLabExAdd.initConfig ID=307010223
+9/6/2558 15:51->FrmLabExAdd.initConfig setControl id307010223
+9/6/2558 15:51->FrmLabExAdd.initConfig setControl 1
+9/6/2558 15:52->FrmLabExView.dgv1_CellDoubleClick 
+9/6/2558 15:52->FrmLabExAdd.initConfig ID=307010223
+9/6/2558 15:52->FrmLabExAdd.initConfig setControl id307010223
+9/6/2558 15:52->FrmLabExAdd.initConfig setControl 1
+9/6/2558 15:52->FrmLabExAdd.initConfig setControl End
+9/6/2558 15:52->FrmLabExView.dgv1_CellDoubleClick 
+9/6/2558 15:52->FrmLabExAdd.initConfig ID=307010223
+9/6/2558 15:52->FrmLabExAdd.initConfig setControl id307010223
+9/6/2558 15:52->FrmLabExAdd.initConfig setControl 1
+9/6/2558 15:53->FrmLabExView.dgv1_CellDoubleClick 
+9/6/2558 15:53->FrmLabExAdd.initConfig ID=307010223
+9/6/2558 15:53->FrmLabExAdd.initConfig setControl id307010223
+9/6/2558 15:53->FrmLabExAdd.initConfig setControl 1
+9/6/2558 15:53->FrmLabExAdd.initConfig setControl End
+9/6/2558 15:54->FrmLabExView.dgv1_CellDoubleClick 
+9/6/2558 15:54->FrmLabExAdd.initConfig ID=307010223
+9/6/2558 15:54->FrmLabExAdd.initConfig setControl id307010223
+9/6/2558 15:54->FrmLabExAdd.initConfig setControl 1
+9/6/2558 15:54->FrmLabExAdd.initConfig setControl End

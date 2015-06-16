@@ -1,6 +1,6 @@
 ﻿namespace reportBangna.gui
 {
-    partial class FrmLabExAdd
+    partial class FrmLabExAdd1
     {
         /// <summary>
         /// Required designer variable.
@@ -29,18 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnPDF3 = new System.Windows.Forms.Button();
-            this.btnPDF2 = new System.Windows.Forms.Button();
-            this.btnPDF1 = new System.Windows.Forms.Button();
-            this.btn1 = new System.Windows.Forms.Button();
+            this.btnImage = new System.Windows.Forms.Button();
             this.txtLabReqNo = new System.Windows.Forms.TextBox();
             this.txtDoctorId = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -55,6 +44,7 @@
             this.txtRowNumber = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtId = new System.Windows.Forms.TextBox();
+            this.btnLoadImage = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.txtRemark = new System.Windows.Forms.TextBox();
             this.txtVN = new System.Windows.Forms.TextBox();
@@ -74,29 +64,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.btn3 = new System.Windows.Forms.Button();
-            this.btn4 = new System.Windows.Forms.Button();
-            this.btn5 = new System.Windows.Forms.Button();
+            this.btnPDF1 = new System.Windows.Forms.Button();
+            this.btnPDF2 = new System.Windows.Forms.Button();
+            this.btnPDF3 = new System.Windows.Forms.Button();
+            this.pic1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btn5);
-            this.groupBox1.Controls.Add(this.btn4);
-            this.groupBox1.Controls.Add(this.btn3);
-            this.groupBox1.Controls.Add(this.btn2);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Controls.Add(this.button7);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.btnPDF3);
             this.groupBox1.Controls.Add(this.btnPDF2);
             this.groupBox1.Controls.Add(this.btnPDF1);
-            this.groupBox1.Controls.Add(this.btn1);
+            this.groupBox1.Controls.Add(this.btnImage);
             this.groupBox1.Controls.Add(this.txtLabReqNo);
             this.groupBox1.Controls.Add(this.txtDoctorId);
             this.groupBox1.Controls.Add(this.label10);
@@ -111,6 +92,7 @@
             this.groupBox1.Controls.Add(this.txtRowNumber);
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.txtId);
+            this.groupBox1.Controls.Add(this.btnLoadImage);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtRemark);
             this.groupBox1.Controls.Add(this.txtVN);
@@ -129,135 +111,25 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtDescription);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(774, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(592, 493);
+            this.groupBox1.Size = new System.Drawing.Size(228, 705);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // btn2
+            // btnImage
             // 
-            this.btn2.Location = new System.Drawing.Point(403, 167);
-            this.btn2.Name = "btn2";
-            this.btn2.Size = new System.Drawing.Size(37, 23);
-            this.btn2.TabIndex = 87;
-            this.btn2.Text = "...";
-            this.btn2.UseVisualStyleBackColor = true;
-            this.btn2.Click += new System.EventHandler(this.btn2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(455, 275);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 86;
-            this.button3.Text = "Labนอก 10";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Enabled = false;
-            this.button4.Location = new System.Drawing.Point(455, 238);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 85;
-            this.button4.Text = "Labนอก 9";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Enabled = false;
-            this.button5.Location = new System.Drawing.Point(455, 204);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 84;
-            this.button5.Text = "Labนอก 8";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Enabled = false;
-            this.button6.Location = new System.Drawing.Point(455, 167);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 83;
-            this.button6.Text = "Labนอก 7";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Enabled = false;
-            this.button7.Location = new System.Drawing.Point(455, 127);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 82;
-            this.button7.Text = "Labนอก 6";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(322, 275);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 81;
-            this.button1.Text = "Labนอก 5";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(322, 238);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 80;
-            this.button2.Text = "Labนอก 4";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnPDF3
-            // 
-            this.btnPDF3.Location = new System.Drawing.Point(322, 204);
-            this.btnPDF3.Name = "btnPDF3";
-            this.btnPDF3.Size = new System.Drawing.Size(75, 23);
-            this.btnPDF3.TabIndex = 79;
-            this.btnPDF3.Text = "Labนอก 3";
-            this.btnPDF3.UseVisualStyleBackColor = true;
-            this.btnPDF3.Click += new System.EventHandler(this.btnPDF3_Click);
-            // 
-            // btnPDF2
-            // 
-            this.btnPDF2.Location = new System.Drawing.Point(322, 167);
-            this.btnPDF2.Name = "btnPDF2";
-            this.btnPDF2.Size = new System.Drawing.Size(75, 23);
-            this.btnPDF2.TabIndex = 78;
-            this.btnPDF2.Text = "Labนอก 2";
-            this.btnPDF2.UseVisualStyleBackColor = true;
-            this.btnPDF2.Click += new System.EventHandler(this.btnPDF2_Click);
-            // 
-            // btnPDF1
-            // 
-            this.btnPDF1.Location = new System.Drawing.Point(322, 127);
-            this.btnPDF1.Name = "btnPDF1";
-            this.btnPDF1.Size = new System.Drawing.Size(75, 23);
-            this.btnPDF1.TabIndex = 77;
-            this.btnPDF1.Text = "Labนอก 1";
-            this.btnPDF1.UseVisualStyleBackColor = true;
-            this.btnPDF1.Click += new System.EventHandler(this.btnPDF1_Click);
-            // 
-            // btn1
-            // 
-            this.btn1.Location = new System.Drawing.Point(403, 127);
-            this.btn1.Name = "btn1";
-            this.btn1.Size = new System.Drawing.Size(37, 23);
-            this.btn1.TabIndex = 76;
-            this.btn1.Text = "...";
-            this.btn1.UseVisualStyleBackColor = true;
-            this.btn1.Click += new System.EventHandler(this.btn1_Click);
+            this.btnImage.Location = new System.Drawing.Point(14, 564);
+            this.btnImage.Name = "btnImage";
+            this.btnImage.Size = new System.Drawing.Size(37, 23);
+            this.btnImage.TabIndex = 76;
+            this.btnImage.Text = "...";
+            this.btnImage.UseVisualStyleBackColor = true;
+            this.btnImage.Click += new System.EventHandler(this.btnImage_Click);
             // 
             // txtLabReqNo
             // 
-            this.txtLabReqNo.Location = new System.Drawing.Point(154, 166);
+            this.txtLabReqNo.Location = new System.Drawing.Point(154, 203);
             this.txtLabReqNo.Name = "txtLabReqNo";
             this.txtLabReqNo.ReadOnly = true;
             this.txtLabReqNo.Size = new System.Drawing.Size(66, 20);
@@ -265,7 +137,7 @@
             // 
             // txtDoctorId
             // 
-            this.txtDoctorId.Location = new System.Drawing.Point(72, 386);
+            this.txtDoctorId.Location = new System.Drawing.Point(72, 423);
             this.txtDoctorId.Name = "txtDoctorId";
             this.txtDoctorId.Size = new System.Drawing.Size(37, 20);
             this.txtDoctorId.TabIndex = 74;
@@ -274,7 +146,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(8, 393);
+            this.label10.Location = new System.Drawing.Point(8, 430);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(45, 13);
             this.label10.TabIndex = 73;
@@ -282,14 +154,14 @@
             // 
             // txtDoctorName
             // 
-            this.txtDoctorName.Location = new System.Drawing.Point(11, 409);
+            this.txtDoctorName.Location = new System.Drawing.Point(11, 446);
             this.txtDoctorName.Name = "txtDoctorName";
             this.txtDoctorName.Size = new System.Drawing.Size(203, 20);
             this.txtDoctorName.TabIndex = 72;
             // 
             // txtLabTime
             // 
-            this.txtLabTime.Location = new System.Drawing.Point(93, 166);
+            this.txtLabTime.Location = new System.Drawing.Point(93, 203);
             this.txtLabTime.Name = "txtLabTime";
             this.txtLabTime.ReadOnly = true;
             this.txtLabTime.Size = new System.Drawing.Size(55, 20);
@@ -299,14 +171,14 @@
             // dtpLabEx
             // 
             this.dtpLabEx.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpLabEx.Location = new System.Drawing.Point(11, 205);
+            this.dtpLabEx.Location = new System.Drawing.Point(11, 242);
             this.dtpLabEx.Name = "dtpLabEx";
             this.dtpLabEx.Size = new System.Drawing.Size(98, 20);
             this.dtpLabEx.TabIndex = 70;
             // 
             // txtVisitTime
             // 
-            this.txtVisitTime.Location = new System.Drawing.Point(93, 127);
+            this.txtVisitTime.Location = new System.Drawing.Point(93, 164);
             this.txtVisitTime.Name = "txtVisitTime";
             this.txtVisitTime.Size = new System.Drawing.Size(55, 20);
             this.txtVisitTime.TabIndex = 69;
@@ -314,7 +186,7 @@
             // 
             // txtYearId
             // 
-            this.txtYearId.Location = new System.Drawing.Point(346, 32);
+            this.txtYearId.Location = new System.Drawing.Point(154, 73);
             this.txtYearId.Name = "txtYearId";
             this.txtYearId.Size = new System.Drawing.Size(37, 20);
             this.txtYearId.TabIndex = 68;
@@ -322,7 +194,7 @@
             // 
             // btnUnActive
             // 
-            this.btnUnActive.Location = new System.Drawing.Point(455, 419);
+            this.btnUnActive.Location = new System.Drawing.Point(136, 618);
             this.btnUnActive.Name = "btnUnActive";
             this.btnUnActive.Size = new System.Drawing.Size(86, 23);
             this.btnUnActive.TabIndex = 67;
@@ -334,7 +206,7 @@
             // 
             this.ChkUnActive.AutoSize = true;
             this.ChkUnActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.ChkUnActive.Location = new System.Drawing.Point(473, 393);
+            this.ChkUnActive.Location = new System.Drawing.Point(154, 592);
             this.ChkUnActive.Margin = new System.Windows.Forms.Padding(2);
             this.ChkUnActive.Name = "ChkUnActive";
             this.ChkUnActive.Size = new System.Drawing.Size(60, 21);
@@ -348,7 +220,7 @@
             // 
             this.chkActive.AutoSize = true;
             this.chkActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.chkActive.Location = new System.Drawing.Point(348, 393);
+            this.chkActive.Location = new System.Drawing.Point(29, 592);
             this.chkActive.Margin = new System.Windows.Forms.Padding(2);
             this.chkActive.Name = "chkActive";
             this.chkActive.Size = new System.Drawing.Size(61, 21);
@@ -360,7 +232,7 @@
             // 
             // txtRowNumber
             // 
-            this.txtRowNumber.Location = new System.Drawing.Point(303, 32);
+            this.txtRowNumber.Location = new System.Drawing.Point(111, 73);
             this.txtRowNumber.Name = "txtRowNumber";
             this.txtRowNumber.Size = new System.Drawing.Size(37, 20);
             this.txtRowNumber.TabIndex = 21;
@@ -384,10 +256,20 @@
             this.txtId.TabIndex = 19;
             this.txtId.Visible = false;
             // 
+            // btnLoadImage
+            // 
+            this.btnLoadImage.Location = new System.Drawing.Point(11, 487);
+            this.btnLoadImage.Name = "btnLoadImage";
+            this.btnLoadImage.Size = new System.Drawing.Size(75, 23);
+            this.btnLoadImage.TabIndex = 18;
+            this.btnLoadImage.Text = "Load Image";
+            this.btnLoadImage.UseVisualStyleBackColor = true;
+            this.btnLoadImage.Click += new System.EventHandler(this.btnLoadImage_Click);
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(11, 331);
+            this.label9.Location = new System.Drawing.Point(11, 368);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(58, 13);
             this.label9.TabIndex = 17;
@@ -395,14 +277,14 @@
             // 
             // txtRemark
             // 
-            this.txtRemark.Location = new System.Drawing.Point(11, 347);
+            this.txtRemark.Location = new System.Drawing.Point(11, 384);
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.Size = new System.Drawing.Size(203, 20);
             this.txtRemark.TabIndex = 16;
             // 
             // txtVN
             // 
-            this.txtVN.Location = new System.Drawing.Point(203, 32);
+            this.txtVN.Location = new System.Drawing.Point(11, 73);
             this.txtVN.Name = "txtVN";
             this.txtVN.Size = new System.Drawing.Size(94, 20);
             this.txtVN.TabIndex = 15;
@@ -411,7 +293,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(200, 16);
+            this.label8.Location = new System.Drawing.Point(8, 57);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(28, 13);
             this.label8.TabIndex = 14;
@@ -419,7 +301,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(511, 344);
+            this.btnSave.Location = new System.Drawing.Point(11, 527);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 2;
@@ -430,7 +312,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(11, 244);
+            this.comboBox1.Location = new System.Drawing.Point(11, 281);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(203, 21);
             this.comboBox1.TabIndex = 13;
@@ -438,7 +320,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(11, 189);
+            this.label7.Location = new System.Drawing.Point(11, 226);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(128, 13);
             this.label7.TabIndex = 11;
@@ -446,7 +328,7 @@
             // 
             // txtLabDate
             // 
-            this.txtLabDate.Location = new System.Drawing.Point(11, 166);
+            this.txtLabDate.Location = new System.Drawing.Point(11, 203);
             this.txtLabDate.Name = "txtLabDate";
             this.txtLabDate.ReadOnly = true;
             this.txtLabDate.Size = new System.Drawing.Size(76, 20);
@@ -455,7 +337,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 150);
+            this.label6.Location = new System.Drawing.Point(12, 187);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 13);
             this.label6.TabIndex = 9;
@@ -463,7 +345,7 @@
             // 
             // txtVisitDate
             // 
-            this.txtVisitDate.Location = new System.Drawing.Point(11, 127);
+            this.txtVisitDate.Location = new System.Drawing.Point(11, 164);
             this.txtVisitDate.Name = "txtVisitDate";
             this.txtVisitDate.ReadOnly = true;
             this.txtVisitDate.Size = new System.Drawing.Size(76, 20);
@@ -473,7 +355,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 109);
+            this.label5.Location = new System.Drawing.Point(11, 148);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 13);
             this.label5.TabIndex = 7;
@@ -482,7 +364,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 59);
+            this.label4.Location = new System.Drawing.Point(11, 109);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 13);
             this.label4.TabIndex = 6;
@@ -490,7 +372,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(11, 75);
+            this.txtName.Location = new System.Drawing.Point(11, 125);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(203, 20);
             this.txtName.TabIndex = 5;
@@ -515,7 +397,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 228);
+            this.label2.Location = new System.Drawing.Point(12, 265);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 2;
@@ -524,7 +406,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 268);
+            this.label1.Location = new System.Drawing.Point(8, 305);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 1;
@@ -532,7 +414,7 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(11, 284);
+            this.txtDescription.Location = new System.Drawing.Point(11, 321);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(203, 20);
             this.txtDescription.TabIndex = 0;
@@ -542,48 +424,56 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.InitialDirectory = "D:\\\\labex";
             // 
-            // btn3
+            // btnPDF1
             // 
-            this.btn3.Location = new System.Drawing.Point(403, 204);
-            this.btn3.Name = "btn3";
-            this.btn3.Size = new System.Drawing.Size(37, 23);
-            this.btn3.TabIndex = 88;
-            this.btn3.Text = "...";
-            this.btn3.UseVisualStyleBackColor = true;
-            this.btn3.Click += new System.EventHandler(this.btn3_Click);
+            this.btnPDF1.Location = new System.Drawing.Point(139, 487);
+            this.btnPDF1.Name = "btnPDF1";
+            this.btnPDF1.Size = new System.Drawing.Size(75, 23);
+            this.btnPDF1.TabIndex = 77;
+            this.btnPDF1.Text = "PDF1";
+            this.btnPDF1.UseVisualStyleBackColor = true;
+            this.btnPDF1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btn4
+            // btnPDF2
             // 
-            this.btn4.Location = new System.Drawing.Point(403, 238);
-            this.btn4.Name = "btn4";
-            this.btn4.Size = new System.Drawing.Size(37, 23);
-            this.btn4.TabIndex = 89;
-            this.btn4.Text = "...";
-            this.btn4.UseVisualStyleBackColor = true;
-            this.btn4.Click += new System.EventHandler(this.btn4_Click);
+            this.btnPDF2.Location = new System.Drawing.Point(139, 527);
+            this.btnPDF2.Name = "btnPDF2";
+            this.btnPDF2.Size = new System.Drawing.Size(75, 23);
+            this.btnPDF2.TabIndex = 78;
+            this.btnPDF2.Text = "PDF2";
+            this.btnPDF2.UseVisualStyleBackColor = true;
             // 
-            // btn5
+            // btnPDF3
             // 
-            this.btn5.Location = new System.Drawing.Point(403, 275);
-            this.btn5.Name = "btn5";
-            this.btn5.Size = new System.Drawing.Size(37, 23);
-            this.btn5.TabIndex = 90;
-            this.btn5.Text = "...";
-            this.btn5.UseVisualStyleBackColor = true;
-            this.btn5.Click += new System.EventHandler(this.btn5_Click);
+            this.btnPDF3.Location = new System.Drawing.Point(139, 564);
+            this.btnPDF3.Name = "btnPDF3";
+            this.btnPDF3.Size = new System.Drawing.Size(75, 23);
+            this.btnPDF3.TabIndex = 79;
+            this.btnPDF3.Text = "PDF3";
+            this.btnPDF3.UseVisualStyleBackColor = true;
+            // 
+            // pic1
+            // 
+            this.pic1.Location = new System.Drawing.Point(12, 12);
+            this.pic1.Name = "pic1";
+            this.pic1.Size = new System.Drawing.Size(756, 805);
+            this.pic1.TabIndex = 81;
+            this.pic1.TabStop = false;
             // 
             // FrmLabExAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(625, 524);
+            this.ClientSize = new System.Drawing.Size(1122, 924);
+            this.Controls.Add(this.pic1);
             this.Controls.Add(this.groupBox1);
-            this.Name = "FrmLabExAdd";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmLabExAdd";
-            this.Load += new System.EventHandler(this.FrmLabExAdd_Load);
+            this.Name = "FrmLabExAdd1";
+            this.Text = "FrmLabExAdd1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmLabExAdd1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -609,6 +499,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtRemark;
+        private System.Windows.Forms.Button btnLoadImage;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtRowNumber;
@@ -624,20 +515,10 @@
         private System.Windows.Forms.TextBox txtDoctorId;
         private System.Windows.Forms.TextBox txtLabReqNo;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button btn1;
+        private System.Windows.Forms.Button btnImage;
         private System.Windows.Forms.Button btnPDF1;
         private System.Windows.Forms.Button btnPDF2;
         private System.Windows.Forms.Button btnPDF3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button btn2;
-        private System.Windows.Forms.Button btn5;
-        private System.Windows.Forms.Button btn4;
-        private System.Windows.Forms.Button btn3;
+        private System.Windows.Forms.PictureBox pic1;
     }
 }

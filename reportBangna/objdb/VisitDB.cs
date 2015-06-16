@@ -146,12 +146,16 @@ namespace reportBangna.objdb
                     "When '' Then '' " +
                     "Else MNC_FN_TYP_DSC " +
                     "End as MNC_FN_TYP_DSC, " +
-                " t01.MNC_SHIF_MEMO,t01.MNC_FN_TYP_CD,t01.MNC_DATE,t01.MNC_time,LAB_T01.MNC_REQ_NO " +
+                " t01.MNC_SHIF_MEMO,t01.MNC_FN_TYP_CD,t01.MNC_DATE,t01.MNC_time,LAB_T01.MNC_REQ_NO,LAB_T01.MNC_DOT_CD,LAB_T01.MNC_REQ_DAT,LAB_T01.MNC_REQ_TIM, "+
+                "m26.MNC_DOT_FNAME,m26.MNC_DOT_LNAME,m021.MNC_PFIX_DSC as prefixdoc, " +
+                "isnull(FLOOR((CAST (GetDate() AS INTEGER) - CAST( MNC_BDAY AS INTEGER)) / 365.25),0) AS Age " +
                 "From patient_t01 t01 " +
                 " inner join patient_m01 m01 on t01.MNC_HN_NO = m01.MNC_HN_NO " +
                 " inner join patient_m02 m02 on m01.MNC_PFIX_CDT =m02.MNC_PFIX_CD " +
                 " inner join FINANCE_M02 f02 ON t01.MNC_FN_TYP_CD = f02.MNC_FN_TYP_CD " +
                 " inner join LAB_T01 ON t01.MNC_PRE_NO = LAB_T01.MNC_PRE_NO AND t01.MNC_DATE = LAB_T01.MNC_DATE  " +
+                " left join patient_m26 m26 ON LAB_T01.MNC_DOT_CD = m26.MNC_DOT_CD " +
+                " inner join patient_m02 m021 on m26.MNC_DOT_PFIX =m021.MNC_PFIX_CD " +
                 " Where t01.MNC_HN_NO like '" + hn + "%' " +
                 "and t01.MNC_STS <> 'C' " +
                 " Order by t01.MNC_HN_NO ";

@@ -13,12 +13,12 @@ namespace reportBangna.gui
 {
     public partial class FrmLabExSearch : Form
     {
-        int colRow = 0, colHN = 1, colVn = 2, colName = 3, colAge = 4, colFnCd = 5, colsymptom=6, colVisitDate=7, colVisitTime=8;
-        int colCnt = 9;
+        int colRow = 0, colHN = 1, colVn = 2, colName = 3, colAge = 4, colFnCd = 5, colsymptom=6, colVisitDate=7, colVisitTime=8, colLabDate=9, colLabTime=10, colDoctorId=11, colDoctorName=12, colLabReqNo=13;
+        int colCnt = 14;
 
-        VisitDB vsdb;
+        //VisitDB vsdb;
         Visit vs;
-        LabExDB labexdb;
+        //LabExDB labexdb;
         BangnaControl bc;
         public String vnSearch = "";
 
@@ -31,8 +31,8 @@ namespace reportBangna.gui
         }
         private void initConfig()
         {
-            labexdb = new LabExDB();
-            vsdb = new VisitDB();
+            //labexdb = new LabExDB();
+            //vsdb = new VisitDB();
             vs = new Visit();
             setGrd();
         }
@@ -42,7 +42,7 @@ namespace reportBangna.gui
             DataTable dt = new DataTable();
             DateTime dt1 = new DateTime();
             String visitDate = "", visitTime="";
-            dt = vsdb.selectVisitByHn1(txtHN.Text);
+            dt = bc.vsdb.selectVisitByHn1(txtHN.Text);
 
             dgv1.ColumnCount = colCnt;
             dgv1.Rows.Clear();
@@ -74,10 +74,12 @@ namespace reportBangna.gui
                     dgv1[colHN, i].Value = dt.Rows[i]["MNC_HN_NO"].ToString();
                     dgv1[colVn, i].Value = dt.Rows[i]["MNC_VN_NO"].ToString() + "." + dt.Rows[i]["MNC_VN_SEQ"].ToString() + "." + dt.Rows[i]["MNC_VN_SUM"].ToString();
                     dgv1[colName, i].Value = dt.Rows[i]["prefix"].ToString() + " " + dt.Rows[i]["MNC_FNAME_T"].ToString() + " " + dt.Rows[i]["MNC_LNAME_T"].ToString();
-                    dgv1[colAge, i].Value = dt.Rows[i]["MNC_AGE"].ToString();
+                    dgv1[colAge, i].Value = dt.Rows[i]["AGE"].ToString();
                     dgv1[colFnCd, i].Value = dt.Rows[i]["MNC_FN_TYP_DSC"].ToString();
                     dgv1[colsymptom, i].Value = dt.Rows[i]["MNC_SHIF_MEMO"].ToString();
-                    //dgv1[colVisitDate, i].Value = bc.cf.dateDBtoShow25(dt.Rows[i]["MNC_DATE"].ToString());
+                    dgv1[colDoctorId, i].Value = dt.Rows[i]["MNC_DOT_CD"].ToString();
+                    dgv1[colDoctorName, i].Value = dt.Rows[i]["prefixdoc"].ToString() + " " + dt.Rows[i]["MNC_DOT_FNAME"].ToString() + " " + dt.Rows[i]["MNC_DOT_LNAME"].ToString();
+                    dgv1[colLabReqNo, i].Value = dt.Rows[i]["MNC_REQ_NO"].ToString();
                     if (dt.Rows[i]["MNC_DATE"] != null)
                     {
                         dt1 = DateTime.Parse(dt.Rows[i]["MNC_DATE"].ToString());
@@ -91,15 +93,26 @@ namespace reportBangna.gui
                     {
                         dgv1[colVisitDate, i].Value = "";
                     }
+                    if (dt.Rows[i]["MNC_REQ_DAT"] != null)
+                    {
+                        dt1 = DateTime.Parse(dt.Rows[i]["MNC_REQ_DAT"].ToString());
+                        visitDate = dt1.ToString("dd-MM-yyyy");
+                        dgv1[colLabDate, i].Value = visitDate;
+                        visitTime = "0000" + dt.Rows[i]["MNC_REQ_TIM"].ToString();
+                        visitTime = visitTime.Substring(visitTime.Length - 4);
+                        dgv1[colLabTime, i].Value = visitTime.Substring(0, 2) + ":" + visitTime.Substring(2);
+                    }
+                    else
+                    {
+                        dgv1[colVisitDate, i].Value = "";
+                    }
                     if ((i % 2) != 0)
                     {
                         dgv1.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
                     }
                 }
-
                 dgv1.Font = font;
             }
-            
             //dgv1.Columns[colPEId].Visible = false;
         }
 
@@ -118,7 +131,7 @@ namespace reportBangna.gui
 
         private void txtHN_KeyUp(object sender, KeyEventArgs e)
         {
-            if (txtHN.Text.Length>=4)
+            if (txtHN.Text.Length>=5)
             {
                 setGrd();
             }
@@ -141,6 +154,11 @@ namespace reportBangna.gui
             bc.vs.PatientName = dgv1[colName, e.RowIndex].Value.ToString();
             bc.vs.VisitDate = dgv1[colVisitDate, e.RowIndex].Value.ToString();
             bc.vs.VisitTime = dgv1[colVisitTime, e.RowIndex].Value.ToString();
+            bc.vs.LabDate = dgv1[colLabDate, e.RowIndex].Value.ToString();
+            bc.vs.LabTime = dgv1[colLabTime, e.RowIndex].Value.ToString();
+            bc.vs.DoctorId = dgv1[colDoctorId, e.RowIndex].Value.ToString();
+            bc.vs.DoctorName = dgv1[colDoctorName, e.RowIndex].Value.ToString();
+            bc.vs.LabReqNo = dgv1[colLabReqNo, e.RowIndex].Value.ToString();
 
             this.Dispose();
         }

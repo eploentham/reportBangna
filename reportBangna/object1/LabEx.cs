@@ -8,5 +8,6 @@ namespace reportBangna.object1
     public class LabEx : Persistent
     {
         public String Id = "", Hn = "", Vn = "", VisitDate = "", VisitTime = "", PatientName = "", Active = "", LabDate = "", LabExDate = "", Description = "", Remark = "", RowNumber = "", YearId="";
+        public String ReqNo = "", LabTime = "", DoctorId="", DoctorName="";
     }
 }

@@ -15,28 +15,36 @@ namespace reportBangna.gui
         BangnaControl bc;
         int colRow = 0, colHN = 1, colVn = 2, colName = 3, colVisitDate = 4, colDescription = 5, colRemark = 6, colId = 7, colRowNumber=8, colYearId=9;
         int colCnt = 10;
-        LabExDB labexdb;
+        //LabExDB labexdb;
         //BangnaControl bc;
         public FrmLabExDoctor(BangnaControl b)
         {
             InitializeComponent();
+            bc = b;
             initConfig();
         }
         private void initConfig()
         {
-            bc = new BangnaControl();
-            labexdb = new LabExDB();
+            //bc = new BangnaControl();
+            //labexdb = new LabExDB();
             //vsdb = new VisitDB();
             //vs = new Visit();
             tC.TabPages[0].Text = "image";
             tC.TabPages[1].Text = "ประวัติ";
-            setGrd("");
+            setGrd("1");
         }
         private void setGrd(String hn)
         {
             Font font = new Font("Microsoft Sans Serif", 12);
             DataTable dt = new DataTable();
-            dt = labexdb.selectByHn(hn);
+            if (hn.Equals(""))
+            {
+                dt = bc.labexdb.selectByHn1(hn);
+            }
+            else
+            {
+                dt = bc.labexdb.selectByHn(hn);
+            }            
 
             dgv1.ColumnCount = colCnt;
             dgv1.Rows.Clear();
@@ -66,15 +74,15 @@ namespace reportBangna.gui
                 for (int i = 0; i < dgv1.RowCount; i++)
                 {
                     dgv1[colRow, i].Value = (i + 1);
-                    dgv1[colHN, i].Value = dt.Rows[i][labexdb.labex.Hn].ToString();
-                    dgv1[colVn, i].Value = dt.Rows[i][labexdb.labex.Vn].ToString();
-                    dgv1[colName, i].Value = dt.Rows[i][labexdb.labex.PatientName].ToString();
-                    dgv1[colVisitDate, i].Value = dt.Rows[i][labexdb.labex.VisitDate].ToString();
-                    dgv1[colId, i].Value = dt.Rows[i][labexdb.labex.Id].ToString();
-                    dgv1[colDescription, i].Value = dt.Rows[i][labexdb.labex.Description].ToString();
-                    dgv1[colRemark, i].Value = dt.Rows[i][labexdb.labex.Remark].ToString();
-                    dgv1[colRowNumber, i].Value = dt.Rows[i][labexdb.labex.RowNumber].ToString();
-                    dgv1[colYearId, i].Value = dt.Rows[i][labexdb.labex.YearId].ToString();
+                    dgv1[colHN, i].Value = dt.Rows[i][bc.labexdb.labex.Hn].ToString();
+                    dgv1[colVn, i].Value = dt.Rows[i][bc.labexdb.labex.Vn].ToString();
+                    dgv1[colName, i].Value = dt.Rows[i][bc.labexdb.labex.PatientName].ToString();
+                    dgv1[colVisitDate, i].Value = dt.Rows[i][bc.labexdb.labex.VisitDate].ToString();
+                    dgv1[colId, i].Value = dt.Rows[i][bc.labexdb.labex.Id].ToString();
+                    dgv1[colDescription, i].Value = dt.Rows[i][bc.labexdb.labex.Description].ToString();
+                    dgv1[colRemark, i].Value = dt.Rows[i][bc.labexdb.labex.Remark].ToString();
+                    dgv1[colRowNumber, i].Value = dt.Rows[i][bc.labexdb.labex.RowNumber].ToString();
+                    dgv1[colYearId, i].Value = dt.Rows[i][bc.labexdb.labex.YearId].ToString();
                     if ((i % 2) != 0)
                     {
                         dgv1.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
@@ -97,8 +105,7 @@ namespace reportBangna.gui
             else
             {
                 pic1.Image = null;
-            }
-            
+            }            
             //fileName = ofd.FileName;
             //btnSave.Enabled = true;
         }
@@ -114,6 +121,13 @@ namespace reportBangna.gui
             {
                 setGrd(txtHN.Text);
             }
+            else
+            {
+                if (txtHN.Text.Length >= 5)
+                {
+                    setGrd(txtHN.Text);
+                }
+            }
         }
 
         private void dgv1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -126,7 +140,7 @@ namespace reportBangna.gui
             {
                 return;
             }
-            String fileEx = "\\\\172.25.10.5\\image\\labex\\" + dgv1[colYearId, e.RowIndex].Value.ToString() + "\\";
+            String fileEx = bc.pathLabEx + dgv1[colYearId, e.RowIndex].Value.ToString() + "\\";
             LoadPic1(fileEx+dgv1[colRowNumber, e.RowIndex].Value.ToString()+".jpg");
             //bc.vnSearch = dgv1[colVn, e.RowIndex].Value.ToString();
             //bc.hnSearch = dgv1[colHN, e.RowIndex].Value.ToString();

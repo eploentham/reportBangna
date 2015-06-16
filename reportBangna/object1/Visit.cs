@@ -7,6 +7,6 @@ namespace reportBangna.object1
 {
     public class Visit:Persistent
     {
-        public String VN = "", HN = "", PatientName = "", VisitDate = "", vn = "", vnseq = "", vnsum = "", symptom="", VisitTime="";
+        public String VN = "", HN = "", PatientName = "", VisitDate = "", vn = "", vnseq = "", vnsum = "", symptom="", VisitTime="", LabDate="", LabTime="", DoctorId="", DoctorName="", LabReqNo="";
     }
 }

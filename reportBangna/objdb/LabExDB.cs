@@ -14,6 +14,7 @@ namespace reportBangna.objdb
         public ConnectDB connBua;
         public ConnectDB conn;
         public LabEx labex;
+        private LogWriter lw;
         public LabExDB()
         {
             initConfig();
@@ -21,6 +22,7 @@ namespace reportBangna.objdb
         private void initConfig()
         {
             cf = new Config1();
+            lw = new LogWriter();
             connBua = new ConnectDB("bangna");
             conn = new ConnectDB("mainhis");
             labex = new LabEx();
@@ -37,6 +39,10 @@ namespace reportBangna.objdb
             labex.VisitTime = "visit_time";
             labex.Vn = "vn";
             labex.YearId = "year_id";
+            labex.DoctorId = "doctor_id";
+            labex.LabTime = "lab_time";
+            labex.ReqNo = "req_no";
+            labex.DoctorName = "doctor_name";
 
             labex.table = "labex";
             labex.pkField = "labex_id";
@@ -56,6 +62,10 @@ namespace reportBangna.objdb
             p.VisitTime = dt.Rows[0][labex.VisitTime].ToString();
             p.Vn = dt.Rows[0][labex.Vn].ToString();
             p.YearId = dt.Rows[0][labex.YearId].ToString();
+            p.DoctorId = dt.Rows[0][labex.DoctorId].ToString();
+            p.LabTime = dt.Rows[0][labex.LabTime].ToString();
+            p.ReqNo = dt.Rows[0][labex.ReqNo].ToString();
+            p.DoctorName = dt.Rows[0][labex.DoctorName].ToString();
 
             return p;
         }
@@ -64,12 +74,31 @@ namespace reportBangna.objdb
             LabEx item = new LabEx();
             String sql = "";
             DataTable dt = new DataTable();
+            
             sql = "Select * From " + labex.table + " Where " + labex.pkField + "='" + Id + "'";
+            //lw.WriteLog("LabExDB.selectByPk  sql " + sql);
+            //lw.WriteLog("LabExDB.selectByPk  connBua.hostNameBua " + connBua.hostNameBua + " connBua.databaseNameBua " + connBua.databaseNameBua);
+            //MessageBox.Show("111111 connBua.databaseNameBua " + connBua.databaseNameBua, "1111111");
+            if (connBua.hostNameBua.Equals(""))
+            {
+                lw.WriteLog("LabExDB.selectByPk  connBua.hostNameBua if (connBua.hostNameBua.Equals" );
+                IniFile iniFile = new IniFile("reportbangna.ini");
+                connBua.databaseNameBua = iniFile.Read("database_name_bua");
+                connBua.hostNameBua = iniFile.Read("host_name_bua");
+                connBua.userNameBua = iniFile.Read("user_name_bua");
+                connBua.passwordBua = iniFile.Read("password_bua");
+                //MessageBox.Show("connBua.databaseNameBua " + connBua.databaseNameBua, "");
+                //MessageBox.Show("connBua.hostNameBua " + connBua.hostNameBua, "");
+                //MessageBox.Show("connBua.hostNameMainHIS " + connBua.hostNameMainHIS, "");
+                //MessageBox.Show("connBua.hostNameMainHIS " + , "");
+            }
+            
             dt = connBua.selectData(sql);
             if (dt.Rows.Count > 0)
             {
                 item = setData(item, dt);
             }
+            //lw.WriteLog("LabExDB.selectByPk  End connBua.connMainHIS.State " + connBua.connMainHIS.State);
             return item;
         }
         public String selectMaxRowNumber(String yearId)
@@ -129,13 +158,18 @@ namespace reportBangna.objdb
                 sql = "Insert Into " + labex.table + "(" + labex.pkField + "," + labex.Active + "," + labex.Description + "," +
                     labex.Hn + "," + labex.LabDate + "," + labex.LabExDate + "," +
                     labex.PatientName + "," + labex.Remark + "," + labex.RowNumber + "," +
-                    labex.VisitDate + "," + labex.VisitTime + "," + labex.Vn+","+labex.YearId + ") " +
+                    labex.VisitDate + "," + labex.VisitTime + "," + labex.Vn+","+
+                    labex.YearId + "," + labex.DoctorId + "," + labex.LabTime + "," +
+                    labex.ReqNo + "," + labex.DoctorName + ") " +
                     "Values('" + p.Id + "','" + p.Active + "','" + p.Description + "','" +
                     p.Hn + "','" + p.LabDate + "','" + p.LabExDate + "','" +
                     p.PatientName + "','" + p.Remark + "','" + p.RowNumber + "','" +
-                    p.VisitDate + "','" + p.VisitTime + "','" + p.Vn+"','"+p.YearId + "') ";
+                    p.VisitDate + "','" + p.VisitTime + "','" + p.Vn+"','"+
+                    p.YearId + "','" + p.DoctorId + "','" + p.LabTime + "','" +
+                    p.ReqNo + "','" + p.DoctorName + "') ";
                 chk = connBua.ExecuteNonQuery(sql);
-                chk = p.RowNumber;
+                //chk = p.RowNumber;
+                chk = p.Id;
             }
             catch (Exception ex)
             {
@@ -160,7 +194,11 @@ namespace reportBangna.objdb
                     labex.VisitDate + "='" + p.VisitDate + "'," +
                     labex.VisitTime + "='" + p.VisitTime + "'," +
                     labex.Vn + "='" + p.Vn + "'," +
-                    labex.YearId + "='" + p.YearId + "' " +
+                    labex.YearId + "='" + p.YearId + "', " +
+                    labex.DoctorId + "='" + p.DoctorId + "', " +
+                    labex.LabTime + "='" + p.LabTime + "', " +
+                    labex.ReqNo + "='" + p.ReqNo + "', " +
+                    labex.DoctorName + "='" + p.DoctorName + "' " +
 
                     "Where " + labex.pkField + "='" + p.Id + "'";
                 chk = connBua.ExecuteNonQuery(sql);
@@ -243,8 +281,20 @@ namespace reportBangna.objdb
                 "and " + labex.Active+ " = '1' " +
                 " Order by " + labex.RowNumber+ " ";
             dt = connBua.selectData(sql);
-
             return dt;
         }
+        public DataTable selectByHn1(String hn)
+        {
+            DataTable dt = new DataTable();
+            String sql = "";
+            sql = "Select   * " +
+                "From " + labex.table + " " +
+                " Where " + labex.Hn + " like '" + hn + "%' " +
+                "and " + labex.Active + " = '1' " +
+                " Order by " + labex.RowNumber + " ";
+            dt = connBua.selectData(sql);
+            return dt;
+        }
+        
     }
 }

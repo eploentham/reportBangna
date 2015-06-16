@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -15,7 +14,7 @@ using System.Windows.Forms;
 
 namespace reportBangna.gui
 {
-    public partial class FrmLabExAdd : Form
+    public partial class FrmLabExAdd1 : Form
     {
         //OpenFileDialog ofd;
         String VN = "", ID="", fileName="";
@@ -45,13 +44,13 @@ namespace reportBangna.gui
             chkActive.Checked = true;
             ChkUnActive.Checked = false;
             btnUnActive.Visible = false;
-            bc.lw.WriteLog("FrmLabExAdd.initConfig ID=" + ID);
+            bc.lw.WriteLog("FrmLabExAdd1.initConfig ID=" + ID);
             setControl(ID);
 
         }
         private void setControl(String id)
         {
-            bc.lw.WriteLog("FrmLabExAdd.initConfig setControl id"+id);
+            bc.lw.WriteLog("FrmLabExAdd1.initConfig setControl id"+id);
             le = bc.labexdb.selectByPk(id);
             txtId.Text = le.Id;
             txtDescription.Text = le.Description;
@@ -66,7 +65,7 @@ namespace reportBangna.gui
             txtDoctorName.Text = le.DoctorName;
             txtLabReqNo.Text = le.ReqNo;
 
-            bc.lw.WriteLog("FrmLabExAdd.initConfig setControl 1");
+            bc.lw.WriteLog("FrmLabExAdd1.initConfig setControl 1");
             //txtLabExDate.Text = le.LabExDate;
             if (le.LabExDate != "")
             {
@@ -78,7 +77,7 @@ namespace reportBangna.gui
             String fileEx = bc.pathLabEx + txtYearId.Text + "\\";
             if (!le.RowNumber.Equals(""))
             {
-                //LoadPic1(fileEx + le.RowNumber + ".jpg");
+                LoadPic1(fileEx + le.RowNumber + ".jpg");
             }
             else
             {
@@ -103,77 +102,7 @@ namespace reportBangna.gui
                 ChkUnActive.Checked = false;
                 btnUnActive.Visible = false;
             }
-            ShowBtn1PDF();
-            ShowBtn2PDF();
-            ShowBtn3PDF();
-            ShowBtn4PDF();
-            ShowBtn5PDF();
-            bc.lw.WriteLog("FrmLabExAdd.initConfig setControl End");
-        }
-        private void ShowBtn1PDF()
-        {
-            String fileEx = bc.pathLabEx + txtYearId.Text + "\\" + txtId.Text + "_1.pdf";
-            bool isExists = System.IO.File.Exists(fileEx);
-            if (isExists)
-            {
-                btn1.Visible = true;
-            }
-            else
-            {
-                btn1.Visible = false;
-            }
-        }
-        private void ShowBtn2PDF()
-        {
-            String fileEx = bc.pathLabEx + txtYearId.Text + "\\" + txtId.Text + "_2.pdf";
-            bool isExists = System.IO.File.Exists(fileEx);
-            if (isExists)
-            {
-                btn2.Visible = true;
-            }
-            else
-            {
-                btn2.Visible = false;
-            }
-        }
-        private void ShowBtn3PDF()
-        {
-            String fileEx = bc.pathLabEx + txtYearId.Text + "\\" + txtId.Text + "_3.pdf";
-            bool isExists = System.IO.File.Exists(fileEx);
-            if (isExists)
-            {
-                btn3.Visible = true;
-            }
-            else
-            {
-                btn3.Visible = false;
-            }
-        }
-        private void ShowBtn4PDF()
-        {
-            String fileEx = bc.pathLabEx + txtYearId.Text + "\\" + txtId.Text + "_4.pdf";
-            bool isExists = System.IO.File.Exists(fileEx);
-            if (isExists)
-            {
-                btn4.Visible = true;
-            }
-            else
-            {
-                btn4.Visible = false;
-            }
-        }
-        private void ShowBtn5PDF()
-        {
-            String fileEx = bc.pathLabEx + txtYearId.Text + "\\" + txtId.Text + "_5.pdf";
-            bool isExists = System.IO.File.Exists(fileEx);
-            if (isExists)
-            {
-                btn5.Visible = true;
-            }
-            else
-            {
-                btn5.Visible = false;
-            }
+            bc.lw.WriteLog("FrmLabExAdd1.initConfig setControl End");
         }
         private void setControlBySearch()
         {
@@ -231,7 +160,7 @@ namespace reportBangna.gui
             le.DoctorName = txtDoctorName.Text;
 
         }
-        public FrmLabExAdd(BangnaControl b,String labexId)
+        public FrmLabExAdd1(BangnaControl b,String labexId)
         {
             ID = labexId;
             bc = b;
@@ -239,7 +168,7 @@ namespace reportBangna.gui
             initConfig();
         }
 
-        private void FrmLabExAdd_Load(object sender, EventArgs e)
+        private void FrmLabExAdd1_Load(object sender, EventArgs e)
         {
 
         }
@@ -252,17 +181,17 @@ namespace reportBangna.gui
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 String file = openFileDialog1.FileName;
-                //LoadPic1(file);
+                LoadPic1(file);
             }
 
         }
-        //private void LoadPic1(String filename)
-        //{
-        //    pic1.Image = Image.FromFile(filename);
-        //    pic1.SizeMode = PictureBoxSizeMode.StretchImage;
-        //    fileName = filename;
-        //    btnSave.Enabled = true;
-        //}
+        private void LoadPic1(String filename)
+        {
+            pic1.Image = Image.FromFile(filename);
+            pic1.SizeMode = PictureBoxSizeMode.StretchImage;
+            fileName = filename;
+            btnSave.Enabled = true;
+        }
         public byte[] HashImage(Bitmap image)
         {
             var sha256 = SHA256.Create();
@@ -289,73 +218,38 @@ namespace reportBangna.gui
                 bool isExists = System.IO.Directory.Exists(fileEx);
                 if (!isExists)
                     System.IO.Directory.CreateDirectory(fileEx);
-                String id = bc.labexdb.insertLabEx(le);
-                txtId.Text = id;
-                //if (rowNumber.Length == 6)
-                //{
-                    //Image im = Image.FromFile(fileName);
+                String rowNumber = bc.labexdb.insertLabEx(le);
+                if (rowNumber.Length == 6)
+                {
+                    Image im = Image.FromFile(fileName);
 
-                    //bool isExists1 = System.IO.File.Exists(fileEx+"\\" + le.RowNumber + ".jpg");
-                    //if (isExists1)
-                    //{
-                    //    Image im2 = Image.FromFile(fileEx + "\\" + le.RowNumber + ".jpg");
-                    //    //if (Convert.ToBase64String(HashImage((Bitmap)pic1.Image)) != Convert.ToBase64String(HashImage((Bitmap)im2)))
-                    //    //{
-                    //    //    le.RowNumber = bc.labexdb.selectMaxRowNumber(le.YearId);
-                    //    //    bc.labexdb.UpdateRowNumber(le.Id, le.RowNumber);
-                    //    //    fileEx += le.RowNumber + ".jpg";
-                    //    //    im.Save(fileEx);
-                    //    //}
-                    //    //System.IO.File.Delete(fileEx+le.RowNumber + ".jpg");
-                    //}
-                    //else
-                    //{
-                    //    fileEx += rowNumber + ".jpg";
-                    //    im.Save(fileEx);
+                    bool isExists1 = System.IO.File.Exists(fileEx+"\\" + le.RowNumber + ".jpg");
+                    if (isExists1)
+                    {
+                        Image im2 = Image.FromFile(fileEx + "\\" + le.RowNumber + ".jpg");
+                        if (Convert.ToBase64String(HashImage((Bitmap)pic1.Image)) != Convert.ToBase64String(HashImage((Bitmap)im2)))
+                        {
+                            le.RowNumber = bc.labexdb.selectMaxRowNumber(le.YearId);
+                            bc.labexdb.UpdateRowNumber(le.Id, le.RowNumber);
+                            fileEx += le.RowNumber + ".jpg";
+                            im.Save(fileEx);
+                        }
+                        //System.IO.File.Delete(fileEx+le.RowNumber + ".jpg");
+                    }
+                    else
+                    {
+                        fileEx += rowNumber + ".jpg";
+                        im.Save(fileEx);
                         
-                    //}
-                    //im.Dispose();
-                    //MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
-                    //this.Dispose();
-                //}
+                    }
+                    im.Dispose();
+                    MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
+                    this.Dispose();
+                }
             }
             catch (Exception ex)
             {
 
-            }
-        }
-        private void OpenPDF(String num)
-        {
-            String fileEx = bc.pathLabEx + txtYearId.Text + "\\" + txtId.Text + "_" + num + ".pdf";
-            //String fileEx = @"d:\157073293_1.pdf";
-            //String fileEx = @"d:\ScandAllPRO.exe";
-            //Process p = new Process();
-            //p.StartInfo.FileName = fileEx;
-            ////p.StartInfo.Arguments = "/c dir *.cs";
-            //p.StartInfo.UseShellExecute = false;
-            //p.StartInfo.RedirectStandardOutput = true;
-            //p.Start();
-            System.Diagnostics.Process.Start(fileEx);
-        }
-        private void SavePDF(String num)
-        {
-            this.openFileDialog1.Filter = "PDF (*.PDF)|*.PDF";
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                if (txtId.Text.Equals(""))
-                {
-                    btnSave_Click(null, null);
-                }
-                String fileEx = bc.pathLabEx + txtYearId.Text + "\\" + txtId.Text + "_"+num+".pdf";
-                String file = openFileDialog1.FileName;
-                bool isExists = System.IO.File.Exists(fileEx);
-                if (isExists)
-                {
-                    File.Delete(fileEx);
-                }
-                File.Copy(file, fileEx, true);
-                //System.Diagnostics.Process.Start(file);
-                MessageBox.Show("นำเข้าข้อมูลเรียบร้อย", "นำเข้าข้อมูล");
             }
         }
         private void btnSearch_Click(object sender, EventArgs e)
@@ -391,56 +285,20 @@ namespace reportBangna.gui
             }
         }
 
-        private void btn1_Click(object sender, EventArgs e)
+        private void btnImage_Click(object sender, EventArgs e)
         {
-            OpenPDF("1");
-        }
-
-        private void btnPDF1_Click(object sender, EventArgs e)
-        {
-            SavePDF("1");
-        }
-
-        private void btnPDF2_Click(object sender, EventArgs e)
-        {
-            SavePDF("2");
-        }
-
-        private void btnPDF3_Click(object sender, EventArgs e)
-        {
-            SavePDF("3");
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            SavePDF("4");
+            LoadPic1("");
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SavePDF("5");
-        }
-
-        private void btn3_Click(object sender, EventArgs e)
-        {
-            //System.Diagnostics.Process.Start(@"d:\157073293_1.pdf");
-            OpenPDF("3");
-        }
-
-        private void btn2_Click(object sender, EventArgs e)
-        {
-            //System.Diagnostics.Process.Start(@"c:\HaxLogs.txt");
-            OpenPDF("2");
-        }
-
-        private void btn4_Click(object sender, EventArgs e)
-        {
-            OpenPDF("4");
-        }
-
-        private void btn5_Click(object sender, EventArgs e)
-        {
-            OpenPDF("5");
+            //System.Diagnostics.Process.Start(@"d:\file.pdf");
+            openFileDialog1.Multiselect = true;
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                String file = openFileDialog1.FileName;
+                System.Diagnostics.Process.Start(file);
+            }
         }
     }
 }
