@@ -33,15 +33,8 @@
             this.txtHN = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgv1 = new System.Windows.Forms.DataGridView();
-            this.tC = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.pic1 = new System.Windows.Forms.PictureBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
-            this.tC.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -90,67 +83,25 @@
             this.dgv1.Margin = new System.Windows.Forms.Padding(2);
             this.dgv1.Name = "dgv1";
             this.dgv1.RowTemplate.Height = 24;
-            this.dgv1.Size = new System.Drawing.Size(449, 590);
+            this.dgv1.Size = new System.Drawing.Size(966, 590);
             this.dgv1.TabIndex = 45;
             this.dgv1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellClick);
-            // 
-            // tC
-            // 
-            this.tC.Controls.Add(this.tabPage1);
-            this.tC.Controls.Add(this.tabPage2);
-            this.tC.Location = new System.Drawing.Point(466, 84);
-            this.tC.Name = "tC";
-            this.tC.SelectedIndex = 0;
-            this.tC.Size = new System.Drawing.Size(444, 588);
-            this.tC.TabIndex = 46;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.pic1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(436, 562);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // pic1
-            // 
-            this.pic1.Location = new System.Drawing.Point(3, 6);
-            this.pic1.Name = "pic1";
-            this.pic1.Size = new System.Drawing.Size(424, 550);
-            this.pic1.TabIndex = 2;
-            this.pic1.TabStop = false;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(436, 562);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.dgv1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellDoubleClick);
             // 
             // FrmLabExDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(922, 684);
-            this.Controls.Add(this.tC);
+            this.ClientSize = new System.Drawing.Size(988, 684);
             this.Controls.Add(this.dgv1);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmLabExDoctor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLabExDoctor";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmLabExDoctor_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
-            this.tC.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pic1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -162,9 +113,5 @@
         private System.Windows.Forms.TextBox txtHN;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgv1;
-        private System.Windows.Forms.TabControl tC;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.PictureBox pic1;
     }
 }

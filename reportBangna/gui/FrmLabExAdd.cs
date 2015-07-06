@@ -26,10 +26,9 @@ namespace reportBangna.gui
         VisitDB vsdb;
         Visit vs;
         BangnaControl bc;
+        String pahtFile = "D:\\labex";
         private void initConfig()
-        {
-            String pahtFile = "D:\\labex";
-            
+        {            
             //labexdb = new LabExDB();
             //le = labexdb.selectByPk(ID);
             padb = new PatientDB();
@@ -45,13 +44,13 @@ namespace reportBangna.gui
             chkActive.Checked = true;
             ChkUnActive.Checked = false;
             btnUnActive.Visible = false;
-            bc.lw.WriteLog("FrmLabExAdd.initConfig ID=" + ID);
+            //bc.lw.WriteLog("FrmLabExAdd.initConfig ID=" + ID);
             setControl(ID);
 
         }
         private void setControl(String id)
         {
-            bc.lw.WriteLog("FrmLabExAdd.initConfig setControl id"+id);
+            //bc.lw.WriteLog("FrmLabExAdd.initConfig setControl id"+id);
             le = bc.labexdb.selectByPk(id);
             txtId.Text = le.Id;
             txtDescription.Text = le.Description;
@@ -66,7 +65,7 @@ namespace reportBangna.gui
             txtDoctorName.Text = le.DoctorName;
             txtLabReqNo.Text = le.ReqNo;
 
-            bc.lw.WriteLog("FrmLabExAdd.initConfig setControl 1");
+            //bc.lw.WriteLog("FrmLabExAdd.initConfig setControl 1");
             //txtLabExDate.Text = le.LabExDate;
             if (le.LabExDate != "")
             {
@@ -108,7 +107,7 @@ namespace reportBangna.gui
             ShowBtn3PDF();
             ShowBtn4PDF();
             ShowBtn5PDF();
-            bc.lw.WriteLog("FrmLabExAdd.initConfig setControl End");
+            //bc.lw.WriteLog("FrmLabExAdd.initConfig setControl End");
         }
         private void ShowBtn1PDF()
         {
@@ -354,6 +353,7 @@ namespace reportBangna.gui
                     File.Delete(fileEx);
                 }
                 File.Copy(file, fileEx, true);
+                File.Delete(file);
                 //System.Diagnostics.Process.Start(file);
                 MessageBox.Show("นำเข้าข้อมูลเรียบร้อย", "นำเข้าข้อมูล");
             }

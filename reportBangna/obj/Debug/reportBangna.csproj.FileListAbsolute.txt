@@ -66,3 +66,5 @@ D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmCheckNHSODetai
 D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmCtScan.resources
 D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmLabExAdd1.resources
 D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.csprojResolveAssemblyReference.cache
+D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmDischargeSearch.resources
+D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmDischargeVnView.resources

@@ -1,6 +1,6 @@
 ﻿namespace reportBangna.gui
 {
-    partial class FrmLabExSearch
+    partial class FrmDischargeSearch
     {
         /// <summary>
         /// Required designer variable.
@@ -42,10 +42,10 @@
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.txtHN);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(12, 8);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(693, 66);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
             // btnSearch
@@ -56,7 +56,6 @@
             this.btnSearch.TabIndex = 7;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtHN
             // 
@@ -83,21 +82,19 @@
             this.dgv1.Margin = new System.Windows.Forms.Padding(2);
             this.dgv1.Name = "dgv1";
             this.dgv1.RowTemplate.Height = 24;
-            this.dgv1.Size = new System.Drawing.Size(999, 715);
-            this.dgv1.TabIndex = 44;
-            this.dgv1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellDoubleClick);
+            this.dgv1.Size = new System.Drawing.Size(693, 583);
+            this.dgv1.TabIndex = 45;
             // 
-            // FrmLabExSearch
+            // FrmDischargeSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1022, 809);
+            this.ClientSize = new System.Drawing.Size(722, 677);
             this.Controls.Add(this.dgv1);
             this.Controls.Add(this.groupBox1);
-            this.Name = "FrmLabExSearch";
+            this.Name = "FrmDischargeSearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmLabExSearch";
-            this.Load += new System.EventHandler(this.FrmLabExSearch_Load);
+            this.Text = "FrmDischargeSearch";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
@@ -108,9 +105,9 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtHN;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgv1;
-        private System.Windows.Forms.Button btnSearch;
     }
 }

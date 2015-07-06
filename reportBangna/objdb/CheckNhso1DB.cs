@@ -598,32 +598,32 @@ namespace reportBangna.objdb
             sql = "delete from checknhso_client";
             connClient.ExecuteNonQuery(sql);
         }
-        //cNhso1ublic String insertCheckNhsoClient(CheckNhso1 cNhso1)
+        //Public String insertCheckNhsoClient(CheckNhso1 P)
         //{
 
         //}
-        public String insertCHeckNhso(CheckNhso1 cNhso1, Boolean isBranch)
+        public String insertCHeckNhso(CheckNhso1 p, Boolean isBranch)
         {
             CheckNhso1 item = new CheckNhso1();
             String chk = "";
-            item = selectByPk(cNhso1.checknhsoId);
+            item = selectByPk(p.checknhsoId);
             if (item.checknhsoId == "")
             {
                 //cNhso1.statusDecNhso1osit = "0";
                 //cNhso1.statusReccNhso1 = "1";
                 if (isBranch)
                 {
-                    chk = insert(cNhso1, connClient,"_client");
+                    chk = insert(p, connClient,"_client");
                 }
                 else
                 {
-                    chk = insert(cNhso1, connBua,"");
+                    chk = insert(p, connBua,"");
                 }
                 //chk = insert(cNhso1);
             }
             else
             {
-                chk = update(cNhso1);
+                chk = update(p);
             }
             return chk;
         }
@@ -776,30 +776,30 @@ namespace reportBangna.objdb
         public DataTable selectPatientByDate(String dateStart, String dateEnd, String chkDrug,
             String drugSearch, String labSearch1, String labSearch2, String labId)
         {
-            //select cNhso1ATIENT_T01.MNC_HN_NO,cNhso1ATIENT_T01.MNC_cNhso1RE_NO,
-            //cNhso1ATIENT_T01.MNC_DATE,cNhso1ATIENT_T01.MNC_TIME,
-            //cNhso1atient_t09.MNC_DIA_CD,
-            //cNhso1ATIENT_T09_1.CHRONICCODE,
-            //cNhso1HARMACY_T06.MNC_cNhso1H_CD,
-            //cNhso1harmacy_m01.MNC_cNhso1H_TN
+            //select PATIENT_T01.MNC_HN_NO,PATIENT_T01.MNC_PRE_NO,
+            //PATIENT_T01.MNC_DATE,PATIENT_T01.MNC_TIME,
+            //Patient_t09.MNC_DIA_CD,
+            //PATIENT_T09_1.CHRONICCODE,
+            //PHARMACY_T06.MNC_PH_CD,
+            //Pharmacy_m01.MNC_PH_TN
 
-            //from cNhso1ATIENT_T01
+            //from PATIENT_T01
 
-            //left join cNhso1ATIENT_T09_1 on cNhso1atient_t01.MNC_ID_NAM = cNhso1ATIENT_T09_1.MNC_IDNUM
-            //left join cNhso1ATIENT_T09 on cNhso1atient_t01.MNC_cNhso1RE_NO =cNhso1atient_t09.MNC_cNhso1RE_NO and
-            //cNhso1atient_t01.MNC_date =cNhso1atient_t09.MNC_date
-            //left join cNhso1atient_m18 on cNhso1atient_t09.MNC_DIA_CD = cNhso1atient_m18 .MNC_DIA_CD
-            //left join cNhso1HARMACY_T05 on cNhso1atient_t01.MNC_cNhso1RE_NO = cNhso1HARMACY_T05.MNC_cNhso1RE_NO and
-            //cNhso1atient_t01.MNC_date = cNhso1HARMACY_T05.mnc_date
-            //left join cNhso1HARMACY_T06 on cNhso1harmacy_t05.MNC_CFR_NO = cNhso1harmacy_t06.MNC_CFR_NO and
-            //cNhso1harmacy_t05.MNC_CFG_DAT = cNhso1harmacy_t06.MNC_CFR_dat
-            //left join cNhso1HARMACY_M01 on cNhso1harmacy_t06.MNC_cNhso1H_CD = cNhso1harmacy_m01.MNC_cNhso1H_CD
+            //left join PATIENT_T09_1 on Patient_t01.MNC_ID_NAM = PATIENT_T09_1.MNC_IDNUM
+            //left join PATIENT_T09 on Patient_t01.MNC_PRE_NO =Patient_t09.MNC_PRE_NO and
+            //Patient_t01.MNC_date =Patient_t09.MNC_date
+            //left join Patient_m18 on Patient_t09.MNC_DIA_CD = Patient_m18 .MNC_DIA_CD
+            //left join PHARMACY_T05 on Patient_t01.MNC_PRE_NO = PHARMACY_T05.MNC_PRE_NO and
+            //Patient_t01.MNC_date = PHARMACY_T05.mnc_date
+            //left join PHARMACY_T06 on Pharmacy_t05.MNC_CFR_NO = Pharmacy_t06.MNC_CFR_NO and
+            //Pharmacy_t05.MNC_CFG_DAT = Pharmacy_t06.MNC_CFR_dat
+            //left join PHARMACY_M01 on Pharmacy_t06.MNC_PH_CD = Pharmacy_m01.MNC_PH_CD
 
-            //where cNhso1ATIENT_T01.MNC_DATE BETWEEN '01/01/2014' AND '01/01/2014'
+            //where PATIENT_T01.MNC_DATE BETWEEN '01/01/2014' AND '01/01/2014'
 
-            //and cNhso1atient_t01.MNC_FN_TYcNhso1_CD in ('44','45','46','47','48','49')
+            //and Patient_t01.MNC_FN_TYP_CD in ('44','45','46','47','48','49')
  
-            //order by cNhso1ATIENT_T01.MNC_HN_NO
+            //order by PATIENT_T01.MNC_HN_NO
 
             String sql = "";
             DataTable dt = new DataTable();
@@ -809,11 +809,11 @@ namespace reportBangna.objdb
                 String labWhere = "", labFrom = "", drugWhere="", drugFrom="";
                 if (!labSearch1.Equals(""))
                 {
-                    labFrom = "inner join LAB_T01 ON t01.MNC_cNhso1RE_NO = LAB_T01.MNC_cNhso1RE_NO AND t01.MNC_DATE = LAB_T01.MNC_DATE " +
+                    labFrom = "inner join LAB_T01 ON t01.MNC_PRE_NO = LAB_T01.MNC_PRE_NO AND t01.MNC_DATE = LAB_T01.MNC_DATE " +
                 "inner join LAB_T05 ON LAB_T01.MNC_REQ_NO = LAB_T05.MNC_REQ_NO AND LAB_T01.MNC_REQ_DAT = LAB_T05.MNC_REQ_DAT ";
                     if (!labSearch2.Equals(""))
                     {
-                        //lab1 = labSearch1.ScNhso1lit(new char[] { ',' });
+                        //lab1 = labSearch1.SPlit(new char[] { ',' });
                         labWhere = " and lab_t05.mnc_res_value >= " + labSearch1 + " and lab_t05.mnc_res_value <= " + labSearch2;
                     }
                     else
@@ -825,7 +825,7 @@ namespace reportBangna.objdb
                 {
                     if (labFrom.Equals(""))
                     {
-                        labFrom = "inner join LAB_T01 ON t01.MNC_cNhso1RE_NO = LAB_T01.MNC_cNhso1RE_NO AND t01.MNC_DATE = LAB_T01.MNC_DATE " +
+                        labFrom = "inner join LAB_T01 ON t01.MNC_PRE_NO = LAB_T01.MNC_PRE_NO AND t01.MNC_DATE = LAB_T01.MNC_DATE " +
                 "inner join LAB_T05 ON LAB_T01.MNC_REQ_NO = LAB_T05.MNC_REQ_NO AND LAB_T01.MNC_REQ_DAT = LAB_T05.MNC_REQ_DAT ";
                     }
                     labWhere += " and lab_t05.mnc_lb_cd = '" + labId + "' ";
@@ -833,148 +833,148 @@ namespace reportBangna.objdb
                 
                 if (!drugSearch.Equals(""))
                 {
-                        drugFrom = "inner join cNhso1HARMACY_T05 cNhso1hart05 on t01.MNC_cNhso1RE_NO = cNhso1hart05.MNC_cNhso1RE_NO and t01.mnc_hn_no = cNhso1hart05.mnc_hn_no " +
-                "and t01.mnc_hn_yr = cNhso1hart05.mnc_hn_yr " +
-                            "inner join cNhso1HARMACY_T06 cNhso1hart06 on cNhso1hart05.MNC_CFR_NO = cNhso1hart06.MNC_CFR_NO and cNhso1hart05.MNC_CFG_DAT = cNhso1hart06.MNC_CFR_dat " +
-                "inner join cNhso1HARMACY_M01 on cNhso1hart06.MNC_cNhso1H_CD = cNhso1harmacy_m01.MNC_cNhso1H_CD ";
-                        drugWhere = "and cNhso1harmacy_m01.mnc_cNhso1h_tn like '" + drugSearch + "%' ";
+                        drugFrom = "inner join PHARMACY_T05 Phart05 on t01.MNC_PRE_NO = Phart05.MNC_PRE_NO and t01.mnc_hn_no = Phart05.mnc_hn_no " +
+                "and t01.mnc_hn_yr = Phart05.mnc_hn_yr " +
+                            "inner join PHARMACY_T06 Phart06 on Phart05.MNC_CFR_NO = Phart06.MNC_CFR_NO and Phart05.MNC_CFG_DAT = Phart06.MNC_CFR_dat " +
+                "inner join PHARMACY_M01 on Phart06.MNC_PH_CD = Pharmacy_m01.MNC_PH_CD ";
+                        drugWhere = "and Pharmacy_m01.mnc_Ph_tn like '" + drugSearch + "%' ";
                     }
-                sql = "Select distinct t01.MNC_HN_NO,t01.MNC_cNhso1RE_NO, t01.MNC_DATE,t01.MNC_TIME, " +
+                sql = "Select distinct t01.MNC_HN_NO,t01.MNC_PRE_NO, t01.MNC_DATE,t01.MNC_TIME, " +
                             //"t09.MNC_DIA_CD,t091.CHRONICCODE, " +
-                "m01.mnc_fname_t, mnc_lname_t, m02.mnc_cNhso1fix_dsc, t01.mnc_vn_no, t01.mnc_vn_seq, t01.mnc_vn_sum " +
-                " from cNhso1ATIENT_T01 t01 " +
-                "Left Join cNhso1atient_m01 m01 on m01.mnc_hn_no = t01.mnc_hn_no " +
-                "Left Join cNhso1atient_m02 m02 on m01.mnc_cNhso1fix_cdt = m02.mnc_cNhso1fix_cd " +
+                "m01.mnc_fname_t, mnc_lname_t, m02.mnc_Pfix_dsc, t01.mnc_vn_no, t01.mnc_vn_seq, t01.mnc_vn_sum " +
+                " from PATIENT_T01 t01 " +
+                "Left Join Patient_m01 m01 on m01.mnc_hn_no = t01.mnc_hn_no " +
+                "Left Join Patient_m02 m02 on m01.mnc_Pfix_cdt = m02.mnc_Pfix_cd " +
                 drugFrom + labFrom +
-                            //"left join cNhso1ATIENT_T09 t09 on t01.MNC_cNhso1RE_NO = t09.MNC_cNhso1RE_NO and t01.MNC_date = t09.MNC_date " +
+                            //"left join PATIENT_T09 t09 on t01.MNC_PRE_NO = t09.MNC_PRE_NO and t01.MNC_date = t09.MNC_date " +
                 "where t01.MNC_DATE BETWEEN '" + dateStart + "' AND '" + dateEnd + "' " +
-                "and t01.MNC_FN_TYcNhso1_CD in ('44','45','46','47','48','49') " +
+                "and t01.MNC_FN_TYP_CD in ('44','45','46','47','48','49') " +
                 drugWhere + labWhere +
                 "Order by t01.MNC_HN_NO";
                
             }
             else
             {
-                sql = "Select t01.MNC_HN_NO,t01.MNC_cNhso1RE_NO, t01.MNC_DATE,t01.MNC_TIME, " +
+                sql = "Select t01.MNC_HN_NO,t01.MNC_PRE_NO, t01.MNC_DATE,t01.MNC_TIME, " +
                     //"t09.MNC_DIA_CD,t091.CHRONICCODE, " +
-                "m01.mnc_fname_t, mnc_lname_t, m02.mnc_cNhso1fix_dsc, t01.mnc_vn_no, t01.mnc_vn_seq, t01.mnc_vn_sum " +
-                " from cNhso1ATIENT_T01 t01 " +
-                "Left Join cNhso1atient_m01 m01 on m01.mnc_hn_no = t01.mnc_hn_no " +
-                "Left Join cNhso1atient_m02 m02 on m01.mnc_cNhso1fix_cdt = m02.mnc_cNhso1fix_cd " +
-                    //"left join cNhso1ATIENT_T09_1 t091 on t01.MNC_ID_NAM = t091.MNC_IDNUM " +
-                    //"left join cNhso1ATIENT_T09 t09 on t01.MNC_cNhso1RE_NO = t09.MNC_cNhso1RE_NO and t01.MNC_date = t09.MNC_date " +
+                "m01.mnc_fname_t, mnc_lname_t, m02.mnc_Pfix_dsc, t01.mnc_vn_no, t01.mnc_vn_seq, t01.mnc_vn_sum " +
+                " from PATIENT_T01 t01 " +
+                "Left Join Patient_m01 m01 on m01.mnc_hn_no = t01.mnc_hn_no " +
+                "Left Join Patient_m02 m02 on m01.mnc_Pfix_cdt = m02.mnc_Pfix_cd " +
+                    //"left join PATIENT_T09_1 t091 on t01.MNC_ID_NAM = t091.MNC_IDNUM " +
+                    //"left join PATIENT_T09 t09 on t01.MNC_PRE_NO = t09.MNC_PRE_NO and t01.MNC_date = t09.MNC_date " +
                 "where t01.MNC_DATE BETWEEN '" + dateStart + "' AND '" + dateEnd + "' " +
-                "and t01.MNC_FN_TYcNhso1_CD in ('44','45','46','47','48','49') " +
-                "and t01.mnc_hn_no = '2179721 ' "+
+                "and t01.MNC_FN_TYP_CD in ('44','45','46','47','48','49') " +
+                //"and t01.mnc_hn_no = '2179721 ' "+
                 "Order by t01.MNC_HN_NO";
             }
             
             dt = conn.selectData(sql);
             return dt;
         }
-        public DataTable selectDiaCDbyVN(String dateStart, String dateEnd, String hn, String vn, String cNhso1reNo)
+        public DataTable selectDiaCDbyVN(String dateStart, String dateEnd, String hn, String vn, String preNo)
         {
             String sql = "";
             DataTable dt = new DataTable();
             sql = "Select t09.MNC_DIA_CD " +
-                "From cNhso1ATIENT_T01 t01 " +
-                "left join cNhso1ATIENT_T09 t09 on t01.MNC_cNhso1RE_NO = t09.MNC_cNhso1RE_NO and t01.MNC_date = t09.MNC_date " +
+                "From PATIENT_T01 t01 " +
+                "left join PATIENT_T09 t09 on t01.MNC_PRE_NO = t09.MNC_PRE_NO and t01.MNC_date = t09.MNC_date " +
                 "where t01.MNC_DATE BETWEEN '" + dateStart + "' AND '" + dateEnd + "' " +
-                "and t01.MNC_FN_TYcNhso1_CD in ('44','45','46','47','48','49') " + " and t01.mnc_hn_no = '" + hn + "' " +
+                "and t01.MNC_FN_TYP_CD in ('44','45','46','47','48','49') " + " and t01.mnc_hn_no = '" + hn + "' " +
                 "and t01.mnc_vn_no = '" + vn + "'"+
-                "and t01.mnc_cNhso1re_no = '" + cNhso1reNo + "'";
+                "and t01.mnc_Pre_no = '" + preNo + "'";
                 //"Order By t01.mnc_date, t01.mnc_hn_no ";
             dt = conn.selectData(sql);
             return dt;
         }
-        public DataTable selectChronicbyVN(String dateStart, String dateEnd, String hn, String vn, String cNhso1reNo)
+        public DataTable selectChronicbyVN(String dateStart, String dateEnd, String hn, String vn, String preNo)
         {
             String sql = "";
             DataTable dt = new DataTable();
             sql = "Select t091.chroniccode " +
-                "From cNhso1ATIENT_T01 t01 " +
-                "left join cNhso1ATIENT_T09_1 t091 on t01.MNC_ID_NAM = t091.MNC_IDNUM " +
+                "From PATIENT_T01 t01 " +
+                "left join PATIENT_T09_1 t091 on t01.MNC_ID_NAM = t091.MNC_IDNUM " +
                 "where t01.MNC_DATE BETWEEN '" + dateStart + "' AND '" + dateEnd + "' " +
-                "and t01.MNC_FN_TYcNhso1_CD in ('44','45','46','47','48','49') " + " and t01.mnc_hn_no = '" + hn + "' " +
+                "and t01.MNC_FN_TYP_CD in ('44','45','46','47','48','49') " + " and t01.mnc_hn_no = '" + hn + "' " +
                 "and t01.mnc_vn_no = '"+vn+"' "+
-                "and t01.mnc_cNhso1re_no = '" + cNhso1reNo + "'";
+                "and t01.mnc_Pre_no = '" + preNo + "'";
             dt = conn.selectData(sql);
             return dt;
         }
-        public DataTable selectDrugbyVN(String dateStart, String dateEnd, String hn, String vn, String cNhso1reNo)
+        public DataTable selectDrugbyVN(String dateStart, String dateEnd, String hn, String vn, String preNo)
         {
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select cNhso1hart06.MNC_cNhso1H_CD, cNhso1harmacy_m01.MNC_cNhso1H_TN " +
-                "From cNhso1ATIENT_T01 t01 " +
-                "left join cNhso1HARMACY_T05 cNhso1hart05 on t01.MNC_cNhso1RE_NO = cNhso1hart05.MNC_cNhso1RE_NO and t01.MNC_date = cNhso1hart05.mnc_date " +
-                "left join cNhso1HARMACY_T06 cNhso1hart06 on cNhso1hart05.MNC_CFR_NO = cNhso1hart06.MNC_CFR_NO and cNhso1hart05.MNC_CFG_DAT = cNhso1hart06.MNC_CFR_dat " +
-                "left join cNhso1HARMACY_M01 on cNhso1hart06.MNC_cNhso1H_CD = cNhso1harmacy_m01.MNC_cNhso1H_CD " +
+            sql = "Select Phart06.MNC_PH_CD, Pharmacy_m01.MNC_PH_TN " +
+                "From PATIENT_T01 t01 " +
+                "left join PHARMACY_T05 Phart05 on t01.MNC_PRE_NO = Phart05.MNC_PRE_NO and t01.MNC_date = Phart05.mnc_date " +
+                "left join PHARMACY_T06 Phart06 on Phart05.MNC_CFR_NO = Phart06.MNC_CFR_NO and Phart05.MNC_CFG_DAT = Phart06.MNC_CFR_dat " +
+                "left join PHARMACY_M01 on Phart06.MNC_PH_CD = Pharmacy_m01.MNC_PH_CD " +
                 "where t01.MNC_DATE BETWEEN '" + dateStart + "' AND '" + dateEnd + "' " +
-                "and t01.MNC_FN_TYcNhso1_CD in ('44','45','46','47','48','49') " + " and t01.mnc_hn_no = '" + hn + "' " +
-                "and t01.mnc_vn_no = '" + vn + "' and cNhso1HARMACY_M01.mnc_cNhso1h_tycNhso1_flg = 'cNhso1' "+
-                "and t01.mnc_cNhso1re_no = '" + cNhso1reNo + "'";
+                "and t01.MNC_FN_TYP_CD in ('44','45','46','47','48','49') " + " and t01.mnc_hn_no = '" + hn + "' " +
+                "and t01.mnc_vn_no = '" + vn + "' and PHARMACY_M01.mnc_Ph_tyP_flg = 'P' "+
+                "and t01.mnc_Pre_no = '" + preNo + "'";
             dt = conn.selectData(sql);
             return dt;
         }
-        public DataTable selectLabbyVN(String dateStart, String dateEnd, String hn, String vn, String cNhso1reNo)
+        public DataTable selectLabbyVN(String dateStart, String dateEnd, String hn, String vn, String preNo)
         {
-            //select cNhso1ATIENT_T01.MNC_HN_NO,cNhso1ATIENT_T01.MNC_cNhso1RE_NO,
-            //cNhso1ATIENT_T01.MNC_DATE,cNhso1ATIENT_T01.MNC_TIME,
-            //cNhso1atient_t09.MNC_DIA_CD,
-            //cNhso1ATIENT_T09_1.CHRONICCODE,
-            //cNhso1HARMACY_T06.MNC_cNhso1H_CD,
-            //cNhso1harmacy_m01.MNC_cNhso1H_TN,
+            //select PATIENT_T01.MNC_HN_NO,PATIENT_T01.MNC_PRE_NO,
+            //PATIENT_T01.MNC_DATE,PATIENT_T01.MNC_TIME,
+            //Patient_t09.MNC_DIA_CD,
+            //PATIENT_T09_1.CHRONICCODE,
+            //PHARMACY_T06.MNC_PH_CD,
+            //Pharmacy_m01.MNC_PH_TN,
             //lab_t05.MNC_LB_CD,lab_m01.MNC_LB_DSC,
             //lab_t05.MNC_RES_VALUE,
             //lab_t05.MNC_STS
-            //from cNhso1ATIENT_T01
-            //left join cNhso1ATIENT_T09_1 on cNhso1atient_t01.MNC_ID_NAM = cNhso1ATIENT_T09_1.MNC_IDNUM
-            //left join cNhso1ATIENT_T09 on cNhso1atient_t01.MNC_cNhso1RE_NO =cNhso1atient_t09.MNC_cNhso1RE_NO and
-            //cNhso1atient_t01.MNC_date =cNhso1atient_t09.MNC_date
-            //left join cNhso1atient_m18 on cNhso1atient_t09.MNC_DIA_CD = cNhso1atient_m18 .MNC_DIA_CD
-            //left join cNhso1HARMACY_T05 on cNhso1atient_t01.MNC_cNhso1RE_NO = cNhso1HARMACY_T05.MNC_cNhso1RE_NO and
-            //cNhso1atient_t01.MNC_date = cNhso1HARMACY_T05.mnc_date
-            //left join cNhso1HARMACY_T06 on cNhso1harmacy_t05.MNC_CFR_NO = cNhso1harmacy_t06.MNC_CFR_NO and
-            //cNhso1harmacy_t05.MNC_CFG_DAT = cNhso1harmacy_t06.MNC_CFR_dat
-            //left join cNhso1HARMACY_M01 on cNhso1harmacy_t06.MNC_cNhso1H_CD = cNhso1harmacy_m01.MNC_cNhso1H_CD
-            //left join LAB_T01 on  cNhso1atient_t01.MNC_cNhso1RE_NO = lab_t01.MNC_cNhso1RE_NO and
-            //cNhso1atient_t01.MNC_date = LAB_T01.mnc_date
+            //from PATIENT_T01
+            //left join PATIENT_T09_1 on Patient_t01.MNC_ID_NAM = PATIENT_T09_1.MNC_IDNUM
+            //left join PATIENT_T09 on Patient_t01.MNC_PRE_NO =Patient_t09.MNC_PRE_NO and
+            //Patient_t01.MNC_date =Patient_t09.MNC_date
+            //left join Patient_m18 on Patient_t09.MNC_DIA_CD = Patient_m18 .MNC_DIA_CD
+            //left join PHARMACY_T05 on Patient_t01.MNC_PRE_NO = PHARMACY_T05.MNC_PRE_NO and
+            //Patient_t01.MNC_date = PHARMACY_T05.mnc_date
+            //left join PHARMACY_T06 on Pharmacy_t05.MNC_CFR_NO = Pharmacy_t06.MNC_CFR_NO and
+            //Pharmacy_t05.MNC_CFG_DAT = Pharmacy_t06.MNC_CFR_dat
+            //left join PHARMACY_M01 on Pharmacy_t06.MNC_PH_CD = Pharmacy_m01.MNC_PH_CD
+            //left join LAB_T01 on  Patient_t01.MNC_PRE_NO = lab_t01.MNC_PRE_NO and
+            //Patient_t01.MNC_date = LAB_T01.mnc_date
             //left join LAB_T05 on lab_t01.MNC_REQ_NO = lab_t05.MNC_REQ_NO and
             //lab_t01.MNC_REQ_DAT = lab_t05.MNC_REQ_DAT
             //left join LAB_M01 on lab_t05.MNC_LB_CD = lab_m01.MNC_LB_CD
-            //where cNhso1ATIENT_T01.MNC_DATE BETWEEN '03/02/2014' AND '03/02/2014'
-            //and cNhso1atient_t01.MNC_FN_TYcNhso1_CD in ('44','45','46','47','48','49')
+            //where PATIENT_T01.MNC_DATE BETWEEN '03/02/2014' AND '03/02/2014'
+            //and Patient_t01.MNC_FN_TYP_CD in ('44','45','46','47','48','49')
             //and lab_t05.MNC_LB_CD in ('ch002','ch250','ch003','ch004','ch040','ch037','ch039','ch036','ch038',
             //'se005','se038','se047','ch006','ch007','ch008','ch009','se165') 
-            //order by cNhso1ATIENT_T01.MNC_HN_NO
+            //order by PATIENT_T01.MNC_HN_NO
 
 
-//            SELECT LAB_T05.MNC_LB_CD, LAB_M01.MNC_LB_DSC, LAB_T05.MNC_RES_VALUE, LAB_T05.MNC_STS, LAB_T05.MNC_REQ_YR, LAB_T05.MNC_REQ_NO, LAB_T05.MNC_REQ_DAT, LAB_T05.MNC_LB_CD AS ExcNhso1r1, 
-//                  LAB_T05.MNC_LB_RES_CD, LAB_T05.MNC_RES, LAB_T05.MNC_RES_VALUE AS ExcNhso1r2, LAB_T05.MNC_LB_USR, LAB_T05.MNC_STS AS ExcNhso1r3, LAB_T05.MNC_RES_MIN, LAB_T05.MNC_RES_MAX, 
-//                  LAB_T05.MNC_LB_RES, LAB_T05.MNC_RES_UNT, LAB_T05.MNC_LB_ACT, LAB_T05.MNC_STAMcNhso1_DAT, LAB_T05.MNC_STAMcNhso1_TIM, LAB_T05.MNC_LAB_cNhso1RN
-//FROM     cNhso1ATIENT_T01 AS t01 LEFT OUTER JOIN
-//                  LAB_T01 ON t01.MNC_cNhso1RE_NO = LAB_T01.MNC_cNhso1RE_NO AND t01.MNC_DATE = LAB_T01.MNC_DATE LEFT OUTER JOIN
+//            SELECT LAB_T05.MNC_LB_CD, LAB_M01.MNC_LB_DSC, LAB_T05.MNC_RES_VALUE, LAB_T05.MNC_STS, LAB_T05.MNC_REQ_YR, LAB_T05.MNC_REQ_NO, LAB_T05.MNC_REQ_DAT, LAB_T05.MNC_LB_CD AS ExPr1, 
+//                  LAB_T05.MNC_LB_RES_CD, LAB_T05.MNC_RES, LAB_T05.MNC_RES_VALUE AS ExPr2, LAB_T05.MNC_LB_USR, LAB_T05.MNC_STS AS ExPr3, LAB_T05.MNC_RES_MIN, LAB_T05.MNC_RES_MAX, 
+//                  LAB_T05.MNC_LB_RES, LAB_T05.MNC_RES_UNT, LAB_T05.MNC_LB_ACT, LAB_T05.MNC_STAMP_DAT, LAB_T05.MNC_STAMP_TIM, LAB_T05.MNC_LAB_PRN
+//FROM     PATIENT_T01 AS t01 LEFT OUTER JOIN
+//                  LAB_T01 ON t01.MNC_PRE_NO = LAB_T01.MNC_PRE_NO AND t01.MNC_DATE = LAB_T01.MNC_DATE LEFT OUTER JOIN
 //                  LAB_T05 ON LAB_T01.MNC_REQ_NO = LAB_T05.MNC_REQ_NO AND LAB_T01.MNC_REQ_DAT = LAB_T05.MNC_REQ_DAT LEFT OUTER JOIN
 //                  LAB_M01 ON LAB_T05.MNC_LB_CD = LAB_M01.MNC_LB_CD
-//WHERE  (t01.MNC_DATE BETWEEN '2014-03-31' AND '2014-03-31') AND (t01.MNC_FN_TYcNhso1_CD IN ('44', '45', '46', '47', '48', '49')) AND (t01.MNC_HN_NO = '5077727') AND (LAB_T05.MNC_LB_CD IN ('ch002', 'ch250', 'ch003', 'ch004', 
+//WHERE  (t01.MNC_DATE BETWEEN '2014-03-31' AND '2014-03-31') AND (t01.MNC_FN_TYP_CD IN ('44', '45', '46', '47', '48', '49')) AND (t01.MNC_HN_NO = '5077727') AND (LAB_T05.MNC_LB_CD IN ('ch002', 'ch250', 'ch003', 'ch004', 
 //                  'ch040', 'ch037', 'ch039', 'ch036', 'ch038', 'se005', 'se038', 'se047', 'ch006', 'ch007', 'ch008', 'ch009', 'se165'))
 
 
             String sql = "";
             DataTable dt = new DataTable();
             sql = "SELECT distinct LAB_T05.MNC_LB_CD, LAB_M01.MNC_LB_DSC, LAB_T05.MNC_RES_VALUE, LAB_T05.MNC_STS " +
-                "FROM     cNhso1ATIENT_T01 t01 " +
-                "left join LAB_T01 ON t01.MNC_cNhso1RE_NO = LAB_T01.MNC_cNhso1RE_NO AND t01.MNC_DATE = LAB_T01.MNC_DATE " +
+                "FROM     PATIENT_T01 t01 " +
+                "left join LAB_T01 ON t01.MNC_PRE_NO = LAB_T01.MNC_PRE_NO AND t01.MNC_DATE = LAB_T01.MNC_DATE " +
                 "left join LAB_T05 ON LAB_T01.MNC_REQ_NO = LAB_T05.MNC_REQ_NO AND LAB_T01.MNC_REQ_DAT = LAB_T05.MNC_REQ_DAT " +
                 "left join LAB_M01 ON LAB_T05.MNC_LB_CD = LAB_M01.MNC_LB_CD " +
                 "where t01.MNC_DATE BETWEEN '" + dateStart + "' AND '" + dateEnd + "' " +
-                "and t01.MNC_FN_TYcNhso1_CD in ('44','45','46','47','48','49') " + " and t01.mnc_hn_no = '" + hn + "' " +
+                "and t01.MNC_FN_TYP_CD in ('44','45','46','47','48','49') " + " and t01.mnc_hn_no = '" + hn + "' " +
                 "and t01.mnc_vn_no = '" + vn + "'  "+
-                "and t01.mnc_cNhso1re_no = '" + cNhso1reNo + "'  " +
+                "and t01.mnc_Pre_no = '" + preNo + "'  " +
                 "and  (LAB_T05.MNC_LB_CD IN ('ch002', 'ch250', 'ch003', 'ch004', 'ch040', 'ch037', "+
                 "'ch039', 'ch036', 'ch038', 'se005', 'se038', 'se047', 'ch006', 'ch007', 'ch008', 'ch009', 'se165')) "+
-                "and lab_t05.mnc_res <> '' and LAB_T05.MNC_LAB_cNhso1RN = '1' ";
+                "and lab_t05.mnc_res <> '' and LAB_T05.MNC_LAB_PRN = '1' ";
             dt = conn.selectData(sql);
             return dt;
         }

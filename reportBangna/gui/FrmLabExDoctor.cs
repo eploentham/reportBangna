@@ -13,8 +13,8 @@ namespace reportBangna.gui
     public partial class FrmLabExDoctor : Form
     {
         BangnaControl bc;
-        int colRow = 0, colHN = 1, colVn = 2, colName = 3, colVisitDate = 4, colDescription = 5, colRemark = 6, colId = 7, colRowNumber=8, colYearId=9;
-        int colCnt = 10;
+        int colRow = 0, colHN = 1, colVn = 2, colName = 3, colVisitDate = 4, colDescription = 5, colRemark = 6, colId = 7, colRowNumber = 8, colYearId = 9, col1pdf1 = 10, col1pdf2 = 11, col1pdf3 = 12, col1pdf4 = 13, col1pdf5 = 14;
+        int colCnt = 15;
         //LabExDB labexdb;
         //BangnaControl bc;
         public FrmLabExDoctor(BangnaControl b)
@@ -29,10 +29,62 @@ namespace reportBangna.gui
             //labexdb = new LabExDB();
             //vsdb = new VisitDB();
             //vs = new Visit();
-            tC.TabPages[0].Text = "image";
-            tC.TabPages[1].Text = "ประวัติ";
+            //tC.TabPages[0].Text = "image";
+            //tC.TabPages[1].Text = "ประวัติ";
             setGrd("1");
         }
+        private void ShowBtn1PDF(int row, String num)
+        {
+            String fileEx = bc.pathLabEx + dgv1[colYearId, row].Value + "\\" + dgv1[colId, row].Value + "_"+num+".pdf";
+            bool isExists = System.IO.File.Exists(fileEx);
+            if (isExists)
+            {
+                if (num.Equals("1"))
+                {
+                    dgv1[col1pdf1, row].Value = "PDF";
+                }
+                else if (num.Equals("2"))
+                {
+                    dgv1[col1pdf2, row].Value = "PDF";
+                }
+                else if (num.Equals("3"))
+                {
+                    dgv1[col1pdf3, row].Value = "PDF";
+                }
+                else if (num.Equals("4"))
+                {
+                    dgv1[col1pdf4, row].Value = "PDF";
+                }
+                else if (num.Equals("5"))
+                {
+                    dgv1[col1pdf5, row].Value = "PDF";
+                }
+            }
+            else
+            {
+                if (num.Equals("1"))
+                {
+                    dgv1[col1pdf1, row].Value = "";
+                }
+                else if (num.Equals("2"))
+                {
+                    dgv1[col1pdf2, row].Value = "";
+                }
+                else if (num.Equals("3"))
+                {
+                    dgv1[col1pdf3, row].Value = "";
+                }
+                else if (num.Equals("4"))
+                {
+                    dgv1[col1pdf4, row].Value = "";
+                }
+                else if (num.Equals("5"))
+                {
+                    dgv1[col1pdf5, row].Value = "";
+                };
+            }
+        }
+
         private void setGrd(String hn)
         {
             Font font = new Font("Microsoft Sans Serif", 12);
@@ -57,6 +109,11 @@ namespace reportBangna.gui
             dgv1.Columns[colVisitDate].Width = 120;
             dgv1.Columns[colDescription].Width = 120;
             dgv1.Columns[colRemark].Width = 120;
+            dgv1.Columns[col1pdf1].Width = 50;
+            dgv1.Columns[col1pdf2].Width = 50;
+            dgv1.Columns[col1pdf3].Width = 50;
+            dgv1.Columns[col1pdf4].Width = 50;
+            dgv1.Columns[col1pdf5].Width = 50;
 
             dgv1.Columns[colRow].HeaderText = "ลำดับ";
             dgv1.Columns[colHN].HeaderText = "HN";
@@ -65,7 +122,12 @@ namespace reportBangna.gui
             dgv1.Columns[colVisitDate].HeaderText = "วันที่visit";
             dgv1.Columns[colDescription].HeaderText = "รายละเอียด";
             dgv1.Columns[colRemark].HeaderText = "หมายเหตุ";
-            //dgv1.Columns[colPEWeight].HeaderText = "น้ำหนัก";
+            dgv1.Columns[col1pdf1].HeaderText = "1";
+            dgv1.Columns[col1pdf2].HeaderText = "2";
+            dgv1.Columns[col1pdf3].HeaderText = "3";
+            dgv1.Columns[col1pdf4].HeaderText = "4";
+            dgv1.Columns[col1pdf5].HeaderText = "5";
+
 
             //dgvPE.Columns[colPEId].HeaderText = "id";
             if (dt.Rows.Count > 0)
@@ -87,6 +149,11 @@ namespace reportBangna.gui
                     {
                         dgv1.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
                     }
+                    ShowBtn1PDF(i, "1");
+                    ShowBtn1PDF(i, "2");
+                    ShowBtn1PDF(i, "3");
+                    ShowBtn1PDF(i, "4");
+                    ShowBtn1PDF(i, "5");
                 }
             }
 
@@ -95,19 +162,34 @@ namespace reportBangna.gui
             dgv1.Columns[colRowNumber].Visible = false;
             dgv1.Columns[colYearId].Visible = false;
         }
-        private void LoadPic1(String filename)
+        //private void LoadPic1(String filename)
+        //{
+        //    if (System.IO.File.Exists(filename))
+        //    {
+        //        pic1.Image = Image.FromFile(filename);
+        //        pic1.SizeMode = PictureBoxSizeMode.StretchImage;
+        //    }
+        //    else
+        //    {
+        //        pic1.Image = null;
+        //    }            
+        //    //fileName = ofd.FileName;
+        //    //btnSave.Enabled = true;
+        //}
+        private void OpenPDF(int row,String num)
         {
-            if (System.IO.File.Exists(filename))
-            {
-                pic1.Image = Image.FromFile(filename);
-                pic1.SizeMode = PictureBoxSizeMode.StretchImage;
-            }
-            else
-            {
-                pic1.Image = null;
-            }            
-            //fileName = ofd.FileName;
-            //btnSave.Enabled = true;
+            String fileEx = bc.pathLabEx + dgv1[colYearId, row].Value + "\\" + dgv1[colId, row].Value + "_" + num + ".pdf";
+            //String fileEx = @"d:\157073293_1.pdf";
+            //String fileEx = @"d:\ScandAllPRO.exe";
+            //Process p = new Process();
+            //p.StartInfo.FileName = fileEx;
+            ////p.StartInfo.Arguments = "/c dir *.cs";
+            //p.StartInfo.UseShellExecute = false;
+            //p.StartInfo.RedirectStandardOutput = true;
+            //p.Start();
+            bool isExists = System.IO.File.Exists(fileEx);
+            if(isExists)
+                System.Diagnostics.Process.Start(fileEx);
         }
 
         private void FrmLabExDoctor_Load(object sender, EventArgs e)
@@ -132,16 +214,16 @@ namespace reportBangna.gui
 
         private void dgv1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1)
-            {
-                return;
-            }
-            if (dgv1[colRowNumber, e.RowIndex].Value == null)
-            {
-                return;
-            }
-            String fileEx = bc.pathLabEx + dgv1[colYearId, e.RowIndex].Value.ToString() + "\\";
-            LoadPic1(fileEx+dgv1[colRowNumber, e.RowIndex].Value.ToString()+".jpg");
+            //if (e.RowIndex == -1)
+            //{
+            //    return;
+            //}
+            //if (dgv1[colRowNumber, e.RowIndex].Value == null)
+            //{
+            //    return;
+            //}
+            //String fileEx = bc.pathLabEx + dgv1[colYearId, e.RowIndex].Value.ToString() + "\\";
+            //LoadPic1(fileEx+dgv1[colRowNumber, e.RowIndex].Value.ToString()+".jpg");
             //bc.vnSearch = dgv1[colVn, e.RowIndex].Value.ToString();
             //bc.hnSearch = dgv1[colHN, e.RowIndex].Value.ToString();
             //bc.vs.HN = dgv1[colHN, e.RowIndex].Value.ToString();
@@ -155,6 +237,38 @@ namespace reportBangna.gui
         private void btnSearch_Click(object sender, EventArgs e)
         {
             setGrd(txtHN.Text);
+        }
+
+        private void dgv1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
+            if (dgv1[colVn, e.RowIndex].Value == null)
+            {
+                return;
+            }
+            if(e.ColumnIndex==col1pdf1)
+            {
+                OpenPDF( e.RowIndex, "1");
+            }
+            else if (e.ColumnIndex == col1pdf2)
+            {
+                OpenPDF(e.RowIndex, "2");
+            }
+            else if (e.ColumnIndex == col1pdf3)
+            {
+                OpenPDF(e.RowIndex, "3");
+            }
+            else if (e.ColumnIndex == col1pdf4)
+            {
+                OpenPDF(e.RowIndex, "4");
+            }
+            else if (e.ColumnIndex == col1pdf5)
+            {
+                OpenPDF(e.RowIndex, "5");
+            }
         }
     }
 }

@@ -103,6 +103,18 @@
     <Compile Include="gui\FrmCtScan.Designer.cs">
       <DependentUpon>FrmCtScan.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\FrmDischargeSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmDischargeSearch.Designer.cs">
+      <DependentUpon>FrmDischargeSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmDischargeVnView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmDischargeVnView.Designer.cs">
+      <DependentUpon>FrmDischargeVnView.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\FrmLabExAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -345,6 +357,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmCtScan.resx">
       <DependentUpon>FrmCtScan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmDischargeSearch.resx">
+      <DependentUpon>FrmDischargeSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmDischargeVnView.resx">
+      <DependentUpon>FrmDischargeVnView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmLabExAdd.resx">
       <DependentUpon>FrmLabExAdd.cs</DependentUpon>

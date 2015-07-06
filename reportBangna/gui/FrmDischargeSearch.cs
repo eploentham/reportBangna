@@ -1,5 +1,4 @@
-﻿using reportBangna.objdb;
-using reportBangna.object1;
+﻿using reportBangna.object1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,28 +10,24 @@ using System.Windows.Forms;
 
 namespace reportBangna.gui
 {
-    public partial class FrmLabExSearch : Form
+    public partial class FrmDischargeSearch : Form
     {
-        int colRow = 0, colHN = 1, colVn = 2, colName = 3, colAge = 4, colFnCd = 5, colsymptom=6, colVisitDate=7, colVisitTime=8, colLabDate=9, colLabTime=10, colDoctorId=11, colDoctorName=12, colLabReqNo=13;
+        int colRow = 0, colHN = 1, colVn = 2, colName = 3, colAge = 4, colFnCd = 5, colsymptom = 6, colVisitDate = 7, colVisitTime = 8, colLabDate = 9, colLabTime = 10, colDoctorId = 11, colDoctorName = 12, colLabReqNo = 13;
         int colCnt = 14;
 
-        //VisitDB vsdb;
-        Visit vs;
-        //LabExDB labexdb;
         BangnaControl bc;
-        public String vnSearch = "";
-
-        public FrmLabExSearch(BangnaControl b)
+        Visit vs;
+        public FrmDischargeSearch()
         {
             InitializeComponent();
-            bc = b;
-            //vnSearch = vnsearch;
+            //bc = b;
             initConfig();
         }
         private void initConfig()
         {
             //labexdb = new LabExDB();
             //vsdb = new VisitDB();
+            bc = new BangnaControl();
             vs = new Visit();
             setGrd();
         }
@@ -41,7 +36,7 @@ namespace reportBangna.gui
             Font font = new Font("Microsoft Sans Serif", 12);
             DataTable dt = new DataTable();
             DateTime dt1 = new DateTime();
-            String visitDate = "", visitTime="",hn="";
+            String visitDate = "", visitTime = "", hn = "";
             hn = txtHN.Text;
             if (hn.Equals(""))
             {
@@ -121,51 +116,12 @@ namespace reportBangna.gui
             //dgv1.Columns[colPEId].Visible = false;
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            /**
-             * ให้แสดงข้อมูล จากdatabase ของbee 
-             * เพราะจะได้รู้ว่า scan ผลแล้วหรือยัง
-             * */
-        }
-
-        private void FrmLabExSearch_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtHN_KeyUp(object sender, KeyEventArgs e)
         {
-            if (txtHN.Text.Length>=5)
+            if (txtHN.Text.Length >= 5)
             {
                 setGrd();
             }
-        }
-
-        private void dgv1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex == -1)
-            {
-                return;
-            }
-            if (dgv1[colVn, e.RowIndex].Value == null)
-            {
-                return;
-            }
-            //bc.vnSearch = dgv1[colVn, e.RowIndex].Value.ToString();
-            //bc.hnSearch = dgv1[colHN, e.RowIndex].Value.ToString();
-            bc.vs.HN = dgv1[colHN, e.RowIndex].Value.ToString();
-            bc.vs.VN = dgv1[colVn, e.RowIndex].Value.ToString();
-            bc.vs.PatientName = dgv1[colName, e.RowIndex].Value.ToString();
-            bc.vs.VisitDate = dgv1[colVisitDate, e.RowIndex].Value.ToString();
-            bc.vs.VisitTime = dgv1[colVisitTime, e.RowIndex].Value.ToString();
-            bc.vs.LabDate = dgv1[colLabDate, e.RowIndex].Value.ToString();
-            bc.vs.LabTime = dgv1[colLabTime, e.RowIndex].Value.ToString();
-            bc.vs.DoctorId = dgv1[colDoctorId, e.RowIndex].Value.ToString();
-            bc.vs.DoctorName = dgv1[colDoctorName, e.RowIndex].Value.ToString();
-            bc.vs.LabReqNo = dgv1[colLabReqNo, e.RowIndex].Value.ToString();
-
-            this.Dispose();
         }
     }
 }
