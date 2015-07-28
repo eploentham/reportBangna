@@ -13,8 +13,8 @@ namespace reportBangna.gui
 {
     public partial class FrmLabExSearch : Form
     {
-        int colRow = 0, colHN = 1, colVn = 2, colName = 3, colAge = 4, colFnCd = 5, colsymptom=6, colVisitDate=7, colVisitTime=8, colLabDate=9, colLabTime=10, colDoctorId=11, colDoctorName=12, colLabReqNo=13;
-        int colCnt = 14;
+        int colRow = 0, colHN = 1, colVn = 2, colName = 3, colAge = 4, colFnCd = 5, colsymptom=6, colVisitDate=7, colVisitTime=8, colLabDate=9, colLabTime=10, colDoctorId=11, colDoctorName=12, colLabReqNo=13, colLabName=14;
+        int colCnt = 15;
 
         //VisitDB vsdb;
         Visit vs;
@@ -56,11 +56,15 @@ namespace reportBangna.gui
 
             dgv1.Columns[colRow].Width = 50;
             dgv1.Columns[colHN].Width = 80;
-            dgv1.Columns[colVn].Width = 80;
+            dgv1.Columns[colVn].Width = 70;
             dgv1.Columns[colName].Width = 220;
-            dgv1.Columns[colAge].Width = 80;
+            dgv1.Columns[colAge].Width = 60;
             dgv1.Columns[colFnCd].Width = 120;
-            dgv1.Columns[colsymptom].Width = 80;
+            dgv1.Columns[colsymptom].Width = 160;
+            dgv1.Columns[colVisitTime].Width = 60;
+            dgv1.Columns[colDoctorName].Width = 160;
+            dgv1.Columns[colLabTime].Width = 60;
+            dgv1.Columns[colLabName].Width = 160;
 
             dgv1.Columns[colRow].HeaderText = "ลำดับ";
             dgv1.Columns[colHN].HeaderText = "HN";
@@ -69,6 +73,13 @@ namespace reportBangna.gui
             dgv1.Columns[colAge].HeaderText = "อายุ";
             dgv1.Columns[colFnCd].HeaderText = "สิทธิ";
             dgv1.Columns[colsymptom].HeaderText = "อาการ";
+            dgv1.Columns[colLabName].HeaderText = "lab name";
+            dgv1.Columns[colDoctorName].HeaderText = "doctor name";
+
+            dgv1.Columns[colVisitDate].HeaderText = "visit date";
+            dgv1.Columns[colVisitTime].HeaderText = "v.time";
+            dgv1.Columns[colLabDate].HeaderText = "l.date";
+            dgv1.Columns[colLabTime].HeaderText = "l.time";
 
             //dgvPE.Columns[colPEId].HeaderText = "id";
             if (dt.Rows.Count > 0)
@@ -76,6 +87,7 @@ namespace reportBangna.gui
                 dgv1.RowCount = dt.Rows.Count;
                 for (int i = 0; i < dgv1.RowCount; i++)
                 {
+                    dgv1[colRow, i].Value = (i+1);
                     dgv1[colHN, i].Value = dt.Rows[i]["MNC_HN_NO"].ToString();
                     dgv1[colVn, i].Value = dt.Rows[i]["MNC_VN_NO"].ToString() + "." + dt.Rows[i]["MNC_VN_SEQ"].ToString() + "." + dt.Rows[i]["MNC_VN_SUM"].ToString();
                     dgv1[colName, i].Value = dt.Rows[i]["prefix"].ToString() + " " + dt.Rows[i]["MNC_FNAME_T"].ToString() + " " + dt.Rows[i]["MNC_LNAME_T"].ToString();
@@ -85,6 +97,7 @@ namespace reportBangna.gui
                     dgv1[colDoctorId, i].Value = dt.Rows[i]["MNC_DOT_CD"].ToString();
                     dgv1[colDoctorName, i].Value = dt.Rows[i]["prefixdoc"].ToString() + " " + dt.Rows[i]["MNC_DOT_FNAME"].ToString() + " " + dt.Rows[i]["MNC_DOT_LNAME"].ToString();
                     dgv1[colLabReqNo, i].Value = dt.Rows[i]["MNC_REQ_NO"].ToString();
+                    dgv1[colLabName, i].Value = dt.Rows[i]["MNC_LB_DSC"].ToString();
                     if (dt.Rows[i]["MNC_DATE"] != null)
                     {
                         dt1 = DateTime.Parse(dt.Rows[i]["MNC_DATE"].ToString());
@@ -118,7 +131,25 @@ namespace reportBangna.gui
                 }
                 dgv1.Font = font;
             }
-            //dgv1.Columns[colPEId].Visible = false;
+            dgv1.Columns[colLabReqNo].Visible = false;
+            dgv1.Columns[colDoctorId].Visible = false;
+            dgv1.Columns[colLabReqNo].Visible = false;
+            dgv1.Columns[colLabReqNo].Visible = false;
+            dgv1.ScrollBars = ScrollBars.Both;
+        }
+        private void setResize()
+        {
+            dgv1.Width = this.Width - 80;
+            dgv1.Height = this.Height - groupBox1.Height - 80;
+            //groupBox3.Left = dgvAdd.Width - groupBox3.Width - 50;
+            //btnSave.Left = dgvAdd.Width - 80;
+            //btnDoc.Left = btnSave.Left;
+            //btnPrint.Left = btnSave.Left;
+            //btnPrintT.Left = btnSave.Left;
+            //btnCalEx.Left = btnSave.Left;
+            //groupBox2.Left = this.Width - groupBox2.Width - btnSave.Width - 150;
+            //groupBox3.Left = groupBox2.Left;
+            //groupBox1.Height = this.Height = 150;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -166,6 +197,11 @@ namespace reportBangna.gui
             bc.vs.LabReqNo = dgv1[colLabReqNo, e.RowIndex].Value.ToString();
 
             this.Dispose();
+        }
+
+        private void FrmLabExSearch_Resize(object sender, EventArgs e)
+        {
+            setResize();
         }
     }
 }

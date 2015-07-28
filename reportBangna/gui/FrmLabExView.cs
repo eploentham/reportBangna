@@ -79,6 +79,20 @@ namespace reportBangna.gui
             dgv1.Font = font;
             dgv1.Columns[colId].Visible = false;
         }
+        private void setResize()
+        {
+            dgv1.Width = this.Width - 80;
+            dgv1.Height = this.Height - groupBox1.Height - 80;
+            //groupBox3.Left = dgvAdd.Width - groupBox3.Width - 50;
+            //btnSave.Left = dgvAdd.Width - 80;
+            //btnDoc.Left = btnSave.Left;
+            //btnPrint.Left = btnSave.Left;
+            //btnPrintT.Left = btnSave.Left;
+            //btnCalEx.Left = btnSave.Left;
+            //groupBox2.Left = this.Width - groupBox2.Width - btnSave.Width - 150;
+            //groupBox3.Left = groupBox2.Left;
+            //groupBox1.Height = this.Height = 150;
+        }
         public FrmLabExView()
         {
             InitializeComponent();
@@ -146,6 +160,11 @@ namespace reportBangna.gui
         private void txtHN_Enter(object sender, EventArgs e)
         {
             txtHN.SelectAll();
+        }
+
+        private void FrmLabExView_Resize(object sender, EventArgs e)
+        {
+            setResize();
         }
     }
 }

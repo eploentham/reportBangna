@@ -82,19 +82,21 @@
             this.dgv1.Margin = new System.Windows.Forms.Padding(2);
             this.dgv1.Name = "dgv1";
             this.dgv1.RowTemplate.Height = 24;
-            this.dgv1.Size = new System.Drawing.Size(693, 583);
+            this.dgv1.Size = new System.Drawing.Size(983, 583);
             this.dgv1.TabIndex = 45;
+            this.dgv1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellDoubleClick);
             // 
             // FrmDischargeSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(722, 677);
+            this.ClientSize = new System.Drawing.Size(1006, 677);
             this.Controls.Add(this.dgv1);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmDischargeSearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmDischargeSearch";
+            this.Load += new System.EventHandler(this.FrmDischargeSearch_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();

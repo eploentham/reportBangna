@@ -41,35 +41,35 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtDrug5 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtDrug10 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtDrug9 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtDrug8 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtDrug7 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtDrug6 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txtDrug20 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txtDrug19 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.txtDrug18 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.txtDrug17 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.txtDrug16 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.txtDrug15 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.txtDrug14 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.txtDrug13 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.txtDrug12 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.txtDrug11 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.txtLabName1 = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -86,21 +86,22 @@
             this.txtLabResult5 = new System.Windows.Forms.TextBox();
             this.txtLabName5 = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.textBox31 = new System.Windows.Forms.TextBox();
-            this.textBox32 = new System.Windows.Forms.TextBox();
+            this.txtLabResult10 = new System.Windows.Forms.TextBox();
+            this.txtLabName10 = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.textBox33 = new System.Windows.Forms.TextBox();
-            this.textBox34 = new System.Windows.Forms.TextBox();
+            this.txtLabResult9 = new System.Windows.Forms.TextBox();
+            this.txtLabName9 = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
-            this.textBox35 = new System.Windows.Forms.TextBox();
-            this.textBox36 = new System.Windows.Forms.TextBox();
+            this.txtLabResult8 = new System.Windows.Forms.TextBox();
+            this.txtLabName8 = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
-            this.textBox37 = new System.Windows.Forms.TextBox();
-            this.textBox38 = new System.Windows.Forms.TextBox();
+            this.txtLabResult7 = new System.Windows.Forms.TextBox();
+            this.txtLabName7 = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
-            this.textBox39 = new System.Windows.Forms.TextBox();
-            this.textBox40 = new System.Windows.Forms.TextBox();
+            this.txtLabResult6 = new System.Windows.Forms.TextBox();
+            this.txtLabName6 = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtName
@@ -207,12 +208,12 @@
             this.label6.TabIndex = 18;
             this.label6.Text = "Drug5 :";
             // 
-            // textBox6
+            // txtDrug10
             // 
-            this.textBox6.Location = new System.Drawing.Point(70, 316);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(243, 20);
-            this.textBox6.TabIndex = 29;
+            this.txtDrug10.Location = new System.Drawing.Point(70, 316);
+            this.txtDrug10.Name = "txtDrug10";
+            this.txtDrug10.Size = new System.Drawing.Size(243, 20);
+            this.txtDrug10.TabIndex = 29;
             // 
             // label7
             // 
@@ -223,12 +224,12 @@
             this.label7.TabIndex = 28;
             this.label7.Text = "Drug10 :";
             // 
-            // textBox7
+            // txtDrug9
             // 
-            this.textBox7.Location = new System.Drawing.Point(70, 290);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(243, 20);
-            this.textBox7.TabIndex = 27;
+            this.txtDrug9.Location = new System.Drawing.Point(70, 290);
+            this.txtDrug9.Name = "txtDrug9";
+            this.txtDrug9.Size = new System.Drawing.Size(243, 20);
+            this.txtDrug9.TabIndex = 27;
             // 
             // label8
             // 
@@ -239,12 +240,12 @@
             this.label8.TabIndex = 26;
             this.label8.Text = "Drug9 :";
             // 
-            // textBox8
+            // txtDrug8
             // 
-            this.textBox8.Location = new System.Drawing.Point(70, 264);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(243, 20);
-            this.textBox8.TabIndex = 25;
+            this.txtDrug8.Location = new System.Drawing.Point(70, 264);
+            this.txtDrug8.Name = "txtDrug8";
+            this.txtDrug8.Size = new System.Drawing.Size(243, 20);
+            this.txtDrug8.TabIndex = 25;
             // 
             // label9
             // 
@@ -255,12 +256,12 @@
             this.label9.TabIndex = 24;
             this.label9.Text = "Drug8 :";
             // 
-            // textBox9
+            // txtDrug7
             // 
-            this.textBox9.Location = new System.Drawing.Point(70, 238);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(243, 20);
-            this.textBox9.TabIndex = 23;
+            this.txtDrug7.Location = new System.Drawing.Point(70, 238);
+            this.txtDrug7.Name = "txtDrug7";
+            this.txtDrug7.Size = new System.Drawing.Size(243, 20);
+            this.txtDrug7.TabIndex = 23;
             // 
             // label10
             // 
@@ -271,12 +272,12 @@
             this.label10.TabIndex = 22;
             this.label10.Text = "Drug7 :";
             // 
-            // textBox10
+            // txtDrug6
             // 
-            this.textBox10.Location = new System.Drawing.Point(70, 212);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(243, 20);
-            this.textBox10.TabIndex = 21;
+            this.txtDrug6.Location = new System.Drawing.Point(70, 212);
+            this.txtDrug6.Name = "txtDrug6";
+            this.txtDrug6.Size = new System.Drawing.Size(243, 20);
+            this.txtDrug6.TabIndex = 21;
             // 
             // label11
             // 
@@ -287,12 +288,12 @@
             this.label11.TabIndex = 20;
             this.label11.Text = "Drug6 :";
             // 
-            // textBox11
+            // txtDrug20
             // 
-            this.textBox11.Location = new System.Drawing.Point(70, 604);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(243, 20);
-            this.textBox11.TabIndex = 49;
+            this.txtDrug20.Location = new System.Drawing.Point(70, 604);
+            this.txtDrug20.Name = "txtDrug20";
+            this.txtDrug20.Size = new System.Drawing.Size(243, 20);
+            this.txtDrug20.TabIndex = 49;
             // 
             // label12
             // 
@@ -303,12 +304,12 @@
             this.label12.TabIndex = 48;
             this.label12.Text = "Drug20 :";
             // 
-            // textBox12
+            // txtDrug19
             // 
-            this.textBox12.Location = new System.Drawing.Point(70, 578);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(243, 20);
-            this.textBox12.TabIndex = 47;
+            this.txtDrug19.Location = new System.Drawing.Point(70, 578);
+            this.txtDrug19.Name = "txtDrug19";
+            this.txtDrug19.Size = new System.Drawing.Size(243, 20);
+            this.txtDrug19.TabIndex = 47;
             // 
             // label13
             // 
@@ -319,12 +320,12 @@
             this.label13.TabIndex = 46;
             this.label13.Text = "Drug19 :";
             // 
-            // textBox13
+            // txtDrug18
             // 
-            this.textBox13.Location = new System.Drawing.Point(70, 552);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(243, 20);
-            this.textBox13.TabIndex = 45;
+            this.txtDrug18.Location = new System.Drawing.Point(70, 552);
+            this.txtDrug18.Name = "txtDrug18";
+            this.txtDrug18.Size = new System.Drawing.Size(243, 20);
+            this.txtDrug18.TabIndex = 45;
             // 
             // label14
             // 
@@ -335,12 +336,12 @@
             this.label14.TabIndex = 44;
             this.label14.Text = "Drug18 :";
             // 
-            // textBox14
+            // txtDrug17
             // 
-            this.textBox14.Location = new System.Drawing.Point(70, 526);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(243, 20);
-            this.textBox14.TabIndex = 43;
+            this.txtDrug17.Location = new System.Drawing.Point(70, 526);
+            this.txtDrug17.Name = "txtDrug17";
+            this.txtDrug17.Size = new System.Drawing.Size(243, 20);
+            this.txtDrug17.TabIndex = 43;
             // 
             // label15
             // 
@@ -351,12 +352,12 @@
             this.label15.TabIndex = 42;
             this.label15.Text = "Drug17 :";
             // 
-            // textBox15
+            // txtDrug16
             // 
-            this.textBox15.Location = new System.Drawing.Point(70, 500);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(243, 20);
-            this.textBox15.TabIndex = 41;
+            this.txtDrug16.Location = new System.Drawing.Point(70, 500);
+            this.txtDrug16.Name = "txtDrug16";
+            this.txtDrug16.Size = new System.Drawing.Size(243, 20);
+            this.txtDrug16.TabIndex = 41;
             // 
             // label16
             // 
@@ -367,12 +368,12 @@
             this.label16.TabIndex = 40;
             this.label16.Text = "Drug16 :";
             // 
-            // textBox16
+            // txtDrug15
             // 
-            this.textBox16.Location = new System.Drawing.Point(70, 465);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(243, 20);
-            this.textBox16.TabIndex = 39;
+            this.txtDrug15.Location = new System.Drawing.Point(70, 465);
+            this.txtDrug15.Name = "txtDrug15";
+            this.txtDrug15.Size = new System.Drawing.Size(243, 20);
+            this.txtDrug15.TabIndex = 39;
             // 
             // label17
             // 
@@ -383,12 +384,12 @@
             this.label17.TabIndex = 38;
             this.label17.Text = "Drug15 :";
             // 
-            // textBox17
+            // txtDrug14
             // 
-            this.textBox17.Location = new System.Drawing.Point(70, 439);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(243, 20);
-            this.textBox17.TabIndex = 37;
+            this.txtDrug14.Location = new System.Drawing.Point(70, 439);
+            this.txtDrug14.Name = "txtDrug14";
+            this.txtDrug14.Size = new System.Drawing.Size(243, 20);
+            this.txtDrug14.TabIndex = 37;
             // 
             // label18
             // 
@@ -399,12 +400,12 @@
             this.label18.TabIndex = 36;
             this.label18.Text = "Drug14 :";
             // 
-            // textBox18
+            // txtDrug13
             // 
-            this.textBox18.Location = new System.Drawing.Point(70, 413);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(243, 20);
-            this.textBox18.TabIndex = 35;
+            this.txtDrug13.Location = new System.Drawing.Point(70, 413);
+            this.txtDrug13.Name = "txtDrug13";
+            this.txtDrug13.Size = new System.Drawing.Size(243, 20);
+            this.txtDrug13.TabIndex = 35;
             // 
             // label19
             // 
@@ -415,12 +416,12 @@
             this.label19.TabIndex = 34;
             this.label19.Text = "Drug13 :";
             // 
-            // textBox19
+            // txtDrug12
             // 
-            this.textBox19.Location = new System.Drawing.Point(70, 387);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(243, 20);
-            this.textBox19.TabIndex = 33;
+            this.txtDrug12.Location = new System.Drawing.Point(70, 387);
+            this.txtDrug12.Name = "txtDrug12";
+            this.txtDrug12.Size = new System.Drawing.Size(243, 20);
+            this.txtDrug12.TabIndex = 33;
             // 
             // label20
             // 
@@ -431,12 +432,12 @@
             this.label20.TabIndex = 32;
             this.label20.Text = "Drug12 :";
             // 
-            // textBox20
+            // txtDrug11
             // 
-            this.textBox20.Location = new System.Drawing.Point(70, 361);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(243, 20);
-            this.textBox20.TabIndex = 31;
+            this.txtDrug11.Location = new System.Drawing.Point(70, 361);
+            this.txtDrug11.Name = "txtDrug11";
+            this.txtDrug11.Size = new System.Drawing.Size(243, 20);
+            this.txtDrug11.TabIndex = 31;
             // 
             // label21
             // 
@@ -562,19 +563,19 @@
             this.label26.TabIndex = 62;
             this.label26.Text = "Lab5 :";
             // 
-            // textBox31
+            // txtLabResult10
             // 
-            this.textBox31.Location = new System.Drawing.Point(686, 316);
-            this.textBox31.Name = "textBox31";
-            this.textBox31.Size = new System.Drawing.Size(243, 20);
-            this.textBox31.TabIndex = 79;
+            this.txtLabResult10.Location = new System.Drawing.Point(686, 316);
+            this.txtLabResult10.Name = "txtLabResult10";
+            this.txtLabResult10.Size = new System.Drawing.Size(243, 20);
+            this.txtLabResult10.TabIndex = 79;
             // 
-            // textBox32
+            // txtLabName10
             // 
-            this.textBox32.Location = new System.Drawing.Point(437, 316);
-            this.textBox32.Name = "textBox32";
-            this.textBox32.Size = new System.Drawing.Size(243, 20);
-            this.textBox32.TabIndex = 78;
+            this.txtLabName10.Location = new System.Drawing.Point(437, 316);
+            this.txtLabName10.Name = "txtLabName10";
+            this.txtLabName10.Size = new System.Drawing.Size(243, 20);
+            this.txtLabName10.TabIndex = 78;
             // 
             // label27
             // 
@@ -585,19 +586,19 @@
             this.label27.TabIndex = 77;
             this.label27.Text = "Lab10 :";
             // 
-            // textBox33
+            // txtLabResult9
             // 
-            this.textBox33.Location = new System.Drawing.Point(686, 290);
-            this.textBox33.Name = "textBox33";
-            this.textBox33.Size = new System.Drawing.Size(243, 20);
-            this.textBox33.TabIndex = 76;
+            this.txtLabResult9.Location = new System.Drawing.Point(686, 290);
+            this.txtLabResult9.Name = "txtLabResult9";
+            this.txtLabResult9.Size = new System.Drawing.Size(243, 20);
+            this.txtLabResult9.TabIndex = 76;
             // 
-            // textBox34
+            // txtLabName9
             // 
-            this.textBox34.Location = new System.Drawing.Point(437, 290);
-            this.textBox34.Name = "textBox34";
-            this.textBox34.Size = new System.Drawing.Size(243, 20);
-            this.textBox34.TabIndex = 75;
+            this.txtLabName9.Location = new System.Drawing.Point(437, 290);
+            this.txtLabName9.Name = "txtLabName9";
+            this.txtLabName9.Size = new System.Drawing.Size(243, 20);
+            this.txtLabName9.TabIndex = 75;
             // 
             // label28
             // 
@@ -608,19 +609,19 @@
             this.label28.TabIndex = 74;
             this.label28.Text = "Lab9 :";
             // 
-            // textBox35
+            // txtLabResult8
             // 
-            this.textBox35.Location = new System.Drawing.Point(686, 264);
-            this.textBox35.Name = "textBox35";
-            this.textBox35.Size = new System.Drawing.Size(243, 20);
-            this.textBox35.TabIndex = 73;
+            this.txtLabResult8.Location = new System.Drawing.Point(686, 264);
+            this.txtLabResult8.Name = "txtLabResult8";
+            this.txtLabResult8.Size = new System.Drawing.Size(243, 20);
+            this.txtLabResult8.TabIndex = 73;
             // 
-            // textBox36
+            // txtLabName8
             // 
-            this.textBox36.Location = new System.Drawing.Point(437, 264);
-            this.textBox36.Name = "textBox36";
-            this.textBox36.Size = new System.Drawing.Size(243, 20);
-            this.textBox36.TabIndex = 72;
+            this.txtLabName8.Location = new System.Drawing.Point(437, 264);
+            this.txtLabName8.Name = "txtLabName8";
+            this.txtLabName8.Size = new System.Drawing.Size(243, 20);
+            this.txtLabName8.TabIndex = 72;
             // 
             // label29
             // 
@@ -631,19 +632,19 @@
             this.label29.TabIndex = 71;
             this.label29.Text = "Lab8 :";
             // 
-            // textBox37
+            // txtLabResult7
             // 
-            this.textBox37.Location = new System.Drawing.Point(686, 238);
-            this.textBox37.Name = "textBox37";
-            this.textBox37.Size = new System.Drawing.Size(243, 20);
-            this.textBox37.TabIndex = 70;
+            this.txtLabResult7.Location = new System.Drawing.Point(686, 238);
+            this.txtLabResult7.Name = "txtLabResult7";
+            this.txtLabResult7.Size = new System.Drawing.Size(243, 20);
+            this.txtLabResult7.TabIndex = 70;
             // 
-            // textBox38
+            // txtLabName7
             // 
-            this.textBox38.Location = new System.Drawing.Point(437, 238);
-            this.textBox38.Name = "textBox38";
-            this.textBox38.Size = new System.Drawing.Size(243, 20);
-            this.textBox38.TabIndex = 69;
+            this.txtLabName7.Location = new System.Drawing.Point(437, 238);
+            this.txtLabName7.Name = "txtLabName7";
+            this.txtLabName7.Size = new System.Drawing.Size(243, 20);
+            this.txtLabName7.TabIndex = 69;
             // 
             // label30
             // 
@@ -654,19 +655,19 @@
             this.label30.TabIndex = 68;
             this.label30.Text = "Lab7 :";
             // 
-            // textBox39
+            // txtLabResult6
             // 
-            this.textBox39.Location = new System.Drawing.Point(686, 212);
-            this.textBox39.Name = "textBox39";
-            this.textBox39.Size = new System.Drawing.Size(243, 20);
-            this.textBox39.TabIndex = 67;
+            this.txtLabResult6.Location = new System.Drawing.Point(686, 212);
+            this.txtLabResult6.Name = "txtLabResult6";
+            this.txtLabResult6.Size = new System.Drawing.Size(243, 20);
+            this.txtLabResult6.TabIndex = 67;
             // 
-            // textBox40
+            // txtLabName6
             // 
-            this.textBox40.Location = new System.Drawing.Point(437, 212);
-            this.textBox40.Name = "textBox40";
-            this.textBox40.Size = new System.Drawing.Size(243, 20);
-            this.textBox40.TabIndex = 66;
+            this.txtLabName6.Location = new System.Drawing.Point(437, 212);
+            this.txtLabName6.Name = "txtLabName6";
+            this.txtLabName6.Size = new System.Drawing.Size(243, 20);
+            this.txtLabName6.TabIndex = 66;
             // 
             // label31
             // 
@@ -677,25 +678,36 @@
             this.label31.TabIndex = 65;
             this.label31.Text = "Lab6 :";
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(437, 16);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(46, 37);
+            this.btnSave.TabIndex = 80;
+            this.btnSave.Text = "บันทึก";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // FrmCheckNHSODetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(943, 643);
-            this.Controls.Add(this.textBox31);
-            this.Controls.Add(this.textBox32);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.txtLabResult10);
+            this.Controls.Add(this.txtLabName10);
             this.Controls.Add(this.label27);
-            this.Controls.Add(this.textBox33);
-            this.Controls.Add(this.textBox34);
+            this.Controls.Add(this.txtLabResult9);
+            this.Controls.Add(this.txtLabName9);
             this.Controls.Add(this.label28);
-            this.Controls.Add(this.textBox35);
-            this.Controls.Add(this.textBox36);
+            this.Controls.Add(this.txtLabResult8);
+            this.Controls.Add(this.txtLabName8);
             this.Controls.Add(this.label29);
-            this.Controls.Add(this.textBox37);
-            this.Controls.Add(this.textBox38);
+            this.Controls.Add(this.txtLabResult7);
+            this.Controls.Add(this.txtLabName7);
             this.Controls.Add(this.label30);
-            this.Controls.Add(this.textBox39);
-            this.Controls.Add(this.textBox40);
+            this.Controls.Add(this.txtLabResult6);
+            this.Controls.Add(this.txtLabName6);
             this.Controls.Add(this.label31);
             this.Controls.Add(this.txtLabResult5);
             this.Controls.Add(this.txtLabName5);
@@ -712,35 +724,35 @@
             this.Controls.Add(this.txtLabResult1);
             this.Controls.Add(this.txtLabName1);
             this.Controls.Add(this.label22);
-            this.Controls.Add(this.textBox11);
+            this.Controls.Add(this.txtDrug20);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox12);
+            this.Controls.Add(this.txtDrug19);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.textBox13);
+            this.Controls.Add(this.txtDrug18);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.textBox14);
+            this.Controls.Add(this.txtDrug17);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.textBox15);
+            this.Controls.Add(this.txtDrug16);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.textBox16);
+            this.Controls.Add(this.txtDrug15);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.textBox17);
+            this.Controls.Add(this.txtDrug14);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.textBox18);
+            this.Controls.Add(this.txtDrug13);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.textBox19);
+            this.Controls.Add(this.txtDrug12);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.textBox20);
+            this.Controls.Add(this.txtDrug11);
             this.Controls.Add(this.label21);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtDrug10);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.txtDrug9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.txtDrug8);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.txtDrug7);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.txtDrug6);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtDrug5);
             this.Controls.Add(this.label6);
@@ -779,35 +791,35 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtDrug5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtDrug10;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtDrug9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtDrug8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtDrug7;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtDrug6;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txtDrug20;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox txtDrug19;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox txtDrug18;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox txtDrug17;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox txtDrug16;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox txtDrug15;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox txtDrug14;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.TextBox txtDrug13;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.TextBox txtDrug12;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox txtDrug11;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtLabName1;
         private System.Windows.Forms.Label label22;
@@ -824,20 +836,21 @@
         private System.Windows.Forms.TextBox txtLabResult5;
         private System.Windows.Forms.TextBox txtLabName5;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBox31;
-        private System.Windows.Forms.TextBox textBox32;
+        private System.Windows.Forms.TextBox txtLabResult10;
+        private System.Windows.Forms.TextBox txtLabName10;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TextBox textBox33;
-        private System.Windows.Forms.TextBox textBox34;
+        private System.Windows.Forms.TextBox txtLabResult9;
+        private System.Windows.Forms.TextBox txtLabName9;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox textBox35;
-        private System.Windows.Forms.TextBox textBox36;
+        private System.Windows.Forms.TextBox txtLabResult8;
+        private System.Windows.Forms.TextBox txtLabName8;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox textBox37;
-        private System.Windows.Forms.TextBox textBox38;
+        private System.Windows.Forms.TextBox txtLabResult7;
+        private System.Windows.Forms.TextBox txtLabName7;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox textBox39;
-        private System.Windows.Forms.TextBox textBox40;
+        private System.Windows.Forms.TextBox txtLabResult6;
+        private System.Windows.Forms.TextBox txtLabName6;
         private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Button btnSave;
     }
 }

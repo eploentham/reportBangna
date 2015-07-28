@@ -30,13 +30,13 @@
         {
             this.dgv1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpStart = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnDoctor = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtHN = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dtpStart = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +67,23 @@
             this.groupBox1.Size = new System.Drawing.Size(693, 66);
             this.groupBox1.TabIndex = 46;
             this.groupBox1.TabStop = false;
+            // 
+            // dtpStart
+            // 
+            this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpStart.Location = new System.Drawing.Point(299, 27);
+            this.dtpStart.Name = "dtpStart";
+            this.dtpStart.Size = new System.Drawing.Size(94, 20);
+            this.dtpStart.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(259, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "วันที่ :";
             // 
             // btnDoctor
             // 
@@ -116,23 +133,6 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "HN :";
             // 
-            // dtpStart
-            // 
-            this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpStart.Location = new System.Drawing.Point(299, 27);
-            this.dtpStart.Name = "dtpStart";
-            this.dtpStart.Size = new System.Drawing.Size(94, 20);
-            this.dtpStart.TabIndex = 11;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(259, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "วันที่ :";
-            // 
             // FrmLabExView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -144,6 +144,7 @@
             this.Text = "FrmLabExView";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmLabExView_Load);
+            this.Resize += new System.EventHandler(this.FrmLabExView_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -131,119 +131,247 @@ namespace reportBangna.objdb
             cNhso1.dia8Ori = "dia8_original";
             cNhso1.dia9Ori = "dia9_original";
             cNhso1.dia10Ori = "dia10_original";
+
+            cNhso1.labName10 = "labname11";
+            cNhso1.labResult10 = "labresult11";
+            cNhso1.labValue10 = "labvalue11";
+            cNhso1.labName10 = "labname12";
+            cNhso1.labResult10 = "labresult12";
+            cNhso1.labValue10 = "labvalue12";
+            cNhso1.labName10 = "labname13";
+            cNhso1.labResult10 = "labresult13";
+            cNhso1.labValue10 = "labvalue13";
+            cNhso1.labName10 = "labname14";
+            cNhso1.labResult10 = "labresult14";
+            cNhso1.labValue10 = "labvalue14";
+            cNhso1.labName10 = "labname15";
+            cNhso1.labResult10 = "labresult15";
+            cNhso1.labValue10 = "labvalue15";
+            cNhso1.labName10 = "labname16";
+            cNhso1.labResult10 = "labresult16";
+            cNhso1.labValue10 = "labvalue16";
+            cNhso1.labName10 = "labname17";
+            cNhso1.labResult10 = "labresult17";
+            cNhso1.labValue10 = "labvalue17";
+            cNhso1.labName10 = "labname18";
+            cNhso1.labResult10 = "labresult18";
+            cNhso1.labValue10 = "labvalue18";
+            cNhso1.labName10 = "labname19";
+            cNhso1.labResult10 = "labresult19";
+            cNhso1.labValue10 = "labvalue19";
+            cNhso1.labName10 = "labname20";
+            cNhso1.labResult10 = "labresult20";
+            cNhso1.labValue10 = "labvalue20";
+            cNhso1.labName10 = "labname21";
+            cNhso1.labResult10 = "labresult21";
+            cNhso1.labValue10 = "labvalue21";
+            cNhso1.labName10 = "labname22";
+            cNhso1.labResult10 = "labresult22";
+            cNhso1.labValue10 = "labvalue22";
+            
+            cNhso1.labName10 = "labname23";
+            cNhso1.labResult10 = "labresult23";
+            cNhso1.labValue10 = "labvalue23";
+            cNhso1.labName10 = "labname24";
+            cNhso1.labResult10 = "labresult24";
+            cNhso1.labValue10 = "labvalue24";
+            cNhso1.labName10 = "labname25";
+            cNhso1.labResult10 = "labresult25";
+            cNhso1.labValue10 = "labvalue25";
+            cNhso1.labName10 = "labname26";
+            cNhso1.labResult10 = "labresult26";
+            cNhso1.labValue10 = "labvalue26";
+            cNhso1.labName10 = "labname27";
+            cNhso1.labResult10 = "labresult27";
+            cNhso1.labValue10 = "labvalue27";
+            cNhso1.labName10 = "labname28";
+            cNhso1.labResult10 = "labresult28";
+            cNhso1.labValue10 = "labvalue28";
+            cNhso1.labName10 = "labname29";
+            cNhso1.labResult10 = "labresult29";
+            cNhso1.labValue10 = "labvalue29";
+            cNhso1.labName10 = "labname30";
+            cNhso1.labResult10 = "labresult30";
+            cNhso1.labValue10 = "labvalue30";
         }
-        private CheckNhso1 setData(CheckNhso1 cNhso1, DataTable dt)
+        private CheckNhso1 setData(CheckNhso1 p, DataTable dt)
         {
-            cNhso1.checknhsoId = dt.Rows[0][cNhso1.checknhsoId].ToString();//yyyymmdd_rownumber
-            cNhso1.rowID = dt.Rows[0][cNhso1.rowID].ToString();
-            cNhso1.patientName = dt.Rows[0][cNhso1.patientName].ToString();
-            cNhso1.visitDate = dt.Rows[0][cNhso1.visitDate].ToString();
-            cNhso1.visitTime = dt.Rows[0][cNhso1.visitTime].ToString();
+            p.checknhsoId = dt.Rows[0][cNhso1.checknhsoId].ToString();//yyyymmdd_rownumber
+            p.rowID = dt.Rows[0][cNhso1.rowID].ToString();
+            p.patientName = dt.Rows[0][cNhso1.patientName].ToString();
+            p.visitDate = dt.Rows[0][cNhso1.visitDate].ToString();
+            p.visitTime = dt.Rows[0][cNhso1.visitTime].ToString();
 
-            cNhso1.chronic1 = dt.Rows[0][cNhso1.chronic1].ToString();
-            cNhso1.chronic2 = dt.Rows[0][cNhso1.chronic2].ToString();
-            cNhso1.chronic3 = dt.Rows[0][cNhso1.chronic3].ToString();
-            cNhso1.chronic4 = dt.Rows[0][cNhso1.chronic4].ToString();
-            cNhso1.chronic5 = dt.Rows[0][cNhso1.chronic5].ToString();
-            cNhso1.chronic6 = dt.Rows[0][cNhso1.chronic6].ToString();
-            cNhso1.chronic7 = dt.Rows[0][cNhso1.chronic7].ToString();
-            cNhso1.chronic8 = dt.Rows[0][cNhso1.chronic8].ToString();
-            cNhso1.chronic9 = dt.Rows[0][cNhso1.chronic9].ToString();
-            cNhso1.chronic10 = dt.Rows[0][cNhso1.chronic10].ToString();
+            p.chronic1 = dt.Rows[0][cNhso1.chronic1].ToString();
+            p.chronic2 = dt.Rows[0][cNhso1.chronic2].ToString();
+            p.chronic3 = dt.Rows[0][cNhso1.chronic3].ToString();
+            p.chronic4 = dt.Rows[0][cNhso1.chronic4].ToString();
+            p.chronic5 = dt.Rows[0][cNhso1.chronic5].ToString();
+            p.chronic6 = dt.Rows[0][cNhso1.chronic6].ToString();
+            p.chronic7 = dt.Rows[0][cNhso1.chronic7].ToString();
+            p.chronic8 = dt.Rows[0][cNhso1.chronic8].ToString();
+            p.chronic9 = dt.Rows[0][cNhso1.chronic9].ToString();
+            p.chronic10 = dt.Rows[0][cNhso1.chronic10].ToString();
 
-            cNhso1.dia1 = dt.Rows[0][cNhso1.dia1].ToString();
-            cNhso1.dia2 = dt.Rows[0][cNhso1.dia2].ToString();
-            cNhso1.dia3 = dt.Rows[0][cNhso1.dia3].ToString();
-            cNhso1.dia4 = dt.Rows[0][cNhso1.dia4].ToString();
-            cNhso1.dia5 = dt.Rows[0][cNhso1.dia5].ToString();
-            cNhso1.dia6 = dt.Rows[0][cNhso1.dia6].ToString();
-            cNhso1.dia7 = dt.Rows[0][cNhso1.dia7].ToString();
-            cNhso1.dia8 = dt.Rows[0][cNhso1.dia8].ToString();
-            cNhso1.dia9 = dt.Rows[0][cNhso1.dia9].ToString();
-            cNhso1.dia10 = dt.Rows[0][cNhso1.dia10].ToString();
+            p.dia1 = dt.Rows[0][cNhso1.dia1].ToString();
+            p.dia2 = dt.Rows[0][cNhso1.dia2].ToString();
+            p.dia3 = dt.Rows[0][cNhso1.dia3].ToString();
+            p.dia4 = dt.Rows[0][cNhso1.dia4].ToString();
+            p.dia5 = dt.Rows[0][cNhso1.dia5].ToString();
+            p.dia6 = dt.Rows[0][cNhso1.dia6].ToString();
+            p.dia7 = dt.Rows[0][cNhso1.dia7].ToString();
+            p.dia8 = dt.Rows[0][cNhso1.dia8].ToString();
+            p.dia9 = dt.Rows[0][cNhso1.dia9].ToString();
+            p.dia10 = dt.Rows[0][cNhso1.dia10].ToString();
 
-            cNhso1.drug1 = dt.Rows[0][cNhso1.drug1].ToString();
-            cNhso1.drug2 = dt.Rows[0][cNhso1.drug2].ToString();
-            cNhso1.drug3 = dt.Rows[0][cNhso1.drug3].ToString();
-            cNhso1.drug4 = dt.Rows[0][cNhso1.drug4].ToString();
-            cNhso1.drug5 = dt.Rows[0][cNhso1.drug5].ToString();
-            cNhso1.drug6 = dt.Rows[0][cNhso1.drug6].ToString();
-            cNhso1.drug7 = dt.Rows[0][cNhso1.drug7].ToString();
-            cNhso1.drug8 = dt.Rows[0][cNhso1.drug8].ToString();
-            cNhso1.drug9 = dt.Rows[0][cNhso1.drug9].ToString();
-            cNhso1.drug10 = dt.Rows[0][cNhso1.drug10].ToString();
-            cNhso1.drug11 = dt.Rows[0][cNhso1.drug11].ToString();
-            cNhso1.drug12 = dt.Rows[0][cNhso1.drug12].ToString();
-            cNhso1.drug13 = dt.Rows[0][cNhso1.drug13].ToString();
-            cNhso1.drug14 = dt.Rows[0][cNhso1.drug14].ToString();
-            cNhso1.drug15 = dt.Rows[0][cNhso1.drug15].ToString();
-            cNhso1.drug16 = dt.Rows[0][cNhso1.drug16].ToString();
-            cNhso1.drug17 = dt.Rows[0][cNhso1.drug17].ToString();
-            cNhso1.drug18 = dt.Rows[0][cNhso1.drug18].ToString();
-            cNhso1.drug19 = dt.Rows[0][cNhso1.drug19].ToString();
-            cNhso1.drug20 = dt.Rows[0][cNhso1.drug20].ToString();
-            cNhso1.drug21 = dt.Rows[0][cNhso1.drug21].ToString();
-            cNhso1.drug22 = dt.Rows[0][cNhso1.drug22].ToString();
-            cNhso1.drug23 = dt.Rows[0][cNhso1.drug23].ToString();
-            cNhso1.drug24 = dt.Rows[0][cNhso1.drug24].ToString();
-            cNhso1.drug25 = dt.Rows[0][cNhso1.drug25].ToString();
-            cNhso1.drug26 = dt.Rows[0][cNhso1.drug26].ToString();
-            cNhso1.drug27 = dt.Rows[0][cNhso1.drug27].ToString();
-            cNhso1.drug28 = dt.Rows[0][cNhso1.drug28].ToString();
-            cNhso1.drug29 = dt.Rows[0][cNhso1.drug29].ToString();
-            cNhso1.drug30 = dt.Rows[0][cNhso1.drug30].ToString();
+            p.drug1 = dt.Rows[0][cNhso1.drug1].ToString();
+            p.drug2 = dt.Rows[0][cNhso1.drug2].ToString();
+            p.drug3 = dt.Rows[0][cNhso1.drug3].ToString();
+            p.drug4 = dt.Rows[0][cNhso1.drug4].ToString();
+            p.drug5 = dt.Rows[0][cNhso1.drug5].ToString();
+            p.drug6 = dt.Rows[0][cNhso1.drug6].ToString();
+            p.drug7 = dt.Rows[0][cNhso1.drug7].ToString();
+            p.drug8 = dt.Rows[0][cNhso1.drug8].ToString();
+            p.drug9 = dt.Rows[0][cNhso1.drug9].ToString();
+            p.drug10 = dt.Rows[0][cNhso1.drug10].ToString();
+            p.drug11 = dt.Rows[0][cNhso1.drug11].ToString();
+            p.drug12 = dt.Rows[0][cNhso1.drug12].ToString();
+            p.drug13 = dt.Rows[0][cNhso1.drug13].ToString();
+            p.drug14 = dt.Rows[0][cNhso1.drug14].ToString();
+            p.drug15 = dt.Rows[0][cNhso1.drug15].ToString();
+            p.drug16 = dt.Rows[0][cNhso1.drug16].ToString();
+            p.drug17 = dt.Rows[0][cNhso1.drug17].ToString();
+            p.drug18 = dt.Rows[0][cNhso1.drug18].ToString();
+            p.drug19 = dt.Rows[0][cNhso1.drug19].ToString();
+            p.drug20 = dt.Rows[0][cNhso1.drug20].ToString();
+            p.drug21 = dt.Rows[0][cNhso1.drug21].ToString();
+            p.drug22 = dt.Rows[0][cNhso1.drug22].ToString();
+            p.drug23 = dt.Rows[0][cNhso1.drug23].ToString();
+            p.drug24 = dt.Rows[0][cNhso1.drug24].ToString();
+            p.drug25 = dt.Rows[0][cNhso1.drug25].ToString();
+            p.drug26 = dt.Rows[0][cNhso1.drug26].ToString();
+            p.drug27 = dt.Rows[0][cNhso1.drug27].ToString();
+            p.drug28 = dt.Rows[0][cNhso1.drug28].ToString();
+            p.drug29 = dt.Rows[0][cNhso1.drug29].ToString();
+            p.drug30 = dt.Rows[0][cNhso1.drug30].ToString();
 
-            cNhso1.hn = dt.Rows[0][cNhso1.hn].ToString();
-            cNhso1.vn = dt.Rows[0][cNhso1.vn].ToString();
-            cNhso1.labName1 = dt.Rows[0][cNhso1.labName1].ToString();
-            cNhso1.labName2 = dt.Rows[0][cNhso1.labName2].ToString();
-            cNhso1.labName10 = dt.Rows[0][cNhso1.labName10].ToString();
-            cNhso1.labName3 = dt.Rows[0][cNhso1.labName3].ToString();
-            cNhso1.labName4 = dt.Rows[0][cNhso1.labName4].ToString();
-            cNhso1.labName5 = dt.Rows[0][cNhso1.labName5].ToString();
-            cNhso1.labName6 = dt.Rows[0][cNhso1.labName6].ToString();
-            cNhso1.labName7 = dt.Rows[0][cNhso1.labName7].ToString();
-            cNhso1.labName8 = dt.Rows[0][cNhso1.labName8].ToString();
-            cNhso1.labName9 = dt.Rows[0][cNhso1.labName9].ToString();
-            cNhso1.labResult1 = dt.Rows[0][cNhso1.labResult1].ToString();
-            cNhso1.labResult2 = dt.Rows[0][cNhso1.labResult2].ToString();
-            cNhso1.labResult3 = dt.Rows[0][cNhso1.labResult3].ToString();
-            cNhso1.labResult4 = dt.Rows[0][cNhso1.labResult4].ToString();
-            cNhso1.labResult5 = dt.Rows[0][cNhso1.labResult5].ToString();
-            cNhso1.labResult6 = dt.Rows[0][cNhso1.labResult6].ToString();
-            cNhso1.labResult7 = dt.Rows[0][cNhso1.labResult7].ToString();
-            cNhso1.labResult8 = dt.Rows[0][cNhso1.labResult8].ToString();
-            cNhso1.labResult9 = dt.Rows[0][cNhso1.labResult9].ToString();
-            cNhso1.labResult10 = dt.Rows[0][cNhso1.labResult10].ToString();
-            cNhso1.labValue1 = dt.Rows[0][cNhso1.labValue1].ToString();
-            cNhso1.labValue2 = dt.Rows[0][cNhso1.labValue2].ToString();
-            cNhso1.labValue3 = dt.Rows[0][cNhso1.labValue3].ToString();
-            cNhso1.labValue4 = dt.Rows[0][cNhso1.labValue4].ToString();
-            cNhso1.labValue5 = dt.Rows[0][cNhso1.labValue5].ToString();
-            cNhso1.labValue6 = dt.Rows[0][cNhso1.labValue6].ToString();
-            cNhso1.labValue7 = dt.Rows[0][cNhso1.labValue7].ToString();
-            cNhso1.labValue8 = dt.Rows[0][cNhso1.labValue8].ToString();
-            cNhso1.labValue9 = dt.Rows[0][cNhso1.labValue9].ToString();
-            cNhso1.labValue10 = dt.Rows[0][cNhso1.labValue10].ToString();
+            p.hn = dt.Rows[0][cNhso1.hn].ToString();
+            p.vn = dt.Rows[0][cNhso1.vn].ToString();
+            p.labName1 = dt.Rows[0][cNhso1.labName1].ToString();
+            p.labName2 = dt.Rows[0][cNhso1.labName2].ToString();
+            p.labName10 = dt.Rows[0][cNhso1.labName10].ToString();
+            p.labName3 = dt.Rows[0][cNhso1.labName3].ToString();
+            p.labName4 = dt.Rows[0][cNhso1.labName4].ToString();
+            p.labName5 = dt.Rows[0][cNhso1.labName5].ToString();
+            p.labName6 = dt.Rows[0][cNhso1.labName6].ToString();
+            p.labName7 = dt.Rows[0][cNhso1.labName7].ToString();
+            p.labName8 = dt.Rows[0][cNhso1.labName8].ToString();
+            p.labName9 = dt.Rows[0][cNhso1.labName9].ToString();
+            p.labResult1 = dt.Rows[0][cNhso1.labResult1].ToString();
+            p.labResult2 = dt.Rows[0][cNhso1.labResult2].ToString();
+            p.labResult3 = dt.Rows[0][cNhso1.labResult3].ToString();
+            p.labResult4 = dt.Rows[0][cNhso1.labResult4].ToString();
+            p.labResult5 = dt.Rows[0][cNhso1.labResult5].ToString();
+            p.labResult6 = dt.Rows[0][cNhso1.labResult6].ToString();
+            p.labResult7 = dt.Rows[0][cNhso1.labResult7].ToString();
+            p.labResult8 = dt.Rows[0][cNhso1.labResult8].ToString();
+            p.labResult9 = dt.Rows[0][cNhso1.labResult9].ToString();
+            p.labResult10 = dt.Rows[0][cNhso1.labResult10].ToString();
+            p.labValue1 = dt.Rows[0][cNhso1.labValue1].ToString();
+            p.labValue2 = dt.Rows[0][cNhso1.labValue2].ToString();
+            p.labValue3 = dt.Rows[0][cNhso1.labValue3].ToString();
+            p.labValue4 = dt.Rows[0][cNhso1.labValue4].ToString();
+            p.labValue5 = dt.Rows[0][cNhso1.labValue5].ToString();
+            p.labValue6 = dt.Rows[0][cNhso1.labValue6].ToString();
+            p.labValue7 = dt.Rows[0][cNhso1.labValue7].ToString();
+            p.labValue8 = dt.Rows[0][cNhso1.labValue8].ToString();
+            p.labValue9 = dt.Rows[0][cNhso1.labValue9].ToString();
+            p.labValue10 = dt.Rows[0][cNhso1.labValue10].ToString();
 
-            cNhso1.editDia = dt.Rows[0][cNhso1.editDia].ToString();
-            cNhso1.editDrug = dt.Rows[0][cNhso1.editDrug].ToString();
-            cNhso1.branchID = dt.Rows[0][cNhso1.branchID].ToString();
+            p.editDia = dt.Rows[0][cNhso1.editDia].ToString();
+            p.editDrug = dt.Rows[0][cNhso1.editDrug].ToString();
+            p.branchID = dt.Rows[0][cNhso1.branchID].ToString();
 
-            cNhso1.dia1Ori = dt.Rows[0][cNhso1.dia1Ori].ToString();
-            cNhso1.dia2Ori = dt.Rows[0][cNhso1.dia2Ori].ToString();
-            cNhso1.dia3Or1 = dt.Rows[0][cNhso1.dia3Or1].ToString();
-            cNhso1.dia4Ori = dt.Rows[0][cNhso1.dia4Ori].ToString();
-            cNhso1.dia5Ori = dt.Rows[0][cNhso1.dia5Ori].ToString();
-            cNhso1.dia6Ori = dt.Rows[0][cNhso1.dia6Ori].ToString();
-            cNhso1.dia7Ori = dt.Rows[0][cNhso1.dia7Ori].ToString();
-            cNhso1.dia8Ori = dt.Rows[0][cNhso1.dia8Ori].ToString();
-            cNhso1.dia9Ori = dt.Rows[0][cNhso1.dia9Ori].ToString();
-            cNhso1.dia10Ori = dt.Rows[0][cNhso1.dia10Ori].ToString();
+            p.dia1Ori = dt.Rows[0][cNhso1.dia1Ori].ToString();
+            p.dia2Ori = dt.Rows[0][cNhso1.dia2Ori].ToString();
+            p.dia3Or1 = dt.Rows[0][cNhso1.dia3Or1].ToString();
+            p.dia4Ori = dt.Rows[0][cNhso1.dia4Ori].ToString();
+            p.dia5Ori = dt.Rows[0][cNhso1.dia5Ori].ToString();
+            p.dia6Ori = dt.Rows[0][cNhso1.dia6Ori].ToString();
+            p.dia7Ori = dt.Rows[0][cNhso1.dia7Ori].ToString();
+            p.dia8Ori = dt.Rows[0][cNhso1.dia8Ori].ToString();
+            p.dia9Ori = dt.Rows[0][cNhso1.dia9Ori].ToString();
+            p.dia10Ori = dt.Rows[0][cNhso1.dia10Ori].ToString();
+
+            p.labName20 = dt.Rows[0][cNhso1.labName20].ToString();
+            p.labName11 = dt.Rows[0][cNhso1.labName11].ToString();
+            p.labName12 = dt.Rows[0][cNhso1.labName12].ToString();
+            p.labName13 = dt.Rows[0][cNhso1.labName13].ToString();
+            p.labName14 = dt.Rows[0][cNhso1.labName14].ToString();
+            p.labName15 = dt.Rows[0][cNhso1.labName15].ToString();
+            p.labName16 = dt.Rows[0][cNhso1.labName16].ToString();
+            p.labName17 = dt.Rows[0][cNhso1.labName17].ToString();
+            p.labName18 = dt.Rows[0][cNhso1.labName18].ToString();
+            p.labName19 = dt.Rows[0][cNhso1.labName19].ToString();
+
+            p.labName21 = dt.Rows[0][cNhso1.labName21].ToString();
+            p.labName22 = dt.Rows[0][cNhso1.labName22].ToString();
+            p.labName23 = dt.Rows[0][cNhso1.labName23].ToString();
+            p.labName24 = dt.Rows[0][cNhso1.labName24].ToString();
+            p.labName25 = dt.Rows[0][cNhso1.labName25].ToString();
+            p.labName26 = dt.Rows[0][cNhso1.labName26].ToString();
+            p.labName27 = dt.Rows[0][cNhso1.labName27].ToString();
+            p.labName28 = dt.Rows[0][cNhso1.labName28].ToString();
+            p.labName29 = dt.Rows[0][cNhso1.labName29].ToString();
+            p.labName30 = dt.Rows[0][cNhso1.labName30].ToString();
+
+            p.labResult11 = dt.Rows[0][cNhso1.labResult11].ToString();
+            p.labResult12 = dt.Rows[0][cNhso1.labResult12].ToString();
+            p.labResult13 = dt.Rows[0][cNhso1.labResult13].ToString();
+            p.labResult14 = dt.Rows[0][cNhso1.labResult14].ToString();
+            p.labResult15 = dt.Rows[0][cNhso1.labResult15].ToString();
+            p.labResult16 = dt.Rows[0][cNhso1.labResult16].ToString();
+            p.labResult17 = dt.Rows[0][cNhso1.labResult17].ToString();
+            p.labResult18 = dt.Rows[0][cNhso1.labResult18].ToString();
+            p.labResult19 = dt.Rows[0][cNhso1.labResult19].ToString();
+            p.labResult20 = dt.Rows[0][cNhso1.labResult20].ToString();
+            p.labResult21 = dt.Rows[0][cNhso1.labResult21].ToString();
+            p.labResult22 = dt.Rows[0][cNhso1.labResult22].ToString();
+            p.labResult23 = dt.Rows[0][cNhso1.labResult23].ToString();
+            p.labResult24 = dt.Rows[0][cNhso1.labResult24].ToString();
+            p.labResult25 = dt.Rows[0][cNhso1.labResult25].ToString();
+            p.labResult26 = dt.Rows[0][cNhso1.labResult26].ToString();
+            p.labResult27 = dt.Rows[0][cNhso1.labResult27].ToString();
+            p.labResult28 = dt.Rows[0][cNhso1.labResult28].ToString();
+            p.labResult29 = dt.Rows[0][cNhso1.labResult29].ToString();
+            p.labResult30 = dt.Rows[0][cNhso1.labResult30].ToString();
+
+            p.labValue11 = dt.Rows[0][cNhso1.labValue11].ToString();
+            p.labValue12 = dt.Rows[0][cNhso1.labValue12].ToString();
+            p.labValue13 = dt.Rows[0][cNhso1.labValue13].ToString();
+            p.labValue14 = dt.Rows[0][cNhso1.labValue14].ToString();
+            p.labValue15 = dt.Rows[0][cNhso1.labValue15].ToString();
+            p.labValue16 = dt.Rows[0][cNhso1.labValue16].ToString();
+            p.labValue17 = dt.Rows[0][cNhso1.labValue17].ToString();
+            p.labValue18 = dt.Rows[0][cNhso1.labValue18].ToString();
+            p.labValue19 = dt.Rows[0][cNhso1.labValue19].ToString();
+            p.labValue20 = dt.Rows[0][cNhso1.labValue20].ToString();
+            p.labValue21 = dt.Rows[0][cNhso1.labValue21].ToString();
+            p.labValue22 = dt.Rows[0][cNhso1.labValue22].ToString();
+            p.labValue23 = dt.Rows[0][cNhso1.labValue23].ToString();
+            p.labValue24 = dt.Rows[0][cNhso1.labValue24].ToString();
+            p.labValue25 = dt.Rows[0][cNhso1.labValue25].ToString();
+            p.labValue26 = dt.Rows[0][cNhso1.labValue26].ToString();
+            p.labValue27 = dt.Rows[0][cNhso1.labValue27].ToString();
+            p.labValue28 = dt.Rows[0][cNhso1.labValue28].ToString();
+            p.labValue29 = dt.Rows[0][cNhso1.labValue29].ToString();
+            p.labValue30 = dt.Rows[0][cNhso1.labValue30].ToString();
+
+
             //cNhso1.table = "checknhso";
             //cNhso1.cNhso1kField = "checknhso_id";
-            cNhso1.rowEdit = "edit1";
-            return cNhso1;
+            p.rowEdit = "edit1";
+            return p;
         }
         public DataRow setDataRow(DataTable dt, DataRow dr, int row)
         {
@@ -353,6 +481,70 @@ namespace reportBangna.objdb
             dr[cNhso1.dia8Ori] = dt.Rows[row][cNhso1.dia8Ori].ToString();
             dr[cNhso1.dia9Ori] = dt.Rows[row][cNhso1.dia9Ori].ToString();
             dr[cNhso1.dia10Ori] = dt.Rows[row][cNhso1.dia10Ori].ToString();
+
+            dr[cNhso1.labName11] = dt.Rows[row][cNhso1.labName11].ToString();
+            dr[cNhso1.labName12] = dt.Rows[row][cNhso1.labName12].ToString();
+            dr[cNhso1.labName13] = dt.Rows[row][cNhso1.labName13].ToString();
+            dr[cNhso1.labName14] = dt.Rows[row][cNhso1.labName14].ToString();
+            dr[cNhso1.labName15] = dt.Rows[row][cNhso1.labName15].ToString();
+            dr[cNhso1.labName16] = dt.Rows[row][cNhso1.labName16].ToString();
+            dr[cNhso1.labName17] = dt.Rows[row][cNhso1.labName17].ToString();
+            dr[cNhso1.labName18] = dt.Rows[row][cNhso1.labName18].ToString();
+            dr[cNhso1.labName19] = dt.Rows[row][cNhso1.labName19].ToString();
+            dr[cNhso1.labName20] = dt.Rows[row][cNhso1.labName20].ToString();
+            dr[cNhso1.labName21] = dt.Rows[row][cNhso1.labName21].ToString();
+            dr[cNhso1.labName22] = dt.Rows[row][cNhso1.labName22].ToString();
+            dr[cNhso1.labName23] = dt.Rows[row][cNhso1.labName23].ToString();
+            dr[cNhso1.labName24] = dt.Rows[row][cNhso1.labName24].ToString();
+            dr[cNhso1.labName25] = dt.Rows[row][cNhso1.labName25].ToString();
+            dr[cNhso1.labName26] = dt.Rows[row][cNhso1.labName26].ToString();
+            dr[cNhso1.labName27] = dt.Rows[row][cNhso1.labName27].ToString();
+            dr[cNhso1.labName28] = dt.Rows[row][cNhso1.labName28].ToString();
+            dr[cNhso1.labName29] = dt.Rows[row][cNhso1.labName29].ToString();
+            dr[cNhso1.labName30] = dt.Rows[row][cNhso1.labName30].ToString();
+
+            dr[cNhso1.labResult11] = dt.Rows[row][cNhso1.labResult11].ToString();
+            dr[cNhso1.labResult12] = dt.Rows[row][cNhso1.labResult12].ToString();
+            dr[cNhso1.labResult13] = dt.Rows[row][cNhso1.labResult13].ToString();
+            dr[cNhso1.labResult14] = dt.Rows[row][cNhso1.labResult14].ToString();
+            dr[cNhso1.labResult15] = dt.Rows[row][cNhso1.labResult15].ToString();
+            dr[cNhso1.labResult16] = dt.Rows[row][cNhso1.labResult16].ToString();
+            dr[cNhso1.labResult17] = dt.Rows[row][cNhso1.labResult17].ToString();
+            dr[cNhso1.labResult18] = dt.Rows[row][cNhso1.labResult18].ToString();
+            dr[cNhso1.labResult19] = dt.Rows[row][cNhso1.labResult19].ToString();
+            dr[cNhso1.labResult20] = dt.Rows[row][cNhso1.labResult20].ToString();
+            dr[cNhso1.labResult21] = dt.Rows[row][cNhso1.labResult21].ToString();
+            dr[cNhso1.labResult22] = dt.Rows[row][cNhso1.labResult22].ToString();
+            dr[cNhso1.labResult23] = dt.Rows[row][cNhso1.labResult23].ToString();
+            dr[cNhso1.labResult24] = dt.Rows[row][cNhso1.labResult24].ToString();
+            dr[cNhso1.labResult25] = dt.Rows[row][cNhso1.labResult25].ToString();
+            dr[cNhso1.labResult26] = dt.Rows[row][cNhso1.labResult26].ToString();
+            dr[cNhso1.labResult27] = dt.Rows[row][cNhso1.labResult27].ToString();
+            dr[cNhso1.labResult28] = dt.Rows[row][cNhso1.labResult28].ToString();
+            dr[cNhso1.labResult29] = dt.Rows[row][cNhso1.labResult29].ToString();
+            dr[cNhso1.labResult30] = dt.Rows[row][cNhso1.labResult30].ToString();
+
+            dr[cNhso1.labValue11] = dt.Rows[row][cNhso1.labValue11].ToString();
+            dr[cNhso1.labValue12] = dt.Rows[row][cNhso1.labValue12].ToString();
+            dr[cNhso1.labValue13] = dt.Rows[row][cNhso1.labValue13].ToString();
+            dr[cNhso1.labValue14] = dt.Rows[row][cNhso1.labValue14].ToString();
+            dr[cNhso1.labValue15] = dt.Rows[row][cNhso1.labValue15].ToString();
+            dr[cNhso1.labValue16] = dt.Rows[row][cNhso1.labValue16].ToString();
+            dr[cNhso1.labValue17] = dt.Rows[row][cNhso1.labValue17].ToString();
+            dr[cNhso1.labValue18] = dt.Rows[row][cNhso1.labValue18].ToString();
+            dr[cNhso1.labValue19] = dt.Rows[row][cNhso1.labValue19].ToString();
+            dr[cNhso1.labValue20] = dt.Rows[row][cNhso1.labValue20].ToString();
+            dr[cNhso1.labValue21] = dt.Rows[row][cNhso1.labValue21].ToString();
+            dr[cNhso1.labValue22] = dt.Rows[row][cNhso1.labValue22].ToString();
+            dr[cNhso1.labValue23] = dt.Rows[row][cNhso1.labValue23].ToString();
+            dr[cNhso1.labValue24] = dt.Rows[row][cNhso1.labValue24].ToString();
+            dr[cNhso1.labValue25] = dt.Rows[row][cNhso1.labValue25].ToString();
+            dr[cNhso1.labValue26] = dt.Rows[row][cNhso1.labValue26].ToString();
+            dr[cNhso1.labValue27] = dt.Rows[row][cNhso1.labValue27].ToString();
+            dr[cNhso1.labValue28] = dt.Rows[row][cNhso1.labValue28].ToString();
+            dr[cNhso1.labValue29] = dt.Rows[row][cNhso1.labValue29].ToString();
+            dr[cNhso1.labValue30] = dt.Rows[row][cNhso1.labValue30].ToString();
+
             //cNhso1.table = "checknhso";
             //cNhso1.cNhso1kField = "checknhso_id";
             dr[cNhso1.rowEdit] = "edit1";
@@ -371,7 +563,7 @@ namespace reportBangna.objdb
             }
             return item;
         }
-        private String update(CheckNhso1 cNhso1)
+        private String update(CheckNhso1 p)
         {
             String sql = "", chk = "";
 
@@ -379,94 +571,155 @@ namespace reportBangna.objdb
             cNhso1.dia1 = cNhso1.dia1.Replace("'", "''");
 
 
-            sql = "UcNhso1date " + cNhso1.table + " Set " + cNhso1.patientName + "='" + cNhso1.patientName + "'," +
-                cNhso1.hn + "='" + cNhso1.hn + "', " +
-                cNhso1.vn + "='" + cNhso1.vn + "', " +
-                cNhso1.visitDate + "='" + cNhso1.visitDate + "', " +
-                cNhso1.visitTime + "='" + cNhso1.visitTime + "', " +
-                //cNhso1.rowID + "='" + cNhso1.rowID + "', " +
-                cNhso1.chronic1 + "='" + cNhso1.chronic1 + "', " +
-                cNhso1.chronic2 + "='" + cNhso1.chronic2 + "', " +
-                cNhso1.chronic3 + "='" + cNhso1.chronic3 + "', " +
-                cNhso1.chronic4 + "='" + cNhso1.chronic4 + "', " +
-                cNhso1.chronic5 + "='" + cNhso1.chronic5 + "', " +
-                cNhso1.chronic6 + "='" + cNhso1.chronic6 + "', " +
-                cNhso1.chronic7 + "='" + cNhso1.chronic7 + "', " +
-                cNhso1.chronic8 + "='" + cNhso1.chronic8 + "', " +
-                cNhso1.chronic9 + "='" + cNhso1.chronic9 + "', " +
-                cNhso1.chronic10 + "='" + cNhso1.chronic10 + "', " +
-                cNhso1.dia1 + "='" + cNhso1.dia1 + "', " +
-                cNhso1.dia2 + "='" + cNhso1.dia2 + "', " +
-                cNhso1.dia3 + "='" + cNhso1.dia3 + "', " +
-                cNhso1.dia4 + "='" + cNhso1.dia4 + "', " +
-                cNhso1.dia5 + "='" + cNhso1.dia5 + "', " +
-                cNhso1.dia6 + "='" + cNhso1.dia6 + "', " +
-                cNhso1.dia7 + "='" + cNhso1.dia7 + "', " +
-                cNhso1.dia8 + "='" + cNhso1.dia8 + "', " +
-                cNhso1.dia9 + "='" + cNhso1.dia9 + "', " +
-                cNhso1.dia10 + "='" + cNhso1.dia10 + "', " +
-                cNhso1.drug1 + "='" + cNhso1.drug1 + "', " +
-                cNhso1.drug2 + "='" + cNhso1.drug2 + "', " +
-                cNhso1.drug3 + "='" + cNhso1.drug3 + "', " +
-                cNhso1.drug4 + "='" + cNhso1.drug4 + "', " +
-                cNhso1.drug5 + "='" + cNhso1.drug5 + "', " +
-                cNhso1.drug6 + "='" + cNhso1.drug6 + "', " +
-                cNhso1.drug7 + "='" + cNhso1.drug7 + "', " +
-                cNhso1.drug8 + "='" + cNhso1.drug8 + "', " +
-                cNhso1.drug9 + "='" + cNhso1.drug9 + "', " +
-                cNhso1.drug10 + "='" + cNhso1.drug10 + "', " +
-                cNhso1.drug11 + "='" + cNhso1.drug11 + "', " +
-                cNhso1.drug12 + "='" + cNhso1.drug12 + "', " +
-                cNhso1.drug13 + "='" + cNhso1.drug13 + "', " +
-                cNhso1.drug14 + "='" + cNhso1.drug14 + "', " +
-                cNhso1.drug15 + "='" + cNhso1.drug15 + "', " +
-                cNhso1.drug16 + "='" + cNhso1.drug16 + "', " +
-                cNhso1.drug17 + "='" + cNhso1.drug17 + "', " +
-                cNhso1.drug18 + "='" + cNhso1.drug18 + "', " +
-                cNhso1.drug19 + "='" + cNhso1.drug19 + "', " +
-                cNhso1.drug20 + "='" + cNhso1.drug20 + "', " +
-                cNhso1.drug21 + "='" + cNhso1.drug21 + "', " +
-                cNhso1.drug22 + "='" + cNhso1.drug22 + "', " +
-                cNhso1.drug23 + "='" + cNhso1.drug23 + "', " +
-                cNhso1.drug24 + "='" + cNhso1.drug24 + "', " +
-                cNhso1.drug25 + "='" + cNhso1.drug25 + "', " +
-                cNhso1.drug26 + "='" + cNhso1.drug26 + "', " +
-                cNhso1.drug27 + "='" + cNhso1.drug27 + "', " +
-                cNhso1.drug28 + "='" + cNhso1.drug28 + "', " +
-                cNhso1.drug29 + "='" + cNhso1.drug29 + "', " +
-                cNhso1.drug30 + "='" + cNhso1.drug30 + "', " +
-                cNhso1.labName1 + "='" + cNhso1.labName1 + "', " +
-                cNhso1.labResult1 + "='" + cNhso1.labResult1 + "', " +
-                cNhso1.labValue1 + "='" + cNhso1.labValue1 + "', " +
-                cNhso1.labName2 + "='" + cNhso1.labName2 + "', " +
-                cNhso1.labResult2 + "='" + cNhso1.labResult2 + "', " +
-                cNhso1.labValue2 + "='" + cNhso1.labValue2 + "', " +
-                cNhso1.labName3 + "='" + cNhso1.labName3 + "', " +
-                cNhso1.labResult3 + "='" + cNhso1.labResult3 + "', " +
-                cNhso1.labValue3 + "='" + cNhso1.labValue3 + "', " +
-                cNhso1.labName4 + "='" + cNhso1.labName4 + "', " +
-                cNhso1.labResult4 + "='" + cNhso1.labResult4 + "', " +
-                cNhso1.labValue4 + "='" + cNhso1.labValue4 + "', " +
-                cNhso1.labName5 + "='" + cNhso1.labName5 + "', " +
-                cNhso1.labResult5 + "='" + cNhso1.labResult5 + "', " +
-                cNhso1.labName6 + "='" + cNhso1.labName6 + "', " +
-                cNhso1.labResult6 + "='" + cNhso1.labResult6 + "', " +
-                cNhso1.labValue6 + "='" + cNhso1.labValue6 + "', " +
-                cNhso1.labName7 + "='" + cNhso1.labName7 + "', " +
-                cNhso1.labResult7 + "='" + cNhso1.labResult7 + "', " +
-                cNhso1.labValue7 + "='" + cNhso1.labValue7 + "', " +
-                cNhso1.labName8 + "='" + cNhso1.labName8 + "', " +
-                cNhso1.labResult8 + "='" + cNhso1.labResult8 + "', " +
-                cNhso1.labValue8 + "='" + cNhso1.labValue8 + "', " +
-                cNhso1.labName9 + "='" + cNhso1.labName9 + "', " +
-                cNhso1.labResult9 + "='" + cNhso1.labResult9 + "', " +
-                cNhso1.labValue9 + "='" + cNhso1.labValue9 + "', " +
-                cNhso1.labName10 + "='" + cNhso1.labName10 + "', " +
-                cNhso1.labResult10 + "='" + cNhso1.labResult10 + "', " +
-                cNhso1.labValue10 + "='" + cNhso1.labValue10 + "', " +
-                cNhso1.editDrug + "='" + cNhso1.editDrug + "', " +
-                cNhso1.editDia + "='" + cNhso1.editDia + "' " +
-                "Where " + cNhso1.pkField + "='" + cNhso1.checknhsoId + "'";
+            sql = "Update " + cNhso1.table + " Set " + cNhso1.patientName + "='" + p.patientName + "'," +
+                cNhso1.hn + "='" + p.hn + "', " +
+                cNhso1.vn + "='" + p.vn + "', " +
+                cNhso1.visitDate + "='" + p.visitDate + "', " +
+                cNhso1.visitTime + "='" + p.visitTime + "', " +
+                //cNhso1.rowID + "='" + p.rowID + "', " +
+                cNhso1.chronic1 + "='" + p.chronic1 + "', " +
+                cNhso1.chronic2 + "='" + p.chronic2 + "', " +
+                cNhso1.chronic3 + "='" + p.chronic3 + "', " +
+                cNhso1.chronic4 + "='" + p.chronic4 + "', " +
+                cNhso1.chronic5 + "='" + p.chronic5 + "', " +
+                cNhso1.chronic6 + "='" + p.chronic6 + "', " +
+                cNhso1.chronic7 + "='" + p.chronic7 + "', " +
+                cNhso1.chronic8 + "='" + p.chronic8 + "', " +
+                cNhso1.chronic9 + "='" + p.chronic9 + "', " +
+                cNhso1.chronic10 + "='" + p.chronic10 + "', " +
+                cNhso1.dia1 + "='" + p.dia1 + "', " +
+                cNhso1.dia2 + "='" + p.dia2 + "', " +
+                cNhso1.dia3 + "='" + p.dia3 + "', " +
+                cNhso1.dia4 + "='" + p.dia4 + "', " +
+                cNhso1.dia5 + "='" + p.dia5 + "', " +
+                cNhso1.dia6 + "='" + p.dia6 + "', " +
+                cNhso1.dia7 + "='" + p.dia7 + "', " +
+                cNhso1.dia8 + "='" + p.dia8 + "', " +
+                cNhso1.dia9 + "='" + p.dia9 + "', " +
+                cNhso1.dia10 + "='" + p.dia10 + "', " +
+                cNhso1.drug1 + "='" + p.drug1 + "', " +
+                cNhso1.drug2 + "='" + p.drug2 + "', " +
+                cNhso1.drug3 + "='" + p.drug3 + "', " +
+                cNhso1.drug4 + "='" + p.drug4 + "', " +
+                cNhso1.drug5 + "='" + p.drug5 + "', " +
+                cNhso1.drug6 + "='" + p.drug6 + "', " +
+                cNhso1.drug7 + "='" + p.drug7 + "', " +
+                cNhso1.drug8 + "='" + p.drug8 + "', " +
+                cNhso1.drug9 + "='" + p.drug9 + "', " +
+                cNhso1.drug10 + "='" + p.drug10 + "', " +
+                cNhso1.drug11 + "='" + p.drug11 + "', " +
+                cNhso1.drug12 + "='" + p.drug12 + "', " +
+                cNhso1.drug13 + "='" + p.drug13 + "', " +
+                cNhso1.drug14 + "='" + p.drug14 + "', " +
+                cNhso1.drug15 + "='" + p.drug15 + "', " +
+                cNhso1.drug16 + "='" + p.drug16 + "', " +
+                cNhso1.drug17 + "='" + p.drug17 + "', " +
+                cNhso1.drug18 + "='" + p.drug18 + "', " +
+                cNhso1.drug19 + "='" + p.drug19 + "', " +
+                cNhso1.drug20 + "='" + p.drug20 + "', " +
+                cNhso1.drug21 + "='" + p.drug21 + "', " +
+                cNhso1.drug22 + "='" + p.drug22 + "', " +
+                cNhso1.drug23 + "='" + p.drug23 + "', " +
+                cNhso1.drug24 + "='" + p.drug24 + "', " +
+                cNhso1.drug25 + "='" + p.drug25 + "', " +
+                cNhso1.drug26 + "='" + p.drug26 + "', " +
+                cNhso1.drug27 + "='" + p.drug27 + "', " +
+                cNhso1.drug28 + "='" + p.drug28 + "', " +
+                cNhso1.drug29 + "='" + p.drug29 + "', " +
+                cNhso1.drug30 + "='" + p.drug30 + "', " +
+                cNhso1.labName1 + "='" + p.labName1 + "', " +
+                cNhso1.labResult1 + "='" + p.labResult1 + "', " +
+                cNhso1.labValue1 + "='" + p.labValue1 + "', " +
+                cNhso1.labName2 + "='" + p.labName2 + "', " +
+                cNhso1.labResult2 + "='" + p.labResult2 + "', " +
+                cNhso1.labValue2 + "='" + p.labValue2 + "', " +
+                cNhso1.labName3 + "='" + p.labName3 + "', " +
+                cNhso1.labResult3 + "='" + p.labResult3 + "', " +
+                cNhso1.labValue3 + "='" + p.labValue3 + "', " +
+                cNhso1.labName4 + "='" + p.labName4 + "', " +
+                cNhso1.labResult4 + "='" + p.labResult4 + "', " +
+                cNhso1.labValue4 + "='" + p.labValue4 + "', " +
+                cNhso1.labName5 + "='" + p.labName5 + "', " +
+                cNhso1.labResult5 + "='" + p.labResult5 + "', " +
+                cNhso1.labName6 + "='" + p.labName6 + "', " +
+                cNhso1.labResult6 + "='" + p.labResult6 + "', " +
+                cNhso1.labValue6 + "='" + p.labValue6 + "', " +
+                cNhso1.labName7 + "='" + p.labName7 + "', " +
+                cNhso1.labResult7 + "='" + p.labResult7 + "', " +
+                cNhso1.labValue7 + "='" + p.labValue7 + "', " +
+                cNhso1.labName8 + "='" + p.labName8 + "', " +
+                cNhso1.labResult8 + "='" + p.labResult8 + "', " +
+                cNhso1.labValue8 + "='" + p.labValue8 + "', " +
+                cNhso1.labName9 + "='" + p.labName9 + "', " +
+                cNhso1.labResult9 + "='" + p.labResult9 + "', " +
+                cNhso1.labValue9 + "='" + p.labValue9 + "', " +
+                cNhso1.labName10 + "='" + p.labName10 + "', " +
+                cNhso1.labResult10 + "='" + p.labResult10 + "', " +
+                cNhso1.labValue10 + "='" + p.labValue10 + "', " +
+                cNhso1.editDrug + "='" + p.editDrug + "', " +
+                cNhso1.editDia + "='" + p.editDia +
+                cNhso1.labName11 + "='" + p.labName11 + "', " +
+                cNhso1.labResult11 + "='" + p.labResult11 + "', " +
+                cNhso1.labValue11 + "='" + p.labValue11 + "', " +
+                cNhso1.labName12 + "='" + p.labName12 + "', " +
+                cNhso1.labResult12 + "='" + p.labResult12 + "', " +
+                cNhso1.labValue12 + "='" + p.labValue12 + "', " +
+                cNhso1.labName13 + "='" + p.labName13 + "', " +
+                cNhso1.labResult13 + "='" + p.labResult13 + "', " +
+                cNhso1.labValue13 + "='" + p.labValue13 + "', " +
+                cNhso1.labName14 + "='" + p.labName14 + "', " +
+                cNhso1.labResult14 + "='" + p.labResult14 + "', " +
+                cNhso1.labValue14 + "='" + p.labValue14 + "', " +
+                cNhso1.labName15 + "='" + p.labName15 + "', " +
+                cNhso1.labResult15 + "='" + p.labResult15 + "', " +
+                cNhso1.labValue15 + "='" + p.labValue15 + "', " +
+                cNhso1.labName16 + "='" + p.labName16 + "', " +
+                cNhso1.labResult16 + "='" + p.labResult16 + "', " +
+                cNhso1.labValue16 + "='" + p.labValue16 + "', " +
+                cNhso1.labName17 + "='" + p.labName17 + "', " +
+                cNhso1.labResult17 + "='" + p.labResult17 + "', " +
+                cNhso1.labValue17 + "='" + p.labValue17 + "', " +
+                cNhso1.labName18 + "='" + p.labName18 + "', " +
+                cNhso1.labResult18 + "='" + p.labResult18 + "', " +
+                cNhso1.labValue18 + "='" + p.labValue18 + "', " +
+                cNhso1.labName19 + "='" + p.labName19 + "', " +
+                cNhso1.labResult19 + "='" + p.labResult19 + "', " +
+                cNhso1.labValue19 + "='" + p.labValue19 + "', " +
+                cNhso1.labName20 + "='" + p.labName20 + "', " +
+                cNhso1.labResult20 + "='" + p.labResult20 + "', " +
+                cNhso1.labValue20 + "='" + p.labValue20 + "', " +
+                cNhso1.labName21 + "='" + p.labName21 + "', " +
+                cNhso1.labResult21 + "='" + p.labResult21 + "', " +
+                cNhso1.labValue21 + "='" + p.labValue21 + "', " +
+                cNhso1.labName22 + "='" + p.labName22 + "', " +
+                cNhso1.labResult22 + "='" + p.labResult22 + "', " +
+                cNhso1.labValue22 + "='" + p.labValue22 + "', " +
+                cNhso1.labName23 + "='" + p.labName23 + "', " +
+                cNhso1.labResult23 + "='" + p.labResult23 + "', " +
+                cNhso1.labValue23 + "='" + p.labValue23 + "', " +
+                cNhso1.labName24 + "='" + p.labName24 + "', " +
+                cNhso1.labResult24 + "='" + p.labResult24 + "', " +
+                cNhso1.labValue24 + "='" + p.labValue24 + "', " +
+                cNhso1.labName25 + "='" + p.labName25 + "', " +
+                cNhso1.labResult25 + "='" + p.labResult25 + "', " +
+                cNhso1.labValue25 + "='" + p.labValue25 + "', " +
+                cNhso1.labName26 + "='" + p.labName26 + "', " +
+                cNhso1.labResult26 + "='" + p.labResult26 + "', " +
+                cNhso1.labValue26 + "='" + p.labValue26 + "', " +
+                cNhso1.labName27 + "='" + p.labName27 + "', " +
+                cNhso1.labResult27 + "='" + p.labResult27 + "', " +
+                cNhso1.labValue27 + "='" + p.labValue27 + "', " +
+                cNhso1.labName28 + "='" + p.labName28 + "', " +
+                cNhso1.labResult28 + "='" + p.labResult28 + "', " +
+                cNhso1.labValue28 + "='" + p.labValue28 + "', " +
+                cNhso1.labName29 + "='" + p.labName29 + "', " +
+                cNhso1.labResult29 + "='" + p.labResult29 + "', " +
+                cNhso1.labValue29 + "='" + p.labValue29 + "', " +
+                cNhso1.labName30 + "='" + p.labName30 + "', " +
+                cNhso1.labResult30 + "='" + p.labResult30 + "', " +
+                cNhso1.labValue30 + "='" + p.labValue30 + "', " +
+                "' " +
+                "Where " + cNhso1.pkField + "='" + p.checknhsoId + "'";
             try
             {
                 chk = connBua.ExecuteNonQuery(sql);
@@ -542,7 +795,27 @@ namespace reportBangna.objdb
                     cNhso1.statusActive+","+cNhso1.branchID+","+cNhso1.dia1Ori+","+
                     cNhso1.dia2Ori+","+cNhso1.dia3Or1+","+cNhso1.dia4Ori+","+
                     cNhso1.dia5Ori+","+cNhso1.dia6Ori + "," + cNhso1.dia7Ori + "," + 
-                    cNhso1.dia8Ori + "," + cNhso1.dia9Ori + "," + cNhso1.dia10Ori  + 
+                    cNhso1.dia8Ori + "," + cNhso1.dia9Ori + "," + cNhso1.dia10Ori  + "," + 
+                    cNhso1.labName11 + "," + cNhso1.labResult11 + "," + cNhso1.labValue11 + "," +
+                    cNhso1.labName12 + "," + cNhso1.labResult12 + "," + cNhso1.labValue12 + "," +
+                    cNhso1.labName13 + "," + cNhso1.labResult13 + "," + cNhso1.labValue13 + "," +
+                    cNhso1.labName14 + "," + cNhso1.labResult14 + "," + cNhso1.labValue14 + "," +
+                    cNhso1.labName15 + "," + cNhso1.labResult15 + "," + cNhso1.labValue15 + "," +
+                    cNhso1.labName16 + "," + cNhso1.labResult16 + "," + cNhso1.labValue16 + "," +
+                    cNhso1.labName17 + "," + cNhso1.labResult17 + "," + cNhso1.labValue17 + "," +
+                    cNhso1.labName18 + "," + cNhso1.labResult18 + "," + cNhso1.labValue18 + "," +
+                    cNhso1.labName19 + "," + cNhso1.labResult19 + "," + cNhso1.labValue19 + "," +
+                    cNhso1.labName20 + "," + cNhso1.labResult20 + "," + cNhso1.labValue20 + "," +
+                    cNhso1.labName21 + "," + cNhso1.labResult21 + "," + cNhso1.labValue21 + "," +
+                    cNhso1.labName22 + "," + cNhso1.labResult22 + "," + cNhso1.labValue22 + "," +
+                    cNhso1.labName23 + "," + cNhso1.labResult23 + "," + cNhso1.labValue23 + "," +
+                    cNhso1.labName24 + "," + cNhso1.labResult24 + "," + cNhso1.labValue24 + "," +
+                    cNhso1.labName25 + "," + cNhso1.labResult25 + "," + cNhso1.labValue25 + "," +
+                    cNhso1.labName26 + "," + cNhso1.labResult26 + "," + cNhso1.labValue26 + "," +
+                    cNhso1.labName27 + "," + cNhso1.labResult27 + "," + cNhso1.labValue27 + "," +
+                    cNhso1.labName28 + "," + cNhso1.labResult28 + "," + cNhso1.labValue28 + "," +
+                    cNhso1.labName29 + "," + cNhso1.labResult29 + "," + cNhso1.labValue29 + "," +
+                    cNhso1.labName30 + "," + cNhso1.labResult30 + "," + cNhso1.labValue30 + "," +
                     ") " +
                     "Values " + cNhso1.table + " ('" + cNhso1.checknhsoId + "','" + cNhso1.patientName + "','" + cNhso1.hn + "','" +
                     cNhso1.vn + "','" + cNhso1.visitDate + "','" + cNhso1.visitTime + "','" +
@@ -575,10 +848,30 @@ namespace reportBangna.objdb
                     cNhso1.labName9 + "','" + cNhso1.labResult9 + "','" + cNhso1.labValue9 + "','" +
                     cNhso1.labName10 + "','" + cNhso1.labResult10 + "','" + cNhso1.labValue10+"','"+
                     cNhso1.rowEdit + "','" + cNhso1.editDia + "','" + cNhso1.editDrug +"','"+
-                    cNhso1.statusActive+"','"+cNhso1.branchID+"','"+cNhso1.dia1Ori+"','"+
-                    cNhso1.dia2Ori+"','"+cNhso1.dia3Or1+"','"+cNhso1.dia4Ori+"','"+
+                    cNhso1.statusActive + "','"+cNhso1.branchID+"','" + cNhso1.dia1Ori+"','"+
+                    cNhso1.dia2Ori + "','"+cNhso1.dia3Or1 + "','" + cNhso1.dia4Ori+"','"+
                     cNhso1.dia5Ori + "','" + cNhso1.dia6Ori + "','" + cNhso1.dia7Ori + "','" +
-                    cNhso1.dia8Ori + "','" + cNhso1.dia9Ori + "','" + cNhso1.dia10Ori +
+                    cNhso1.dia8Ori + "','" + cNhso1.dia9Ori + "','" + cNhso1.dia10Ori + "','" +
+                    cNhso1.labName11 + "','" + cNhso1.labResult11 + "','" + cNhso1.labValue11 + "','" +
+                    cNhso1.labName12 + "','" + cNhso1.labResult12 + "','" + cNhso1.labValue12 + "','" +
+                    cNhso1.labName13 + "','" + cNhso1.labResult13 + "','" + cNhso1.labValue13 + "','" +
+                    cNhso1.labName14 + "','" + cNhso1.labResult14 + "','" + cNhso1.labValue14 + "','" +
+                    cNhso1.labName15 + "','" + cNhso1.labResult15 + "','" + cNhso1.labValue15 + "','" +
+                    cNhso1.labName16 + "','" + cNhso1.labResult16 + "','" + cNhso1.labValue16 + "','" +
+                    cNhso1.labName17 + "','" + cNhso1.labResult17 + "','" + cNhso1.labValue17 + "','" +
+                    cNhso1.labName18 + "','" + cNhso1.labResult18 + "','" + cNhso1.labValue18 + "','" +
+                    cNhso1.labName19 + "','" + cNhso1.labResult19 + "','" + cNhso1.labValue19 + "','" +
+                    cNhso1.labName20 + "','" + cNhso1.labResult20 + "','" + cNhso1.labValue20 + "','" +
+                    cNhso1.labName21 + "','" + cNhso1.labResult21 + "','" + cNhso1.labValue21 + "','" +
+                    cNhso1.labName22 + "','" + cNhso1.labResult22 + "','" + cNhso1.labValue22 + "','" +
+                    cNhso1.labName23 + "','" + cNhso1.labResult23 + "','" + cNhso1.labValue23 + "','" +
+                    cNhso1.labName24 + "','" + cNhso1.labResult24 + "','" + cNhso1.labValue24 + "','" +
+                    cNhso1.labName25 + "','" + cNhso1.labResult25 + "','" + cNhso1.labValue25 + "','" +
+                    cNhso1.labName26 + "','" + cNhso1.labResult26 + "','" + cNhso1.labValue26 + "','" +
+                    cNhso1.labName27 + "','" + cNhso1.labResult27 + "','" + cNhso1.labValue27 + "','" +
+                    cNhso1.labName28 + "','" + cNhso1.labResult28 + "','" + cNhso1.labValue28 + "','" +
+                    cNhso1.labName29 + "','" + cNhso1.labResult29 + "','" + cNhso1.labValue29 + "','" +
+                    cNhso1.labName30 + "','" + cNhso1.labResult30 + "','" + cNhso1.labValue30 + "','" +
                     "') ";
                 chk = c.ExecuteNonQuery(sql);
                 chk = cNhso1.checknhsoId;
@@ -680,15 +973,15 @@ namespace reportBangna.objdb
                 if (StatusLabError)
                 {
                     labWhere = " ((" + visitDateWhere + " and " + cNhso1.labName1 + " like '" + labId + "%') and " + cNhso1.labValue1 + " like '%" + labSearch1 + "%') or "
-                        + " ((" + visitDateWhere + " and " + cNhso1.labName2 + " like '" + labId + "%') and " + cNhso1.labValue2 + " like '%" + labSearch1 + "%') or "
-                        + " ((" + visitDateWhere + " and " + cNhso1.labName3 + " like '" + labId + "%') and " + cNhso1.labValue3 + " like '%" + labSearch1 + "%') or "
-                        + " ((" + visitDateWhere + " and " + cNhso1.labName4 + " like '" + labId + "%') and " + cNhso1.labValue4 + " like '%" + labSearch1 + "%') or "
-                        + " ((" + visitDateWhere + " and " + cNhso1.labName5 + " like '" + labId + "%') and " + cNhso1.labValue5 + " like '%" + labSearch1 + "%') or "
-                        + " ((" + visitDateWhere + " and " + cNhso1.labName6 + " like '" + labId + "%') and " + cNhso1.labValue6 + " like '%" + labSearch1 + "%') or "
-                        + " ((" + visitDateWhere + " and " + cNhso1.labName7 + " like '" + labId + "%') and " + cNhso1.labValue7 + " like '%" + labSearch1 + "%') or "
-                        + " ((" + visitDateWhere + " and " + cNhso1.labName8 + " like '" + labId + "%') and " + cNhso1.labValue8 + " like '%" + labSearch1 + "%') or "
-                        + " ((" + visitDateWhere + " and " + cNhso1.labName9 + " like '" + labId + "%') and " + cNhso1.labValue9 + " like '%" + labSearch1 + "%') or "
-                        + " ((" + visitDateWhere + " and " + cNhso1.labName10 + " like '" + labId + "%') and " + cNhso1.labValue10 + " like '%" + labSearch1 + "%')  ";
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName2 + " like '" + labId + "%') and " + cNhso1.labValue2 + " like '%" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName3 + " like '" + labId + "%') and " + cNhso1.labValue3 + " like '%" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName4 + " like '" + labId + "%') and " + cNhso1.labValue4 + " like '%" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName5 + " like '" + labId + "%') and " + cNhso1.labValue5 + " like '%" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName6 + " like '" + labId + "%') and " + cNhso1.labValue6 + " like '%" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName7 + " like '" + labId + "%') and " + cNhso1.labValue7 + " like '%" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName8 + " like '" + labId + "%') and " + cNhso1.labValue8 + " like '%" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName9 + " like '" + labId + "%') and " + cNhso1.labValue9 + " like '%" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName10 + " like '" + labId + "%') and " + cNhso1.labValue10 + " like '%" + labSearch1 + "%')  ";
                 }
                 else
                 {
@@ -705,29 +998,29 @@ namespace reportBangna.objdb
                         //+ " ((" + visitDateWhere + " and " + cNhso1.labName9 + " like '" + labId + "%') and cast(" + cNhso1.labValue9 + " as float) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
                         //+ " ((" + visitDateWhere + " and " + cNhso1.labName10 + " like '" + labId + "%') and cast(" + cNhso1.labValue10 + " as float) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float))  ";
 
-                        labWhere = " ((" + visitDateWhere + " and " + cNhso1.labName1 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue1 + ")=1 Then Convert(float," + cNhso1.labValue1 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
-                        + " ((" + visitDateWhere + " and " + cNhso1.labName2 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue2 + ")=1 Then Convert(float," + cNhso1.labValue2 + ") else NULL end)  between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
-                        + " ((" + visitDateWhere + " and " + cNhso1.labName3 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue3 + ")=1 Then Convert(float," + cNhso1.labValue3 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
-                        + " ((" + visitDateWhere + " and " + cNhso1.labName4 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue4 + ")=1 Then Convert(float," + cNhso1.labValue4 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
-                        + " ((" + visitDateWhere + " and " + cNhso1.labName5 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue5 + ")=1 Then Convert(float," + cNhso1.labValue5 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
-                        + " ((" + visitDateWhere + " and " + cNhso1.labName6 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue6 + ")=1 Then Convert(float," + cNhso1.labValue6 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
-                        + " ((" + visitDateWhere + " and " + cNhso1.labName7 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue7 + ")=1 Then Convert(float," + cNhso1.labValue7 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
-                        + " ((" + visitDateWhere + " and " + cNhso1.labName8 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue8 + ")=1 Then Convert(float," + cNhso1.labValue8 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
-                        + " ((" + visitDateWhere + " and " + cNhso1.labName9 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue9 + ")=1 Then Convert(float," + cNhso1.labValue9 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
-                        + " ((" + visitDateWhere + " and " + cNhso1.labName10 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue10 + ")=1 Then Convert(float," + cNhso1.labValue10 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float))  ";
+                        labWhere = " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName1 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue1 + ")=1 Then Convert(float," + cNhso1.labValue1 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName2 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue2 + ")=1 Then Convert(float," + cNhso1.labValue2 + ") else NULL end)  between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName3 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue3 + ")=1 Then Convert(float," + cNhso1.labValue3 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName4 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue4 + ")=1 Then Convert(float," + cNhso1.labValue4 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName5 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue5 + ")=1 Then Convert(float," + cNhso1.labValue5 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName6 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue6 + ")=1 Then Convert(float," + cNhso1.labValue6 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName7 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue7 + ")=1 Then Convert(float," + cNhso1.labValue7 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName8 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue8 + ")=1 Then Convert(float," + cNhso1.labValue8 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName9 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue9 + ")=1 Then Convert(float," + cNhso1.labValue9 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName10 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue10 + ")=1 Then Convert(float," + cNhso1.labValue10 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float))  ";
                     }
                     else
                     {
                         labWhere = " ((" + visitDateWhere + " and " + cNhso1.labName1 + " like '" + labId + "%') and " + cNhso1.labValue1 + " like '" + labSearch1 + "%') or "
-                        + " ((" + visitDateWhere + " and " + cNhso1.labName2 + " like '" + labId + "%') and " + cNhso1.labValue2 + " like '" + labSearch1 + "%') or "
-                        + " ((" + visitDateWhere + " and " + cNhso1.labName3 + " like '" + labId + "%') and " + cNhso1.labValue3 + " like '" + labSearch1 + "%') or "
-                        + " ((" + visitDateWhere + " and " + cNhso1.labName4 + " like '" + labId + "%') and " + cNhso1.labValue4 + " like '" + labSearch1 + "%') or "
-                        + " ((" + visitDateWhere + " and " + cNhso1.labName5 + " like '" + labId + "%') and " + cNhso1.labValue5 + " like '" + labSearch1 + "%') or "
-                        + " ((" + visitDateWhere + " and " + cNhso1.labName6 + " like '" + labId + "%') and " + cNhso1.labValue6 + " like '" + labSearch1 + "%') or "
-                        + " ((" + visitDateWhere + " and " + cNhso1.labName7 + " like '" + labId + "%') and " + cNhso1.labValue7 + " like '" + labSearch1 + "%') or "
-                        + " ((" + visitDateWhere + " and " + cNhso1.labName8 + " like '" + labId + "%') and " + cNhso1.labValue8 + " like '" + labSearch1 + "%') or "
-                        + " ((" + visitDateWhere + " and " + cNhso1.labName9 + " like '" + labId + "%') and " + cNhso1.labValue9 + " like '" + labSearch1 + "%') or "
-                        + " ((" + visitDateWhere + " and " + cNhso1.labName10 + " like '" + labId + "%') and " + cNhso1.labValue10 + " like '" + labSearch1 + "%')  ";
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName2 + " like '" + labId + "%') and " + cNhso1.labValue2 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName3 + " like '" + labId + "%') and " + cNhso1.labValue3 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName4 + " like '" + labId + "%') and " + cNhso1.labValue4 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName5 + " like '" + labId + "%') and " + cNhso1.labValue5 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName6 + " like '" + labId + "%') and " + cNhso1.labValue6 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName7 + " like '" + labId + "%') and " + cNhso1.labValue7 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName8 + " like '" + labId + "%') and " + cNhso1.labValue8 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName9 + " like '" + labId + "%') and " + cNhso1.labValue9 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName10 + " like '" + labId + "%') and " + cNhso1.labValue10 + " like '" + labSearch1 + "%')  ";
                     }
                 }
             }
@@ -963,6 +1256,19 @@ namespace reportBangna.objdb
 
             String sql = "";
             DataTable dt = new DataTable();
+            //sql = "SELECT distinct LAB_T05.MNC_LB_CD, LAB_M01.MNC_LB_DSC, LAB_T05.MNC_RES_VALUE, LAB_T05.MNC_STS " +
+            //    "FROM     PATIENT_T01 t01 " +
+            //    "left join LAB_T01 ON t01.MNC_PRE_NO = LAB_T01.MNC_PRE_NO AND t01.MNC_DATE = LAB_T01.MNC_DATE " +
+            //    "left join LAB_T05 ON LAB_T01.MNC_REQ_NO = LAB_T05.MNC_REQ_NO AND LAB_T01.MNC_REQ_DAT = LAB_T05.MNC_REQ_DAT " +
+            //    "left join LAB_M01 ON LAB_T05.MNC_LB_CD = LAB_M01.MNC_LB_CD " +
+            //    "where t01.MNC_DATE BETWEEN '" + dateStart + "' AND '" + dateEnd + "' " +
+            //    "and t01.MNC_FN_TYP_CD in ('44','45','46','47','48','49') " + " and t01.mnc_hn_no = '" + hn + "' " +
+            //    "and t01.mnc_vn_no = '" + vn + "'  "+
+            //    "and t01.mnc_Pre_no = '" + preNo + "'  " +
+            //    "and  (LAB_T05.MNC_LB_CD IN ('ch002', 'ch250', 'ch003', 'ch004', 'ch040', 'ch037', "+
+            //    "'ch039', 'ch036', 'ch038', 'se005', 'se038', 'se047', 'ch006', 'ch007', 'ch008', 'ch009', 'se165')) "+
+            //    "and lab_t05.mnc_res <> '' and LAB_T05.MNC_LAB_PRN = '1' ";
+
             sql = "SELECT distinct LAB_T05.MNC_LB_CD, LAB_M01.MNC_LB_DSC, LAB_T05.MNC_RES_VALUE, LAB_T05.MNC_STS " +
                 "FROM     PATIENT_T01 t01 " +
                 "left join LAB_T01 ON t01.MNC_PRE_NO = LAB_T01.MNC_PRE_NO AND t01.MNC_DATE = LAB_T01.MNC_DATE " +
@@ -970,11 +1276,12 @@ namespace reportBangna.objdb
                 "left join LAB_M01 ON LAB_T05.MNC_LB_CD = LAB_M01.MNC_LB_CD " +
                 "where t01.MNC_DATE BETWEEN '" + dateStart + "' AND '" + dateEnd + "' " +
                 "and t01.MNC_FN_TYP_CD in ('44','45','46','47','48','49') " + " and t01.mnc_hn_no = '" + hn + "' " +
-                "and t01.mnc_vn_no = '" + vn + "'  "+
+                "and t01.mnc_vn_no = '" + vn + "'  " +
                 "and t01.mnc_Pre_no = '" + preNo + "'  " +
-                "and  (LAB_T05.MNC_LB_CD IN ('ch002', 'ch250', 'ch003', 'ch004', 'ch040', 'ch037', "+
-                "'ch039', 'ch036', 'ch038', 'se005', 'se038', 'se047', 'ch006', 'ch007', 'ch008', 'ch009', 'se165')) "+
+                //"and  (LAB_T05.MNC_LB_CD IN ('ch002', 'ch250', 'ch003', 'ch004', 'ch040', 'ch037', " +
+                //"'ch039', 'ch036', 'ch038', 'se005', 'se038', 'se047', 'ch006', 'ch007', 'ch008', 'ch009', 'se165')) " +
                 "and lab_t05.mnc_res <> '' and LAB_T05.MNC_LAB_PRN = '1' ";
+
             dt = conn.selectData(sql);
             return dt;
         }

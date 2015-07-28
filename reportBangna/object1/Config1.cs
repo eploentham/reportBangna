@@ -85,7 +85,7 @@ namespace reportBangna.object1
                 new { Text = "TRIGLYCERIDE", Value = "ch007" },
                 new { Text = "HDL-C", Value = "ch008" },
                 new { Text = "LDL-C", Value = "ch009" },
-                new { Text = "CD4 (Out lab / MEDICA LAB)", Value = "se165" },
+                new { Text = "CD4 ", Value = "se165" },
                 new { Text = "CBC", Value = "he001" },
                 new { Text = "HbA1C", Value = "ch035" },
                 new { Text = "Vival Load se161", Value = "se161" },

@@ -20,5 +20,27 @@ namespace reportBangna.object1
         public String rowID = "", rowEdit="";
         public String statusActive = "", editDia = "", editDrug = "", branchID = "", dia1Ori = "", dia2Ori = "", dia3Or1 = "", dia4Ori = "", dia5Ori = "";
         public String dia6Ori = "", dia7Ori = "", dia8Ori = "", dia9Ori = "", dia10Ori = "";
+
+        public String labName11 = "", labResult11 = "", labValue11 = "";
+        public String labName12 = "", labResult12 = "", labValue12 = "";
+        public String labName13 = "", labResult13 = "", labValue13 = "";
+        public String labName14 = "", labResult14 = "", labValue14 = "";
+        public String labName15 = "", labResult15 = "", labValue15 = "";
+        public String labName16 = "", labResult16 = "", labValue16 = "";
+        public String labName17 = "", labResult17 = "", labValue17 = "";
+        public String labName18 = "", labResult18 = "", labValue18 = "";
+        public String labName19 = "", labResult19 = "", labValue19 = "";
+        public String labName20 = "", labResult20 = "", labValue20 = "";
+        public String labName21 = "", labResult21 = "", labValue21 = "";
+        public String labName22 = "", labResult22 = "", labValue22 = "";
+        public String labName23 = "", labResult23 = "", labValue23 = "";
+        public String labName24 = "", labResult24 = "", labValue24 = "";
+        public String labName25 = "", labResult25 = "", labValue25 = "";
+        public String labName26 = "", labResult26 = "", labValue26 = "";
+        public String labName27 = "", labResult27 = "", labValue27 = "";
+        public String labName28 = "", labResult28 = "", labValue28 = "";
+        public String labName29 = "", labResult29 = "", labValue29 = "";
+        public String labName30 = "", labResult30 = "", labValue30 = "";
+
     }
 }

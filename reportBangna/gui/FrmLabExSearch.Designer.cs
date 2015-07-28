@@ -83,7 +83,7 @@
             this.dgv1.Margin = new System.Windows.Forms.Padding(2);
             this.dgv1.Name = "dgv1";
             this.dgv1.RowTemplate.Height = 24;
-            this.dgv1.Size = new System.Drawing.Size(999, 715);
+            this.dgv1.Size = new System.Drawing.Size(999, 607);
             this.dgv1.TabIndex = 44;
             this.dgv1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellDoubleClick);
             // 
@@ -97,7 +97,9 @@
             this.Name = "FrmLabExSearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLabExSearch";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmLabExSearch_Load);
+            this.Resize += new System.EventHandler(this.FrmLabExSearch_Resize);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
