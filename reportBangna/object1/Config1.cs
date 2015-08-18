@@ -240,6 +240,17 @@ namespace reportBangna.object1
                 return dt;
             }
         }
+        public String dateLabExShow(String dt)
+        {
+            if (dt != "")
+            {
+                return dt.Substring(0, 6) + dt.Substring(8);
+            }
+            else
+            {
+                return dt;
+            }
+        }
         public String dateDBtoShow(DateTime dt)
         {
             if (dt != null)

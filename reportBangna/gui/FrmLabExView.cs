@@ -38,15 +38,15 @@ namespace reportBangna.gui
             dgv1.Rows.Clear();
             dgv1.RowCount = 1;
             dgv1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv1.Columns[colRow].Width = 50;
+            dgv1.Columns[colRow].Width = 40;
             dgv1.Columns[colHN].Width = 80;
             dgv1.Columns[colVn].Width = 80;
-            dgv1.Columns[colName].Width = 220;
-            dgv1.Columns[colVisitDate].Width = 120;
+            dgv1.Columns[colName].Width = 200;
+            dgv1.Columns[colVisitDate].Width = 80;
             dgv1.Columns[colDescription].Width = 120;
             dgv1.Columns[colRemark].Width = 120;
 
-            dgv1.Columns[colRow].HeaderText = "ลำดับ";
+            dgv1.Columns[colRow].HeaderText = "no";
             dgv1.Columns[colHN].HeaderText = "HN";
             dgv1.Columns[colVn].HeaderText = "VN";
             dgv1.Columns[colName].HeaderText = "ชื่อ นามสกุล";
@@ -65,7 +65,7 @@ namespace reportBangna.gui
                     dgv1[colHN, i].Value = dt.Rows[i][labexdb.labex.Hn].ToString();
                     dgv1[colVn, i].Value = dt.Rows[i][labexdb.labex.Vn].ToString();
                     dgv1[colName, i].Value = dt.Rows[i][labexdb.labex.PatientName].ToString();
-                    dgv1[colVisitDate, i].Value = dt.Rows[i][labexdb.labex.VisitDate].ToString();
+                    dgv1[colVisitDate, i].Value = bc.cf.dateLabExShow(dt.Rows[i][labexdb.labex.VisitDate].ToString());
                     dgv1[colId, i].Value = dt.Rows[i][labexdb.labex.Id].ToString();
                     dgv1[colDescription, i].Value = dt.Rows[i][labexdb.labex.Description].ToString();
                     dgv1[colRemark, i].Value = dt.Rows[i][labexdb.labex.Remark].ToString();

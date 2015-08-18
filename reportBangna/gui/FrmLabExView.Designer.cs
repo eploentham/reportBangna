@@ -141,6 +141,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgv1);
             this.Name = "FrmLabExView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLabExView";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmLabExView_Load);

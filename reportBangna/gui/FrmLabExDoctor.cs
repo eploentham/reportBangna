@@ -23,9 +23,15 @@ namespace reportBangna.gui
             bc = b;
             initConfig();
         }
+        public FrmLabExDoctor()
+        {
+            InitializeComponent();
+            //bc = b;
+            initConfig();
+        }
         private void initConfig()
         {
-            //bc = new BangnaControl();
+            bc = new BangnaControl();
             //labexdb = new LabExDB();
             //vsdb = new VisitDB();
             //vs = new Visit();
@@ -91,31 +97,31 @@ namespace reportBangna.gui
             DataTable dt = new DataTable();
             if (hn.Equals(""))
             {
-                dt = bc.labexdb.selectByHn1(hn);
+                return;
             }
             else
             {
-                dt = bc.labexdb.selectByHn(hn);
+                dt = bc.labexdb.selectByHn1(hn);
             }            
 
             dgv1.ColumnCount = colCnt;
             dgv1.Rows.Clear();
             dgv1.RowCount = 1;
             dgv1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv1.Columns[colRow].Width = 50;
+            dgv1.Columns[colRow].Width = 40;
             dgv1.Columns[colHN].Width = 80;
-            dgv1.Columns[colVn].Width = 80;
-            dgv1.Columns[colName].Width = 220;
-            dgv1.Columns[colVisitDate].Width = 120;
+            dgv1.Columns[colVn].Width = 65;
+            dgv1.Columns[colName].Width = 200;
+            dgv1.Columns[colVisitDate].Width = 90;
             dgv1.Columns[colDescription].Width = 120;
-            dgv1.Columns[colRemark].Width = 120;
+            dgv1.Columns[colRemark].Width = 100;
             dgv1.Columns[col1pdf1].Width = 50;
             dgv1.Columns[col1pdf2].Width = 50;
             dgv1.Columns[col1pdf3].Width = 50;
             dgv1.Columns[col1pdf4].Width = 50;
             dgv1.Columns[col1pdf5].Width = 50;
 
-            dgv1.Columns[colRow].HeaderText = "ลำดับ";
+            dgv1.Columns[colRow].HeaderText = "no";
             dgv1.Columns[colHN].HeaderText = "HN";
             dgv1.Columns[colVn].HeaderText = "VN";
             dgv1.Columns[colName].HeaderText = "ชื่อ นามสกุล";
@@ -133,13 +139,14 @@ namespace reportBangna.gui
             if (dt.Rows.Count > 0)
             {
                 dgv1.RowCount = dt.Rows.Count;
+                label1.Text = "";
                 for (int i = 0; i < dgv1.RowCount; i++)
                 {
                     dgv1[colRow, i].Value = (i + 1);
                     dgv1[colHN, i].Value = dt.Rows[i][bc.labexdb.labex.Hn].ToString();
                     dgv1[colVn, i].Value = dt.Rows[i][bc.labexdb.labex.Vn].ToString();
                     dgv1[colName, i].Value = dt.Rows[i][bc.labexdb.labex.PatientName].ToString();
-                    dgv1[colVisitDate, i].Value = dt.Rows[i][bc.labexdb.labex.VisitDate].ToString();
+                    dgv1[colVisitDate, i].Value = bc.cf.dateLabExShow(dt.Rows[i][bc.labexdb.labex.VisitDate].ToString());
                     dgv1[colId, i].Value = dt.Rows[i][bc.labexdb.labex.Id].ToString();
                     dgv1[colDescription, i].Value = dt.Rows[i][bc.labexdb.labex.Description].ToString();
                     dgv1[colRemark, i].Value = dt.Rows[i][bc.labexdb.labex.Remark].ToString();
@@ -155,6 +162,10 @@ namespace reportBangna.gui
                     ShowBtn1PDF(i, "4");
                     ShowBtn1PDF(i, "5");
                 }
+            }
+            else
+            {
+                label1.Text = "ไม่พบข้อมูล หรือผลLabนอก ยังไม่มา";
             }
 
             dgv1.Font = font;

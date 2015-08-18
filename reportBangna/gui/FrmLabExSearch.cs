@@ -13,7 +13,8 @@ namespace reportBangna.gui
 {
     public partial class FrmLabExSearch : Form
     {
-        int colRow = 0, colHN = 1, colVn = 2, colName = 3, colAge = 4, colFnCd = 5, colsymptom=6, colVisitDate=7, colVisitTime=8, colLabDate=9, colLabTime=10, colDoctorId=11, colDoctorName=12, colLabReqNo=13, colLabName=14;
+        int colRow = 0, colHN = 1, colVn = 2, colName = 3, colAge = 4, colFnCd = 5, colsymptom = 6, colVisitDate = 7, colVisitTime = 8, colLabDate = 9, colLabTime = 10, colDoctorId = 11;
+        int colDoctorName=12, colLabReqNo=13, colLabName=14;
         int colCnt = 15;
 
         //VisitDB vsdb;

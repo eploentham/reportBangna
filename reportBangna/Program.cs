@@ -33,6 +33,10 @@ namespace reportBangna
             {
                 Application.Run(new FrmCtScan());
             }
+            else if (System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLower().Equals("labexdoctor"))
+            {
+                Application.Run(new FrmLabExDoctor());
+            }
             else
             {
                 //Application.Run(new FrmMain());
