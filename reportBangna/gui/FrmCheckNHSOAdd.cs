@@ -17,7 +17,7 @@ namespace reportBangna.gui
         CheckNhso1DB cNhso1db;
         WriteText wt;
         String edit = "";
-        int colCnt = 145, colRow = 0, colPatientName = 1, colPatientHnno = 2, colDate = 3, colTime = 4;
+        int colCnt = 146, colRow = 0, colPatientName = 1, colPatientHnno = 2, colDate = 3, colTime = 4;
         int colDiaCD1 = 5, colDiaCD2 = 6, colDiaCD3 = 7, colDiaCD4 = 8, colDiaCD5 = 9;
         int colDiaCD6 = 10, colDiaCD7 = 11, colDiaCD8 = 12, colDiaCD9 = 13, colDiaCD10 = 14;
         int colCHRONICCODE1 = 15, colCHRONICCODE2 = 16, colCHRONICCODE3 = 17, colCHRONICCODE4 = 18, colCHRONICCODE5 = 19;
@@ -43,7 +43,7 @@ namespace reportBangna.gui
         int colLabName26 = 130, colLabResult26 = 131, colLabValue26 = 132, colLabName27 = 133, colLabResult27 = 134, colLabValue27 = 135, colLabName28 = 136, colLabResult28 = 137, colLabValue28 = 138;
         int colLabName29 = 139, colLabResult29 = 140, colLabValue29 = 141, colLabName30 = 142, colLabResult30 = 143, colLabValue30 = 144;
 
-        int colvnSum = 85, colvnSeq = 86, colVn = 87, colRowEdit = 88, colId = 89, colEditDia = 90, colEditDrug = 91, colBranch=92;
+        int colvnSum = 85, colvnSeq = 86, colVn = 87, colRowEdit = 88, colId = 89, colEditDia = 90, colEditDrug = 91, colBranch=145;
 
         public FrmCheckNHSOAdd()
         {

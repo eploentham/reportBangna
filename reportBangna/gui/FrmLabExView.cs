@@ -16,15 +16,15 @@ namespace reportBangna.gui
     {
         int colRow = 0, colHN = 1, colVn = 2, colName = 3, colVisitDate = 4, colDescription = 5, colRemark = 6, colId=7;
         int colCnt = 8;
-        LabExDB labexdb;
+        //LabExDB labexdb;
         BangnaControl bc;
-        VisitDB vsdb;
+        //VisitDB vsdb;
         Visit vs;
         private void initConfig()
         {
             bc = new BangnaControl();
-            labexdb = new LabExDB();
-            vsdb = new VisitDB();
+            //labexdb = new LabExDB();
+            //vsdb = new VisitDB();
             vs = new Visit();
             setGrd("");
         }
@@ -32,8 +32,7 @@ namespace reportBangna.gui
         {
             Font font = new Font("Microsoft Sans Serif", 12);
             DataTable dt = new DataTable();
-            dt = labexdb.selectByHn(hn);
-
+            
             dgv1.ColumnCount = colCnt;
             dgv1.Rows.Clear();
             dgv1.RowCount = 1;
@@ -54,7 +53,12 @@ namespace reportBangna.gui
             dgv1.Columns[colDescription].HeaderText = "รายละเอียด";
             dgv1.Columns[colRemark].HeaderText = "หมายเหตุ";
             //dgv1.Columns[colPEWeight].HeaderText = "น้ำหนัก";
-            
+            if (hn.Equals(""))
+            {
+                return;
+            }
+            dt = bc.labexdb.selectByHn(hn);
+
             //dgvPE.Columns[colPEId].HeaderText = "id";
             if (dt.Rows.Count > 0)
             {
@@ -62,13 +66,13 @@ namespace reportBangna.gui
                 for (int i = 0; i < dgv1.RowCount; i++)
                 {
                     dgv1[colRow, i].Value = (i+1);
-                    dgv1[colHN, i].Value = dt.Rows[i][labexdb.labex.Hn].ToString();
-                    dgv1[colVn, i].Value = dt.Rows[i][labexdb.labex.Vn].ToString();
-                    dgv1[colName, i].Value = dt.Rows[i][labexdb.labex.PatientName].ToString();
-                    dgv1[colVisitDate, i].Value = bc.cf.dateLabExShow(dt.Rows[i][labexdb.labex.VisitDate].ToString());
-                    dgv1[colId, i].Value = dt.Rows[i][labexdb.labex.Id].ToString();
-                    dgv1[colDescription, i].Value = dt.Rows[i][labexdb.labex.Description].ToString();
-                    dgv1[colRemark, i].Value = dt.Rows[i][labexdb.labex.Remark].ToString();
+                    dgv1[colHN, i].Value = dt.Rows[i][bc.labexdb.labex.Hn].ToString();
+                    dgv1[colVn, i].Value = dt.Rows[i][bc.labexdb.labex.Vn].ToString();
+                    dgv1[colName, i].Value = dt.Rows[i][bc.labexdb.labex.PatientName].ToString();
+                    dgv1[colVisitDate, i].Value = bc.cf.dateLabExShow(dt.Rows[i][bc.labexdb.labex.VisitDate].ToString());
+                    dgv1[colId, i].Value = dt.Rows[i][bc.labexdb.labex.Id].ToString();
+                    dgv1[colDescription, i].Value = dt.Rows[i][bc.labexdb.labex.Description].ToString();
+                    dgv1[colRemark, i].Value = dt.Rows[i][bc.labexdb.labex.Remark].ToString();
                     if ((i % 2) != 0)
                     {
                         dgv1.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;

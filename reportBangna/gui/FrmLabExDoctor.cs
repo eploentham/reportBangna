@@ -37,7 +37,7 @@ namespace reportBangna.gui
             //vs = new Visit();
             //tC.TabPages[0].Text = "image";
             //tC.TabPages[1].Text = "ประวัติ";
-            setGrd("1");
+            setGrd("");
         }
         private void ShowBtn1PDF(int row, String num)
         {
@@ -95,14 +95,7 @@ namespace reportBangna.gui
         {
             Font font = new Font("Microsoft Sans Serif", 12);
             DataTable dt = new DataTable();
-            if (hn.Equals(""))
-            {
-                return;
-            }
-            else
-            {
-                dt = bc.labexdb.selectByHn1(hn);
-            }            
+            
 
             dgv1.ColumnCount = colCnt;
             dgv1.Rows.Clear();
@@ -134,6 +127,12 @@ namespace reportBangna.gui
             dgv1.Columns[col1pdf4].HeaderText = "4";
             dgv1.Columns[col1pdf5].HeaderText = "5";
 
+            if (hn.Equals(""))
+            {
+                return;
+            }
+            
+            dt = bc.labexdb.selectByHn1(hn);
 
             //dgvPE.Columns[colPEId].HeaderText = "id";
             if (dt.Rows.Count > 0)

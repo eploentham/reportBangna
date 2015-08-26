@@ -38,7 +38,7 @@ namespace reportBangna.object1
             c.DisplayMember = "Text";
 
             c.ValueMember = "Value";
-            //c.SelectedIndex = c.FindStringExact(getMonth(System.DateTime.Now.Month.ToString("00")));
+            c.SelectedIndex = c.FindStringExact(getMonth(System.DateTime.Now.Month.ToString("00")));
             return c;
         }
         public ComboBox setCboDoctor(ComboBox c)

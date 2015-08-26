@@ -19,9 +19,10 @@ namespace reportBangna
             Application.SetCompatibleTextRenderingDefault(false);
             if (System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLower().Equals("labex"))
             {
+                //MessageBox.Show("labex", "labex");
                 Application.Run(new FrmLabExView());
             }
-            else if (System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLower().Equals("labex"))
+            else if (System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLower().Equals("certificates"))
             {
                 Application.Run(new FrmCertificatesView());
             }
@@ -35,15 +36,19 @@ namespace reportBangna
             }
             else if (System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLower().Equals("labexdoctor"))
             {
+                //MessageBox.Show("labexdoctor", "labexdoctor");
                 Application.Run(new FrmLabExDoctor());
             }
             else
             {
+                //MessageBox.Show("else", "else");
                 //Application.Run(new FrmMain());
                 //Application.Run(new FrmCtScan());
                 //Application.Run(new FrmLabExView());
                 Application.Run(new FrmCheckNHSO());
                 //Application.Run(new FrmDischargeSearch());
+                //Application.Run(new FrmLabExDoctor());
+                //Application.Run(new FrmCertificatesView());
             }
             //Application.Run(new FrmMain());
             //Application.Run(new FrmPatientDead());

@@ -573,6 +573,140 @@ namespace reportBangna.objdb
             cNhso1.patientName = cNhso1.patientName.Replace("'", "''");
             cNhso1.dia1 = cNhso1.dia1.Replace("'", "''");
 
+            p.patientName = p.patientName.Replace("'", "''");
+            p.dia2 = p.dia2.Replace("'", "''");
+            p.dia1 = p.dia1.Replace("'", "''");
+            p.dia3 = p.dia3.Replace("'", "''");
+            p.dia4 = p.dia4.Replace("'", "''");
+            p.dia5 = p.dia5.Replace("'", "''");
+            p.dia6 = p.dia6.Replace("'", "''");
+            p.dia7 = p.dia7.Replace("'", "''");
+            p.dia8 = p.dia8.Replace("'", "''");
+            p.dia9 = p.dia9.Replace("'", "''");
+            p.dia10 = p.dia10.Replace("'", "''");
+            p.drug1 = p.drug1.Replace("'", "''");
+            p.drug2 = p.drug2.Replace("'", "''");
+            p.drug3 = p.drug3.Replace("'", "''");
+            p.drug4 = p.drug4.Replace("'", "''");
+            p.drug5 = p.drug5.Replace("'", "''");
+            p.drug6 = p.drug6.Replace("'", "''");
+            p.drug7 = p.drug7.Replace("'", "''");
+            p.drug8 = p.drug8.Replace("'", "''");
+            p.drug9 = p.drug9.Replace("'", "''");
+            p.drug10 = p.drug10.Replace("'", "''");
+            p.drug11 = p.drug11.Replace("'", "''");
+            p.drug12 = p.drug12.Replace("'", "''");
+            p.drug13 = p.drug13.Replace("'", "''");
+            p.drug14 = p.drug14.Replace("'", "''");
+            p.drug15 = p.drug15.Replace("'", "''");
+            p.drug16 = p.drug16.Replace("'", "''");
+            p.drug17 = p.drug17.Replace("'", "''");
+            p.drug18 = p.drug18.Replace("'", "''");
+            p.drug19 = p.drug19.Replace("'", "''");
+            p.drug20 = p.drug20.Replace("'", "''");
+            p.drug21 = p.drug21.Replace("'", "''");
+            p.drug22 = p.drug22.Replace("'", "''");
+            p.drug23 = p.drug23.Replace("'", "''");
+            p.drug24 = p.drug24.Replace("'", "''");
+            p.drug25 = p.drug25.Replace("'", "''");
+            p.drug26 = p.drug26.Replace("'", "''");
+            p.drug27 = p.drug27.Replace("'", "''");
+            p.drug28 = p.drug28.Replace("'", "''");
+            p.drug29 = p.drug29.Replace("'", "''");
+            p.drug30 = p.drug30.Replace("'", "''");
+            p.labName1 = p.labName1.Replace("'", "''");
+            p.labName2 = p.labName2.Replace("'", "''");
+            p.labName3 = p.labName3.Replace("'", "''");
+            p.labName4 = p.labName4.Replace("'", "''");
+            p.labName5 = p.labName5.Replace("'", "''");
+            p.labName6 = p.labName6.Replace("'", "''");
+            p.labName7 = p.labName7.Replace("'", "''");
+            p.labName8 = p.labName8.Replace("'", "''");
+            p.labName9 = p.labName9.Replace("'", "''");
+            p.labName10 = p.labName10.Replace("'", "''");
+            p.labName11 = p.labName11.Replace("'", "''");
+            p.labName12 = p.labName12.Replace("'", "''");
+            p.labName13 = p.labName13.Replace("'", "''");
+            p.labName14 = p.labName14.Replace("'", "''");
+            p.labName15 = p.labName15.Replace("'", "''");
+            p.labName16 = p.labName16.Replace("'", "''");
+            p.labName17 = p.labName17.Replace("'", "''");
+            p.labName18 = p.labName18.Replace("'", "''");
+            p.labName19 = p.labName19.Replace("'", "''");
+            p.labName20 = p.labName20.Replace("'", "''");
+            p.labName21 = p.labName21.Replace("'", "''");
+            p.labName22 = p.labName22.Replace("'", "''");
+            p.labName23 = p.labName23.Replace("'", "''");
+            p.labName24 = p.labName24.Replace("'", "''");
+            p.labName25 = p.labName25.Replace("'", "''");
+            p.labName26 = p.labName26.Replace("'", "''");
+            p.labName27 = p.labName27.Replace("'", "''");
+            p.labName28 = p.labName28.Replace("'", "''");
+            p.labName29 = p.labName29.Replace("'", "''");
+            p.labName30 = p.labName30.Replace("'", "''");
+
+            p.labResult1 = p.labResult1.Replace("'", "''");
+            p.labResult2 = p.labResult2.Replace("'", "''");
+            p.labResult3 = p.labResult3.Replace("'", "''");
+            p.labResult4 = p.labResult4.Replace("'", "''");
+            p.labResult5 = p.labResult5.Replace("'", "''");
+            p.labResult6 = p.labResult6.Replace("'", "''");
+            p.labResult7 = p.labResult7.Replace("'", "''");
+            p.labResult8 = p.labResult8.Replace("'", "''");
+            p.labResult9 = p.labResult9.Replace("'", "''");
+            p.labResult10 = p.labResult10.Replace("'", "''");
+            p.labResult11 = p.labResult11.Replace("'", "''");
+            p.labResult12 = p.labResult12.Replace("'", "''");
+            p.labResult13 = p.labResult13.Replace("'", "''");
+            p.labResult14 = p.labResult14.Replace("'", "''");
+            p.labResult15 = p.labResult15.Replace("'", "''");
+            p.labResult16 = p.labResult16.Replace("'", "''");
+            p.labResult17 = p.labResult17.Replace("'", "''");
+            p.labResult18 = p.labResult18.Replace("'", "''");
+            p.labResult19 = p.labResult19.Replace("'", "''");
+            p.labResult20 = p.labResult20.Replace("'", "''");
+            p.labResult21 = p.labResult21.Replace("'", "''");
+            p.labResult22 = p.labResult22.Replace("'", "''");
+            p.labResult23 = p.labResult23.Replace("'", "''");
+            p.labResult24 = p.labResult24.Replace("'", "''");
+            p.labResult25 = p.labResult25.Replace("'", "''");
+            p.labResult26 = p.labResult26.Replace("'", "''");
+            p.labResult27 = p.labResult27.Replace("'", "''");
+            p.labResult28 = p.labResult28.Replace("'", "''");
+            p.labResult29 = p.labResult29.Replace("'", "''");
+            p.labResult30 = p.labResult30.Replace("'", "''");
+
+            p.labValue1 = p.labValue1.Replace("'", "''");
+            p.labValue2 = p.labValue2.Replace("'", "''");
+            p.labValue3 = p.labValue3.Replace("'", "''");
+            p.labValue4 = p.labValue4.Replace("'", "''");
+            p.labValue5 = p.labValue5.Replace("'", "''");
+            p.labValue6 = p.labValue6.Replace("'", "''");
+            p.labValue7 = p.labValue7.Replace("'", "''");
+            p.labValue8 = p.labValue8.Replace("'", "''");
+            p.labValue9 = p.labValue9.Replace("'", "''");
+            p.labValue10 = p.labValue10.Replace("'", "''");
+            p.labValue11 = p.labValue11.Replace("'", "''");
+            p.labValue12 = p.labValue12.Replace("'", "''");
+            p.labValue13 = p.labValue13.Replace("'", "''");
+            p.labValue14 = p.labValue14.Replace("'", "''");
+            p.labValue15 = p.labValue15.Replace("'", "''");
+            p.labValue16 = p.labValue16.Replace("'", "''");
+            p.labValue17 = p.labValue17.Replace("'", "''");
+            p.labValue18 = p.labValue18.Replace("'", "''");
+            p.labValue19 = p.labValue19.Replace("'", "''");
+            p.labValue20 = p.labValue20.Replace("'", "''");
+            p.labValue21 = p.labValue21.Replace("'", "''");
+            p.labValue22 = p.labValue22.Replace("'", "''");
+            p.labValue23 = p.labValue23.Replace("'", "''");
+            p.labValue24 = p.labValue24.Replace("'", "''");
+            p.labValue25 = p.labValue25.Replace("'", "''");
+            p.labValue26 = p.labValue26.Replace("'", "''");
+            p.labValue27 = p.labValue27.Replace("'", "''");
+            p.labValue28 = p.labValue28.Replace("'", "''");
+            p.labValue29 = p.labValue29.Replace("'", "''");
+            p.labValue30 = p.labValue30.Replace("'", "''");
+
 
             sql = "Update " + cNhso1.table + " Set " + cNhso1.patientName + "='" + p.patientName + "'," +
                 cNhso1.hn + "='" + p.hn + "', " +
@@ -660,7 +794,7 @@ namespace reportBangna.objdb
                 cNhso1.labResult10 + "='" + p.labResult10 + "', " +
                 cNhso1.labValue10 + "='" + p.labValue10 + "', " +
                 cNhso1.editDrug + "='" + p.editDrug + "', " +
-                cNhso1.editDia + "='" + p.editDia +
+                cNhso1.editDia + "='" + p.editDia + "', " +
                 cNhso1.labName11 + "='" + p.labName11 + "', " +
                 cNhso1.labResult11 + "='" + p.labResult11 + "', " +
                 cNhso1.labValue11 + "='" + p.labValue11 + "', " +
@@ -720,8 +854,8 @@ namespace reportBangna.objdb
                 cNhso1.labValue29 + "='" + p.labValue29 + "', " +
                 cNhso1.labName30 + "='" + p.labName30 + "', " +
                 cNhso1.labResult30 + "='" + p.labResult30 + "', " +
-                cNhso1.labValue30 + "='" + p.labValue30 + "', " +
-                "' " +
+                cNhso1.labValue30 + "='" + p.labValue30 + "' " +
+                " " +
                 "Where " + cNhso1.pkField + "='" + p.checknhsoId + "'";
             try
             {
@@ -741,7 +875,7 @@ namespace reportBangna.objdb
             String sql = "", chk = "";
             if (p.checknhsoId.Equals(""))
             {
-                p.checknhsoId = cNhso1.visitDate.Replace("-","")+cNhso1.visitTime+cNhso1.rowID;
+                p.checknhsoId = p.branchID+p.visitDate.Replace("-","")+p.visitTime.Replace(":", "") + p.rowID;
             }
             try
             {
@@ -763,7 +897,140 @@ namespace reportBangna.objdb
                 {
                     p.branchID = conn.server;
                 }
-                
+                p.patientName = p.patientName.Replace("'", "''");
+                p.dia2 = p.dia2.Replace("'", "''");
+                p.dia1 = p.dia1.Replace("'", "''");
+                p.dia3 = p.dia3.Replace("'", "''");
+                p.dia4 = p.dia4.Replace("'", "''");
+                p.dia5 = p.dia5.Replace("'", "''");
+                p.dia6 = p.dia6.Replace("'", "''");
+                p.dia7 = p.dia7.Replace("'", "''");
+                p.dia8 = p.dia8.Replace("'", "''");
+                p.dia9 = p.dia9.Replace("'", "''");
+                p.dia10 = p.dia10.Replace("'", "''");
+                p.drug1 = p.drug1.Replace("'", "''");                
+                p.drug2 = p.drug2.Replace("'", "''");
+                p.drug3 = p.drug3.Replace("'", "''");
+                p.drug4 = p.drug4.Replace("'", "''");
+                p.drug5 = p.drug5.Replace("'", "''");
+                p.drug6 = p.drug6.Replace("'", "''");
+                p.drug7 = p.drug7.Replace("'", "''");
+                p.drug8 = p.drug8.Replace("'", "''");
+                p.drug9 = p.drug9.Replace("'", "''");
+                p.drug10 = p.drug10.Replace("'", "''");
+                p.drug11 = p.drug11.Replace("'", "''");
+                p.drug12 = p.drug12.Replace("'", "''");
+                p.drug13 = p.drug13.Replace("'", "''");
+                p.drug14 = p.drug14.Replace("'", "''");
+                p.drug15 = p.drug15.Replace("'", "''");
+                p.drug16 = p.drug16.Replace("'", "''");
+                p.drug17 = p.drug17.Replace("'", "''");
+                p.drug18 = p.drug18.Replace("'", "''");
+                p.drug19 = p.drug19.Replace("'", "''");
+                p.drug20 = p.drug20.Replace("'", "''");
+                p.drug21 = p.drug21.Replace("'", "''");
+                p.drug22 = p.drug22.Replace("'", "''");
+                p.drug23 = p.drug23.Replace("'", "''");
+                p.drug24 = p.drug24.Replace("'", "''");
+                p.drug25 = p.drug25.Replace("'", "''");
+                p.drug26 = p.drug26.Replace("'", "''");
+                p.drug27 = p.drug27.Replace("'", "''");
+                p.drug28 = p.drug28.Replace("'", "''");
+                p.drug29 = p.drug29.Replace("'", "''");
+                p.drug30 = p.drug30.Replace("'", "''");
+                p.labName1 = p.labName1.Replace("'", "''");
+                p.labName2 = p.labName2.Replace("'", "''");
+                p.labName3 = p.labName3.Replace("'", "''");
+                p.labName4 = p.labName4.Replace("'", "''");
+                p.labName5 = p.labName5.Replace("'", "''");
+                p.labName6 = p.labName6.Replace("'", "''");
+                p.labName7 = p.labName7.Replace("'", "''");
+                p.labName8 = p.labName8.Replace("'", "''");
+                p.labName9 = p.labName9.Replace("'", "''");
+                p.labName10 = p.labName10.Replace("'", "''");
+                p.labName11 = p.labName11.Replace("'", "''");
+                p.labName12 = p.labName12.Replace("'", "''");
+                p.labName13 = p.labName13.Replace("'", "''");
+                p.labName14 = p.labName14.Replace("'", "''");
+                p.labName15 = p.labName15.Replace("'", "''");
+                p.labName16 = p.labName16.Replace("'", "''");
+                p.labName17 = p.labName17.Replace("'", "''");
+                p.labName18 = p.labName18.Replace("'", "''");
+                p.labName19 = p.labName19.Replace("'", "''");
+                p.labName20 = p.labName20.Replace("'", "''");
+                p.labName21 = p.labName21.Replace("'", "''");
+                p.labName22 = p.labName22.Replace("'", "''");
+                p.labName23 = p.labName23.Replace("'", "''");
+                p.labName24 = p.labName24.Replace("'", "''");
+                p.labName25 = p.labName25.Replace("'", "''");
+                p.labName26 = p.labName26.Replace("'", "''");
+                p.labName27 = p.labName27.Replace("'", "''");
+                p.labName28 = p.labName28.Replace("'", "''");
+                p.labName29 = p.labName29.Replace("'", "''");
+                p.labName30 = p.labName30.Replace("'", "''");
+
+                p.labResult1 = p.labResult1.Replace("'", "''");
+                p.labResult2 = p.labResult2.Replace("'", "''");
+                p.labResult3 = p.labResult3.Replace("'", "''");
+                p.labResult4 = p.labResult4.Replace("'", "''");
+                p.labResult5 = p.labResult5.Replace("'", "''");
+                p.labResult6 = p.labResult6.Replace("'", "''");
+                p.labResult7 = p.labResult7.Replace("'", "''");
+                p.labResult8 = p.labResult8.Replace("'", "''");
+                p.labResult9 = p.labResult9.Replace("'", "''");
+                p.labResult10 = p.labResult10.Replace("'", "''");
+                p.labResult11 = p.labResult11.Replace("'", "''");
+                p.labResult12 = p.labResult12.Replace("'", "''");
+                p.labResult13 = p.labResult13.Replace("'", "''");
+                p.labResult14 = p.labResult14.Replace("'", "''");
+                p.labResult15 = p.labResult15.Replace("'", "''");
+                p.labResult16 = p.labResult16.Replace("'", "''");
+                p.labResult17 = p.labResult17.Replace("'", "''");
+                p.labResult18 = p.labResult18.Replace("'", "''");
+                p.labResult19 = p.labResult19.Replace("'", "''");
+                p.labResult20 = p.labResult20.Replace("'", "''");
+                p.labResult21 = p.labResult21.Replace("'", "''");
+                p.labResult22 = p.labResult22.Replace("'", "''");
+                p.labResult23 = p.labResult23.Replace("'", "''");
+                p.labResult24 = p.labResult24.Replace("'", "''");
+                p.labResult25 = p.labResult25.Replace("'", "''");
+                p.labResult26 = p.labResult26.Replace("'", "''");
+                p.labResult27 = p.labResult27.Replace("'", "''");
+                p.labResult28 = p.labResult28.Replace("'", "''");
+                p.labResult29 = p.labResult29.Replace("'", "''");
+                p.labResult30 = p.labResult30.Replace("'", "''");
+
+                p.labValue1 = p.labValue1.Replace("'", "''");
+                p.labValue2 = p.labValue2.Replace("'", "''");
+                p.labValue3 = p.labValue3.Replace("'", "''");
+                p.labValue4 = p.labValue4.Replace("'", "''");
+                p.labValue5 = p.labValue5.Replace("'", "''");
+                p.labValue6 = p.labValue6.Replace("'", "''");
+                p.labValue7 = p.labValue7.Replace("'", "''");
+                p.labValue8 = p.labValue8.Replace("'", "''");
+                p.labValue9 = p.labValue9.Replace("'", "''");
+                p.labValue10 = p.labValue10.Replace("'", "''");
+                p.labValue11 = p.labValue11.Replace("'", "''");
+                p.labValue12 = p.labValue12.Replace("'", "''");
+                p.labValue13 = p.labValue13.Replace("'", "''");
+                p.labValue14 = p.labValue14.Replace("'", "''");
+                p.labValue15 = p.labValue15.Replace("'", "''");
+                p.labValue16 = p.labValue16.Replace("'", "''");
+                p.labValue17 = p.labValue17.Replace("'", "''");
+                p.labValue18 = p.labValue18.Replace("'", "''");
+                p.labValue19 = p.labValue19.Replace("'", "''");
+                p.labValue20 = p.labValue20.Replace("'", "''");
+                p.labValue21 = p.labValue21.Replace("'", "''");
+                p.labValue22 = p.labValue22.Replace("'", "''");
+                p.labValue23 = p.labValue23.Replace("'", "''");
+                p.labValue24 = p.labValue24.Replace("'", "''");
+                p.labValue25 = p.labValue25.Replace("'", "''");
+                p.labValue26 = p.labValue26.Replace("'", "''");
+                p.labValue27 = p.labValue27.Replace("'", "''");
+                p.labValue28 = p.labValue28.Replace("'", "''");
+                p.labValue29 = p.labValue29.Replace("'", "''");
+                p.labValue30 = p.labValue30.Replace("'", "''");
+
                 sql = "Insert Into " + cNhso1.table+client+" ("+cNhso1.checknhsoId+","+cNhso1.patientName+","+cNhso1.hn+","+
                     cNhso1.vn+","+cNhso1.visitDate+","+cNhso1.visitTime+","+
                     cNhso1.rowID+","+cNhso1.chronic1+","+cNhso1.chronic2+","+
@@ -882,7 +1149,8 @@ namespace reportBangna.objdb
             catch (Exception ex)
             {
                 MessageBox.Show("Error " + ex.ToString(), "insert CheckNhso1");
-                lw.WriteLog("FrmLabExAdd.initConfig setControl 1");
+                lw.WriteLog("CheckNhso1DB Insert Error->"+ ex.ToString());
+                lw.WriteLog("CheckNhso1DB Insert SQL->" + sql);
             }
             finally
             {
@@ -939,7 +1207,7 @@ namespace reportBangna.objdb
         {
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select "+cNhso1.visitDate+", count(1) as cnt, "+cNhso1.branchID+" From "+cNhso1.table+"_client GroucNhso1 By "+cNhso1.visitDate+","+cNhso1.branchID;
+            sql = "Select "+cNhso1.visitDate+", count(1) as cnt, "+cNhso1.branchID+" From "+cNhso1.table+"_client Group By "+cNhso1.visitDate+","+cNhso1.branchID;
             dt = connClient.selectData(sql);
             sql = "";
             for(int i=0;i<dt.Rows.Count;i++){
