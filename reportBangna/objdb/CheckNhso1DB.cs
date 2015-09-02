@@ -908,6 +908,18 @@ namespace reportBangna.objdb
                 p.dia8 = p.dia8.Replace("'", "''");
                 p.dia9 = p.dia9.Replace("'", "''");
                 p.dia10 = p.dia10.Replace("'", "''");
+
+                p.chronic1 = p.chronic1.Replace("'", "''");
+                p.chronic2 = p.chronic2.Replace("'", "''");
+                p.chronic3 = p.chronic3.Replace("'", "''");
+                p.chronic4 = p.chronic4.Replace("'", "''");
+                p.chronic5 = p.chronic5.Replace("'", "''");
+                p.chronic6 = p.chronic6.Replace("'", "''");
+                p.chronic7 = p.chronic7.Replace("'", "''");
+                p.chronic8 = p.chronic8.Replace("'", "''");
+                p.chronic9 = p.chronic9.Replace("'", "''");
+                p.chronic10 = p.chronic10.Replace("'", "''");
+
                 p.drug1 = p.drug1.Replace("'", "''");                
                 p.drug2 = p.drug2.Replace("'", "''");
                 p.drug3 = p.drug3.Replace("'", "''");
@@ -1148,7 +1160,7 @@ namespace reportBangna.objdb
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error " + ex.ToString(), "insert CheckNhso1");
+                MessageBox.Show("Error " + ex.ToString(), "insert CheckNhso1 hn="+p.hn+" vn="+p.vn);
                 lw.WriteLog("CheckNhso1DB Insert Error->"+ ex.ToString());
                 lw.WriteLog("CheckNhso1DB Insert SQL->" + sql);
             }

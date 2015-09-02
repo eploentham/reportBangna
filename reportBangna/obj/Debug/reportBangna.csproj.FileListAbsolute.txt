@@ -84,3 +84,8 @@ D:\source\reportBangna\reportBangna\bin\Debug\CrystalDecisions.ReportAppServer.C
 D:\source\reportBangna\reportBangna\bin\Debug\ShockwaveFlashObjects.dll
 D:\source\reportBangna\reportBangna\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 D:\source\reportBangna\reportBangna\bin\Debug\stdole.dll
+D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.FrmStockOR.resources
+D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmStGoodsAdd.resources
+D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmStGoodsView.resources
+D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmStVendorAdd.resources
+D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmStVendorView.resources

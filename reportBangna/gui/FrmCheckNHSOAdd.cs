@@ -4,8 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 
@@ -103,6 +106,10 @@ namespace reportBangna.gui
                 {
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
+                        //lB1.Items.Add("กำลังดึงข้อมูล " + i);
+                        //lB1.Refresh();
+                        label1.Text = "ข้อมูล "+i;
+                        this.Refresh();
                         dgvAdd[colRow, i].Value = (i + 1);
                         dgvAdd[colvnSeq, i].Value = dt.Rows[i]["mnc_vn_seq"].ToString();
                         dgvAdd[colvnSum, i].Value = dt.Rows[i]["mnc_vn_sum"].ToString();
@@ -131,6 +138,8 @@ namespace reportBangna.gui
                         //dgvAdd[colTime, i].Value = dt.Rows[i]["MNC_TIME"].ToString();
 
                         dtDia = cNhso1db.selectDiaCDbyVN(dateStart, dateEnd, hn, vn, preNo);
+                        //lB1.Items.Add("กำลังดึงข้อมูล dtDia " + dtDia.Rows.Count);
+                        //lB1.Refresh();
                         for (int j = 0; j < dtDia.Rows.Count; j++)
                         {
                             dia = "";
@@ -181,6 +190,8 @@ namespace reportBangna.gui
                             //}
                         }
                         dtChr = cNhso1db.selectChronicbyVN(dateStart, dateEnd, hn, vn, preNo);
+                        //lB1.Items.Add("กำลังดึงข้อมูล dtChr " + dtChr.Rows.Count);
+                        //lB1.Refresh();
                         for (int k = 0; k < dtChr.Rows.Count; k++)
                         {
                             //if (nudChronic.Value <= k)
@@ -235,6 +246,8 @@ namespace reportBangna.gui
                             }
                         }
                         dtDrug = cNhso1db.selectDrugbyVN(dateStart, dateEnd, hn, vn, preNo);
+                        //lB1.Items.Add("กำลังดึงข้อมูล dtDrug " + dtDrug.Rows.Count);
+                        //lB1.Refresh();
                         for (int l = 0; l < dtDrug.Rows.Count; l++)
                         {
                             //if (nudDrug.Value <= l)
@@ -368,6 +381,8 @@ namespace reportBangna.gui
                             //}
                         }
                         dtLab = cNhso1db.selectLabbyVN(dateStart, dateEnd, hn, vn, preNo);
+                        //lB1.Items.Add("กำลังดึงข้อมูล dtLab " + dtLab.Rows.Count);
+                        //lB1.Refresh();
                         for (int m = 0; m < dtLab.Rows.Count; m++)
                         {
                             labName = dtLab.Rows[m]["MNC_LB_DSC"].ToString();
@@ -784,12 +799,13 @@ namespace reportBangna.gui
                 //}
                 //else
                 //{
-                    //p.branchID = cNhso1db.conn.server;
+                //p.branchID = cNhso1db.conn.server;
                 //}
                 //MessageBox.Show("11", "11");
                 //if (isBranch)
                 //{
-                    chk = cNhso1db.insertCHeckNhso(p, isBranch);
+                //wt.writeTxt();
+                chk = cNhso1db.insertCHeckNhso(p, isBranch);
                 //}
                 //else
                 //{
@@ -887,7 +903,8 @@ namespace reportBangna.gui
 
         private void FrmCheckNHSOAdd_Load(object sender, EventArgs e)
         {
-            this.Text = "Host="+cNhso1db.conn.hostNameMainHIS+" database="+cNhso1db.conn.databaseNameMainHIS+" user="+cNhso1db.conn.userNameMainHIS+" pass="+cNhso1db.conn.passwordMainHIS;
+            this.Text = "Host="+cNhso1db.conn.hostNameMainHIS+" database="+cNhso1db.conn.databaseNameMainHIS+" user="+cNhso1db.conn.userNameMainHIS+" pass="+cNhso1db.conn.passwordMainHIS+" Path "+ Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location); ;
+
         }
 
         private void btnChk_Click(object sender, EventArgs e)

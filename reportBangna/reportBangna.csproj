@@ -91,6 +91,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmStockOR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStockOR.Designer.cs">
+      <DependentUpon>FrmStockOR.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\FrmCheckNHSODetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,37 @@
     <Compile Include="gui\FrmLabExLoadPic.Designer.cs">
       <DependentUpon>FrmLabExLoadPic.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\FrmStGoodsAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmStGoodsAdd.Designer.cs">
+      <DependentUpon>FrmStGoodsAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmStGoodsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmStGoodsView.Designer.cs">
+      <DependentUpon>FrmStGoodsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmStVendorAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmStVendorAdd.Designer.cs">
+      <DependentUpon>FrmStVendorAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmStVendorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmStVendorView.Designer.cs">
+      <DependentUpon>FrmStVendorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\Goods.cs" />
+    <Compile Include="objdb\AmphurDB.cs" />
+    <Compile Include="objdb\DistinctDB.cs" />
+    <Compile Include="objdb\ProvinceDB.cs" />
+    <Compile Include="objdb\StVendorDB.cs" />
+    <Compile Include="object1\Amphur.cs" />
+    <Compile Include="object1\Distinct.cs" />
     <Compile Include="object1\LogWriter.cs" />
     <Compile Include="Control\BangnaControl.cs" />
     <Compile Include="FrmMain.cs">
@@ -270,29 +307,27 @@
     <Compile Include="objdb\VisitDB.cs" />
     <Compile Include="object1\ChkStaffNote.cs" />
     <Compile Include="object1\ComboBoxItem.cs" />
-    <Compile Include="object1\DailyCheckup.cs">
+    <Compile Include="object1\StGoods.cs" />
+    <Compile Include="report\DailyCheckup.cs">
       <DependentUpon>DailyCheckup.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="object1\DailypatientsumPaidDay.cs">
+    <Compile Include="report\DailypatientsumPaidDay.cs">
       <DependentUpon>DailypatientsumPaidDay.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="object1\DailypatientsumPaidDay.Designer.cs">
+    <Compile Include="report\DailypatientsumPaidDay.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DailypatientsumPaidDay.xsd</DependentUpon>
     </Compile>
-    <Compile Include="object1\DailyCheckup.Designer.cs">
+    <Compile Include="report\DailyCheckup.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DailyCheckup.xsd</DependentUpon>
     </Compile>
-    <Compile Include="object1\DailySummaryDoctor.cs">
+    <Compile Include="report\DailySummaryDoctor.cs">
       <DependentUpon>DailySummaryDoctor.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="object1\DailySummaryDoctor.Designer.cs">
+    <Compile Include="report\DailySummaryDoctor.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DailySummaryDoctor.xsd</DependentUpon>
@@ -303,15 +338,15 @@
     <Compile Include="object1\IniFile.cs" />
     <Compile Include="object1\LabEx.cs" />
     <Compile Include="object1\Patient.cs" />
+    <Compile Include="object1\Province.cs" />
     <Compile Include="object1\ReAdmit.cs" />
     <Compile Include="object1\RmonthlyGroupId.cs" />
     <Compile Include="object1\CertificatesChild.cs" />
     <Compile Include="object1\Config1.cs" />
-    <Compile Include="object1\DailypatientsumPaid.cs">
+    <Compile Include="report\DailypatientsumPaid.cs">
       <DependentUpon>DailypatientsumPaid.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="object1\DailypatientsumPaid.Designer.cs">
+    <Compile Include="report\DailypatientsumPaid.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DailypatientsumPaid.xsd</DependentUpon>
@@ -319,18 +354,18 @@
     <Compile Include="object1\employee.cs" />
     <Compile Include="object1\FinanceT01.cs" />
     <Compile Include="object1\Persistent.cs" />
+    <Compile Include="object1\StVendor.cs" />
     <Compile Include="object1\Visit.cs" />
     <Compile Include="object1\WriteText.cs" />
-    <Compile Include="object1\xraySummary.cs">
+    <Compile Include="report\xraySummary.cs">
       <DependentUpon>xraySummary.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="object1\xraySummary.Designer.cs">
+    <Compile Include="report\xraySummary.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>xraySummary.xsd</DependentUpon>
     </Compile>
-    <Compile Include="object1\xray_SummaryMount.Designer.cs">
+    <Compile Include="report\xray_SummaryMount.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>xray_SummaryMount.xsd</DependentUpon>
@@ -351,6 +386,9 @@
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStockOR.resx">
+      <DependentUpon>FrmStockOR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmCheckNHSODetail.resx">
       <DependentUpon>FrmCheckNHSODetail.cs</DependentUpon>
@@ -431,6 +469,18 @@
     <EmbeddedResource Include="gui\FrmRptXarySummary.resx">
       <DependentUpon>FrmRptXarySummary.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmStGoodsAdd.resx">
+      <DependentUpon>FrmStGoodsAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmStGoodsView.resx">
+      <DependentUpon>FrmStGoodsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmStVendorAdd.resx">
+      <DependentUpon>FrmStVendorAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmStVendorView.resx">
+      <DependentUpon>FrmStVendorView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -454,70 +504,70 @@
     <EmbeddedResource Include="report\DailySummaryDoctor.rdlc" />
     <EmbeddedResource Include="report\xraysummary.rdlc" />
     <EmbeddedResource Include="report\xray_SummaryMount.rdlc" />
-    <None Include="object1\DailypatientsumPaid.xsc">
+    <None Include="report\DailypatientsumPaid.xsc">
       <DependentUpon>DailypatientsumPaid.xsd</DependentUpon>
     </None>
-    <None Include="object1\DailypatientsumPaid.xsd">
+    <None Include="report\DailypatientsumPaid.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DailypatientsumPaid.Designer.cs</LastGenOutput>
     </None>
-    <None Include="object1\DailypatientsumPaid.xss">
+    <None Include="report\DailypatientsumPaid.xss">
       <DependentUpon>DailypatientsumPaid.xsd</DependentUpon>
     </None>
-    <None Include="object1\DailypatientsumPaidDay.xsc">
+    <None Include="report\DailypatientsumPaidDay.xsc">
       <DependentUpon>DailypatientsumPaidDay.xsd</DependentUpon>
     </None>
-    <None Include="object1\DailypatientsumPaidDay.xsd">
+    <None Include="report\DailypatientsumPaidDay.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DailypatientsumPaidDay.Designer.cs</LastGenOutput>
     </None>
-    <None Include="object1\DailypatientsumPaidDay.xss">
+    <None Include="report\DailypatientsumPaidDay.xss">
       <DependentUpon>DailypatientsumPaidDay.xsd</DependentUpon>
     </None>
-    <None Include="object1\DailyCheckup.xsc">
+    <None Include="report\DailyCheckup.xsc">
       <DependentUpon>DailyCheckup.xsd</DependentUpon>
     </None>
-    <None Include="object1\DailyCheckup.xsd">
+    <None Include="report\DailyCheckup.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DailyCheckup.Designer.cs</LastGenOutput>
     </None>
-    <None Include="object1\DailyCheckup.xss">
+    <None Include="report\DailyCheckup.xss">
       <DependentUpon>DailyCheckup.xsd</DependentUpon>
     </None>
-    <None Include="object1\DailySummaryDoctor.xsc">
+    <None Include="report\DailySummaryDoctor.xsc">
       <DependentUpon>DailySummaryDoctor.xsd</DependentUpon>
     </None>
-    <None Include="object1\DailySummaryDoctor.xsd">
+    <None Include="report\DailySummaryDoctor.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DailySummaryDoctor.Designer.cs</LastGenOutput>
     </None>
-    <None Include="object1\DailySummaryDoctor.xss">
+    <None Include="report\DailySummaryDoctor.xss">
       <DependentUpon>DailySummaryDoctor.xsd</DependentUpon>
     </None>
-    <None Include="object1\xraySummary.xsc">
+    <None Include="report\xraySummary.xsc">
       <DependentUpon>xraySummary.xsd</DependentUpon>
     </None>
-    <None Include="object1\xraySummary.xsd">
+    <None Include="report\xraySummary.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>xraySummary.Designer.cs</LastGenOutput>
     </None>
-    <None Include="object1\xraySummary.xss">
+    <None Include="report\xraySummary.xss">
       <DependentUpon>xraySummary.xsd</DependentUpon>
     </None>
-    <None Include="object1\xray_SummaryMount.xsc">
+    <None Include="report\xray_SummaryMount.xsc">
       <DependentUpon>xray_SummaryMount.xsd</DependentUpon>
     </None>
-    <None Include="object1\xray_SummaryMount.xsd">
+    <None Include="report\xray_SummaryMount.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>xray_SummaryMount.Designer.cs</LastGenOutput>
     </None>
-    <None Include="object1\xray_SummaryMount.xss">
+    <None Include="report\xray_SummaryMount.xss">
       <DependentUpon>xray_SummaryMount.xsd</DependentUpon>
     </None>
     <None Include="Properties\DataSources\reportBangna.object1.xrayPhSummary.datasource" />
