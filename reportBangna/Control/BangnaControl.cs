@@ -22,11 +22,22 @@ namespace reportBangna
         public String pathLabEx = "", FileName="";
         public LabExDB labexdb;
         public VisitDB vsdb;
+        public StVendorDB vendb;
+        public StGoodsDB gooddb;
+        public DistrictDB didb;
+        public AmphurDB amdb;
+        public ProvinceDB prdb;
+
         public BangnaControl()
         {
-            conn = new ConnectDB("mainhis");
+            conn = new ConnectDB("bangna");
             labexdb = new LabExDB();
             vsdb = new VisitDB();
+            vendb = new StVendorDB(conn);
+            didb = new DistrictDB(conn);
+            amdb = new AmphurDB(conn);
+            prdb = new ProvinceDB(conn);
+            gooddb = new StGoodsDB(conn);
 
             cf = new Config1();
             pa = new Patient();

@@ -9,12 +9,12 @@ using System.Windows.Forms;
 
 namespace reportBangna.gui
 {
-    public partial class FrmStVendorView : Form
+    public partial class FrmStReceiveView : Form
     {
         BangnaControl bc;
-        int colCode = 1, colNameT = 2, colId = 3, colRow=0;
+        int colCode = 1, colNameT = 2, colId = 3, colRow = 0;
         int colCnt = 4;
-        public FrmStVendorView(BangnaControl c)
+        public FrmStReceiveView(BangnaControl c)
         {
             InitializeComponent();
             bc = c;
@@ -24,6 +24,18 @@ namespace reportBangna.gui
         {
             setGrd();
         }
+
+        private void FrmStReceiveView_Resize(object sender, EventArgs e)
+        {
+            setResize();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            FrmStReceiveAdd f = new FrmStReceiveAdd(bc);
+            f.Show(this);
+        }
+
         private void setGrd()
         {
             Font font = new Font("Microsoft Sans Serif", 12);
@@ -36,15 +48,16 @@ namespace reportBangna.gui
             dgvView.Columns[colCode].Width = 80;
             dgvView.Columns[colNameT].Width = 300;
             dgvView.Columns[colId].Width = 80;
-            dgvView.Columns[colRow].Width = 40;            
+            dgvView.Columns[colRow].Width = 40;
 
             dgvView.Columns[colRow].HeaderText = "no";
             dgvView.Columns[colCode].HeaderText = "Code";
-            dgvView.Columns[colNameT].HeaderText = "Name";            
+            dgvView.Columns[colNameT].HeaderText = "Name";
+            //dgvView.Columns[colNameT].HeaderText = "Name";
             dgvView.Columns[colId].HeaderText = "";
-            
+
             //dgv1.Columns[colPEWeight].HeaderText = "น้ำหนัก";
-            dt = bc.vendb.selectAll();
+            dt = bc.gooddb.selectAll();
 
             //dgvPE.Columns[colPEId].HeaderText = "id";
             if (dt.Rows.Count > 0)
@@ -53,10 +66,10 @@ namespace reportBangna.gui
                 for (int i = 0; i < dgvView.RowCount; i++)
                 {
                     dgvView[colRow, i].Value = (i + 1);
-                    dgvView[colCode, i].Value = dt.Rows[i][bc.vendb.ven.Code].ToString();
-                    dgvView[colNameT, i].Value = dt.Rows[i][bc.vendb.ven.NameT].ToString();
-                    dgvView[colId, i].Value = dt.Rows[i][bc.vendb.ven.Id].ToString();
-                    
+                    dgvView[colCode, i].Value = dt.Rows[i][bc.gooddb.good.Code].ToString();
+                    dgvView[colNameT, i].Value = dt.Rows[i][bc.gooddb.good.NameT].ToString();
+                    dgvView[colId, i].Value = dt.Rows[i][bc.gooddb.good.Id].ToString();
+
                     if ((i % 2) != 0)
                     {
                         dgvView.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
@@ -69,52 +82,16 @@ namespace reportBangna.gui
         }
         private void setResize()
         {
-            dgvView.Width = this.Width - 80 ;
+            dgvView.Width = this.Width - 80;
             dgvView.Height = this.Height - 150;
             btnAdd.Left = dgvView.Width - 50;
             //btnPrint.Left = dgvView.Width + 20;
             //groupBox1.Width = this.Width - 50;
             //groupBox1.Height = this.Height = 150;
         }
-
-        private void dgvView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex == -1)
-            {
-                return;
-            }
-            if (dgvView[colId, e.RowIndex].Value == null)
-            {
-                return;
-            }
-            bc.lw.WriteLog("FrmStVendorView.dgvView_CellDoubleClick ");
-            //bc.vnSearch = dgv1[colVn, e.RowIndex].Value.ToString();
-            //bc.hnSearch = dgv1[colHN, e.RowIndex].Value.ToString();
-            //bc.vs.HN = dgv1[colHN, e.RowIndex].Value.ToString();
-            //bc.vs.VN = dgv1[colVn, e.RowIndex].Value.ToString();
-            //bc.vs.PatientName = dgv1[colName, e.RowIndex].Value.ToString();
-
-            FrmStVendorAdd frm = new FrmStVendorAdd(bc, dgvView[colId, e.RowIndex].Value.ToString());
-            this.Hide();
-            frm.ShowDialog();
-            this.Show();
-            //this.Dispose();
-        }
-
-        private void FrmStVendorView_Load(object sender, EventArgs e)
+        private void FrmStReceiveView_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void FrmStVendorView_Resize(object sender, EventArgs e)
-        {
-            setResize();
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            FrmStVendorAdd f = new FrmStVendorAdd(bc,"");
-            f.ShowDialog(this);
         }
     }
 }

@@ -276,14 +276,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="reportBangna.exe" size="905216">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="reportBangna.exe" size="947200">
       <assemblyIdentity name="reportBangna" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Pau323eCVuqUy1/dW0sTxvIkgjE=</dsig:DigestValue>
+        <dsig:DigestValue>7w3uGi/Zh6ejZ4UZ0NUrkkUujGw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

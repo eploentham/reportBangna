@@ -28,37 +28,83 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgv1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
+            this.dgvView = new System.Windows.Forms.DataGridView();
+            this.chkActive = new System.Windows.Forms.RadioButton();
+            this.chkUnActive = new System.Windows.Forms.RadioButton();
+            this.btnAdd = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvView)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgv1
+            // dgvView
             // 
-            this.dgv1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv1.Location = new System.Drawing.Point(11, 65);
-            this.dgv1.Margin = new System.Windows.Forms.Padding(2);
-            this.dgv1.Name = "dgv1";
-            this.dgv1.RowTemplate.Height = 24;
-            this.dgv1.Size = new System.Drawing.Size(985, 434);
-            this.dgv1.TabIndex = 47;
+            this.dgvView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvView.Location = new System.Drawing.Point(11, 65);
+            this.dgvView.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvView.Name = "dgvView";
+            this.dgvView.RowTemplate.Height = 24;
+            this.dgvView.Size = new System.Drawing.Size(985, 434);
+            this.dgvView.TabIndex = 47;
+            this.dgvView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvView_CellDoubleClick);
+            // 
+            // chkActive
+            // 
+            this.chkActive.AutoSize = true;
+            this.chkActive.Location = new System.Drawing.Point(670, 15);
+            this.chkActive.Name = "chkActive";
+            this.chkActive.Size = new System.Drawing.Size(56, 17);
+            this.chkActive.TabIndex = 52;
+            this.chkActive.TabStop = true;
+            this.chkActive.Text = "ใช้งาน";
+            this.chkActive.UseVisualStyleBackColor = true;
+            // 
+            // chkUnActive
+            // 
+            this.chkUnActive.AutoSize = true;
+            this.chkUnActive.Location = new System.Drawing.Point(783, 15);
+            this.chkUnActive.Name = "chkUnActive";
+            this.chkUnActive.Size = new System.Drawing.Size(57, 17);
+            this.chkUnActive.TabIndex = 51;
+            this.chkUnActive.TabStop = true;
+            this.chkUnActive.Text = "ยกเลิก";
+            this.chkUnActive.UseVisualStyleBackColor = true;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(940, 11);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(56, 39);
+            this.btnAdd.TabIndex = 50;
+            this.btnAdd.Text = "ป้อนใหม่";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // FrmStGoodsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 610);
-            this.Controls.Add(this.dgv1);
+            this.Controls.Add(this.chkActive);
+            this.Controls.Add(this.chkUnActive);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.dgvView);
             this.Name = "FrmStGoodsView";
             this.Text = "FrmStGoodsView";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
+            this.Load += new System.EventHandler(this.FrmStGoodsView_Load);
+            this.Resize += new System.EventHandler(this.FrmStGoodsView_Resize);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgv1;
+        private System.Windows.Forms.DataGridView dgvView;
+        private System.Windows.Forms.RadioButton chkActive;
+        private System.Windows.Forms.RadioButton chkUnActive;
+        private System.Windows.Forms.Button btnAdd;
     }
 }

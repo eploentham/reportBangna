@@ -594,6 +594,8 @@ namespace reportBangna.gui
                 if (!chkUnDel.Checked)
                 {
                     cNhso1db.deleteAllClient();
+                    lB1.Items.Add("Clear Temp");
+                    lB1.Refresh();
                 }
             }
             else

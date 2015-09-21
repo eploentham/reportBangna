@@ -364,5 +364,18 @@ namespace reportBangna.object1
                 return name;
             }
         }
+        public String getValueCboItem(ComboBox c)
+        {
+            ComboBoxItem iSale;
+            iSale = (ComboBoxItem)c.SelectedItem;
+            if (iSale == null)
+            {
+                return "";
+            }
+            else
+            {
+                return iSale.Value;
+            }
+        }
     }
 }

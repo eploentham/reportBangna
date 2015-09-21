@@ -145,11 +145,41 @@
     <Compile Include="gui\FrmStGoodsAdd.Designer.cs">
       <DependentUpon>FrmStGoodsAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\FrmStGoodsTypeAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmStGoodsTypeAdd.Designer.cs">
+      <DependentUpon>FrmStGoodsTypeAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmStGoodsTypeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmStGoodsTypeView.Designer.cs">
+      <DependentUpon>FrmStGoodsTypeView.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\FrmStGoodsView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="gui\FrmStGoodsView.Designer.cs">
       <DependentUpon>FrmStGoodsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmStMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmStMain.Designer.cs">
+      <DependentUpon>FrmStMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmStReceiveAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmStReceiveAdd.Designer.cs">
+      <DependentUpon>FrmStReceiveAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmStReceiveView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmStReceiveView.Designer.cs">
+      <DependentUpon>FrmStReceiveView.cs</DependentUpon>
     </Compile>
     <Compile Include="gui\FrmStVendorAdd.cs">
       <SubType>Form</SubType>
@@ -163,13 +193,15 @@
     <Compile Include="gui\FrmStVendorView.Designer.cs">
       <DependentUpon>FrmStVendorView.cs</DependentUpon>
     </Compile>
-    <Compile Include="gui\Goods.cs" />
     <Compile Include="objdb\AmphurDB.cs" />
-    <Compile Include="objdb\DistinctDB.cs" />
+    <Compile Include="objdb\DistrictDB.cs" />
     <Compile Include="objdb\ProvinceDB.cs" />
+    <Compile Include="objdb\StGoodsDB.cs" />
+    <Compile Include="objdb\StReceiveDB.cs" />
+    <Compile Include="objdb\StReceiveGoodsDB.cs" />
     <Compile Include="objdb\StVendorDB.cs" />
     <Compile Include="object1\Amphur.cs" />
-    <Compile Include="object1\Distinct.cs" />
+    <Compile Include="object1\District.cs" />
     <Compile Include="object1\LogWriter.cs" />
     <Compile Include="Control\BangnaControl.cs" />
     <Compile Include="FrmMain.cs">
@@ -308,6 +340,8 @@
     <Compile Include="object1\ChkStaffNote.cs" />
     <Compile Include="object1\ComboBoxItem.cs" />
     <Compile Include="object1\StGoods.cs" />
+    <Compile Include="object1\StReceive.cs" />
+    <Compile Include="object1\StReceiveGoods.cs" />
     <Compile Include="report\DailyCheckup.cs">
       <DependentUpon>DailyCheckup.xsd</DependentUpon>
     </Compile>
@@ -472,8 +506,23 @@
     <EmbeddedResource Include="gui\FrmStGoodsAdd.resx">
       <DependentUpon>FrmStGoodsAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmStGoodsTypeAdd.resx">
+      <DependentUpon>FrmStGoodsTypeAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmStGoodsTypeView.resx">
+      <DependentUpon>FrmStGoodsTypeView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmStGoodsView.resx">
       <DependentUpon>FrmStGoodsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmStMain.resx">
+      <DependentUpon>FrmStMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmStReceiveAdd.resx">
+      <DependentUpon>FrmStReceiveAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmStReceiveView.resx">
+      <DependentUpon>FrmStReceiveView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmStVendorAdd.resx">
       <DependentUpon>FrmStVendorAdd.cs</DependentUpon>
