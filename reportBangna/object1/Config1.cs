@@ -88,8 +88,8 @@ namespace reportBangna.object1
                 new { Text = "CD4 ", Value = "se165" },
                 new { Text = "CBC", Value = "he001" },
                 new { Text = "HbA1C", Value = "ch035" },
-                new { Text = "Vival Load se161", Value = "se161" },
-                new { Text = "Vival Load se244", Value = "se244" }
+                new { Text = "HIV Viral Load ", Value = "se161" }
+                //new { Text = "HIV Vival Load ", Value = "se244" }
             };
             c.Items.Clear();
             c.DataSource = items;

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.cboBranch = new System.Windows.Forms.ComboBox();
             this.chkDoctorEdit = new System.Windows.Forms.CheckBox();
             this.chkLabError = new System.Windows.Forms.CheckBox();
@@ -66,6 +67,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnUpdate);
             this.groupBox1.Controls.Add(this.cboBranch);
             this.groupBox1.Controls.Add(this.chkDoctorEdit);
             this.groupBox1.Controls.Add(this.chkLabError);
@@ -90,11 +92,22 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(799, 31);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(56, 23);
+            this.btnUpdate.TabIndex = 29;
+            this.btnUpdate.Text = "update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Visible = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // cboBranch
             // 
             this.cboBranch.FormattingEnabled = true;
             this.cboBranch.Location = new System.Drawing.Point(463, 11);
-            this.cboBranch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboBranch.Margin = new System.Windows.Forms.Padding(2);
             this.cboBranch.Name = "cboBranch";
             this.cboBranch.Size = new System.Drawing.Size(92, 21);
             this.cboBranch.TabIndex = 28;
@@ -103,7 +116,7 @@
             // 
             this.chkDoctorEdit.AutoSize = true;
             this.chkDoctorEdit.Location = new System.Drawing.Point(387, 12);
-            this.chkDoctorEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkDoctorEdit.Margin = new System.Windows.Forms.Padding(2);
             this.chkDoctorEdit.Name = "chkDoctorEdit";
             this.chkDoctorEdit.Size = new System.Drawing.Size(76, 17);
             this.chkDoctorEdit.TabIndex = 27;
@@ -114,7 +127,7 @@
             // 
             this.chkLabError.AutoSize = true;
             this.chkLabError.Location = new System.Drawing.Point(302, 12);
-            this.chkLabError.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkLabError.Margin = new System.Windows.Forms.Padding(2);
             this.chkLabError.Name = "chkLabError";
             this.chkLabError.Size = new System.Drawing.Size(83, 17);
             this.chkLabError.TabIndex = 26;
@@ -124,7 +137,7 @@
             // btnConvert
             // 
             this.btnConvert.Location = new System.Drawing.Point(676, 11);
-            this.btnConvert.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConvert.Margin = new System.Windows.Forms.Padding(2);
             this.btnConvert.Name = "btnConvert";
             this.btnConvert.Size = new System.Drawing.Size(26, 39);
             this.btnConvert.TabIndex = 25;
@@ -135,7 +148,7 @@
             // txtLabSearch2
             // 
             this.txtLabSearch2.Location = new System.Drawing.Point(505, 36);
-            this.txtLabSearch2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLabSearch2.Margin = new System.Windows.Forms.Padding(2);
             this.txtLabSearch2.Name = "txtLabSearch2";
             this.txtLabSearch2.Size = new System.Drawing.Size(50, 20);
             this.txtLabSearch2.TabIndex = 24;
@@ -145,7 +158,7 @@
             // 
             this.btnSave.Location = new System.Drawing.Point(614, 12);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(46, 37);
+            this.btnSave.Size = new System.Drawing.Size(57, 37);
             this.btnSave.TabIndex = 23;
             this.btnSave.Text = "บันทึก";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -155,7 +168,7 @@
             // 
             this.cboLab.FormattingEnabled = true;
             this.cboLab.Location = new System.Drawing.Point(215, 34);
-            this.cboLab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboLab.Margin = new System.Windows.Forms.Padding(2);
             this.cboLab.Name = "cboLab";
             this.cboLab.Size = new System.Drawing.Size(224, 21);
             this.cboLab.TabIndex = 21;
@@ -173,7 +186,7 @@
             // txtLabSearch1
             // 
             this.txtLabSearch1.Location = new System.Drawing.Point(452, 36);
-            this.txtLabSearch1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLabSearch1.Margin = new System.Windows.Forms.Padding(2);
             this.txtLabSearch1.Name = "txtLabSearch1";
             this.txtLabSearch1.Size = new System.Drawing.Size(50, 20);
             this.txtLabSearch1.TabIndex = 19;
@@ -192,7 +205,7 @@
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(60, 34);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(76, 20);
             this.txtSearch.TabIndex = 14;
@@ -278,7 +291,7 @@
             0,
             0});
             this.numericUpDown1.Location = new System.Drawing.Point(296, 29);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             20,
             0,
@@ -316,7 +329,7 @@
             0,
             0});
             this.nudDrug.Location = new System.Drawing.Point(225, 29);
-            this.nudDrug.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudDrug.Margin = new System.Windows.Forms.Padding(2);
             this.nudDrug.Maximum = new decimal(new int[] {
             20,
             0,
@@ -354,7 +367,7 @@
             0,
             0});
             this.nudChronic.Location = new System.Drawing.Point(152, 29);
-            this.nudChronic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudChronic.Margin = new System.Windows.Forms.Padding(2);
             this.nudChronic.Maximum = new decimal(new int[] {
             10,
             0,
@@ -380,7 +393,7 @@
             this.chkDrug.Checked = true;
             this.chkDrug.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkDrug.Location = new System.Drawing.Point(44, 30);
-            this.chkDrug.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkDrug.Margin = new System.Windows.Forms.Padding(2);
             this.chkDrug.Name = "chkDrug";
             this.chkDrug.Size = new System.Drawing.Size(69, 17);
             this.chkDrug.TabIndex = 9;
@@ -395,7 +408,7 @@
             this.dgvAdd.AllowUserToResizeRows = false;
             this.dgvAdd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAdd.Location = new System.Drawing.Point(3, 74);
-            this.dgvAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvAdd.Margin = new System.Windows.Forms.Padding(2);
             this.dgvAdd.MultiSelect = false;
             this.dgvAdd.Name = "dgvAdd";
             this.dgvAdd.RowTemplate.Height = 24;
@@ -415,9 +428,9 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Location = new System.Drawing.Point(791, 92);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(414, 81);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
@@ -432,7 +445,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgvAdd);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmCheckNHSO";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCheckNHSO";
@@ -481,5 +494,6 @@
         private System.Windows.Forms.CheckBox chkLabError;
         private System.Windows.Forms.CheckBox chkDoctorEdit;
         private System.Windows.Forms.ComboBox cboBranch;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

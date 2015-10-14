@@ -25,8 +25,6 @@ namespace reportBangna.gui
         }
         private void initConfig()
         {
-            good = new StGoods();
-            good = bc.gooddb.selectByPk(id);
             cboVen = bc.vendb.getCboVendor(cboVen);
 
             SetControl();
@@ -34,6 +32,8 @@ namespace reportBangna.gui
         }
         private void SetControl()
         {
+            good = new StGoods();
+            good = bc.gooddb.selectByPk(id);
             txtCode.Text = good.Code;
             txtCodeBng.Text = good.CodeBng;
             txtId.Text = good.Id;
@@ -88,6 +88,196 @@ namespace reportBangna.gui
                 MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
                 this.Dispose();
                 //this.Hide();
+            }
+        }
+
+        private void txtCode_Enter(object sender, EventArgs e)
+        {
+            txtCode.BackColor = Color.LightYellow;
+        }
+
+        private void txtCode_Leave(object sender, EventArgs e)
+        {
+            txtCode.BackColor = Color.White;
+        }
+
+        private void txtCode_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtNameT.SelectAll();
+                txtNameT.Focus();
+            }
+        }
+
+        private void txtNameT_Enter(object sender, EventArgs e)
+        {
+            txtNameT.BackColor = Color.LightYellow;
+        }
+
+        private void txtNameT_Leave(object sender, EventArgs e)
+        {
+            txtNameT.BackColor = Color.White;
+        }
+
+        private void txtNameT_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtNameE.SelectAll();
+                txtNameE.Focus();
+            }
+        }
+
+        private void txtNameE_Enter(object sender, EventArgs e)
+        {
+            txtNameE.BackColor = Color.LightYellow;
+        }
+
+        private void txtNameE_Leave(object sender, EventArgs e)
+        {
+            txtNameE.BackColor = Color.White;
+        }
+
+        private void txtNameE_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtNameGen.SelectAll();
+                txtNameGen.Focus();
+            }
+        }
+
+        private void txtNameGen_Enter(object sender, EventArgs e)
+        {
+            txtNameGen.BackColor = Color.LightYellow;
+        }
+
+        private void txtNameGen_Leave(object sender, EventArgs e)
+        {
+            txtNameGen.BackColor = Color.White;
+        }
+
+        private void txtNameGen_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtNameBng.SelectAll();
+                txtNameBng.Focus();
+            }
+        }
+
+        private void txtNameBng_Enter(object sender, EventArgs e)
+        {
+            txtNameBng.BackColor = Color.LightYellow;
+        }
+
+        private void txtNameBng_Leave(object sender, EventArgs e)
+        {
+            txtNameBng.BackColor = Color.White;
+        }
+
+        private void txtNameBng_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                //txtPrice.SelectAll();
+                txtPrice.Focus();
+            }
+        }
+
+        private void txtPrice_Enter(object sender, EventArgs e)
+        {
+            txtPrice.BackColor = Color.LightYellow;
+        }
+
+        private void txtPrice_Leave(object sender, EventArgs e)
+        {
+            txtPrice.BackColor = Color.White;
+        }
+
+        private void txtPrice_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                //txtOnHand.SelectAll();
+                txtOnHand.Focus();
+            }
+        }
+
+        private void txtOnHand_Enter(object sender, EventArgs e)
+        {
+            txtOnHand.BackColor = Color.LightYellow;
+        }
+
+        private void txtOnHand_Leave(object sender, EventArgs e)
+        {
+            txtOnHand.BackColor = Color.White;
+        }
+
+        private void txtOnHand_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtDescription.SelectAll();
+                txtDescription.Focus();
+            }
+        }
+
+        private void txtDescription_Enter(object sender, EventArgs e)
+        {
+            txtDescription.BackColor = Color.LightYellow;
+        }
+
+        private void txtDescription_Leave(object sender, EventArgs e)
+        {
+            txtDescription.BackColor = Color.White;
+        }
+
+        private void txtDescription_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtRemark.SelectAll();
+                txtRemark.Focus();
+            }
+        }
+
+        private void txtRemark_Enter(object sender, EventArgs e)
+        {
+            txtRemark.BackColor = Color.LightYellow;
+        }
+
+        private void txtRemark_Leave(object sender, EventArgs e)
+        {
+            txtRemark.BackColor = Color.White;
+        }
+
+        private void txtRemark_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtBarcode.SelectAll();
+                txtBarcode.Focus();
+            }
+        }
+
+        private void txtBarcode_Enter(object sender, EventArgs e)
+        {
+            txtBarcode.BackColor = Color.LightYellow;
+        }
+
+        private void txtBarcode_Leave(object sender, EventArgs e)
+        {
+            txtBarcode.BackColor = Color.White;
+        }
+
+        private void txtBarcode_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                //txtBarcode.SelectAll();
+                //txtBarcode.Focus();
             }
         }
     }

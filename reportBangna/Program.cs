@@ -45,12 +45,12 @@ namespace reportBangna
                 //Application.Run(new FrmMain());
                 //Application.Run(new FrmCtScan());
                 //Application.Run(new FrmLabExView());
-                //Application.Run(new FrmCheckNHSO());
+                Application.Run(new FrmCheckNHSO());
                 //Application.Run(new FrmDischargeSearch());
                 //Application.Run(new FrmLabExDoctor());
                 //Application.Run(new FrmCertificatesView());
                 //Application.Run(new FrmStMain());
-                Application.Run(new FrmStMain());
+                //Application.Run(new FrmStMain());
             }
             //Application.Run(new FrmMain());
             //Application.Run(new FrmPatientDead());

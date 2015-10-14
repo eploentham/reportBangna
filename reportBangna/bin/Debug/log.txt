@@ -487,3 +487,7 @@ The statement has been terminated.
 7/9/2558 13:45->FrmStVendorView.dgvView_CellDoubleClick 
 18/9/2558 9:13->FrmCustAdd.cboDistrict_KeyUp Error Index and length must refer to a location within the string.
 Parameter name: length
+23/9/2558 15:28->FrmStGoodsView.dgvView_CellDoubleClick 
+23/9/2558 15:28->FrmStVendorView.dgvView_CellDoubleClick 
+23/9/2558 15:29->FrmStVendorView.dgvView_CellDoubleClick 
+23/9/2558 15:29->FrmStVendorView.dgvView_CellDoubleClick 

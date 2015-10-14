@@ -17,7 +17,7 @@ namespace reportBangna.gui
     {
         Config1 config1 ;
         String edit = "";
-        int colCnt =94, colRow=0, colPatientName = 1, colPatientHnno = 2, colDate = 3, colTime = 4;
+        int colCnt =95, colRow=0, colPatientName = 1, colPatientHnno = 2, colDate = 3, colTime = 4;
         int colDiaCD1 = 5, colDiaCD2 = 6, colDiaCD3 = 7, colDiaCD4 = 8, colDiaCD5 = 9;
         int colDiaCD6 = 10, colDiaCD7 = 11, colDiaCD8 = 12, colDiaCD9 = 13, colDiaCD10 = 14;
         
@@ -28,6 +28,9 @@ namespace reportBangna.gui
         int colDrug1 = 25, colDrug2 =26, colDrug3 = 27, colDrug4 = 28, colDrug5 = 29;
         int colDrug6 = 30, colDrug7 = 31, colDrug8 = 32, colDrug9 = 33, colDrug10 = 34;
         int colDrug11 = 35, colDrug12 = 36, colDrug13 = 37, colDrug14 = 38, colDrug15 = 39;
+
+        
+
         int colDrug16 = 40, colDrug17 = 41, colDrug18 = 42, colDrug19 = 43, colDrug20 = 44;
         int colDrug21 = 45, colDrug22 = 46, colDrug23 = 47, colDrug24 = 48, colDrug25 = 49;
         int colDrug26 = 50, colDrug27 = 51, colDrug28 = 52, colDrug29 = 53, colDrug30 = 54;
@@ -39,7 +42,7 @@ namespace reportBangna.gui
         int colLabValue7 = 75, colLabName8 = 76, colLabResult8 = 77, colLabValue8 = 78, colLabName9 = 79;
         int colLabResult9 = 80, colLabValue9 = 81, colLabName10 = 82, colLabResult10 = 83, colLabValue10 = 84;
 
-        int colvnSum = 85, colvnSeq = 86, colVn=87, colRowEdit=88, colId=89, colEditDia=90, colEditDrug=91, colBranch=92;
+        int colvnSum = 85, colvnSeq = 86, colVn=87, colRowEdit=88, colId=89, colEditDia=90, colEditDrug=91, colBranch=92, colpreno=94;
         //int colExport = 40;
         CheckNhso1DB cNhso1db;
         DataTable dtView;
@@ -254,6 +257,7 @@ namespace reportBangna.gui
             dgvAdd.Columns[colvnSum].Visible = false;
             dgvAdd.Columns[colVn].Visible = false;
             dgvAdd.Columns[colId].Visible = false;
+            dgvAdd.Columns[colpreno].Visible = false;
             dgvAdd.Columns[colRow].ReadOnly = true;
 
             dgvAdd.Font = font;
@@ -270,14 +274,14 @@ namespace reportBangna.gui
             dt = cNhso1db.selectByDate(dateStart1, dateEnd1, chkDrug, "*****", txtLabSearch1.Text, txtLabSearch2.Text, cboLab.Text, StatusLabError, StatusDoctorEdit, branchId);
             if (drug1.Length == 1)
             {
-                dt = cNhso1db.selectByDate(dateStart1, dateEnd1, chkDrug, txtSearch.Text, txtLabSearch1.Text, txtLabSearch2.Text, cboLab.Text, StatusLabError, StatusDoctorEdit, branchId);
+                dt = cNhso1db.selectByDate(dateStart1, dateEnd1, chkDrug, txtSearch.Text, txtLabSearch1.Text.Trim(), txtLabSearch2.Text.Trim(), cboLab.Text.Trim(), StatusLabError, StatusDoctorEdit, branchId);
             }
             else
             {
                 DataTable dt1 = new DataTable();
                 foreach (String aa in drug1)
                 {
-                    dt1 = cNhso1db.selectByDate(dateStart1, dateEnd1, chkDrug, aa.Trim(), txtLabSearch1.Text, txtLabSearch2.Text, cboLab.Text, StatusLabError, StatusDoctorEdit, branchId);
+                    dt1 = cNhso1db.selectByDate(dateStart1, dateEnd1, chkDrug, aa.Trim(), txtLabSearch1.Text.Trim(), txtLabSearch2.Text, cboLab.Text.Trim(), StatusLabError, StatusDoctorEdit, branchId);
                     for (int i = 0; i < dt1.Rows.Count; i++)
                     {
                         DataRow r = dt.NewRow();
@@ -471,6 +475,9 @@ namespace reportBangna.gui
                     dgvAdd[colEditDia, i].Value = dt.Rows[i][cNhso1db.cNhso1.editDia].ToString();
                     dgvAdd[colEditDrug, i].Value = dt.Rows[i][cNhso1db.cNhso1.editDrug].ToString();
                     dgvAdd[colBranch, i].Value = config1.stringNull1(dt.Rows[i][cNhso1db.cNhso1.branchID]);
+                    dgvAdd[colpreno, i].Value = config1.stringNull1(dt.Rows[i][cNhso1db.cNhso1.preno]);
+                    dgvAdd[colvnSeq, i].Value = config1.stringNull1(dt.Rows[i][cNhso1db.cNhso1.vnseq]);
+                    dgvAdd[colvnSum, i].Value = config1.stringNull1(dt.Rows[i][cNhso1db.cNhso1.vnsum]);
                     if ((i % 2) != 0)
                     {
                         //dgvAdd.Rows[i].DefaultCellStyle.BackColor = Color.LightGreen;
@@ -805,7 +812,37 @@ namespace reportBangna.gui
             this.Text = "Last Update " + System.IO.File.GetLastWriteTime(System.Environment.CurrentDirectory + "\\" + Process.GetCurrentProcess().ProcessName + ".exe");
             this.Text +=" hostNameMainHIS="+cNhso1db.conn.hostNameMainHIS+" databaseMainHIS="+cNhso1db.conn.databaseNameMainHIS;
         }
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            pB1.Show();
+            pB1.Minimum = 0;
+            pB1.Maximum = dgvAdd.RowCount;
+            String id = "", hn = "", vn = "", date="", preno="";
 
+            for (int i = 0; i < dgvAdd.RowCount; i++)
+            {
+                id = dgvAdd[colId, i].Value.ToString();
+                hn = dgvAdd[colPatientHnno, i].Value.ToString();
+                vn = dgvAdd[colVn, i].Value.ToString();
+                date = config1.dateShowtoDB(dgvAdd[colDate, i].Value.ToString());
+                date = (int.Parse(date.Substring(0, 4)) - 543) + date.Substring(4);
+                preno = dgvAdd[colpreno, i].Value.ToString();
+                if (hn.Equals("5068244"))
+                {
+                    preno = "";
+                }
+                DataTable dt = cNhso1db.selectLabbyVN(date, date, hn, vn, preno);
+                if (dt.Rows.Count > 0)
+                {
+                    for(int j = 0; j < dt.Rows.Count; j++)
+                    {
+
+                    }
+                }
+                pB1.Value = i;
+            }
+            pB1.Hide();
+        }
         private void FrmCheckNHSO_Resize(object sender, EventArgs e)
         {
             setResize();

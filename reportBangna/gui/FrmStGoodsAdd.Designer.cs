@@ -57,7 +57,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtRemark = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBarcode = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOnHand)).BeginInit();
@@ -88,6 +88,9 @@
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(100, 22);
             this.txtCode.TabIndex = 21;
+            this.txtCode.Enter += new System.EventHandler(this.txtCode_Enter);
+            this.txtCode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCode_KeyUp);
+            this.txtCode.Leave += new System.EventHandler(this.txtCode_Leave);
             // 
             // label1
             // 
@@ -106,6 +109,9 @@
             this.txtNameE.Name = "txtNameE";
             this.txtNameE.Size = new System.Drawing.Size(226, 22);
             this.txtNameE.TabIndex = 27;
+            this.txtNameE.Enter += new System.EventHandler(this.txtNameE_Enter);
+            this.txtNameE.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNameE_KeyUp);
+            this.txtNameE.Leave += new System.EventHandler(this.txtNameE_Leave);
             // 
             // label3
             // 
@@ -124,6 +130,9 @@
             this.txtNameT.Name = "txtNameT";
             this.txtNameT.Size = new System.Drawing.Size(226, 22);
             this.txtNameT.TabIndex = 25;
+            this.txtNameT.Enter += new System.EventHandler(this.txtNameT_Enter);
+            this.txtNameT.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNameT_KeyUp);
+            this.txtNameT.Leave += new System.EventHandler(this.txtNameT_Leave);
             // 
             // label2
             // 
@@ -142,6 +151,9 @@
             this.txtNameBng.Name = "txtNameBng";
             this.txtNameBng.Size = new System.Drawing.Size(226, 22);
             this.txtNameBng.TabIndex = 31;
+            this.txtNameBng.Enter += new System.EventHandler(this.txtNameBng_Enter);
+            this.txtNameBng.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNameBng_KeyUp);
+            this.txtNameBng.Leave += new System.EventHandler(this.txtNameBng_Leave);
             // 
             // label4
             // 
@@ -160,6 +172,9 @@
             this.txtNameGen.Name = "txtNameGen";
             this.txtNameGen.Size = new System.Drawing.Size(226, 22);
             this.txtNameGen.TabIndex = 29;
+            this.txtNameGen.Enter += new System.EventHandler(this.txtNameGen_Enter);
+            this.txtNameGen.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNameGen_KeyUp);
+            this.txtNameGen.Leave += new System.EventHandler(this.txtNameGen_Leave);
             // 
             // label5
             // 
@@ -262,6 +277,9 @@
             this.txtPrice.Size = new System.Drawing.Size(120, 22);
             this.txtPrice.TabIndex = 76;
             this.txtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPrice.Enter += new System.EventHandler(this.txtPrice_Enter);
+            this.txtPrice.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPrice_KeyUp);
+            this.txtPrice.Leave += new System.EventHandler(this.txtPrice_Leave);
             // 
             // label8
             // 
@@ -300,6 +318,9 @@
             this.txtOnHand.Size = new System.Drawing.Size(120, 22);
             this.txtOnHand.TabIndex = 79;
             this.txtOnHand.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtOnHand.Enter += new System.EventHandler(this.txtOnHand_Enter);
+            this.txtOnHand.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtOnHand_KeyUp);
+            this.txtOnHand.Leave += new System.EventHandler(this.txtOnHand_Leave);
             // 
             // txtDescription
             // 
@@ -308,6 +329,9 @@
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(226, 22);
             this.txtDescription.TabIndex = 82;
+            this.txtDescription.Enter += new System.EventHandler(this.txtDescription_Enter);
+            this.txtDescription.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtDescription_KeyUp);
+            this.txtDescription.Leave += new System.EventHandler(this.txtDescription_Leave);
             // 
             // label11
             // 
@@ -326,6 +350,9 @@
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.Size = new System.Drawing.Size(226, 22);
             this.txtRemark.TabIndex = 84;
+            this.txtRemark.Enter += new System.EventHandler(this.txtRemark_Enter);
+            this.txtRemark.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtRemark_KeyUp);
+            this.txtRemark.Leave += new System.EventHandler(this.txtRemark_Leave);
             // 
             // label12
             // 
@@ -337,13 +364,16 @@
             this.label12.TabIndex = 83;
             this.label12.Text = "Remark :";
             // 
-            // textBox1
+            // txtBarcode
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox1.Location = new System.Drawing.Point(102, 401);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(226, 22);
-            this.textBox1.TabIndex = 86;
+            this.txtBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtBarcode.Location = new System.Drawing.Point(102, 401);
+            this.txtBarcode.Name = "txtBarcode";
+            this.txtBarcode.Size = new System.Drawing.Size(226, 22);
+            this.txtBarcode.TabIndex = 86;
+            this.txtBarcode.Enter += new System.EventHandler(this.txtBarcode_Enter);
+            this.txtBarcode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBarcode_KeyUp);
+            this.txtBarcode.Leave += new System.EventHandler(this.txtBarcode_Leave);
             // 
             // label13
             // 
@@ -360,7 +390,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(780, 609);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBarcode);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.txtRemark);
             this.Controls.Add(this.label12);
@@ -433,7 +463,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtRemark;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBarcode;
         private System.Windows.Forms.Label label13;
     }
 }

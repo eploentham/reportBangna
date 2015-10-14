@@ -94,6 +94,9 @@
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(100, 22);
             this.txtCode.TabIndex = 1;
+            this.txtCode.Enter += new System.EventHandler(this.txtCode_Enter);
+            this.txtCode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCode_KeyUp);
+            this.txtCode.Leave += new System.EventHandler(this.txtCode_Leave);
             // 
             // txtNameT
             // 
@@ -102,6 +105,9 @@
             this.txtNameT.Name = "txtNameT";
             this.txtNameT.Size = new System.Drawing.Size(226, 22);
             this.txtNameT.TabIndex = 3;
+            this.txtNameT.Enter += new System.EventHandler(this.txtNameT_Enter);
+            this.txtNameT.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNameT_KeyUp);
+            this.txtNameT.Leave += new System.EventHandler(this.txtNameT_Leave);
             // 
             // label2
             // 
@@ -120,6 +126,9 @@
             this.txtNameE.Name = "txtNameE";
             this.txtNameE.Size = new System.Drawing.Size(226, 22);
             this.txtNameE.TabIndex = 5;
+            this.txtNameE.Enter += new System.EventHandler(this.txtNameE_Enter);
+            this.txtNameE.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNameE_KeyUp);
+            this.txtNameE.Leave += new System.EventHandler(this.txtNameE_Leave);
             // 
             // label3
             // 
@@ -198,6 +207,9 @@
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(226, 22);
             this.txtContact.TabIndex = 13;
+            this.txtContact.Enter += new System.EventHandler(this.txtContact_Enter);
+            this.txtContact.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtContact_KeyUp);
+            this.txtContact.Leave += new System.EventHandler(this.txtContact_Leave);
             // 
             // label7
             // 
@@ -216,6 +228,9 @@
             this.txtContactEmail.Name = "txtContactEmail";
             this.txtContactEmail.Size = new System.Drawing.Size(226, 22);
             this.txtContactEmail.TabIndex = 15;
+            this.txtContactEmail.Enter += new System.EventHandler(this.txtContactEmail_Enter);
+            this.txtContactEmail.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtContactEmail_KeyUp);
+            this.txtContactEmail.Leave += new System.EventHandler(this.txtContactEmail_Leave);
             // 
             // label8
             // 
@@ -234,6 +249,9 @@
             this.txtWebSite.Name = "txtWebSite";
             this.txtWebSite.Size = new System.Drawing.Size(226, 22);
             this.txtWebSite.TabIndex = 17;
+            this.txtWebSite.Enter += new System.EventHandler(this.txtWebSite_Enter);
+            this.txtWebSite.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtWebSite_KeyUp);
+            this.txtWebSite.Leave += new System.EventHandler(this.txtWebSite_Leave);
             // 
             // label9
             // 
@@ -334,6 +352,9 @@
             this.txtAddressE.Name = "txtAddressE";
             this.txtAddressE.Size = new System.Drawing.Size(418, 22);
             this.txtAddressE.TabIndex = 75;
+            this.txtAddressE.Enter += new System.EventHandler(this.txtAddressE_Enter);
+            this.txtAddressE.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtAddressE_KeyUp);
+            this.txtAddressE.Leave += new System.EventHandler(this.txtAddressE_Leave);
             // 
             // label12
             // 
@@ -352,6 +373,9 @@
             this.txtAddressT.Name = "txtAddressT";
             this.txtAddressT.Size = new System.Drawing.Size(418, 22);
             this.txtAddressT.TabIndex = 74;
+            this.txtAddressT.Enter += new System.EventHandler(this.txtAddressT_Enter);
+            this.txtAddressT.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtAddressT_KeyUp);
+            this.txtAddressT.Leave += new System.EventHandler(this.txtAddressT_Leave);
             // 
             // label13
             // 
@@ -370,6 +394,9 @@
             this.txtTele.Name = "txtTele";
             this.txtTele.Size = new System.Drawing.Size(206, 22);
             this.txtTele.TabIndex = 78;
+            this.txtTele.Enter += new System.EventHandler(this.txtTele_Enter);
+            this.txtTele.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtTele_KeyUp);
+            this.txtTele.Leave += new System.EventHandler(this.txtTele_Leave);
             // 
             // label14
             // 
@@ -388,6 +415,9 @@
             this.TxtFax.Name = "TxtFax";
             this.TxtFax.Size = new System.Drawing.Size(206, 22);
             this.TxtFax.TabIndex = 80;
+            this.TxtFax.Enter += new System.EventHandler(this.TxtFax_Enter);
+            this.TxtFax.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtFax_KeyUp);
+            this.TxtFax.Leave += new System.EventHandler(this.TxtFax_Leave);
             // 
             // label15
             // 
@@ -406,6 +436,9 @@
             this.txtTaxID.Name = "txtTaxID";
             this.txtTaxID.Size = new System.Drawing.Size(206, 22);
             this.txtTaxID.TabIndex = 82;
+            this.txtTaxID.Enter += new System.EventHandler(this.txtTaxID_Enter);
+            this.txtTaxID.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtTaxID_KeyUp);
+            this.txtTaxID.Leave += new System.EventHandler(this.txtTaxID_Leave);
             // 
             // label16
             // 
@@ -424,6 +457,9 @@
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.Size = new System.Drawing.Size(418, 22);
             this.txtRemark.TabIndex = 84;
+            this.txtRemark.Enter += new System.EventHandler(this.txtRemark_Enter);
+            this.txtRemark.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtRemark_KeyUp);
+            this.txtRemark.Leave += new System.EventHandler(this.txtRemark_Leave);
             // 
             // label17
             // 
@@ -442,6 +478,9 @@
             this.txtContactTel.Name = "txtContactTel";
             this.txtContactTel.Size = new System.Drawing.Size(226, 22);
             this.txtContactTel.TabIndex = 87;
+            this.txtContactTel.Enter += new System.EventHandler(this.txtContactTel_Enter);
+            this.txtContactTel.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtContactTel_KeyUp);
+            this.txtContactTel.Leave += new System.EventHandler(this.txtContactTel_Leave);
             // 
             // label18
             // 

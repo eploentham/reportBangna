@@ -28,7 +28,7 @@ namespace reportBangna.gui
         private void initConfig()
         {
             ven = new StVendor();
-            
+            setControl();
         }
         private void setControl()
         {
@@ -119,6 +119,253 @@ namespace reportBangna.gui
         private void cboDistrict_Enter(object sender, EventArgs e)
         {
             keyDistrict = true;
+        }
+
+        private void txtCode_Enter(object sender, EventArgs e)
+        {
+            txtCode.BackColor = Color.LightYellow;
+        }
+
+        private void txtCode_Leave(object sender, EventArgs e)
+        {
+            txtCode.BackColor = Color.White;
+        }
+
+        private void txtCode_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtNameT.SelectAll();
+                txtNameT.Focus();
+            }
+        }
+
+        private void txtNameT_Enter(object sender, EventArgs e)
+        {
+            txtNameT.BackColor = Color.LightYellow;
+        }
+
+        private void txtNameT_Leave(object sender, EventArgs e)
+        {
+            txtNameT.BackColor = Color.White;
+        }
+
+        private void txtNameT_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtNameE.SelectAll();
+                txtNameE.Focus();
+            }
+        }
+
+        private void txtNameE_Enter(object sender, EventArgs e)
+        {
+            txtNameE.BackColor = Color.LightYellow;
+        }
+
+        private void txtNameE_Leave(object sender, EventArgs e)
+        {
+            txtNameE.BackColor = Color.White;
+        }
+
+        private void txtNameE_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtAddressT.SelectAll();
+                txtAddressT.Focus();
+            }
+        }
+
+        private void txtAddressT_Enter(object sender, EventArgs e)
+        {
+            txtAddressT.BackColor = Color.LightYellow;
+        }
+
+        private void txtAddressT_Leave(object sender, EventArgs e)
+        {
+            txtAddressT.BackColor = Color.White;
+        }
+
+        private void txtAddressT_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtAddressE.SelectAll();
+                txtAddressE.Focus();
+            }
+        }
+
+        private void txtAddressE_Enter(object sender, EventArgs e)
+        {
+            txtAddressE.BackColor = Color.LightYellow;
+        }
+
+        private void txtAddressE_Leave(object sender, EventArgs e)
+        {
+            txtAddressE.BackColor = Color.White;
+        }
+
+        private void txtAddressE_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtTele.SelectAll();
+                txtTele.Focus();
+            }
+        }
+
+        private void txtTele_Enter(object sender, EventArgs e)
+        {
+            txtTele.BackColor = Color.LightYellow;
+        }
+
+        private void txtTele_Leave(object sender, EventArgs e)
+        {
+            txtTele.BackColor = Color.White;
+        }
+
+        private void txtTele_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                TxtFax.SelectAll();
+                TxtFax.Focus();
+            }
+        }
+
+        private void TxtFax_Enter(object sender, EventArgs e)
+        {
+            TxtFax.BackColor = Color.LightYellow;
+        }
+
+        private void TxtFax_Leave(object sender, EventArgs e)
+        {
+            TxtFax.BackColor = Color.White;
+        }
+
+        private void TxtFax_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtTaxID.SelectAll();
+                txtTaxID.Focus();
+            }
+        }
+
+        private void txtTaxID_Enter(object sender, EventArgs e)
+        {
+            txtTaxID.BackColor = Color.LightYellow;
+        }
+
+        private void txtTaxID_Leave(object sender, EventArgs e)
+        {
+            txtTaxID.BackColor = Color.White;
+        }
+
+        private void txtTaxID_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtRemark.SelectAll();
+                txtRemark.Focus();
+            }
+        }
+
+        private void txtRemark_Enter(object sender, EventArgs e)
+        {
+            txtRemark.BackColor = Color.LightYellow;
+        }
+
+        private void txtRemark_Leave(object sender, EventArgs e)
+        {
+            txtRemark.BackColor = Color.White;
+        }
+
+        private void txtRemark_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtContact.SelectAll();
+                txtContact.Focus();
+            }
+        }
+
+        private void txtContact_Enter(object sender, EventArgs e)
+        {
+            txtContact.BackColor = Color.LightYellow;
+        }
+
+        private void txtContact_Leave(object sender, EventArgs e)
+        {
+            txtContact.BackColor = Color.White;
+        }
+
+        private void txtContact_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtContactTel.SelectAll();
+                txtContactTel.Focus();
+            }
+        }
+
+        private void txtContactTel_Enter(object sender, EventArgs e)
+        {
+            txtContactTel.BackColor = Color.LightYellow;
+        }
+
+        private void txtContactTel_Leave(object sender, EventArgs e)
+        {
+            txtContactTel.BackColor = Color.White;
+        }
+
+        private void txtContactTel_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtContactEmail.SelectAll();
+                txtContactEmail.Focus();
+            }
+        }
+
+        private void txtContactEmail_Enter(object sender, EventArgs e)
+        {
+            txtContactEmail.BackColor = Color.LightYellow;
+        }
+
+        private void txtContactEmail_Leave(object sender, EventArgs e)
+        {
+            txtContactEmail.BackColor = Color.White;
+        }
+
+        private void txtContactEmail_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtWebSite.SelectAll();
+                txtWebSite.Focus();
+            }
+        }
+
+        private void txtWebSite_Enter(object sender, EventArgs e)
+        {
+            txtWebSite.BackColor = Color.LightYellow;
+        }
+
+        private void txtWebSite_Leave(object sender, EventArgs e)
+        {
+            txtWebSite.BackColor = Color.White;
+        }
+
+        private void txtWebSite_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                //txtWebSite.SelectAll();
+                //txtWebSite.Focus();
+            }
         }
 
         private void cboDistrict_KeyUp(object sender, KeyEventArgs e)

@@ -20,7 +20,7 @@ namespace reportBangna.gui
         CheckNhso1DB cNhso1db;
         WriteText wt;
         String edit = "";
-        int colCnt = 146, colRow = 0, colPatientName = 1, colPatientHnno = 2, colDate = 3, colTime = 4;
+        int colCnt = 153, colRow = 0, colPatientName = 1, colPatientHnno = 2, colDate = 3, colTime = 4;
         int colDiaCD1 = 5, colDiaCD2 = 6, colDiaCD3 = 7, colDiaCD4 = 8, colDiaCD5 = 9;
         int colDiaCD6 = 10, colDiaCD7 = 11, colDiaCD8 = 12, colDiaCD9 = 13, colDiaCD10 = 14;
         int colCHRONICCODE1 = 15, colCHRONICCODE2 = 16, colCHRONICCODE3 = 17, colCHRONICCODE4 = 18, colCHRONICCODE5 = 19;
@@ -28,6 +28,7 @@ namespace reportBangna.gui
         int colExport = 93;
         int colDrug1 = 25, colDrug2 = 26, colDrug3 = 27, colDrug4 = 28, colDrug5 = 29;
         int colDrug6 = 30, colDrug7 = 31, colDrug8 = 32, colDrug9 = 33, colDrug10 = 34;
+
         int colDrug11 = 35, colDrug12 = 36, colDrug13 = 37, colDrug14 = 38, colDrug15 = 39;
         int colDrug16 = 40, colDrug17 = 41, colDrug18 = 42, colDrug19 = 43, colDrug20 = 44;
         int colDrug21 = 45, colDrug22 = 46, colDrug23 = 47, colDrug24 = 48, colDrug25 = 49;
@@ -46,7 +47,8 @@ namespace reportBangna.gui
         int colLabName26 = 130, colLabResult26 = 131, colLabValue26 = 132, colLabName27 = 133, colLabResult27 = 134, colLabValue27 = 135, colLabName28 = 136, colLabResult28 = 137, colLabValue28 = 138;
         int colLabName29 = 139, colLabResult29 = 140, colLabValue29 = 141, colLabName30 = 142, colLabResult30 = 143, colLabValue30 = 144;
 
-        int colvnSum = 85, colvnSeq = 86, colVn = 87, colRowEdit = 88, colId = 89, colEditDia = 90, colEditDrug = 91, colBranch=145;
+        //int colvnSum = 85, colvnSeq = 86, colVn = 87, colRowEdit = 88, colId = 89, colEditDia = 90, colEditDrug = 91, colBranch=145;
+        int colvnSum = 146, colvnSeq = 147, colVn = 18, colRowEdit = 149, colId = 150, colEditDia = 151, colEditDrug = 152, colBranch = 145;
 
         public FrmCheckNHSOAdd()
         {
@@ -136,7 +138,7 @@ namespace reportBangna.gui
                         }
 
                         //dgvAdd[colTime, i].Value = dt.Rows[i]["MNC_TIME"].ToString();
-
+                        Debug.WriteLine("setData1 i"+i);
                         dtDia = cNhso1db.selectDiaCDbyVN(dateStart, dateEnd, hn, vn, preNo);
                         //lB1.Items.Add("กำลังดึงข้อมูล dtDia " + dtDia.Rows.Count);
                         //lB1.Refresh();
@@ -380,6 +382,10 @@ namespace reportBangna.gui
                             //    dgvAdd[colDrug21, i].Value = pharName;
                             //}
                         }
+                        if (hn.Equals("5068244"))
+                        {
+                            labName = "";
+                        }
                         dtLab = cNhso1db.selectLabbyVN(dateStart, dateEnd, hn, vn, preNo);
                         //lB1.Items.Add("กำลังดึงข้อมูล dtLab " + dtLab.Rows.Count);
                         //lB1.Refresh();
@@ -585,6 +591,7 @@ namespace reportBangna.gui
             lB1.Items.Add("ดึงข้อมูลเรียบร้อย");
             lB1.Refresh();
         }
+
         private void saveCHeckNhso(Boolean isConvert)
         {
             Boolean isBranch = false;
@@ -616,6 +623,11 @@ namespace reportBangna.gui
                     continue;
                 }
                 CheckNhso1 p = new CheckNhso1();
+                Debug.WriteLine("saveCHeckNhso i" + i);
+                if (i == 3325)
+                {
+                    Debug.WriteLine("saveCHeckNhso i" + i);
+                }
                 if (dgvAdd[colDate, i].Value.ToString().Length >= 10)
                 {
                     visitDate = dgvAdd[colDate, i].Value.ToString();
@@ -813,7 +825,7 @@ namespace reportBangna.gui
                 //{
                 //    chk = cNhso1db.insertCHeckNhso(p);
                 //}
-                
+
                 //if (chk.Equals(p.checknhsoId))
                 //{
                 //    dgvAdd.Rows[i].DefaultCellStyle.BackColor = Color.Cornsilk;
@@ -847,6 +859,47 @@ namespace reportBangna.gui
 
             setData1(dateStart, dateEnd);
             saveCHeckNhso(true);
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            String visitDate = "", dateStart1 = "", dateEnd1 = "", hn = "", vn = "", id="";
+            DataTable dt = new DataTable();
+            int vn1 = 0;
+            dateStart1 = dtpStart.Value.Year.ToString() + "-" + dtpStart.Value.ToString("MM-dd");
+            dateEnd1 = dtpEnd.Value.Year.ToString() + "-" + dtpEnd.Value.ToString("MM-dd");
+            dateStart1 = (int.Parse(dateStart1.Substring(0, 4)) + 543) + dateStart1.Substring(4);
+            dateEnd1 = (int.Parse(dateEnd1.Substring(0, 4)) + 543) + dateEnd1.Substring(4);
+            dt = cNhso1db.selectByDate(dateStart1, dateEnd1, "", "", "", "", "", false, false, "005");
+            pB1.Visible = true;
+            pB1.Minimum = 0;
+            pB1.Maximum = dt.Rows.Count;
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                id = dt.Rows[i][cNhso1db.cNhso1.checknhsoId].ToString();
+                hn = dt.Rows[i][cNhso1db.cNhso1.hn].ToString();
+                vn = dt.Rows[i][cNhso1db.cNhso1.vn].ToString();
+                //if (vn.Length > 1)
+                //{
+                //    continue;
+                //}
+                if (int.TryParse(vn,out vn1))
+                {
+                    visitDate = dt.Rows[i][cNhso1db.cNhso1.visitDate].ToString();
+                    visitDate = (int.Parse(visitDate.Substring(0, 4)) - 543) + visitDate.Substring(4);
+                    DataTable dt1 = cNhso1db.selectbyVN(visitDate, hn, vn1.ToString());
+                    if (dt1.Rows.Count == 1)
+                    {
+                        String preno = "", vnsum = "", vnseq = "";
+                        preno = dt1.Rows[0]["mnc_pre_no"].ToString();
+                        vnsum = dt1.Rows[0]["mnc_vn_sum"].ToString();
+                        vnseq = dt1.Rows[0]["mnc_vn_seq"].ToString();
+                        cNhso1db.updatePreno(id, preno, vnseq, vnsum);
+                    }
+                }
+                
+                pB1.Value = i;
+            }
+            pB1.Visible = false;
         }
         public String writeText(String dateStart, String dateEnd)
         {
@@ -1133,6 +1186,7 @@ namespace reportBangna.gui
                     //}
                     pB1.Value = i;
                 }
+                Debug.WriteLine("btnChk_Click Finish FOR  for (int i = 0; i < dt.Rows.Count; i++)");
                 saveCHeckNhso(false);
             }
             pB1.Hide();

@@ -41,6 +41,6 @@ namespace reportBangna.object1
         public String labName28 = "", labResult28 = "", labValue28 = "";
         public String labName29 = "", labResult29 = "", labValue29 = "";
         public String labName30 = "", labResult30 = "", labValue30 = "";
-
+        public String preno = "", vnsum = "", vnseq = "";
     }
 }
