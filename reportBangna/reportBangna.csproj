@@ -139,6 +139,12 @@
     <Compile Include="gui\FrmLabExLoadPic.Designer.cs">
       <DependentUpon>FrmLabExLoadPic.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\FrmOPDCheckUP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmOPDCheckUP.Designer.cs">
+      <DependentUpon>FrmOPDCheckUP.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\FrmStGoodsAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -453,6 +459,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmLabExView.resx">
       <DependentUpon>FrmLabExView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmOPDCheckUP.resx">
+      <DependentUpon>FrmOPDCheckUP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmPatientDead.resx">
       <DependentUpon>FrmPatientDead.cs</DependentUpon>
