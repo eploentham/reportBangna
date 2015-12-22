@@ -224,5 +224,21 @@ namespace reportBangna.objdb
             }
             return c;
         }
+        public String getMaxVendor()
+        {
+            String sql = "", doc = "", cnt = "", year = "", month = "";
+
+            sql = "Select count(1) as cnt From " + ven.table + " ";
+            DataTable dt = connBua.selectData(sql);
+            if ((dt.Rows.Count > 0))
+            {
+                doc = String.Concat(int.Parse(dt.Rows[0]["cnt"].ToString()) + 1);
+                doc = "000" + doc;
+                doc = doc.Substring(doc.Length - 3);
+                //cnt = "1";
+                //doc = "00001";
+            }
+            return "VEN" + doc;
+        }
     }
 }

@@ -228,7 +228,7 @@
             // 
             this.btnSave.Location = new System.Drawing.Point(465, 523);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(75, 38);
             this.btnSave.TabIndex = 75;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -255,6 +255,7 @@
             this.ChkUnActive.TabStop = true;
             this.ChkUnActive.Text = "ยกเลิก";
             this.ChkUnActive.UseVisualStyleBackColor = true;
+            this.ChkUnActive.Click += new System.EventHandler(this.ChkUnActive_Click);
             // 
             // chkActive
             // 
@@ -268,11 +269,17 @@
             this.chkActive.TabStop = true;
             this.chkActive.Text = "ใช้งาน";
             this.chkActive.UseVisualStyleBackColor = true;
+            this.chkActive.Click += new System.EventHandler(this.chkActive_Click);
             // 
             // txtPrice
             // 
             this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtPrice.Location = new System.Drawing.Point(102, 269);
+            this.txtPrice.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(120, 22);
             this.txtPrice.TabIndex = 76;
@@ -314,6 +321,11 @@
             // 
             this.txtOnHand.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtOnHand.Location = new System.Drawing.Point(102, 295);
+            this.txtOnHand.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.txtOnHand.Name = "txtOnHand";
             this.txtOnHand.Size = new System.Drawing.Size(120, 22);
             this.txtOnHand.TabIndex = 79;

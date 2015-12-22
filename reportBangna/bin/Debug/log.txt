@@ -491,3 +491,27 @@ Parameter name: length
 23/9/2558 15:28->FrmStVendorView.dgvView_CellDoubleClick 
 23/9/2558 15:29->FrmStVendorView.dgvView_CellDoubleClick 
 23/9/2558 15:29->FrmStVendorView.dgvView_CellDoubleClick 
+18/11/2558 9:45->FrmCustAdd.cboDistrict_KeyUp Error Index and length must refer to a location within the string.
+Parameter name: length
+18/11/2558 9:45->FrmCustAdd.cboDistrict_KeyUp Error Index and length must refer to a location within the string.
+Parameter name: length
+18/11/2558 9:45->FrmCustAdd.cboDistrict_KeyUp Error Index and length must refer to a location within the string.
+Parameter name: length
+18/11/2558 9:46->FrmCustAdd.cboDistrict_KeyUp Error Index and length must refer to a location within the string.
+Parameter name: length
+18/11/2558 9:46->FrmCustAdd.cboDistrict_KeyUp Error Index and length must refer to a location within the string.
+Parameter name: length
+18/11/2558 9:47->FrmCustAdd.cboDistrict_KeyUp Error Index and length must refer to a location within the string.
+Parameter name: length
+18/11/2558 9:49->FrmCustAdd.cboDistrict_KeyUp Error Index and length must refer to a location within the string.
+Parameter name: length
+18/11/2558 10:08->FrmStVendorView.dgvView_CellDoubleClick 
+18/11/2558 10:28->FrmStVendorView.dgvView_CellDoubleClick 
+18/11/2558 10:32->FrmStVendorView.dgvView_CellDoubleClick 
+18/11/2558 10:55->FrmStVendorView.dgvView_CellDoubleClick 
+18/11/2558 10:58->FrmStVendorView.dgvView_CellDoubleClick 
+18/11/2558 10:58->FrmStVendorView.dgvView_CellDoubleClick 
+18/11/2558 10:59->FrmStGoodsView.dgvView_CellDoubleClick 
+1/12/2558 10:29->FrmOPDCheckUPView.dgvView_CellDoubleClick 
+1/12/2558 10:29->FrmOPDCheckUPView.dgvView_CellDoubleClick 
+1/12/2558 10:29->FrmOPDCheckUPView.dgvView_CellDoubleClick 

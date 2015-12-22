@@ -37,7 +37,7 @@ namespace reportBangna.gui
             txtAddressE.Text = ven.AddressE;
             txtAddressT.Text = ven.AddressT;
             txtCode.Text = ven.Code;
-            txtCodeBng.Text = ven.Code;
+            txtCodeBng.Text = ven.CodeBng;
             txtContact.Text = ven.ContactName;
             txtContactEmail.Text = ven.ContactEmail;
             txtContactTel.Text = ven.ContactTel;
@@ -53,17 +53,20 @@ namespace reportBangna.gui
             label19.Text = ven.districtId;
             if (label19.Text.Length > 4)
             {
-                cboDistrict = bc.didb.getCboDist1(cboDistrict, label18.Text);
-                cboAmphur = bc.amdb.getCboAmphur1(cboAmphur, label18.Text.Substring(0, 4));
-                cboProvince = bc.prdb.getCboProv1(cboProvince, label18.Text.Substring(0, 2));
+                cboDistrict = bc.didb.getCboDist1(cboDistrict, label19.Text);
+                cboAmphur = bc.amdb.getCboAmphur1(cboAmphur, label19.Text.Substring(0, 4));
+                cboProvince = bc.prdb.getCboProv1(cboProvince, label19.Text.Substring(0, 2));
             }
+            chkActive.Checked = ven.Active=="1" ? true : false;
+            ChkUnActive.Checked = ven.Active == "1" ? false : true;
+            btnUnActive.Visible = false;
         }
         private void getVendor() {
             ven.Id = txtId.Text;
             ven.AddressE = txtAddressE.Text;
             ven.AddressT= txtAddressT.Text;
             ven.Code= txtCode.Text;
-            ven.Code= txtCodeBng.Text;
+            ven.CodeBng= txtCodeBng.Text;
             ven.ContactName= txtContact.Text;
             ven.ContactEmail= txtContactEmail.Text;
             ven.ContactTel= txtContactTel.Text;
@@ -75,10 +78,13 @@ namespace reportBangna.gui
             ven.Tele= txtTele.Text;
             ven.WebSite= txtWebSite.Text;
             ven.Zipcode= txtZipcode.Text;
+            //ven.c
 
             ven.amphurId = bc.cf.getValueCboItem(cboAmphur);
             ven.districtId = bc.cf.getValueCboItem(cboDistrict);
             ven.provinceId = bc.cf.getValueCboItem(cboProvince);
+            ven.Active = chkActive.Checked ? "1" : "0";
+
         }
         private void FrmStVendorAdd_Load(object sender, EventArgs e)
         {
@@ -94,8 +100,9 @@ namespace reportBangna.gui
             }
             if (txtCode.Text.Equals(""))
             {
-                MessageBox.Show("ไม่ได้ป้อนรหัส", "ป้อนข้อมูลไม่ครบ");
-                return;
+                //MessageBox.Show("ไม่ได้ป้อนรหัส", "ป้อนข้อมูลไม่ครบ");
+                //return;
+                txtCode.Text = bc.vendb.getMaxVendor();
             }
             getVendor();
             if (bc.vendb.insertVendor(ven).Length >= 1)
@@ -118,7 +125,7 @@ namespace reportBangna.gui
 
         private void cboDistrict_Enter(object sender, EventArgs e)
         {
-            keyDistrict = true;
+            //keyDistrict = true;
         }
 
         private void txtCode_Enter(object sender, EventArgs e)
@@ -366,6 +373,21 @@ namespace reportBangna.gui
                 //txtWebSite.SelectAll();
                 //txtWebSite.Focus();
             }
+        }
+
+        private void btnUnActive_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void ChkUnActive_Click(object sender, EventArgs e)
+        {
+            btnUnActive.Visible = true;
+        }
+
+        private void chkActive_Click(object sender, EventArgs e)
+        {
+            btnUnActive.Visible = false;
         }
 
         private void cboDistrict_KeyUp(object sender, KeyEventArgs e)

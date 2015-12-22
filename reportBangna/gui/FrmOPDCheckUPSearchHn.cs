@@ -1,0 +1,124 @@
+﻿using reportBangna.object1;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace reportBangna.gui
+{
+    public partial class FrmOPDCheckUPSearchHn : Form
+    {
+        BangnaControl bc;
+        OPDCheckUP opdc;
+        Boolean pageLoad = false, keyDistrict = false;
+        int colCnt = 0, colRow = 0, colHN = 1, colVn = 2, colName = 3, colAge = 4, colFnCd = 5, colsymptom = 6, colVisitDate = 7, colVisitTime=8;
+        String id = "";
+        public FrmOPDCheckUPSearchHn()
+        {
+            InitializeComponent();
+        }
+        private void initConfig()
+        {
+            opdc = new OPDCheckUP();
+            
+        }
+
+        private void setGrd()
+        {
+            Font font = new Font("Microsoft Sans Serif", 12);
+            DataTable dt = new DataTable();
+            DateTime dt1 = new DateTime();
+            String visitDate = "", visitTime = "", hn = "";
+            hn = txtHN.Text;
+            if (hn.Equals(""))
+            {
+                hn = "@";
+            }
+            dt = bc.vsdb.selectVisitByHn1(hn);
+
+            dgv1.ColumnCount = colCnt;
+            dgv1.Rows.Clear();
+            dgv1.RowCount = 1;
+            dgv1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            dgv1.Columns[colRow].Width = 50;
+            dgv1.Columns[colHN].Width = 80;
+            dgv1.Columns[colVn].Width = 70;
+            dgv1.Columns[colName].Width = 220;
+            dgv1.Columns[colAge].Width = 60;
+            dgv1.Columns[colFnCd].Width = 120;
+            dgv1.Columns[colsymptom].Width = 160;
+            dgv1.Columns[colVisitTime].Width = 60;
+
+
+            dgv1.Columns[colRow].HeaderText = "ลำดับ";
+            dgv1.Columns[colHN].HeaderText = "HN";
+            dgv1.Columns[colVn].HeaderText = "VN";
+            dgv1.Columns[colName].HeaderText = "ชื่อ นามสกุล";
+            dgv1.Columns[colAge].HeaderText = "อายุ";
+            dgv1.Columns[colFnCd].HeaderText = "สิทธิ";
+            dgv1.Columns[colsymptom].HeaderText = "อาการ";
+
+            //dgvPE.Columns[colPEId].HeaderText = "id";
+            if (dt.Rows.Count > 0)
+            {
+                dgv1.RowCount = dt.Rows.Count;
+                for (int i = 0; i < dgv1.RowCount; i++)
+                {
+                    dgv1[colRow, i].Value = (i + 1);
+                    dgv1[colHN, i].Value = dt.Rows[i]["MNC_HN_NO"].ToString();
+                    dgv1[colVn, i].Value = dt.Rows[i]["MNC_VN_NO"].ToString() + "." + dt.Rows[i]["MNC_VN_SEQ"].ToString() + "." + dt.Rows[i]["MNC_VN_SUM"].ToString();
+                    dgv1[colName, i].Value = dt.Rows[i]["prefix"].ToString() + " " + dt.Rows[i]["MNC_FNAME_T"].ToString() + " " + dt.Rows[i]["MNC_LNAME_T"].ToString();
+                    dgv1[colAge, i].Value = dt.Rows[i]["AGE"].ToString();
+                    dgv1[colFnCd, i].Value = dt.Rows[i]["MNC_FN_TYP_DSC"].ToString();
+                    dgv1[colsymptom, i].Value = dt.Rows[i]["MNC_SHIF_MEMO"].ToString();
+                    
+                    if (dt.Rows[i]["MNC_DATE"] != null)
+                    {
+                        dt1 = DateTime.Parse(dt.Rows[i]["MNC_DATE"].ToString());
+                        visitDate = dt1.ToString("dd-MM-yyyy");
+                        dgv1[colVisitDate, i].Value = visitDate;
+                        visitTime = "0000" + dt.Rows[i]["MNC_TIME"].ToString();
+                        visitTime = visitTime.Substring(visitTime.Length - 4);
+                        dgv1[colVisitTime, i].Value = visitTime.Substring(0, 2) + ":" + visitTime.Substring(2);
+                    }
+                    else
+                    {
+                        dgv1[colVisitDate, i].Value = "";
+                    }
+                    //if (dt.Rows[i]["MNC_REQ_DAT"] != null)
+                    //{
+                    //    dt1 = DateTime.Parse(dt.Rows[i]["MNC_REQ_DAT"].ToString());
+                    //    visitDate = dt1.ToString("dd-MM-yyyy");
+                    //    dgv1[colLabDate, i].Value = visitDate;
+                    //    visitTime = "0000" + dt.Rows[i]["MNC_REQ_TIM"].ToString();
+                    //    visitTime = visitTime.Substring(visitTime.Length - 4);
+                    //    dgv1[colLabTime, i].Value = visitTime.Substring(0, 2) + ":" + visitTime.Substring(2);
+                    //}
+                    //else
+                    //{
+                    //    dgv1[colVisitDate, i].Value = "";
+                    //}
+                    if ((i % 2) != 0)
+                    {
+                        dgv1.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
+                    }
+                }
+                dgv1.Font = font;
+            }
+            //dgv1.Columns[colLabReqNo].Visible = false;
+            //dgv1.Columns[colDoctorId].Visible = false;
+            //dgv1.Columns[colLabReqNo].Visible = false;
+            //dgv1.Columns[colLabReqNo].Visible = false;
+            dgv1.ScrollBars = ScrollBars.Both;
+        }
+        private void FrmOPDCheckUPSearchHn_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

@@ -69,6 +69,9 @@ namespace reportBangna.objdb
         {
             StGoods item = new StGoods();
             String sql = "";
+            item.onHand = "0";
+            item.Price = "0";
+            //item.onHand = "0";
             DataTable dt = new DataTable();
             sql = "Select * From " + good.table + " Where " + good.pkField + "='" + id + "'";
             dt = connBua.selectData(sql);

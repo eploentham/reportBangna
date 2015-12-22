@@ -47,6 +47,7 @@ namespace reportBangna.gui
             txtDescription.Text = good.description;
             cboVen.Text = good.VenId;
             cboType.Text = good.TypeId;
+            btnUnActive.Visible = false;
         }
         private void getGoods()
         {
@@ -279,6 +280,16 @@ namespace reportBangna.gui
                 //txtBarcode.SelectAll();
                 //txtBarcode.Focus();
             }
+        }
+
+        private void ChkUnActive_Click(object sender, EventArgs e)
+        {
+            btnUnActive.Visible = true;
+        }
+
+        private void chkActive_Click(object sender, EventArgs e)
+        {
+            btnUnActive.Visible = false;
         }
     }
 }

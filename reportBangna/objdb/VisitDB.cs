@@ -92,6 +92,46 @@ namespace reportBangna.objdb
 
             return dt;
         }
+        public DataTable selectVisitByHn2(String hn, String visitDate)
+        {
+            DataTable dt = new DataTable();
+            String sql = "";
+            sql = "Select   t01.MNC_HN_NO,m02.MNC_PFIX_DSC as prefix, " +
+                "m01.MNC_FNAME_T,m01.MNC_LNAME_T,m01.MNC_AGE,t01.MNC_VN_NO,t01.MNC_VN_SEQ,t01.MNC_VN_SUM, " +
+                "Case f02.MNC_FN_TYP_DSC " +
+                    "When 'ประกันสังคม (บ.1)' Then 'ปกส(บ.1)' " +
+                    "When 'ประกันสังคม (บ.2)' Then 'ปกส(บ.2)' " +
+                    "When 'ประกันสังคม (บ.5)' Then 'ปกส(บ.5)' " +
+                    "When 'ประกันสังคมอิสระ (บ.1)' Then 'ปกต(บ.1)' " +
+                    "When 'ประกันสังคมอิสระ (บ.5)' Then 'ปกต(บ.5)' " +
+                    "When 'ตรวจสุขภาพ (เงินสด)' Then 'ตส(เงินสด)' " +
+                    "When 'ตรวจสุขภาพ (บริษัท)' Then 'ตส(บริษัท)' " +
+                    "When 'ตรวจสุขภาพ (PACKAGE)' Then 'ตส(PACKAGE)' " +
+                    "When 'ลูกหนี้ประกันสังคม รพ.เมืองสมุทรปากน้ำ' Then 'ลูกหนี้(ปากน้ำ)' " +
+
+
+                    "When 'ลูกหนี้บางนา 1' Then 'ลูกหนี้(บ.1)' " +
+                    "When 'บริษัทประกัน' Then 'บ.ประกัน' " +
+                    "When '' Then '' " +
+                    "When '' Then '' " +
+                    "When '' Then '' " +
+                    "Else MNC_FN_TYP_DSC " +
+                    "End as MNC_FN_TYP_DSC, " +
+                " t01.MNC_SHIF_MEMO,t01.MNC_FN_TYP_CD, t01.mnc_pre_no, t01.mnc_breath, t01.mnc_high,t01.mnc_bp1_l,t01.mnc_temp,t01.mnc_weight,m01.*, m07.mnc_tum_dsc, m08.mnc_amp_dsc, m09.mnc_chw_dsc " +
+                "From patient_t01 t01 " +
+                " inner join patient_m01 m01 on t01.MNC_HN_NO = m01.MNC_HN_NO " +
+                " inner join patient_m02 m02 on m01.MNC_PFIX_CDT =m02.MNC_PFIX_CD " +
+                " inner join FINANCE_M02 f02 ON t01.MNC_FN_TYP_CD = f02.MNC_FN_TYP_CD " +
+                " left join patient_m07 m07 ON m01.MNC_cur_tum = m07.MNC_tum_cd " +
+                " left join patient_m08 m08 ON m01.MNC_cur_amp = m08.MNC_amp_cd " +
+                " left join patient_m09 m09 ON m01.MNC_cur_chw = m09.MNC_chw_cd " +
+                " Where t01.MNC_HN_NO = '" + hn + "' " +
+                "and t01.MNC_STS <> 'C' and t01.mnc_shif_memo like '%สุขภาพ%'" +
+                " Order by t01.MNC_HN_NO ";
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
         public DataTable selectVisitByHn1(String hn)
         {
             DataTable dt = new DataTable();
@@ -226,15 +266,15 @@ namespace reportBangna.objdb
         {
             DataTable dt = new DataTable();
             String sql = "";
-            sql = "SELECT LAB_M02.MNC_LB_CD,LAB_M01.MNC_LB_DSC, LAB_M02.MNC_LB_PRI01, LAB_M02.MNC_LB_PRI02,LAB_T05.MNC_REQ_DAT"+
+            sql = "SELECT LAB_M02.MNC_LB_CD,LAB_M01.MNC_LB_DSC, LAB_M02.MNC_LB_PRI01, LAB_M02.MNC_LB_PRI02,LAB_T05.* "+
                 "FROM     PATIENT_T01 t01 "+
                 "left join LAB_T01 ON t01.MNC_PRE_NO = LAB_T01.MNC_PRE_NO AND t01.MNC_DATE = LAB_T01.MNC_DATE "+
                 "left join LAB_T05 ON LAB_T01.MNC_REQ_NO = LAB_T05.MNC_REQ_NO AND LAB_T01.MNC_REQ_DAT = LAB_T05.MNC_REQ_DAT "+
                 "left join LAB_M01 ON LAB_T05.MNC_LB_CD = LAB_M01.MNC_LB_CD "+
                 "left join LAB_M02 ON LAB_T05.MNC_LB_CD = LAB_M02.MNC_LB_CD "+
-                "where  t01.mnc_hn_no = '5086156' "+
-                "and t01.mnc_vn_no = '30' "+
-                "and t01.mnc_pre_no = '32'" +
+                "where  t01.mnc_hn_no = '"+ hn + "' "+
+                "and t01.mnc_vn_no = '"+ vn + "' "+
+                "and t01.mnc_pre_no = '"+ preno + "' " +
                 "Order By LAB_T05.MNC_REQ_DAT";
 
             dt = conn.selectData(sql);

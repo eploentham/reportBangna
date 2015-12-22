@@ -70,6 +70,10 @@
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="itextsharp, Version=5.5.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
@@ -91,10 +95,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmStockOR.cs">
+    <Compile Include="gui\FrmItemGroupAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmStockOR.Designer.cs">
+    <Compile Include="gui\FrmItemGroupAdd.designer.cs">
+      <DependentUpon>FrmItemGroupAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmItemGroupView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmItemGroupView.designer.cs">
+      <DependentUpon>FrmItemGroupView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmStockOR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmStockOR.Designer.cs">
       <DependentUpon>FrmStockOR.cs</DependentUpon>
     </Compile>
     <Compile Include="gui\FrmCheckNHSODetail.cs">
@@ -139,11 +155,29 @@
     <Compile Include="gui\FrmLabExLoadPic.Designer.cs">
       <DependentUpon>FrmLabExLoadPic.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\FrmNHSOPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmNHSOPrint.Designer.cs">
+      <DependentUpon>FrmNHSOPrint.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\FrmOPDCheckUP.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="gui\FrmOPDCheckUP.Designer.cs">
       <DependentUpon>FrmOPDCheckUP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmOPDCheckUPSearchHn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmOPDCheckUPSearchHn.Designer.cs">
+      <DependentUpon>FrmOPDCheckUPSearchHn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmOPDCheckUPView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmOPDCheckUPView.Designer.cs">
+      <DependentUpon>FrmOPDCheckUPView.cs</DependentUpon>
     </Compile>
     <Compile Include="gui\FrmStGoodsAdd.cs">
       <SubType>Form</SubType>
@@ -201,6 +235,8 @@
     </Compile>
     <Compile Include="objdb\AmphurDB.cs" />
     <Compile Include="objdb\DistrictDB.cs" />
+    <Compile Include="objdb\StGoodsGroupDB.cs" />
+    <Compile Include="objdb\OPDCheckUPDB.cs" />
     <Compile Include="objdb\ProvinceDB.cs" />
     <Compile Include="objdb\StGoodsDB.cs" />
     <Compile Include="objdb\StReceiveDB.cs" />
@@ -208,6 +244,7 @@
     <Compile Include="objdb\StVendorDB.cs" />
     <Compile Include="object1\Amphur.cs" />
     <Compile Include="object1\District.cs" />
+    <Compile Include="object1\StGoodsGroup.cs" />
     <Compile Include="object1\LogWriter.cs" />
     <Compile Include="Control\BangnaControl.cs" />
     <Compile Include="FrmMain.cs">
@@ -345,6 +382,7 @@
     <Compile Include="objdb\VisitDB.cs" />
     <Compile Include="object1\ChkStaffNote.cs" />
     <Compile Include="object1\ComboBoxItem.cs" />
+    <Compile Include="object1\OPDCheckUP.cs" />
     <Compile Include="object1\StGoods.cs" />
     <Compile Include="object1\StReceive.cs" />
     <Compile Include="object1\StReceiveGoods.cs" />
@@ -427,11 +465,19 @@
       <DependentUpon>FrmMain.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmStockOR.resx">
+    <EmbeddedResource Include="gui\FrmItemGroupAdd.resx">
+      <DependentUpon>FrmItemGroupAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmItemGroupView.resx">
+      <DependentUpon>FrmItemGroupView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmStockOR.resx">
       <DependentUpon>FrmStockOR.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmCheckNHSODetail.resx">
       <DependentUpon>FrmCheckNHSODetail.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmCtScan.resx">
       <DependentUpon>FrmCtScan.cs</DependentUpon>
@@ -460,8 +506,17 @@
     <EmbeddedResource Include="gui\FrmLabExView.resx">
       <DependentUpon>FrmLabExView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmNHSOPrint.resx">
+      <DependentUpon>FrmNHSOPrint.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmOPDCheckUP.resx">
       <DependentUpon>FrmOPDCheckUP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmOPDCheckUPSearchHn.resx">
+      <DependentUpon>FrmOPDCheckUPSearchHn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmOPDCheckUPView.resx">
+      <DependentUpon>FrmOPDCheckUPView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmPatientDead.resx">
       <DependentUpon>FrmPatientDead.cs</DependentUpon>
@@ -478,18 +533,23 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmCertificatesView.resx">
       <DependentUpon>FrmCertificatesView.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmChangeBed.resx">
       <DependentUpon>FrmChangeBed.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmCheckNHSO.resx">
       <DependentUpon>FrmCheckNHSO.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmCheckNHSOAdd.resx">
       <DependentUpon>FrmCheckNHSOAdd.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmChkStaffNote.resx">
       <DependentUpon>FrmChkStaffNote.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmDailypatientsumpaid.resx">
       <DependentUpon>FrmDailypatientsumpaid.cs</DependentUpon>

@@ -115,6 +115,7 @@ namespace reportBangna.gui
         {
             FrmStVendorAdd f = new FrmStVendorAdd(bc,"");
             f.ShowDialog(this);
+            setGrd();
         }
     }
 }

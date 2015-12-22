@@ -408,10 +408,7 @@ namespace reportBangna.gui
                             //row++;
                         }
                     }
-
-
-
-
+                    
                     //if (!dt.Rows[i][radb.ra.StatusFirst].ToString().Equals("0"))
                     //{
                     //    dgv1.Rows[i].DefaultCellStyle.BackColor = Color.LightGreen;
