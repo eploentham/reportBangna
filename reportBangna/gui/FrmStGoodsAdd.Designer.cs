@@ -42,7 +42,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cboVen = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.cboType = new System.Windows.Forms.ComboBox();
+            this.cboGoodsGroup = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnUnActive = new System.Windows.Forms.Button();
@@ -205,14 +205,14 @@
             this.label6.TabIndex = 32;
             this.label6.Text = "Vendor ซื้อบ่อย :";
             // 
-            // cboType
+            // cboGoodsGroup
             // 
-            this.cboType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.cboType.FormattingEnabled = true;
-            this.cboType.Location = new System.Drawing.Point(102, 215);
-            this.cboType.Name = "cboType";
-            this.cboType.Size = new System.Drawing.Size(226, 24);
-            this.cboType.TabIndex = 35;
+            this.cboGoodsGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.cboGoodsGroup.FormattingEnabled = true;
+            this.cboGoodsGroup.Location = new System.Drawing.Point(102, 215);
+            this.cboGoodsGroup.Name = "cboGoodsGroup";
+            this.cboGoodsGroup.Size = new System.Drawing.Size(226, 24);
+            this.cboGoodsGroup.TabIndex = 35;
             // 
             // label7
             // 
@@ -220,9 +220,9 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label7.Location = new System.Drawing.Point(45, 218);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 16);
+            this.label7.Size = new System.Drawing.Size(33, 16);
             this.label7.TabIndex = 34;
-            this.label7.Text = "ประเภท :";
+            this.label7.Text = "กลุ่ม :";
             // 
             // btnSave
             // 
@@ -242,6 +242,7 @@
             this.btnUnActive.TabIndex = 74;
             this.btnUnActive.Text = "ยกเลิกการใช้งาน";
             this.btnUnActive.UseVisualStyleBackColor = true;
+            this.btnUnActive.Click += new System.EventHandler(this.btnUnActive_Click);
             // 
             // ChkUnActive
             // 
@@ -417,7 +418,7 @@
             this.Controls.Add(this.btnUnActive);
             this.Controls.Add(this.ChkUnActive);
             this.Controls.Add(this.chkActive);
-            this.Controls.Add(this.cboType);
+            this.Controls.Add(this.cboGoodsGroup);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cboVen);
             this.Controls.Add(this.label6);
@@ -460,7 +461,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cboVen;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cboType;
+        private System.Windows.Forms.ComboBox cboGoodsGroup;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnUnActive;

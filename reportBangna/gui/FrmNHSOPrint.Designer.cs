@@ -136,9 +136,9 @@
             this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.btnExport.Location = new System.Drawing.Point(969, 12);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(99, 38);
+            this.btnExport.Size = new System.Drawing.Size(109, 38);
             this.btnExport.TabIndex = 55;
-            this.btnExport.Text = "Export  Excel";
+            this.btnExport.Text = "Export  PDF All";
             this.btnExport.UseVisualStyleBackColor = true;
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 

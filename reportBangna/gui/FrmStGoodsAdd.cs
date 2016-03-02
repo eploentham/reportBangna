@@ -26,9 +26,8 @@ namespace reportBangna.gui
         private void initConfig()
         {
             cboVen = bc.vendb.getCboVendor(cboVen);
-
+            cboGoodsGroup = bc.ggdb.getCboStGoodsGroup(cboGoodsGroup);
             SetControl();
-
         }
         private void SetControl()
         {
@@ -45,9 +44,12 @@ namespace reportBangna.gui
             txtPrice.Value = Decimal.Parse(good.Price);
             txtRemark.Text = good.remark;
             txtDescription.Text = good.description;
-            cboVen.Text = good.VenId;
-            cboType.Text = good.TypeId;
+
+            cboVen.Text = bc.getTextCboItem(cboVen, good.VenId);
+            cboGoodsGroup.Text = bc.getTextCboItem(cboGoodsGroup,good.TypeId);
             btnUnActive.Visible = false;
+            chkActive.Checked = good.Active=="1" ? true : false;
+            ChkUnActive.Checked = good.Active == "1" ? false : true;
         }
         private void getGoods()
         {
@@ -62,8 +64,8 @@ namespace reportBangna.gui
             good.onHand = txtOnHand.Value.ToString();
             good.Price = txtPrice.Value.ToString();
             good.remark = txtRemark.Text;
-            good.TypeId = cboType.Text;
-            good.VenId = cboVen.Text;
+            good.TypeId = bc.getIdCboItemByText(cboGoodsGroup,cboGoodsGroup.Text);
+            good.VenId = bc.getIdCboItemByText(cboVen, cboVen.Text);
         }
 
         private void FrmStGoodsAdd_Load(object sender, EventArgs e)
@@ -80,8 +82,9 @@ namespace reportBangna.gui
             }
             if (txtCode.Text.Equals(""))
             {
-                MessageBox.Show("ไม่ได้ป้อนรหัส", "ป้อนข้อมูลไม่ครบ");
-                return;
+                //MessageBox.Show("ไม่ได้ป้อนรหัส", "ป้อนข้อมูลไม่ครบ");
+                //return;
+                txtCode.Text = bc.gooddb.getMaxGoods();
             }
             getGoods();
             if (bc.gooddb.insertGoods(good).Length >= 1)
@@ -290,6 +293,15 @@ namespace reportBangna.gui
         private void chkActive_Click(object sender, EventArgs e)
         {
             btnUnActive.Visible = false;
+        }
+
+        private void btnUnActive_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("ต้องการยกเลิก", "ยกเลิก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                bc.gooddb.VoidStGoods(txtId.Text);
+                this.Dispose();
+            }
         }
     }
 }

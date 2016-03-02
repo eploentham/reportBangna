@@ -99,6 +99,5 @@ D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmOPDCheckUPView
 D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmOPDCheckUPSearchHn.resources
 D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmNHSOPrint.resources
 D:\source\reportBangna\reportBangna\bin\Debug\itextsharp.dll
-D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.csprojResolveAssemblyReference.cache
-D:\source\reportBangna\reportBangna\obj\Debug\Cemp.gui.FrmItemGroupAdd.resources
-D:\source\reportBangna\reportBangna\obj\Debug\Cemp.gui.FrmItemGroupView.resources
+D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmStGoodsGroupAdd.resources
+D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmStGoodsGroupView.resources

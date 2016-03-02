@@ -35,6 +35,7 @@
             this.btnAdjust = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
             this.btnInitial = new System.Windows.Forms.Button();
+            this.btnTypeGoods = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnVendor
@@ -110,11 +111,23 @@
             this.btnInitial.Text = "กำหนดค่าโปรแกรม";
             this.btnInitial.UseVisualStyleBackColor = true;
             // 
+            // btnTypeGoods
+            // 
+            this.btnTypeGoods.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnTypeGoods.Location = new System.Drawing.Point(405, 109);
+            this.btnTypeGoods.Name = "btnTypeGoods";
+            this.btnTypeGoods.Size = new System.Drawing.Size(181, 48);
+            this.btnTypeGoods.TabIndex = 7;
+            this.btnTypeGoods.Text = "ข้อมูลกลุ่ม Cath Lap";
+            this.btnTypeGoods.UseVisualStyleBackColor = true;
+            this.btnTypeGoods.Click += new System.EventHandler(this.btnTypeGoods_Click);
+            // 
             // FrmStMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 512);
+            this.Controls.Add(this.btnTypeGoods);
             this.Controls.Add(this.btnInitial);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.btnAdjust);
@@ -139,5 +152,6 @@
         private System.Windows.Forms.Button btnAdjust;
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.Button btnInitial;
+        private System.Windows.Forms.Button btnTypeGoods;
     }
 }

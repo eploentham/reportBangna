@@ -90,6 +90,24 @@ namespace reportBangna.objdb
             
             return dt;
         }
+        public DataTable selectByGroup(String id)
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select * From " + good.table + " Where " + good.Active + "='1' and "+good.TypeId+"='"+id+"'";
+            dt = connBua.selectData(sql);
+
+            return dt;
+        }
+        public DataTable selectByByVendor(String id)
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select * From " + good.table + " Where " + good.Active + "='1' and " + good.VenId + "='" + id + "'";
+            dt = connBua.selectData(sql);
+
+            return dt;
+        }
         private String insert(StGoods p)
         {
             String sql = "", chk = "";
@@ -185,6 +203,54 @@ namespace reportBangna.objdb
             }
 
             return chk;
+        }
+        public String getMaxGoods()
+        {
+            String sql = "", doc = "", cnt = "", year = "", month = "";
+
+            sql = "Select count(1) as cnt From " + good.table + " ";
+            DataTable dt = connBua.selectData(sql);
+            if ((dt.Rows.Count > 0))
+            {
+                doc = String.Concat(int.Parse(dt.Rows[0]["cnt"].ToString()) + 1);
+                doc = "00000" + doc;
+                doc = doc.Substring(doc.Length - 5);
+                //cnt = "1";
+                //doc = "00001";
+            }
+            return doc;
+        }
+        public ComboBox getCboGoods(ComboBox c)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectAll();
+            //String aaa = "";
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new ComboBoxItem();
+                item.Value = dt.Rows[i][good.Id].ToString();
+                item.Text = dt.Rows[i][good.NameT].ToString();
+                c.Items.Add(item);
+                //aaa += "new { Text = "+dt.Rows[i][sale.Name].ToString()+", Value = "+dt.Rows[i][sale.Id].ToString()+" },";
+                //c.Items.Add(new );
+            }
+            return c;
+        }
+        public ComboBox getCboGoodsByVendor(ComboBox c, String venId)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectByByVendor(venId);
+            //String aaa = "";
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new ComboBoxItem();
+                item.Value = dt.Rows[i][good.Id].ToString();
+                item.Text = dt.Rows[i][good.NameT].ToString();
+                c.Items.Add(item);
+                //aaa += "new { Text = "+dt.Rows[i][sale.Name].ToString()+", Value = "+dt.Rows[i][sale.Id].ToString()+" },";
+                //c.Items.Add(new );
+            }
+            return c;
         }
     }
 }

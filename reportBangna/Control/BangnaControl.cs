@@ -45,11 +45,13 @@ namespace reportBangna
             prdb = new ProvinceDB(conn);
             gooddb = new StGoodsDB(conn);
             opdcdb = new OPDCheckUPDB(conn);
+            ggdb = new StGoodsGroupDB(conn);
 
             cf = new Config1();
             pa = new Patient();
             vs = new Visit();
             lw = new LogWriter();
+            gg = new StGoodsGroup();
             pathLabEx = "\\\\" + conn.hostNameMainHIS + "\\image\\labex\\";
         }
         public String getTextCboItem(ComboBox c, String valueId)
@@ -66,6 +68,37 @@ namespace reportBangna
             }
             return r.Text;
         }
+        public String getIdCboItemByText(ComboBox c, String valueId)
+        {
+            ComboBoxItem r = new ComboBoxItem();
+            r.Text = "";
+            r.Value = "";
+            foreach (ComboBoxItem cc in c.Items)
+            {
+                if (cc.Text.Equals(valueId))
+                {
+                    r = cc;
+                }
+            }
+            return r.Value;
+        }
+        //public ComboBox getCboItemByList(ComboBox c, List<Item> lit)
+        //{
+        //    ComboBoxItem item = new ComboBoxItem();
+        //    //DataTable dt = selectAll();
+        //    c.Items.Clear();
+        //    //String aaa = "";
+        //    foreach (Item i in lit)
+        //    {
+        //        item = new ComboBoxItem();
+        //        item.Value = i.Id;
+        //        item.Text = i.NameT;
+        //        c.Items.Add(item);
+        //        //aaa += "new { Text = "+dt.Rows[i][sale.Name].ToString()+", Value = "+dt.Rows[i][sale.Id].ToString()+" },";
+        //        //c.Items.Add(new );
+        //    }
+        //    return c;
+        //}
         public ComboBoxItem getCboItem(ComboBox c, String valueId)
         {
             ComboBoxItem r = new ComboBoxItem();
@@ -179,6 +212,33 @@ namespace reportBangna
             dt = connMainHIS.selectData(sql);
             return dt;
         }
+        public DataTable selectNHSOPrintHNAll(String startDate, String hn, String preno, String vn)
+        {
+            DataTable dt = new DataTable();
+            String sql = "";
+            String[] vn1 = vn.Split('.');
+            sql = "Select phart06.MNC_PH_CD, pharmacy_m01.MNC_PH_TN ,PHARMACY_M05.MNC_PH_PRI01,PHARMACY_M05.MNC_PH_PRI02,sum(phart06.MNC_PH_QTY) as qty, PHARMACY_M05.MNC_PH_PRI01 * sum(phart06.MNC_PH_QTY) as amt,phart05.MNC_CFG_DAT " +
+                    " From PATIENT_T01 t01 " +
+                    " left join PHARMACY_T05 phart05 on t01.MNC_PRE_NO = phart05.MNC_PRE_NO and t01.MNC_date = phart05.mnc_date " +
+                    " left join PHARMACY_T06 phart06 on phart05.MNC_CFR_NO = phart06.MNC_CFR_NO and phart05.MNC_CFG_DAT = phart06.MNC_CFR_dat " +
+                    " left join PHARMACY_M01 on phart06.MNC_PH_CD = pharmacy_m01.MNC_PH_CD " +
+                    " left join PHARMACY_M05 on PHARMACY_M05.MNC_PH_CD = PHARMACY_M01.MNC_PH_CD " +
+                    " where " +
+                    //" --t01.MNC_DATE BETWEEN '' AND '' and " +
+                    " t01.mnc_hn_no = '" + hn + "' " +
+                    //" t01.mnc_hn_no = '"+hn+"' "+
+                    " and t01.MNC_PRE_NO = '" + preno + "' " +
+                    " and t01.mnc_vn_no = '" + vn1[0] + "' " +
+                     " and t01.mnc_vn_seq = '" + vn1[1] + "' " +
+                      " and t01.mnc_vn_sum = '" + vn1[2] + "' " +
+                    //" and pharmacy_m01.MNC_PH_TN like '(%' " +
+                    //" and t01.mnc_vn_no = '58' and t01.MNC_PRE_NO = '61' " +
+                    " and phart05.MNC_CFR_STS = 'a' " +
+                    " Group By phart06.MNC_PH_CD, pharmacy_m01.MNC_PH_TN ,PHARMACY_M05.MNC_PH_PRI01,PHARMACY_M05.MNC_PH_PRI02,phart05.MNC_CFG_DAT " +
+                    " Order By phart05.MNC_CFG_DAT,phart06.MNC_PH_CD ";
+            dt = connMainHIS.selectData(sql);
+            return dt;
+        }
         public int selectNHSOPrintHN1(String startDate, String hn, String preno, String vn)
         {
             DataTable dt = new DataTable();
@@ -262,23 +322,25 @@ namespace reportBangna
                 "From PATIENT_T01 t01 "
                 + "left JOIN PATIENT_M01 AS m01 ON t01.MNC_HN_NO = m01.MNC_HN_NO " +
                 "left JOIN  PATIENT_M02 AS m02 ON m02.MNC_PFIX_CD = m01.MNC_PFIX_CDT  "+
-                "inner JOIN  PATIENT_T12 AS t12 ON t12.MNC_HN_NO = t01.MNC_HN_NO and t01.mnc_date = t12.mnc_date and t12.mnc_pre_no = t01.mnc_pre_no " +
+                //"inner JOIN  PATIENT_T12 AS t12 ON t12.MNC_HN_NO = t01.MNC_HN_NO and t01.mnc_date = t12.mnc_date and t12.mnc_pre_no = t01.mnc_pre_no " +
+                "inner JOIN  PATIENT_T12 AS t12 ON t12.MNC_HN_NO = t01.MNC_HN_NO  and t12.mnc_pre_no = t01.mnc_pre_no " +
                 " inner join FINANCE_M02 f02 ON t01.MNC_FN_TYP_CD = f02.MNC_FN_TYP_CD " +
                 //"left join PATIENT_M18 on patient_t01.MNC_DIA_DEAD = PATIENT_M18.MNC_DIA_CD " +
                 " inner join patient_m26 on t01.mnc_dot_cd = patient_m26.MNC_DOT_CD " +
                 " inner join patient_m02 on patient_m26.MNC_DOT_PFIX =patient_m02.MNC_PFIX_CD " +
-                "left join PATIENT_T08 t08 on t01.MNC_PRE_NO = t08.MNC_PRE_NO and t01.MNC_date = t08.MNC_date " +
+                "inner join PATIENT_T08 t08 on t01.MNC_PRE_NO = t08.MNC_PRE_NO and t01.MNC_date = t08.MNC_date " +
                 "where t08.MNC_ds_DATE >= '" + startDate + "'  and t08.MNC_ds_DATE <= '" + endDate + "'" 
                 : "Select Distinct t01.mnc_hn_no, t01.MNC_PRE_NO ,t01.mnc_vn_no,m02.MNC_PFIX_DSC, m01.MNC_FNAME_T, m01.MNC_LNAME_T,t01.MNC_VN_SEQ,t01.MNC_VN_SUM,f02.MNC_FN_TYP_DSC "+
                 "t01.MNC_DATE,patient_m02.MNC_PFIX_DSC as prefix,patient_m26.MNC_DOT_FNAME as Fname,patient_m26.MNC_DOT_LNAME as Lname,t01.mnc_dot_cd, M01.MNC_BDAY, m01.mnc_id_no, t08.mnc_ds_date, t01.mnc_time, t01.mnc_weight " +
                 "From PATIENT_T01 t01 "
                 + "left JOIN PATIENT_M01 AS m01 ON t01.MNC_HN_NO = m01.MNC_HN_NO " +
                 "left JOIN  PATIENT_M02 AS m02 ON m02.MNC_PFIX_CD = m01.MNC_PFIX_CDT  "+
-                "inner JOIN  PATIENT_T12 AS t12 ON t12.MNC_HN_NO = t01.MNC_HN_NO and t01.mnc_date = t12.mnc_date and t12.mnc_pre_no = t01.mnc_pre_no " +
+                //"inner JOIN  PATIENT_T12 AS t12 ON t12.MNC_HN_NO = t01.MNC_HN_NO and t01.mnc_date = t12.mnc_date and t12.mnc_pre_no = t01.mnc_pre_no " +
+                "inner JOIN  PATIENT_T12 AS t12 ON t12.MNC_HN_NO = t01.MNC_HN_NO and t12.mnc_pre_no = t01.mnc_pre_no " +
                 " inner join FINANCE_M02 f02 ON t01.MNC_FN_TYP_CD = f02.MNC_FN_TYP_CD " +
                 " inner join patient_m26 on t01.mnc_dot_cd = patient_m26.MNC_DOT_CD " +
                 " inner join patient_m02 on patient_m26.MNC_DOT_PFIX =patient_m02.MNC_PFIX_CD " +
-                "left join PATIENT_T08 t08 on t01.MNC_PRE_NO = t08.MNC_PRE_NO and t01.MNC_date = t08.MNC_date " +
+                "inner join PATIENT_T08 t08 on t01.MNC_PRE_NO = t08.MNC_PRE_NO and t01.MNC_date = t08.MNC_date " +
                 "where t01.MNC_FN_TYP_CD = '"
                 + fncd + "' and t08.MNC_ds_DATE >= '" + startDate + "'  and t08.MNC_ds_DATE <= '" + endDate + "' ";
             dt = connMainHIS.selectData(sql);

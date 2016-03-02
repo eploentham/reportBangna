@@ -377,7 +377,11 @@ namespace reportBangna.gui
 
         private void btnUnActive_Click(object sender, EventArgs e)
         {
-            
+            if (MessageBox.Show("ต้องการยกเลิก", "ยกเลิก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                bc.vendb.VoidStVendor(txtId.Text);
+                this.Dispose();
+            }
         }
 
         private void ChkUnActive_Click(object sender, EventArgs e)

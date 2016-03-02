@@ -44,5 +44,11 @@ namespace reportBangna.gui
             FrmStReceiveView f = new FrmStReceiveView(bc);
             f.Show(this);
         }
+
+        private void btnTypeGoods_Click(object sender, EventArgs e)
+        {
+            FrmStGoodsGroupView f = new FrmStGoodsGroupView(bc);
+            f.Show(this);
+        }
     }
 }

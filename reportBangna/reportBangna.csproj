@@ -95,17 +95,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="gui\FrmItemGroupAdd.cs">
+    <Compile Include="gui\FrmStGoodsGroupAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="gui\FrmItemGroupAdd.designer.cs">
-      <DependentUpon>FrmItemGroupAdd.cs</DependentUpon>
+    <Compile Include="gui\FrmStGoodsGroupAdd.designer.cs">
+      <DependentUpon>FrmStGoodsGroupAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="gui\FrmItemGroupView.cs">
+    <Compile Include="gui\FrmStGoodsGroupView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="gui\FrmItemGroupView.designer.cs">
-      <DependentUpon>FrmItemGroupView.cs</DependentUpon>
+    <Compile Include="gui\FrmStGoodsGroupView.designer.cs">
+      <DependentUpon>FrmStGoodsGroupView.cs</DependentUpon>
     </Compile>
     <Compile Include="gui\FrmStockOR.cs">
       <SubType>Form</SubType>
@@ -465,11 +465,11 @@
       <DependentUpon>FrmMain.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="gui\FrmItemGroupAdd.resx">
-      <DependentUpon>FrmItemGroupAdd.cs</DependentUpon>
+    <EmbeddedResource Include="gui\FrmStGoodsGroupAdd.resx">
+      <DependentUpon>FrmStGoodsGroupAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="gui\FrmItemGroupView.resx">
-      <DependentUpon>FrmItemGroupView.cs</DependentUpon>
+    <EmbeddedResource Include="gui\FrmStGoodsGroupView.resx">
+      <DependentUpon>FrmStGoodsGroupView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmStockOR.resx">
       <DependentUpon>FrmStockOR.cs</DependentUpon>

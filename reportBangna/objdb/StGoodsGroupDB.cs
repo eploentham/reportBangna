@@ -20,11 +20,11 @@ namespace reportBangna.objdb
         private void initConfig()
         {
             itg = new StGoodsGroup();
-            itg.Active = "item_group_active";
-            itg.Id = "item_group_id";
-            itg.NameE = "item_group_name_e";
-            itg.NameT = "item_group_name_t";
-            itg.Remark = "item_group_remark";
+            itg.Active = "goods_group_active";
+            itg.Id = "goods_group_id";
+            itg.NameE = "goods_group_name_e";
+            itg.NameT = "goods_group_name_t";
+            itg.Remark = "goods_group_remark";
             itg.Sort1 = "sort1";
             itg.dateCancel = "date_cancel";
             itg.dateCreate = "date_create";
@@ -34,8 +34,8 @@ namespace reportBangna.objdb
             itg.userCreate = "user_create";
             itg.userModi = "user_modi";
 
-            itg.table = "b_item_group";
-            itg.pkField = "item_group_id";
+            itg.table = "stock_b_goods_group";
+            itg.pkField = "goods_group_id";
         }
         private StGoodsGroup setData(StGoodsGroup item, DataTable dt)
         {
@@ -170,7 +170,7 @@ namespace reportBangna.objdb
                 itg.userCancel + "," + itg.userCreate + "," + itg.userModi + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.NameE + "','" +
                 p.NameT + "','" + p.Remark + "','" + p.Sort1 + "','" + 
-                p.dateCancel /*+ "'," +p.dateGenDB*/ + ",'" + p.dateModi + "','" + 
+                p.dateCancel + "','"/* +p.dateGenDB + ",'"*/ + p.dateModi + "','" + 
                 p.userCancel + "','" +p.userCreate + "','" + p.userModi + "')";
             try
             {

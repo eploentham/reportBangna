@@ -57,6 +57,18 @@
             this.btnUnActive = new System.Windows.Forms.Button();
             this.ChkUnActive = new System.Windows.Forms.RadioButton();
             this.chkActive = new System.Windows.Forms.RadioButton();
+            this.cboGoods = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtDateExp = new System.Windows.Forms.DateTimePicker();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtQty = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtTotal1 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtRemark1 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,11 +76,11 @@
             // 
             this.dgvAdd.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvAdd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAdd.Location = new System.Drawing.Point(11, 114);
+            this.dgvAdd.Location = new System.Drawing.Point(11, 160);
             this.dgvAdd.Margin = new System.Windows.Forms.Padding(2);
             this.dgvAdd.Name = "dgvAdd";
             this.dgvAdd.RowTemplate.Height = 24;
-            this.dgvAdd.Size = new System.Drawing.Size(985, 483);
+            this.dgvAdd.Size = new System.Drawing.Size(985, 437);
             this.dgvAdd.TabIndex = 48;
             // 
             // label1
@@ -139,7 +151,7 @@
             // 
             this.txtDateInv.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtDateInv.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtDateInv.Location = new System.Drawing.Point(330, 69);
+            this.txtDateInv.Location = new System.Drawing.Point(822, 69);
             this.txtDateInv.Name = "txtDateInv";
             this.txtDateInv.Size = new System.Drawing.Size(100, 22);
             this.txtDateInv.TabIndex = 57;
@@ -148,7 +160,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label4.Location = new System.Drawing.Point(252, 75);
+            this.label4.Location = new System.Drawing.Point(706, 74);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 16);
             this.label4.TabIndex = 56;
@@ -172,6 +184,7 @@
             this.cboVen.Name = "cboVen";
             this.cboVen.Size = new System.Drawing.Size(199, 24);
             this.cboVen.TabIndex = 59;
+            this.cboVen.SelectedIndexChanged += new System.EventHandler(this.cboVen_SelectedIndexChanged);
             // 
             // txtTotal
             // 
@@ -293,9 +306,9 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnSave.Location = new System.Drawing.Point(946, 69);
+            this.btnSave.Location = new System.Drawing.Point(969, 71);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(52, 23);
             this.btnSave.TabIndex = 77;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -336,11 +349,136 @@
             this.chkActive.Text = "ใช้งาน";
             this.chkActive.UseVisualStyleBackColor = true;
             // 
+            // cboGoods
+            // 
+            this.cboGoods.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.cboGoods.FormattingEnabled = true;
+            this.cboGoods.Location = new System.Drawing.Point(51, 131);
+            this.cboGoods.Name = "cboGoods";
+            this.cboGoods.Size = new System.Drawing.Size(244, 24);
+            this.cboGoods.TabIndex = 79;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label12.Location = new System.Drawing.Point(109, 109);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(51, 16);
+            this.label12.TabIndex = 78;
+            this.label12.Text = "Name :";
+            // 
+            // txtDateExp
+            // 
+            this.txtDateExp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtDateExp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtDateExp.Location = new System.Drawing.Point(317, 131);
+            this.txtDateExp.Name = "txtDateExp";
+            this.txtDateExp.Size = new System.Drawing.Size(100, 22);
+            this.txtDateExp.TabIndex = 81;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label13.Location = new System.Drawing.Point(342, 109);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(66, 16);
+            this.label13.TabIndex = 80;
+            this.label13.Text = "exp date :";
+            // 
+            // txtQty
+            // 
+            this.txtQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtQty.Location = new System.Drawing.Point(435, 131);
+            this.txtQty.Name = "txtQty";
+            this.txtQty.Size = new System.Drawing.Size(66, 22);
+            this.txtQty.TabIndex = 83;
+            this.txtQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label14.Location = new System.Drawing.Point(454, 109);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(32, 16);
+            this.label14.TabIndex = 82;
+            this.label14.Text = "qty :";
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtPrice.Location = new System.Drawing.Point(507, 131);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(119, 22);
+            this.txtPrice.TabIndex = 85;
+            this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label15.Location = new System.Drawing.Point(526, 109);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(45, 16);
+            this.label15.TabIndex = 84;
+            this.label15.Text = "Price :";
+            // 
+            // txtTotal1
+            // 
+            this.txtTotal1.Enabled = false;
+            this.txtTotal1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtTotal1.Location = new System.Drawing.Point(632, 131);
+            this.txtTotal1.Name = "txtTotal1";
+            this.txtTotal1.Size = new System.Drawing.Size(132, 22);
+            this.txtTotal1.TabIndex = 87;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label16.Location = new System.Drawing.Point(651, 109);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(45, 16);
+            this.label16.TabIndex = 86;
+            this.label16.Text = "Total :";
+            // 
+            // txtRemark1
+            // 
+            this.txtRemark1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtRemark1.Location = new System.Drawing.Point(770, 131);
+            this.txtRemark1.Name = "txtRemark1";
+            this.txtRemark1.Size = new System.Drawing.Size(183, 22);
+            this.txtRemark1.TabIndex = 89;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label17.Location = new System.Drawing.Point(789, 109);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(59, 16);
+            this.label17.TabIndex = 88;
+            this.label17.Text = "Remark ";
+            // 
             // FrmStReceiveAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1157, 750);
+            this.Controls.Add(this.txtRemark1);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.txtTotal1);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.txtPrice);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.txtQty);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.txtDateExp);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.cboGoods);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnUnActive);
             this.Controls.Add(this.ChkUnActive);
@@ -412,5 +550,17 @@
         private System.Windows.Forms.Button btnUnActive;
         private System.Windows.Forms.RadioButton ChkUnActive;
         private System.Windows.Forms.RadioButton chkActive;
+        private System.Windows.Forms.ComboBox cboGoods;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DateTimePicker txtDateExp;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtQty;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtTotal1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtRemark1;
+        private System.Windows.Forms.Label label17;
     }
 }

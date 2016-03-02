@@ -74,7 +74,13 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.txtAddrT = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.chkStatusPublic = new System.Windows.Forms.RadioButton();
+            this.chkStatusCompany = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.nuDDuePeriod)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -556,11 +562,75 @@
             this.txtAddrT.Size = new System.Drawing.Size(418, 22);
             this.txtAddrT.TabIndex = 117;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.radioButton2);
+            this.panel1.Controls.Add(this.radioButton1);
+            this.panel1.Controls.Add(this.chkStatusPublic);
+            this.panel1.Controls.Add(this.chkStatusCompany);
+            this.panel1.Location = new System.Drawing.Point(334, 65);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(266, 51);
+            this.panel1.TabIndex = 118;
+            // 
+            // chkStatusPublic
+            // 
+            this.chkStatusPublic.AutoSize = true;
+            this.chkStatusPublic.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.chkStatusPublic.Location = new System.Drawing.Point(131, 7);
+            this.chkStatusPublic.Margin = new System.Windows.Forms.Padding(2);
+            this.chkStatusPublic.Name = "chkStatusPublic";
+            this.chkStatusPublic.Size = new System.Drawing.Size(102, 21);
+            this.chkStatusPublic.TabIndex = 106;
+            this.chkStatusPublic.TabStop = true;
+            this.chkStatusPublic.Text = "บริษัท มหาชน";
+            this.chkStatusPublic.UseVisualStyleBackColor = true;
+            // 
+            // chkStatusCompany
+            // 
+            this.chkStatusCompany.AutoSize = true;
+            this.chkStatusCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.chkStatusCompany.Location = new System.Drawing.Point(16, 6);
+            this.chkStatusCompany.Margin = new System.Windows.Forms.Padding(2);
+            this.chkStatusCompany.Name = "chkStatusCompany";
+            this.chkStatusCompany.Size = new System.Drawing.Size(87, 21);
+            this.chkStatusCompany.TabIndex = 21;
+            this.chkStatusCompany.TabStop = true;
+            this.chkStatusCompany.Text = "บริษัทจำกัด";
+            this.chkStatusCompany.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.radioButton1.Location = new System.Drawing.Point(16, 28);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(88, 21);
+            this.radioButton1.TabIndex = 107;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "ห้างหุ้นส่วน";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.radioButton2.Location = new System.Drawing.Point(131, 28);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(100, 21);
+            this.radioButton2.TabIndex = 108;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "บุคคลธรรมดา";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
             // FrmStVendorAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1162, 641);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtAddrT);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.txtId);
@@ -612,6 +682,8 @@
             this.Text = "FrmVendorAdd";
             this.Load += new System.EventHandler(this.FrmStVendorAdd_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nuDDuePeriod)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -665,5 +737,10 @@
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtAddrT;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton chkStatusPublic;
+        private System.Windows.Forms.RadioButton chkStatusCompany;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }
