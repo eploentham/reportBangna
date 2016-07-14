@@ -101,3 +101,7 @@ D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmNHSOPrint.reso
 D:\source\reportBangna\reportBangna\bin\Debug\itextsharp.dll
 D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmStGoodsGroupAdd.resources
 D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmStGoodsGroupView.resources
+D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmOPD2CheckUP.resources
+D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmOPD21CheckUP.resources
+D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmOPD2CheckUPMain.resources
+D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.csprojResolveAssemblyReference.cache

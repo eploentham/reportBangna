@@ -7,6 +7,11 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Microsoft.Office.Interop.Word;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
+using System.Diagnostics;
 
 namespace reportBangna.gui
 {
@@ -125,7 +130,7 @@ namespace reportBangna.gui
             {
                 String date = "";
                 date = System.DateTime.Today.Year+"-"+System.DateTime.Today.ToString("MM-dd");
-                DataTable dt = bc.vsdb.selectVisitByHn2(hn, date);
+                System.Data.DataTable dt = bc.vsdb.selectVisitByHn2(hn, date);
                 //DataTable dtor = bc.selectOPDViewOR(hn);
                 if (dt.Rows.Count <= 0)
                 {
@@ -168,7 +173,7 @@ namespace reportBangna.gui
                 chkHisStatusNo.Checked = txtHisOther.Text != "" ? true : false;
 
                 //DataTable dtlab = bc.vsdb.selectLAB(hn, dt.Rows[0]["MNC_VN_NO"].ToString(), txtPreNo.Text);
-                DataTable dtlab = bc.vsdb.selectLAB(hn, dt.Rows[0]["MNC_VN_NO"].ToString(), txtPreNo.Text);
+                System.Data.DataTable dtlab = bc.vsdb.selectLAB(hn, dt.Rows[0]["MNC_VN_NO"].ToString(), txtPreNo.Text);
                 if (dtlab.Rows.Count > 0)
                 {
                     for(int i = 0; i < dtlab.Rows.Count; i++)
@@ -1032,6 +1037,185 @@ namespace reportBangna.gui
             
             excelapp.UserControl = true;
             excelapp.Visible = true;
+        }
+        private void getPDF()
+        {
+            System.Drawing.Font font = new System.Drawing.Font("Microsoft Sans Serif", 12);
+            iTextSharp.text.pdf.BaseFont bfR, bfR1;
+            iTextSharp.text.BaseColor clrBlack = new iTextSharp.text.BaseColor(0, 0, 0);
+            //MemoryStream ms = new MemoryStream();
+            string myFont = Environment.CurrentDirectory + "\\THSarabun.ttf";
+            String hn = "", name = "", doctor = "", fncd = "", birthday = "", dsDate = "", dsTime = "", an = "";
+
+            decimal total = 0;
+
+            bfR = BaseFont.CreateFont(myFont, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+            bfR1 = BaseFont.CreateFont(myFont, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+            iTextSharp.text.Font fntHead = new iTextSharp.text.Font(bfR, 12, iTextSharp.text.Font.NORMAL, clrBlack);
+            
+            String[] aa = dsDate.Split(',');
+            if (aa.Length > 1)
+            {
+                dsDate = aa[0];
+                an = aa[1];
+            }
+            String[] bb = dsDate.Split('*');
+            if (bb.Length > 1)
+            {
+                dsDate = bb[0];
+                dsTime = bb[1];
+            }
+
+            var logo = iTextSharp.text.Image.GetInstance(Environment.CurrentDirectory + "\\LOGO-BW-tran.jpg");
+            logo.SetAbsolutePosition(10, PageSize.A4.Height - 90);
+            logo.ScaleAbsoluteHeight(70);
+            logo.ScaleAbsoluteWidth(70);
+
+            FontFactory.RegisterDirectory("C:\\WINDOWS\\Fonts");
+
+            iTextSharp.text.Document doc = new iTextSharp.text.Document(PageSize.A4, 36, 36, 36, 36);
+            try
+            {
+
+                FileStream output = new FileStream(Environment.CurrentDirectory + "\\" + hn + ".pdf", FileMode.Create);
+                PdfWriter writer = PdfWriter.GetInstance(doc, output);
+                doc.Open();
+                //PdfContentByte cb = writer.DirectContent;
+                //ColumnText ct = new ColumnText(cb);
+                //ct.Alignment = Element.ALIGN_JUSTIFIED;
+
+                //Paragraph heading = new Paragraph("Chapter 1", fntHead);
+                //heading.Leading = 30f;
+                //doc.Add(heading);
+                //Image L = Image.GetInstance(imagepath + "/l.gif");
+                //logo.SetAbsolutePosition(doc.Left, doc.Top - 180);
+                doc.Add(logo);
+
+                //doc.Add(new Paragraph("Hello World", fntHead));
+
+                Chunk c;
+                String foobar = "Foobar Film Festival";
+                //float width_helv = bfR.GetWidthPoint(foobar, 12);
+                //c = new Chunk(foobar + ": " + width_helv, fntHead);
+                //doc.Add(new Paragraph(c));
+
+                //if (dt.Rows.Count > 24)
+                //{
+                //    doc.NewPage();
+                //    doc.Add(new Paragraph(string.Format("This is a page {0}", 2)));
+                //}
+                int i = 0, r = 0, row2 = 0, rowEnd = 24;
+                //r = dt.Rows.Count;
+                int next = r / 24;
+                int linenumber = 800;
+                PdfContentByte canvas = writer.DirectContent;
+                //canvas.SaveState();
+                //canvas.SetLineWidth(0.05f);
+                //canvas.MoveTo(400, 806);
+                //canvas.LineTo(400, 626);
+                //canvas.MoveTo(508.7f, 806);
+                //canvas.LineTo(508.7f, 626);
+                //canvas.MoveTo(280, 788);
+                //canvas.LineTo(520, 788);
+                //canvas.MoveTo(280, 752);
+                //canvas.LineTo(520, 752);
+                //canvas.MoveTo(280, 716);
+                //canvas.LineTo(520, 716);
+                //canvas.MoveTo(280, 680);
+                //canvas.LineTo(520, 680);
+                //canvas.MoveTo(280, 644);
+                //canvas.LineTo(520, 644);
+                //canvas.Stroke();
+                //canvas.RestoreState();
+                // Adding text with PdfContentByte.showTextAligned()
+                canvas.BeginText();
+                canvas.SetFontAndSize(bfR, 12);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "โรงพยาบาล บางนา5  55 หมู่4 ถนนเทพารักษ์ ตำบลบางพลีใหญ่ อำเภอบางพลี จังหวัด สมุทรปราการ 10540", 100, linenumber, 0);
+                //canvas.ShowTextAligned(Element.ALIGN_LEFT, "55 หมู่4 ถนนเทพารักษ์ ตำบลบางพลีใหญ่ อำเภอบางพลี จังหวัด สมุทรปราการ 10540", 100, 780, 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "BANGNA 5 GENERAL HOSPITAL  55 M.4 Theparuk Road, Bangplee, Samutprakan Thailand0", 100, linenumber-20, 0);
+                canvas.EndText();
+                linenumber = 720;
+                canvas.BeginText();
+                canvas.SetFontAndSize(bfR, 18);
+                canvas.ShowTextAligned(Element.ALIGN_CENTER, "ใบรับรองแพทย์ / MEDICAL CERTIFICATE", PageSize.A4.Width / 2, linenumber, 0);
+                canvas.EndText();
+                linenumber = 680;
+                canvas.BeginText();
+                canvas.SetFontAndSize(bfR, 16);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "วันที่ตรวจ " + dtpDate.Value.Day.ToString()+" เดือน "+bc.cf.getMonth(dtpDate.Value.Month.ToString("00"))+" พ.ศ. "+(dtpDate.Value.Year+543), 400, linenumber+20, 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "ข้าพเจ้า " + txtDoctorName.Text.Trim(), 60, linenumber -= 20, 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "แพทย์ปริญญาใบอนุญาตประกอบวิชาชีพเวชกรรม เลขที่ " + txtDoctorId.Text.Trim(), 60, linenumber -= 20, 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "ได้ทำการตรวจร่างกาย " + txtPatientName.Text.Trim(), 60, linenumber -= 20, 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "ปรากฏว่า ไม่เป็นผู้ทุพพลภาพ ไร้ความสามารถ จิตฟั่นเฟือน ไม่สมประกอบ " , 60, linenumber -= 20, 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "และปราศจากโรคเหล่านี้ " , 60, linenumber -= 20, 0);
+                linenumber = 580;
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "1.	โรคเรื้อนในระยะติดต่อหรือในระยะที่ปรากฏอาการเป็นที่รังเกียจแก่สังคม (Leprosy) " ,100, linenumber -= 20, 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "2.	วัณโรคปอดในระยะติดต่อ (Active pulmonary tuberculosis) " , 100, linenumber -= 20, 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "3.	โรคติดยาเสพติดให้โทษ (Drug addiction) ", 100, linenumber -= 20, 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "4.	โรคพิษสุราเรื้อรัง (Chronic alcoholism) ", 100, linenumber -= 20, 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "5.	โรคเท้าช้างในระยะที่ปรากฏอาการที่เป็นที่รังเกียจแก่สังคม (Filariasis) ", 100, linenumber -= 20, 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "6.	ซิฟิลิสในระยะที่ 2 (Syphilis Secondary)", 100, linenumber -= 20, 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "7.	โรคจิตฟั่นเฟือนหรือปัญญาอ่อน (Schizophrenia or Mental Retardation)", 100, linenumber -= 20, 0);
+
+                linenumber = 400;
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "เห็นว่า  ", 60, linenumber -= 20, 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, txtResult.Text.Trim(), 160, linenumber , 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "บันทึกสัญญาณชีพ  ", 60, linenumber -= 20, 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "ชีพจร : " + txtPulse.Text+ "ครั้ง/นาที "+ " ความดันโลหิต : " + txtBloodPressure.Text + " mmHg ", 160, linenumber , 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "ส่วนสูง "+txtWeight.Text+" กิโลกรัม   น้ำหนัก "+txtHeight.Text+" เซ็นติเมตร", 160, linenumber -= 20, 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "ตรวจสมรรถภาพการทำงานของปอด  ", 60, linenumber -= 20, 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, txtLung.Text.Trim(), 160, linenumber , 0);
+
+                linenumber = 100;
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "มีอายุการใช้งาน 3 เดือน (VALID FOR THREE MONTHS)  ", 60, linenumber -= 20, 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "ผ่านการรับรองมาตรฐาน  ", 60, linenumber -= 20, 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "ISO 9001:2000 ทุกหน่วยงาน  ", 60, linenumber -= 20, 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "FM-NUR-001/3 (แก้ไขครั้งที่ 00 15/02/53)  ", 60, linenumber -= 20, 0);
+                canvas.EndText();
+
+                //canvas.BeginText();
+                //canvas.SetFontAndSize(bfR, 16);
+                //canvas.ShowTextAligned(Element.ALIGN_LEFT, "วัน/เวลา", 50, 620, 0);
+                //canvas.ShowTextAligned(Element.ALIGN_LEFT, "รายการ", 250, 620, 0);
+                //canvas.ShowTextAligned(Element.ALIGN_LEFT, "จำนวน", 405, 620, 0);
+                //canvas.ShowTextAligned(Element.ALIGN_LEFT, "ราคา", 460, 620, 0);
+                //canvas.ShowTextAligned(Element.ALIGN_LEFT, "รวมราคา", 510, 620, 0);
+                ////canvas.ShowTextAlignedKerned(Element.ALIGN_LEFT, "ชื่อแพทย์ผู้รักษา "+ 60, 660, 644, 0);
+                ////canvas.ShowTextAlignedKerned(Element.ALIGN_LEFT, "ชื่อแพทย์ผู้รักษา " + 60, 640, 644, 0);
+                //canvas.EndText();
+
+                //canvas.MoveTo(520, 640);//vertical Amount
+                //canvas.LineTo(520, 110);
+                canvas.Stroke();
+                canvas.RestoreState();
+                //pB1.Maximum = dt.Rows.Count;
+
+            }
+            catch (Exception ex)
+            {
+                //Log(ex.Message);
+            }
+            finally
+            {
+                doc.Close();
+                Process p = new Process();
+                ProcessStartInfo s = new ProcessStartInfo(Environment.CurrentDirectory + "\\" + hn + ".pdf");
+                //s.Arguments = "/c dir *.cs";
+                p.StartInfo = s;
+                //p.StartInfo.Arguments = "/c dir *.cs";
+                //p.StartInfo.UseShellExecute = false;
+                //p.StartInfo.RedirectStandardOutput = true;
+                p.Start();
+
+                //string output = p.StandardOutput.ReadToEnd();
+                //p.WaitForExit();
+                //Application.Exit();
+            }
+        }
+
+        private void btnPrintOPD2_Click(object sender, EventArgs e)
+        {
+            getPDF();
         }
 
         private void FrmOPDCheckUP_Load(object sender, EventArgs e)

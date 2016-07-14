@@ -49,24 +49,31 @@ namespace reportBangna
                 //MessageBox.Show("labexdoctor", "labexdoctor");
                 Application.Run(new FrmStMain());
             }
+            else if (System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLower().Equals("opd2checkup"))
+            {
+                //MessageBox.Show("labexdoctor", "labexdoctor");
+                Application.Run(new FrmOPD2CheckUP(""));
+            }
             else
             {
                 //MessageBox.Show("else", "else");
                 //Application.Run(new FrmMain());
                 //Application.Run(new FrmCtScan());
                 //Application.Run(new FrmLabExView());
-                Application.Run(new FrmCheckNHSO());
+                //Application.Run(new FrmCheckNHSO());
                 //Application.Run(new FrmDischargeSearch());
                 //Application.Run(new FrmLabExDoctor());
                 //Application.Run(new FrmCertificatesView());
                 //Application.Run(new FrmStMain());
                 //Application.Run(new FrmNHSOPrint());
                 //Application.Run(new FrmOPDCheckUPView());
+                Application.Run(new FrmOPD2CheckUPMain());
+                //Application.Run(new FrmLabExView());
             }
             //Application.Run(new FrmMain());
             //Application.Run(new FrmPatientDead());
             //Application.Run(new FrmReAdmit());
-            
+
             //Application.Run(new FrmHosRiskAdd());
             //Application.Run(new FrmCertificatesView());
             //Application.Run(new FrmChangeBed());

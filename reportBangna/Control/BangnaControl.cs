@@ -239,6 +239,9 @@ namespace reportBangna
             dt = connMainHIS.selectData(sql);
             return dt;
         }
+        /**
+
+        */
         public int selectNHSOPrintHN1(String startDate, String hn, String preno, String vn)
         {
             DataTable dt = new DataTable();
@@ -253,12 +256,12 @@ namespace reportBangna
                     " left join PHARMACY_M05 on PHARMACY_M05.MNC_PH_CD = PHARMACY_M01.MNC_PH_CD " +
                     " where " +
                     //" --t01.MNC_DATE BETWEEN '' AND '' and " +
-                    " t01.mnc_hn_no = '" + hn + "' " +
+                    " phart05.mnc_hn_no = '" + hn + "' " +
                     //" t01.mnc_hn_no = '"+hn+"' "+
-                    " and t01.MNC_PRE_NO = '" + preno + "' " +
-                    " and t01.mnc_vn_no = '" + vn1[0] + "' " +
-                     " and t01.mnc_vn_seq = '" + vn1[1] + "' " +
-                      " and t01.mnc_vn_sum = '" + vn1[2] + "' " +
+                    " and phart05.MNC_PRE_NO = '" + preno + "' " +
+                    //" and t01.mnc_vn_no = '" + vn1[0] + "' " +
+                     //" and t01.mnc_vn_seq = '" + vn1[1] + "' " +
+                      //" and t01.mnc_vn_sum = '" + vn1[2] + "' " +
                     //" --PHARMACY_M01.mnc_ph_typ_flg = 'P' " +
                     " and pharmacy_m01.MNC_PH_TN like '(%' " +
                     " and phart05.MNC_CFR_STS = 'a' ";
@@ -573,5 +576,21 @@ namespace reportBangna
         //    }
         //    return aa;
         //}
+        public String selectDoctorName(String doctorId)
+        {
+            DataTable dt = new DataTable();
+            String sql = "", chk = "-";
+            sql = "Select  patient_m02.MNC_PFIX_DSC as prefix,patient_m26.MNC_DOT_FNAME as Fname,patient_m26.MNC_DOT_LNAME as Lname " +
+                "From  patient_m26  " +
+                " inner join patient_m02 on patient_m26.MNC_DOT_PFIX =patient_m02.MNC_PFIX_CD " +
+                "where patient_m26.MNC_DOT_CD = '" + doctorId + "' ";
+            dt = connMainHIS.selectData(sql);
+            if (dt.Rows.Count > 0)
+            {
+                chk = dt.Rows[0]["prefix"].ToString()+" "+dt.Rows[0]["Fname"].ToString()+" "+dt.Rows[0]["Lname"].ToString();
+            }
+            return chk;
+        }
     }
+    
 }

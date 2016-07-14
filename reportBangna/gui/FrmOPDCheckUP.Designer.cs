@@ -253,7 +253,6 @@
             this.txtSgotN = new System.Windows.Forms.TextBox();
             this.label54 = new System.Windows.Forms.Label();
             this.label114 = new System.Windows.Forms.Label();
-            this.textBox96 = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label115 = new System.Windows.Forms.Label();
@@ -264,6 +263,13 @@
             this.txtVn = new System.Windows.Forms.TextBox();
             this.txtPreNo = new System.Windows.Forms.TextBox();
             this.btnPrint = new System.Windows.Forms.Button();
+            this.btnPrintOPD2 = new System.Windows.Forms.Button();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txtLung = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.txtDoctorId = new System.Windows.Forms.TextBox();
+            this.txtDoctorName = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -1918,7 +1924,7 @@
             this.groupBox6.Controls.Add(this.txtFbsN);
             this.groupBox6.Controls.Add(this.label24);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.groupBox6.Location = new System.Drawing.Point(607, 239);
+            this.groupBox6.Location = new System.Drawing.Point(607, 205);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(545, 131);
             this.groupBox6.TabIndex = 40;
@@ -2073,7 +2079,7 @@
             this.groupBox7.Controls.Add(this.txtCholN);
             this.groupBox7.Controls.Add(this.label38);
             this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.groupBox7.Location = new System.Drawing.Point(607, 376);
+            this.groupBox7.Location = new System.Drawing.Point(607, 342);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(545, 134);
             this.groupBox7.TabIndex = 41;
@@ -2228,7 +2234,7 @@
             this.groupBox8.Controls.Add(this.txtCreatiN);
             this.groupBox8.Controls.Add(this.label46);
             this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.groupBox8.Location = new System.Drawing.Point(607, 516);
+            this.groupBox8.Location = new System.Drawing.Point(607, 482);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(545, 132);
             this.groupBox8.TabIndex = 42;
@@ -2386,9 +2392,9 @@
             this.groupBox9.Controls.Add(this.txtSgotN);
             this.groupBox9.Controls.Add(this.label54);
             this.groupBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.groupBox9.Location = new System.Drawing.Point(607, 654);
+            this.groupBox9.Location = new System.Drawing.Point(607, 620);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(545, 184);
+            this.groupBox9.Size = new System.Drawing.Size(545, 166);
             this.groupBox9.TabIndex = 43;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Liver function test";
@@ -2583,17 +2589,9 @@
             this.label114.TabIndex = 45;
             this.label114.Text = "วันที่ตรวจสุขภาพ :";
             // 
-            // textBox96
-            // 
-            this.textBox96.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox96.Location = new System.Drawing.Point(377, 10);
-            this.textBox96.Name = "textBox96";
-            this.textBox96.Size = new System.Drawing.Size(80, 22);
-            this.textBox96.TabIndex = 44;
-            // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(994, 909);
+            this.btnSave.Location = new System.Drawing.Point(686, 918);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(74, 41);
             this.btnSave.TabIndex = 46;
@@ -2673,19 +2671,90 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(1078, 909);
+            this.btnPrint.Location = new System.Drawing.Point(770, 918);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(74, 41);
             this.btnPrint.TabIndex = 61;
-            this.btnPrint.Text = "Print";
+            this.btnPrint.Text = "Print OPD1";
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // btnPrintOPD2
+            // 
+            this.btnPrintOPD2.Location = new System.Drawing.Point(891, 918);
+            this.btnPrintOPD2.Name = "btnPrintOPD2";
+            this.btnPrintOPD2.Size = new System.Drawing.Size(74, 41);
+            this.btnPrintOPD2.TabIndex = 62;
+            this.btnPrintOPD2.Text = "Print OPD2";
+            this.btnPrintOPD2.UseVisualStyleBackColor = true;
+            this.btnPrintOPD2.Click += new System.EventHandler(this.btnPrintOPD2_Click);
+            // 
+            // dtpDate
+            // 
+            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDate.Location = new System.Drawing.Point(371, 12);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(94, 20);
+            this.dtpDate.TabIndex = 63;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label23.Location = new System.Drawing.Point(603, 826);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(43, 16);
+            this.label23.TabIndex = 65;
+            this.label23.Text = "Lung :";
+            // 
+            // txtLung
+            // 
+            this.txtLung.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtLung.Location = new System.Drawing.Point(695, 820);
+            this.txtLung.Name = "txtLung";
+            this.txtLung.Size = new System.Drawing.Size(398, 22);
+            this.txtLung.TabIndex = 64;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label37.Location = new System.Drawing.Point(603, 798);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(74, 16);
+            this.label37.TabIndex = 67;
+            this.label37.Text = "แพทย์ผู้ตรวจ :";
+            // 
+            // txtDoctorId
+            // 
+            this.txtDoctorId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtDoctorId.Location = new System.Drawing.Point(695, 792);
+            this.txtDoctorId.Name = "txtDoctorId";
+            this.txtDoctorId.Size = new System.Drawing.Size(77, 22);
+            this.txtDoctorId.TabIndex = 66;
+            this.txtDoctorId.Text = "24738";
+            // 
+            // txtDoctorName
+            // 
+            this.txtDoctorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtDoctorName.Location = new System.Drawing.Point(778, 792);
+            this.txtDoctorName.Name = "txtDoctorName";
+            this.txtDoctorName.Size = new System.Drawing.Size(315, 22);
+            this.txtDoctorName.TabIndex = 68;
+            this.txtDoctorName.Text = "นายแพทย์ อรรถสิทธิ์ ทองปลาเค้า";
             // 
             // FrmOPDCheckUP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1197, 994);
+            this.Controls.Add(this.txtDoctorName);
+            this.Controls.Add(this.label37);
+            this.Controls.Add(this.txtDoctorId);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.txtLung);
+            this.Controls.Add(this.dtpDate);
+            this.Controls.Add(this.btnPrintOPD2);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.txtPreNo);
             this.Controls.Add(this.label14);
@@ -2697,7 +2766,6 @@
             this.Controls.Add(this.txtResult);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label114);
-            this.Controls.Add(this.textBox96);
             this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox7);
@@ -2953,7 +3021,6 @@
         private System.Windows.Forms.TextBox txtCBCSuggest;
         private System.Windows.Forms.TextBox txtCBCResult;
         private System.Windows.Forms.Label label114;
-        private System.Windows.Forms.TextBox textBox96;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label115;
@@ -3030,5 +3097,12 @@
         private System.Windows.Forms.TextBox txtVn;
         private System.Windows.Forms.TextBox txtPreNo;
         private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Button btnPrintOPD2;
+        private System.Windows.Forms.DateTimePicker dtpDate;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox txtLung;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TextBox txtDoctorId;
+        private System.Windows.Forms.TextBox txtDoctorName;
     }
 }

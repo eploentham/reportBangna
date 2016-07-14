@@ -233,7 +233,15 @@ namespace reportBangna.object1
         {
             if (dt != "")
             {
-                return dt.Substring(8, 2) + "-" + dt.Substring(5, 2) + "-" + String.Concat(Int16.Parse(dt.Substring(0, 4)) + 543).Substring(2);
+                if(Int16.Parse(dt.Substring(0, 4)) < 1957)
+                {
+                    return dt.Substring(8, 2) + "-" + dt.Substring(5, 2) + "-" + String.Concat(Int16.Parse(dt.Substring(0, 4)) + 543);
+                }
+                else
+                {
+                    return dt.Substring(8, 2) + "-" + dt.Substring(5, 2) + "-" + String.Concat(Int16.Parse(dt.Substring(0, 4)) + 543).Substring(2);
+                }
+                
             }
             else
             {

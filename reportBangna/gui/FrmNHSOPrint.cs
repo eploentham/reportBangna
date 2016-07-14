@@ -246,7 +246,9 @@ namespace reportBangna.gui
                             row1 -= cnt;
                             //amt = String.Format("{0:#,###,###.00}", dt.Rows[i]["amt"]);
                             total += decimal.Parse(dt.Rows[i]["amt"].ToString());
-                            canvas.ShowTextAligned(Element.ALIGN_LEFT, bc.cf.dateLabExShow(dt.Rows[i]["MNC_CFG_DAT"].ToString()), 45, row1, 0);
+                            //canvas.ShowTextAligned(Element.ALIGN_LEFT, bc.cf.dateLabExShow(dt.Rows[i]["MNC_CFG_DAT"].ToString()), 45, row1, 0);
+                            canvas.ShowTextAligned(Element.ALIGN_LEFT, bc.cf.dateDBtoShowShort(bc.cf.datetoDB(dt.Rows[i]["MNC_CFG_DAT"].ToString())), 45, row1, 0);
+                            
                             canvas.ShowTextAligned(Element.ALIGN_LEFT, dt.Rows[i]["MNC_PH_TN"].ToString() + " [" + dt.Rows[i]["MNC_PH_cd"].ToString() + "]", 105, row1, 0);
                             canvas.ShowTextAligned(Element.ALIGN_LEFT, dt.Rows[i]["qty"].ToString(), 415, row1, 0);
                             canvas.ShowTextAligned(Element.ALIGN_RIGHT, String.Format("{0:#,###,###.00}", dt.Rows[i]["MNC_PH_PRI01"]), 495, row1, 0);
