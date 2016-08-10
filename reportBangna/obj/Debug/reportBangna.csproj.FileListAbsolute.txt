@@ -104,4 +104,4 @@ D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmStGoodsGroupVi
 D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmOPD2CheckUP.resources
 D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmOPD21CheckUP.resources
 D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmOPD2CheckUPMain.resources
-D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.csprojResolveAssemblyReference.cache
+D:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmCheckDrug.resources

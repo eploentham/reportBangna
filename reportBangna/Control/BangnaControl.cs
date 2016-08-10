@@ -591,6 +591,21 @@ namespace reportBangna
             }
             return chk;
         }
+        public DataTable selectCHeckDrug(String txt)
+        {
+            DataTable dt = new DataTable();
+            String sql = "", chk = "-";
+            sql = "Select m01.*,m05.MNC_PH_PRI01 " +
+                    "From PHARMACY_M01 m01 " +
+                    "Left join PHARMACY_M05 m05 on m01.MNC_PH_CD = m05.MNC_PH_CD " +
+                    "Where MNC_PH_TN like '%"+ txt + "%' ";
+            dt = connMainHIS.selectData(sql);
+            //if (dt.Rows.Count > 0)
+            //{
+            //    chk = dt.Rows[0]["prefix"].ToString() + " " + dt.Rows[0]["Fname"].ToString() + " " + dt.Rows[0]["Lname"].ToString();
+            //}
+            return dt;
+        }
     }
     
 }
