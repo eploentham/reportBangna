@@ -98,6 +98,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmLabCheckText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLabCheckText.Designer.cs">
+      <DependentUpon>FrmLabCheckText.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\FrmCheckDrug.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -488,6 +494,9 @@
       <DependentUpon>PatientDeadPrint.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="FrmLabCheckText.resx">
+      <DependentUpon>FrmLabCheckText.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
       <SubType>Designer</SubType>

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using reportBangna.objdb;
-using Microsoft.Reporting.WinForms;
+//using Microsoft.Reporting.WinForms;
 
 
 namespace reportBangna.gui
