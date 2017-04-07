@@ -32,6 +32,9 @@ namespace reportBangna.gui
         
 
         int colDrug16 = 40, colDrug17 = 41, colDrug18 = 42, colDrug19 = 43, colDrug20 = 44;
+
+        
+
         int colDrug21 = 45, colDrug22 = 46, colDrug23 = 47, colDrug24 = 48, colDrug25 = 49;
         int colDrug26 = 50, colDrug27 = 51, colDrug28 = 52, colDrug29 = 53, colDrug30 = 54;
 
@@ -45,7 +48,9 @@ namespace reportBangna.gui
         int colvnSum = 85, colvnSeq = 86, colVn=87, colRowEdit=88, colId=89, colEditDia=90, colEditDrug=91, colBranch=92, colpreno=94;
         //int colExport = 40;
         CheckNhso1DB cNhso1db;
+        BangnaControl bc;
         DataTable dtView;
+        Boolean pageLoad = false;
         public FrmCheckNHSO()
         {
             InitializeComponent();
@@ -53,16 +58,20 @@ namespace reportBangna.gui
         }
         private void initConfig()
         {
+            pageLoad = true;
             dtView = new DataTable();
             config1 = new Config1();
             cNhso1db = new CheckNhso1DB();
+            bc = new BangnaControl();
             config1.setCboLab(cboLab);
             config1.setCboBranch(cboBranch);
+            
             if (cNhso1db.conn.isBranch.Equals("yes"))
             {
                 showCheckNhsoAdd();
             }
             //sip = new SedanInjuryPerson();
+            pageLoad = false;
         }
         private void setResize()
         {
@@ -810,7 +819,7 @@ namespace reportBangna.gui
             btnExport.Enabled = false;
             setResize();
             this.Text = "Last Update " + System.IO.File.GetLastWriteTime(System.Environment.CurrentDirectory + "\\" + Process.GetCurrentProcess().ProcessName + ".exe");
-            this.Text +=" hostNameMainHIS="+cNhso1db.conn.hostNameMainHIS+" databaseMainHIS="+cNhso1db.conn.databaseNameMainHIS;
+            this.Text +=" hostNameMainHIS="+cNhso1db.conn.hostNameMainHIS5+" databaseMainHIS="+cNhso1db.conn.databaseNameMainHIS5;
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -847,7 +856,18 @@ namespace reportBangna.gui
         {
             setResize();
         }
-
+        private void cboBranch_Click(object sender, EventArgs e)
+        {
+            //bc.getCboFnType(cboBranch, bc.getValueCboItem(cboBranch));
+            //bc.getCboFnType(cboBranch, cboBranch.SelectedValue.ToString());
+        }
+        private void cboBranch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!pageLoad)
+            {
+                bc.getCboFnType(cboFnType, cboBranch.SelectedValue.ToString());
+            }
+        }
         private void btnOK_Click(object sender, EventArgs e)
         {
             if (chkDrug.Checked)

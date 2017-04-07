@@ -22,13 +22,13 @@ namespace reportBangna.objdb
         public int _rowsAffected = 0;
         public SqlInt32 _errorCode = 0;
         public Boolean _isDisposed = false;
-        public SqlConnection connMainHIS;
+        public SqlConnection connMainHIS5,connMainHIS1;
         private String hostname = "";
         private IniFile iniFile;
-        public String databaseNameMainHIS = "";
-        public String hostNameMainHIS = "";
-        public String userNameMainHIS = "";
-        public String passwordMainHIS = "";
+        public String databaseNameMainHIS5 = "",databaseNameMainHIS1 = "";
+        public String hostNameMainHIS5 = "", hostNameMainHIS1 = "";
+        public String userNameMainHIS5 = "", userNameMainHIS1 = "";
+        public String passwordMainHIS5 = "", passwordMainHIS1 = "";
         public String databaseNameBua = "";
         public String hostNameBua = "";
         public String userNameBua = "";
@@ -41,10 +41,10 @@ namespace reportBangna.objdb
         {
             iniFile = new IniFile("reportbangna.ini");
             
-            databaseNameMainHIS = iniFile.Read("database_name");
-            hostNameMainHIS = iniFile.Read("host_name");
-            userNameMainHIS = iniFile.Read("user_password");
-            passwordMainHIS = iniFile.Read("password");
+            databaseNameMainHIS5 = iniFile.Read("database_name");
+            hostNameMainHIS5 = iniFile.Read("host_name");
+            userNameMainHIS5 = iniFile.Read("user_password");
+            passwordMainHIS5 = iniFile.Read("password");
             databaseNameBua = iniFile.Read("database_name_bua");
             hostNameBua = iniFile.Read("host_name_bua");
             userNameBua = iniFile.Read("user_password_bua");
@@ -61,10 +61,10 @@ namespace reportBangna.objdb
             iniFile = new IniFile("reportbangna.ini");
 
             //iniFile.Write("aaaa", "bbbb");
-            hostNameMainHIS = iniFile.Read("host_name");
-            userNameMainHIS = iniFile.Read("user_name");
-            passwordMainHIS = iniFile.Read("password");
-            databaseNameMainHIS = iniFile.Read("database_name");
+            hostNameMainHIS5 = iniFile.Read("host_name");
+            userNameMainHIS5 = iniFile.Read("user_name");
+            passwordMainHIS5 = iniFile.Read("password");
+            databaseNameMainHIS5 = iniFile.Read("database_name");
 
             databaseNameBua = iniFile.Read("database_name_bua");
             hostNameBua = iniFile.Read("host_name_bua");
@@ -72,13 +72,16 @@ namespace reportBangna.objdb
             passwordBua = iniFile.Read("password_bua");
             server = iniFile.Read("server");
             isBranch = iniFile.Read("clientisbranch");
-            pathLabEx = "\\\\"+hostNameMainHIS+"\\image\\labex\\";
+            pathLabEx = "\\\\"+hostNameMainHIS5+"\\image\\labex\\";
             if (hostName == "mainhis")
             {
                 hostname = "mainhis";
-                connMainHIS = new SqlConnection();
+                connMainHIS5 = new SqlConnection();
                 //connMainHIS.ConnectionString = GetConfig(hostName);
-                connMainHIS.ConnectionString = "Server="+hostNameMainHIS+";Database="+databaseNameMainHIS.ToString()+";Uid="+userNameMainHIS+";Pwd="+passwordMainHIS+";";
+                connMainHIS5.ConnectionString = "Server="+hostNameMainHIS5+";Database="+databaseNameMainHIS5.ToString()+";Uid="+userNameMainHIS5+";Pwd="+passwordMainHIS5+";";
+                connMainHIS1 = new SqlConnection();
+                //connMainHIS.ConnectionString = GetConfig(hostName);
+                connMainHIS1.ConnectionString = "Server=" + hostNameMainHIS1 + ";Database=" + databaseNameMainHIS1.ToString() + ";Uid=" + userNameMainHIS1 + ";Pwd=" + passwordMainHIS1 + ";";
                 //if (server.Equals("bangna1"))
                 //{
                 //    connMainHIS.ConnectionString = "Server=172.1.1.1;Database=bng1_front_dbms;Uid=sa;Pwd=;";
@@ -96,9 +99,9 @@ namespace reportBangna.objdb
             else if (hostName == "bangna")
             {
                 hostname = "bangna";
-                connMainHIS = new SqlConnection();
+                connMainHIS5 = new SqlConnection();
                 //connMainHIS.ConnectionString = GetConfig(hostName);
-                connMainHIS.ConnectionString = "Server="+hostNameBua+";Database="+databaseNameBua+";Uid="+userNameBua+";Pwd="+passwordBua+";";
+                connMainHIS5.ConnectionString = "Server="+hostNameBua+";Database="+databaseNameBua+";Uid="+userNameBua+";Pwd="+passwordBua+";";
             }
             else
             {
@@ -131,11 +134,11 @@ namespace reportBangna.objdb
                 SqlCommand comMainhis = new SqlCommand();
                 comMainhis.CommandText = sql;
                 comMainhis.CommandType = CommandType.Text;
-                comMainhis.Connection = connMainHIS;
+                comMainhis.Connection = connMainHIS5;
                 SqlDataAdapter adapMainhis = new SqlDataAdapter(comMainhis);
                 try
                 {
-                    connMainHIS.Open();
+                    connMainHIS5.Open();
                     adapMainhis.Fill(toReturn);
                     //return toReturn;
                 }
@@ -145,7 +148,7 @@ namespace reportBangna.objdb
                 }
                 finally
                 {
-                    connMainHIS.Close();
+                    connMainHIS5.Close();
                     comMainhis.Dispose();
                     adapMainhis.Dispose();
                 }
@@ -176,7 +179,60 @@ namespace reportBangna.objdb
                 }
             }
             return toReturn;
-            
+        }
+        public DataTable selectData(SqlConnection con, String sql)
+        {
+            DataTable toReturn = new DataTable();
+            if ((hostname == "mainhis") || (hostname == "bangna"))
+            {
+                SqlCommand comMainhis = new SqlCommand();
+                comMainhis.CommandText = sql;
+                comMainhis.CommandType = CommandType.Text;
+                comMainhis.Connection = connMainHIS5;
+                SqlDataAdapter adapMainhis = new SqlDataAdapter(comMainhis);
+                try
+                {
+                    con.Open();
+                    adapMainhis.Fill(toReturn);
+                    //return toReturn;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message, ex);
+                }
+                finally
+                {
+                    con.Close();
+                    comMainhis.Dispose();
+                    adapMainhis.Dispose();
+                }
+            }
+            else
+            {
+                OleDbCommand cmdToExecute = new OleDbCommand();
+                cmdToExecute.CommandText = sql;
+                cmdToExecute.CommandType = CommandType.Text;
+
+                OleDbDataAdapter adapter = new OleDbDataAdapter(cmdToExecute);
+                cmdToExecute.Connection = _mainConnection;
+                try
+                {
+                    _mainConnection.Open();
+                    adapter.Fill(toReturn);
+                    //return toReturn;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("", ex);
+                }
+                finally
+                {
+                    _mainConnection.Close();
+                    cmdToExecute.Dispose();
+                    adapter.Dispose();
+                }
+            }
+            return toReturn;
         }
         public DataTable selectDataNoClose(String sql)
         {
@@ -186,7 +242,7 @@ namespace reportBangna.objdb
                 SqlCommand comMainhis = new SqlCommand();
                 comMainhis.CommandText = sql;
                 comMainhis.CommandType = CommandType.Text;
-                comMainhis.Connection = connMainHIS;
+                comMainhis.Connection = connMainHIS5;
                 SqlDataAdapter adapMainhis = new SqlDataAdapter(comMainhis);
                 try
                 {
@@ -241,10 +297,10 @@ namespace reportBangna.objdb
                 SqlCommand comMainhis = new SqlCommand();
                 comMainhis.CommandText = sql;
                 comMainhis.CommandType = CommandType.Text;
-                comMainhis.Connection = connMainHIS;
+                comMainhis.Connection = connMainHIS5;
                 try
                 {
-                    connMainHIS.Open();
+                    connMainHIS5.Open();
                     _rowsAffected = comMainhis.ExecuteNonQuery();
                     toReturn = _rowsAffected.ToString();
                 }
@@ -256,7 +312,7 @@ namespace reportBangna.objdb
                 finally
                 {
                     //_mainConnection.Close();
-                    connMainHIS.Close();
+                    connMainHIS5.Close();
                     comMainhis.Dispose();
                 }
             }
@@ -293,7 +349,7 @@ namespace reportBangna.objdb
                 SqlCommand comMainhis = new SqlCommand();
                 comMainhis.CommandText = sql;
                 comMainhis.CommandType = CommandType.Text;
-                comMainhis.Connection = connMainHIS;
+                comMainhis.Connection = connMainHIS5;
                 try
                 {
                     //connMainHIS.Open();
@@ -344,10 +400,10 @@ namespace reportBangna.objdb
                 SqlCommand comMainhis = new SqlCommand();
                 //comMainhis.CommandText = sql;
                 comMainhis.CommandType = CommandType.Text;
-                comMainhis.Connection = connMainHIS;
+                comMainhis.Connection = connMainHIS5;
                 try
                 {
-                    connMainHIS.Open();
+                    connMainHIS5.Open();
                     //_rowsAffected = comMainhis.ExecuteNonQuery();
                     //toReturn = _rowsAffected.ToString();
                 }
@@ -389,7 +445,7 @@ namespace reportBangna.objdb
         }
         public void CloseConnection()
         {
-            connMainHIS.Close();
+            connMainHIS5.Close();
         }
     }
 }

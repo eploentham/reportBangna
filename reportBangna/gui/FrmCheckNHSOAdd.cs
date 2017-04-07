@@ -958,7 +958,7 @@ namespace reportBangna.gui
 
         private void FrmCheckNHSOAdd_Load(object sender, EventArgs e)
         {
-            this.Text = "Host="+cNhso1db.conn.hostNameMainHIS+" database="+cNhso1db.conn.databaseNameMainHIS+" user="+cNhso1db.conn.userNameMainHIS+" pass="+cNhso1db.conn.passwordMainHIS+" Path "+ Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location); ;
+            this.Text = "Host="+cNhso1db.conn.hostNameMainHIS5+" database="+cNhso1db.conn.databaseNameMainHIS5+" user="+cNhso1db.conn.userNameMainHIS5+" pass="+cNhso1db.conn.passwordMainHIS5+" Path "+ Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location); ;
 
         }
 

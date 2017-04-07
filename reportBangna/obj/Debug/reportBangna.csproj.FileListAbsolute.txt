@@ -132,3 +132,11 @@ C:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmStReceiveView.
 C:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmStVendorAdd.resources
 C:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmStVendorView.resources
 C:\source\reportBangna\reportBangna\obj\Debug\reportBangna.FrmLabCheckText.resources
+C:\source\reportBangna\reportBangna\bin\Debug\reportBangna.exe.manifest
+C:\source\reportBangna\reportBangna\bin\Debug\reportBangna.application
+C:\source\reportBangna\reportBangna\bin\Debug\reportBangna.exe
+C:\source\reportBangna\reportBangna\bin\Debug\reportBangna.pdb
+C:\source\reportBangna\reportBangna\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\source\reportBangna\reportBangna\bin\Debug\stdole.dll
+C:\source\reportBangna\reportBangna\obj\Debug\reportBangna.exe.manifest
+C:\source\reportBangna\reportBangna\obj\Debug\reportBangna.application

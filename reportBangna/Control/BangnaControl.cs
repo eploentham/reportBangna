@@ -11,7 +11,7 @@ namespace reportBangna
 {
     public class BangnaControl
     {
-        public ConnectDB conn, connMainHIS;
+        public ConnectDB conn, connMainHIS5;
         public Config1 cf;
         public ComboBox cboWard, cboSale, cboThoo;
         public List<Font1> thoColor = new List<Font1>();
@@ -36,7 +36,8 @@ namespace reportBangna
         public BangnaControl()
         {
             conn = new ConnectDB("bangna");
-            connMainHIS = new ConnectDB("mainhis");
+            connMainHIS5 = new ConnectDB("mainhis");
+            //connMainHIS1 = new ConnectDB("mainhis");
             labexdb = new LabExDB();
             vsdb = new VisitDB();
             vendb = new StVendorDB(conn);
@@ -52,7 +53,7 @@ namespace reportBangna
             vs = new Visit();
             lw = new LogWriter();
             gg = new StGoodsGroup();
-            pathLabEx = "\\\\" + conn.hostNameMainHIS + "\\image\\labex\\";
+            pathLabEx = "\\\\" + conn.hostNameMainHIS5 + "\\image\\labex\\";
         }
         public String getTextCboItem(ComboBox c, String valueId)
         {
@@ -209,7 +210,7 @@ namespace reportBangna
                     " and phart05.MNC_CFR_STS = 'a' " +
                     " Group By phart06.MNC_PH_CD, pharmacy_m01.MNC_PH_TN ,PHARMACY_M05.MNC_PH_PRI01,PHARMACY_M05.MNC_PH_PRI02,phart05.MNC_CFG_DAT " +
                     " Order By phart05.MNC_CFG_DAT,phart06.MNC_PH_CD ";
-            dt = connMainHIS.selectData(sql);
+            dt = connMainHIS5.selectData(sql);
             return dt;
         }
         public DataTable selectNHSOPrintHNAll(String startDate, String hn, String preno, String vn)
@@ -236,7 +237,7 @@ namespace reportBangna
                     " and phart05.MNC_CFR_STS = 'a' " +
                     " Group By phart06.MNC_PH_CD, pharmacy_m01.MNC_PH_TN ,PHARMACY_M05.MNC_PH_PRI01,PHARMACY_M05.MNC_PH_PRI02,phart05.MNC_CFG_DAT " +
                     " Order By phart05.MNC_CFG_DAT,phart06.MNC_PH_CD ";
-            dt = connMainHIS.selectData(sql);
+            dt = connMainHIS5.selectData(sql);
             return dt;
         }
         /**
@@ -267,7 +268,7 @@ namespace reportBangna
                     " and phart05.MNC_CFR_STS = 'a' ";
                     //" Group By phart06.MNC_PH_CD, pharmacy_m01.MNC_PH_TN ,PHARMACY_M05.MNC_PH_PRI01,PHARMACY_M05.MNC_PH_PRI02,phart05.MNC_CFG_DAT " +
                     //" Order By phart05.MNC_CFG_DAT,phart06.MNC_PH_CD ";
-            dt = connMainHIS.selectData(sql);
+            dt = connMainHIS5.selectData(sql);
             return int.Parse(dt.Rows[0]["cnt"].ToString());
         }
         public String selectOPDViewOR(String hn)
@@ -284,7 +285,7 @@ namespace reportBangna
                 " inner join patient_m26 on t01.mnc_dot_cd = patient_m26.MNC_DOT_CD " +
                 " inner join patient_m02 on patient_m26.MNC_DOT_PFIX =patient_m02.MNC_PFIX_CD " +
                 "where t01.MNC_hn_no = '" + hn + "' ";
-            dt = connMainHIS.selectData(sql);
+            dt = connMainHIS5.selectData(sql);
             if (dt.Rows.Count > 0)
             {
                 for(int i = 0; i < dt.Rows.Count; i++)
@@ -305,7 +306,7 @@ namespace reportBangna
                 +"where t01.MNC_hn_no = '" + hn + "' "+
                 " and t01.MNC_PRE_NO <> '" + preno + "' " +
                 " and t01.mnc_vn_no <> '" + vn + "' " ;
-            dt = connMainHIS.selectData(sql);
+            dt = connMainHIS5.selectData(sql);
             if (dt.Rows.Count > 0)
             {
                 for (int i = 0; i < dt.Rows.Count; i++)
@@ -346,7 +347,7 @@ namespace reportBangna
                 "inner join PATIENT_T08 t08 on t01.MNC_PRE_NO = t08.MNC_PRE_NO and t01.MNC_date = t08.MNC_date " +
                 "where t01.MNC_FN_TYP_CD = '"
                 + fncd + "' and t08.MNC_ds_DATE >= '" + startDate + "'  and t08.MNC_ds_DATE <= '" + endDate + "' ";
-            dt = connMainHIS.selectData(sql);
+            dt = connMainHIS5.selectData(sql);
             return dt;
         }
         public String selectDiaCDbyVN(String hn, String vn, String preNo)
@@ -363,7 +364,7 @@ namespace reportBangna
                       " and t01.mnc_vn_sum = '" + vn1[2] + "' " +
                 "and t01.mnc_pre_no = '" + preNo + "' Order By mnc_dia_flg asc";
             //"Order By t01.mnc_date, t01.mnc_hn_no ";
-            dt = connMainHIS.selectData(sql);
+            dt = connMainHIS5.selectData(sql);
             if (dt.Rows.Count > 0)
             {
                 sql = "";
@@ -389,7 +390,7 @@ namespace reportBangna
                       " and t01.mnc_vn_sum = '" + vn1[2] + "' " +
                 "and t01.mnc_pre_no = '" + preNo + "' Order By mnc_diaor_flg asc";
             //"Order By t01.mnc_date, t01.mnc_hn_no ";
-            dt = connMainHIS.selectData(sql);
+            dt = connMainHIS5.selectData(sql);
             if (dt.Rows.Count > 0)
             {
                 sql = "";
@@ -416,7 +417,7 @@ namespace reportBangna
                       " and t01.mnc_vn_sum = '" + vn1[2] + "' " +
                 "and t01.mnc_pre_no = '" + preNo + "'";
             //"Order By t01.mnc_date, t01.mnc_hn_no ";
-            dt = connMainHIS.selectData(sql);
+            dt = connMainHIS5.selectData(sql);
             if (dt.Rows.Count > 0)
             {
                 sql = dt.Rows[0]["MNC_ds_date"].ToString()+"*"+ FormatTime(dt.Rows[0]["mnc_ds_time"].ToString());
@@ -437,7 +438,7 @@ namespace reportBangna
                       " and t01.mnc_vn_sum = '" + vn1[2] + "' " +
                 "and t01.mnc_pre_no = '" + preNo + "'";
             //"Order By t01.mnc_date, t01.mnc_hn_no ";
-            dt = connMainHIS.selectData(sql);
+            dt = connMainHIS5.selectData(sql);
             if (dt.Rows.Count > 0)
             {
                 sql = dt.Rows[0]["MNC_ds_date"].ToString() + "*" + FormatTime(dt.Rows[0]["MNC_ds_time"].ToString()) + "," + dt.Rows[0]["mnc_an_no"].ToString() + "/" + dt.Rows[0]["mnc_an_yr"].ToString();
@@ -584,7 +585,7 @@ namespace reportBangna
                 "From  patient_m26  " +
                 " inner join patient_m02 on patient_m26.MNC_DOT_PFIX =patient_m02.MNC_PFIX_CD " +
                 "where patient_m26.MNC_DOT_CD = '" + doctorId + "' ";
-            dt = connMainHIS.selectData(sql);
+            dt = connMainHIS5.selectData(sql);
             if (dt.Rows.Count > 0)
             {
                 chk = dt.Rows[0]["prefix"].ToString()+" "+dt.Rows[0]["Fname"].ToString()+" "+dt.Rows[0]["Lname"].ToString();
@@ -599,13 +600,54 @@ namespace reportBangna
                     "From PHARMACY_M01 m01 " +
                     "Left join PHARMACY_M05 m05 on m01.MNC_PH_CD = m05.MNC_PH_CD " +
                     "Where MNC_PH_TN like '%"+ txt + "%' ";
-            dt = connMainHIS.selectData(sql);
+            dt = connMainHIS5.selectData(sql);
             //if (dt.Rows.Count > 0)
             //{
             //    chk = dt.Rows[0]["prefix"].ToString() + " " + dt.Rows[0]["Fname"].ToString() + " " + dt.Rows[0]["Lname"].ToString();
             //}
             return dt;
         }
+        public DataTable selectFnType(String branchId)
+        {
+            DataTable dt = new DataTable();
+            String sql = "", chk = "-";
+            if (branchId.Equals("001"))
+            {
+                sql = "Select * From from FINANCE_M02 ";
+                dt = connMainHIS5.selectData(connMainHIS5.connMainHIS1, sql);
+            }
+            else
+            {
+                sql = "Select * From FINANCE_M02 ";
+                dt = connMainHIS5.selectData(connMainHIS5.connMainHIS5, sql);
+            }
+            
+            //if (dt.Rows.Count > 0)
+            //{
+            //    chk = dt.Rows[0]["prefix"].ToString() + " " + dt.Rows[0]["Fname"].ToString() + " " + dt.Rows[0]["Lname"].ToString();
+            //}
+            return dt;
+        }
+        public ComboBox getCboFnType(ComboBox c, String branchId)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectFnType(branchId);
+            //String aaa = "";
+            ComboBoxItem item1 = new ComboBoxItem();
+            item1.Text = "";
+            item1.Value = "000";
+            c.Items.Add(item1);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new ComboBoxItem();
+                item.Text = dt.Rows[i]["MNC_FN_TYP_DSC"].ToString();
+                item.Value = dt.Rows[i]["MNC_FN_TYP_CD"].ToString();
+                //item.Text = dt.Rows[i][cu.NameT].ToString();
+                c.Items.Add(item);
+                //aaa += "new { Text = "+dt.Rows[i][sale.Name].ToString()+", Value = "+dt.Rows[i][sale.Id].ToString()+" },";
+                //c.Items.Add(new );
+            }
+            return c;
+        }
     }
-    
 }

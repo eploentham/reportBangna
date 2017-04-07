@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboFnType = new System.Windows.Forms.ComboBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.cboBranch = new System.Windows.Forms.ComboBox();
             this.chkDoctorEdit = new System.Windows.Forms.CheckBox();
@@ -67,6 +68,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cboFnType);
             this.groupBox1.Controls.Add(this.btnUpdate);
             this.groupBox1.Controls.Add(this.cboBranch);
             this.groupBox1.Controls.Add(this.chkDoctorEdit);
@@ -92,6 +94,15 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
+            // cboFnType
+            // 
+            this.cboFnType.FormattingEnabled = true;
+            this.cboFnType.Location = new System.Drawing.Point(560, 11);
+            this.cboFnType.Margin = new System.Windows.Forms.Padding(2);
+            this.cboFnType.Name = "cboFnType";
+            this.cboFnType.Size = new System.Drawing.Size(143, 21);
+            this.cboFnType.TabIndex = 30;
+            // 
             // btnUpdate
             // 
             this.btnUpdate.Location = new System.Drawing.Point(799, 31);
@@ -111,6 +122,8 @@
             this.cboBranch.Name = "cboBranch";
             this.cboBranch.Size = new System.Drawing.Size(92, 21);
             this.cboBranch.TabIndex = 28;
+            this.cboBranch.SelectedIndexChanged += new System.EventHandler(this.cboBranch_SelectedIndexChanged);
+            this.cboBranch.Click += new System.EventHandler(this.cboBranch_Click);
             // 
             // chkDoctorEdit
             // 
@@ -136,10 +149,10 @@
             // 
             // btnConvert
             // 
-            this.btnConvert.Location = new System.Drawing.Point(676, 11);
+            this.btnConvert.Location = new System.Drawing.Point(680, 34);
             this.btnConvert.Margin = new System.Windows.Forms.Padding(2);
             this.btnConvert.Name = "btnConvert";
-            this.btnConvert.Size = new System.Drawing.Size(26, 39);
+            this.btnConvert.Size = new System.Drawing.Size(26, 22);
             this.btnConvert.TabIndex = 25;
             this.btnConvert.Text = "...";
             this.btnConvert.UseVisualStyleBackColor = true;
@@ -156,9 +169,9 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(614, 12);
+            this.btnSave.Location = new System.Drawing.Point(620, 34);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(57, 37);
+            this.btnSave.Size = new System.Drawing.Size(57, 22);
             this.btnSave.TabIndex = 23;
             this.btnSave.Text = "บันทึก";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -231,9 +244,9 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(560, 11);
+            this.btnOK.Location = new System.Drawing.Point(560, 34);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(48, 39);
+            this.btnOK.Size = new System.Drawing.Size(57, 22);
             this.btnOK.TabIndex = 4;
             this.btnOK.Text = "ดึงข้อมูล";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -495,5 +508,6 @@
         private System.Windows.Forms.CheckBox chkDoctorEdit;
         private System.Windows.Forms.ComboBox cboBranch;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.ComboBox cboFnType;
     }
 }
