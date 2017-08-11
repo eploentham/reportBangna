@@ -649,5 +649,19 @@ namespace reportBangna
             }
             return c;
         }
+        public String selectPatientHN(String ID)
+        {
+            DataTable dt = new DataTable();
+            String sql = "", chk = "-";
+            sql = "Select  mnc_hn_no " +
+                "From  patient_m01  " +
+                "where patient_m01.MNC_id_no = '" + ID + "' ";
+            dt = connMainHIS5.selectData(sql);
+            if (dt.Rows.Count > 0)
+            {
+                chk = dt.Rows[0]["mnc_hn_no"].ToString();
+            }
+            return chk;
+        }
     }
 }

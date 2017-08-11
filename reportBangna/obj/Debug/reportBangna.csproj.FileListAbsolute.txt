@@ -140,3 +140,6 @@ C:\source\reportBangna\reportBangna\bin\Debug\Microsoft.ReportViewer.WinForms.dl
 C:\source\reportBangna\reportBangna\bin\Debug\stdole.dll
 C:\source\reportBangna\reportBangna\obj\Debug\reportBangna.exe.manifest
 C:\source\reportBangna\reportBangna\obj\Debug\reportBangna.application
+C:\source\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmCheckNHSOImportNamePatient.resources
+C:\source\reportBangna\reportBangna\bin\Debug\MySql.Data.dll
+C:\source\reportBangna\reportBangna\bin\Debug\MySql.Data.xml

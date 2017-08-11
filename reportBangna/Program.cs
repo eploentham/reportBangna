@@ -60,7 +60,7 @@ namespace reportBangna
                 //Application.Run(new FrmMain());
                 //Application.Run(new FrmCtScan());
                 //Application.Run(new FrmLabExView());
-                Application.Run(new FrmCheckNHSO());
+                //Application.Run(new FrmCheckNHSO());
                 //Application.Run(new FrmDischargeSearch());
                 //Application.Run(new FrmLabExDoctor());
                 //Application.Run(new FrmCertificatesView());
@@ -71,6 +71,7 @@ namespace reportBangna
                 //Application.Run(new FrmLabExView());
                 //Application.Run(new FrmCheckDrug());
                 //Application.Run(new FrmLabCheckText());
+                Application.Run(new FrmCheckNHSOImportNamePatient());
             }
             //Application.Run(new FrmMain());
             //Application.Run(new FrmPatientDead());
