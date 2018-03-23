@@ -54,6 +54,11 @@ namespace reportBangna
                 //MessageBox.Show("labexdoctor", "labexdoctor");
                 Application.Run(new FrmOPD2CheckUP(""));
             }
+            else if (System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLower().Equals("ssdata"))
+            {
+                //MessageBox.Show("labexdoctor", "labexdoctor");
+                Application.Run(new FrmSSOAdd());
+            }
             else
             {
                 //MessageBox.Show("else", "else");
@@ -71,7 +76,8 @@ namespace reportBangna
                 //Application.Run(new FrmLabExView());
                 //Application.Run(new FrmCheckDrug());
                 //Application.Run(new FrmLabCheckText());
-                Application.Run(new FrmCheckNHSOImportNamePatient());
+                //Application.Run(new FrmCheckNHSOImportNamePatient());
+                Application.Run(new FrmSSOAdd());
             }
             //Application.Run(new FrmMain());
             //Application.Run(new FrmPatientDead());

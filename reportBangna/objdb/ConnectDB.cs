@@ -37,6 +37,8 @@ namespace reportBangna.objdb
         public String isBranch = "";
         private LogWriter lw;
         public String pathLabEx = "";
+
+        public String pathSSO = "";
         public ConnectDB()
         {
             iniFile = new IniFile("reportbangna.ini");
@@ -103,6 +105,21 @@ namespace reportBangna.objdb
                 //connMainHIS.ConnectionString = GetConfig(hostName);
                 connMainHIS5.ConnectionString = "Server="+hostNameBua+";Database="+databaseNameBua+";Uid="+userNameBua+";Pwd="+passwordBua+";";
             }
+            else if (hostName == "sso")
+            {
+                _mainConnection = new OleDbConnection();
+                //_mainConnection.ConnectionString = GetConfig("Main.ConnectionString");
+                if (Environment.Is64BitOperatingSystem)
+                {
+                    _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source="+ pathSSO + ";Persist Security Info=False";
+                }
+                else
+                {
+                    _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source="+ pathSSO + ";Persist Security Info=False";
+                }
+                //_mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\reportBangna\\reportBangna\\DataBase\\reportBangna.mdb;Persist Security Info=False";
+                _isDisposed = false;
+            }
             else
             {
                 _mainConnection = new OleDbConnection();
@@ -118,6 +135,33 @@ namespace reportBangna.objdb
                 //_mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\reportBangna\\reportBangna\\DataBase\\reportBangna.mdb;Persist Security Info=False";
                 _isDisposed = false;
             }
+        }
+        public ConnectDB(String hostName, String pathSSO, String flag)
+        {
+            _mainConnection = new OleDbConnection();
+            //_mainConnection.ConnectionString = GetConfig("Main.ConnectionString");
+            if (flag.Equals("32"))
+            {
+                _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + pathSSO + ";Persist Security Info=False";
+            }
+            else if (flag.Equals("64"))
+            {
+                _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + pathSSO + ";Persist Security Info=False";
+            }
+            else
+            {
+                if (Environment.Is64BitOperatingSystem)
+                {
+                    _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + pathSSO + ";Persist Security Info=False";
+                }
+                else
+                {
+                    _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + pathSSO + ";Persist Security Info=False";
+                }
+            }
+            
+            //_mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\reportBangna\\reportBangna\\DataBase\\reportBangna.mdb;Persist Security Info=False";
+            _isDisposed = false;
         }
         public String GetConfig(String key)
         {
