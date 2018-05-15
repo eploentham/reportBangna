@@ -291,8 +291,8 @@ namespace reportBangna.gui
             {
                 err = ex.Message;
             }
-            
 
+            MessageBox.Show("Check Data เรียบร้อย ", "");
             ////worksheet.Cells[1, 1] = "Name";
             ////worksheet.Cells[1, 2] = "Bid";
 

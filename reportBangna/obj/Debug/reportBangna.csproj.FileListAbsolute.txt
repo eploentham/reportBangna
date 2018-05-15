@@ -291,3 +291,4 @@ D:\source\bangna\reportBangna\reportBangna\bin\Debug\pt\Microsoft.SqlServer.Type
 D:\source\bangna\reportBangna\reportBangna\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
 D:\source\bangna\reportBangna\reportBangna\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
 D:\source\bangna\reportBangna\reportBangna\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+D:\source\bangna\reportBangna\reportBangna\obj\Debug\reportBangna.csprojResolveAssemblyReference.cache
