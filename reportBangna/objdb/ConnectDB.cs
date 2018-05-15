@@ -22,13 +22,13 @@ namespace reportBangna.objdb
         public int _rowsAffected = 0;
         public SqlInt32 _errorCode = 0;
         public Boolean _isDisposed = false;
-        public SqlConnection connMainHIS5,connMainHIS1;
+        public SqlConnection connMainHIS5,connMainHIS1, connMainHIS2;
         private String hostname = "";
         private IniFile iniFile;
-        public String databaseNameMainHIS5 = "",databaseNameMainHIS1 = "";
-        public String hostNameMainHIS5 = "", hostNameMainHIS1 = "";
-        public String userNameMainHIS5 = "", userNameMainHIS1 = "";
-        public String passwordMainHIS5 = "", passwordMainHIS1 = "";
+        public String databaseNameMainHIS5 = "",databaseNameMainHIS1 = "", databaseNameMainHIS2 = "";
+        public String hostNameMainHIS5 = "", hostNameMainHIS1 = "", hostNameMainHIS2 = "";
+        public String userNameMainHIS5 = "", userNameMainHIS1 = "", userNameMainHIS2 = "";
+        public String passwordMainHIS5 = "", passwordMainHIS1 = "", passwordMainHIS2 = "";
         public String databaseNameBua = "";
         public String hostNameBua = "";
         public String userNameBua = "";
@@ -57,6 +57,55 @@ namespace reportBangna.objdb
             _mainConnection.ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\\reportBangna\\reportBangna\\DataBase\\reportBangna.mdb;Persist Security Info=False";
             _isDisposed = false;
         }
+        public ConnectDB(String hostName, String flag)
+        {
+            hostname = "mainhis";
+            iniFile = new IniFile("reportbangna.ini");
+
+            databaseNameMainHIS5 = iniFile.Read("database_name");
+            hostNameMainHIS5 = iniFile.Read("host_name");
+            userNameMainHIS5 = iniFile.Read("user_password");
+            passwordMainHIS5 = iniFile.Read("password");
+
+            hostNameMainHIS1 = iniFile.Read("host_name1");
+            userNameMainHIS1 = iniFile.Read("user_name1");
+            passwordMainHIS1 = iniFile.Read("password1");
+            databaseNameMainHIS1 = iniFile.Read("database_name1");
+
+            hostNameMainHIS2 = iniFile.Read("host_name2");
+            userNameMainHIS2 = iniFile.Read("user_name2");
+            passwordMainHIS2 = iniFile.Read("password2");
+            databaseNameMainHIS2 = iniFile.Read("database_name2");
+
+            databaseNameBua = iniFile.Read("database_name_bua");
+            hostNameBua = iniFile.Read("host_name_bua");
+            userNameBua = iniFile.Read("user_password_bua");
+            passwordBua = iniFile.Read("password_bua");
+
+            connMainHIS5 = new SqlConnection();
+            connMainHIS2 = new SqlConnection();
+            connMainHIS1 = new SqlConnection();
+            connMainHIS5.ConnectionString = "Server=" + hostNameMainHIS5 + ";Database=" + databaseNameMainHIS5.ToString() + ";Uid=" + userNameMainHIS5 + ";Pwd=" + passwordMainHIS5 + ";";
+            connMainHIS1.ConnectionString = "Server=" + hostNameMainHIS1 + ";Database=" + databaseNameMainHIS1.ToString() + ";Uid=" + userNameMainHIS1 + ";Pwd=" + passwordMainHIS1 + ";";
+            connMainHIS2.ConnectionString = "Server=" + hostNameMainHIS2 + ";Database=" + databaseNameMainHIS2.ToString() + ";Uid=" + userNameMainHIS2 + ";Pwd=" + passwordMainHIS2 + ";";
+
+            if (flag.Equals("1"))
+            {
+                connMainHIS5.ConnectionString = connMainHIS1.ConnectionString;
+            }
+            else if (flag.Equals("2"))
+            {
+                connMainHIS5.ConnectionString = connMainHIS2.ConnectionString;
+            }
+            else if (flag.Equals("5"))
+            {
+                connMainHIS5.ConnectionString = connMainHIS5.ConnectionString;
+            }
+            _mainConnection = new OleDbConnection();
+            //_mainConnection.ConnectionString = GetConfig("Main.ConnectionString");
+            _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\\reportBangna\\reportBangna\\DataBase\\reportBangna.mdb;Persist Security Info=False";
+            _isDisposed = false;
+        }
         public ConnectDB(String hostName)
         {
             lw = new LogWriter();
@@ -67,6 +116,8 @@ namespace reportBangna.objdb
             userNameMainHIS5 = iniFile.Read("user_name");
             passwordMainHIS5 = iniFile.Read("password");
             databaseNameMainHIS5 = iniFile.Read("database_name");
+
+            
 
             databaseNameBua = iniFile.Read("database_name_bua");
             hostNameBua = iniFile.Read("host_name_bua");

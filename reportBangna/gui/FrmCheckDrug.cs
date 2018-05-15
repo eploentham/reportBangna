@@ -35,6 +35,11 @@ namespace reportBangna.gui
             setGrd();
         }
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void FrmCheckDrug_Load(object sender, EventArgs e)
         {
 

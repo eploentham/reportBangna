@@ -32,6 +32,8 @@
             this.btnSSOOk = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
@@ -65,16 +67,20 @@
             this.btnSSOGenData = new System.Windows.Forms.Button();
             this.btnSSOPathSave = new System.Windows.Forms.Button();
             this.txtSSOSavePath = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.chk32 = new System.Windows.Forms.RadioButton();
+            this.chk64 = new System.Windows.Forms.RadioButton();
+            this.btnPath = new System.Windows.Forms.Button();
+            this.txtSSOPathAccess = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(352, 22);
+            this.label1.Location = new System.Drawing.Point(251, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 0;
@@ -101,6 +107,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label13);
@@ -123,15 +130,33 @@
             this.groupBox1.Controls.Add(this.btnSSOOk);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(814, 200);
+            this.groupBox1.Size = new System.Drawing.Size(814, 282);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Data Access SS Data";
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(552, 197);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 32;
+            this.button7.Text = "นำเข้า";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(552, 168);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "นำเข้า";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(227, 117);
+            this.label13.Location = new System.Drawing.Point(218, 202);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(41, 13);
             this.label13.TabIndex = 30;
@@ -140,7 +165,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(227, 89);
+            this.label12.Location = new System.Drawing.Point(218, 174);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(41, 13);
             this.label12.TabIndex = 29;
@@ -148,7 +173,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(425, 112);
+            this.button6.Location = new System.Drawing.Point(416, 197);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(129, 23);
             this.button6.TabIndex = 28;
@@ -157,7 +182,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(425, 83);
+            this.button5.Location = new System.Drawing.Point(416, 168);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(129, 23);
             this.button5.TabIndex = 27;
@@ -166,7 +191,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(142, 112);
+            this.button4.Location = new System.Drawing.Point(133, 197);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 26;
@@ -175,7 +200,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(142, 83);
+            this.button3.Location = new System.Drawing.Point(133, 168);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 25;
@@ -184,7 +209,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(17, 113);
+            this.button2.Location = new System.Drawing.Point(8, 198);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(97, 23);
             this.button2.TabIndex = 24;
@@ -193,7 +218,7 @@
             // 
             // btn
             // 
-            this.btn.Location = new System.Drawing.Point(17, 84);
+            this.btn.Location = new System.Drawing.Point(8, 169);
             this.btn.Name = "btn";
             this.btn.Size = new System.Drawing.Size(97, 23);
             this.btn.TabIndex = 23;
@@ -211,7 +236,7 @@
             // 
             // pB2
             // 
-            this.pB2.Location = new System.Drawing.Point(6, 163);
+            this.pB2.Location = new System.Drawing.Point(0, 253);
             this.pB2.Name = "pB2";
             this.pB2.Size = new System.Drawing.Size(802, 23);
             this.pB2.TabIndex = 21;
@@ -219,7 +244,7 @@
             // cboYear
             // 
             this.cboYear.FormattingEnabled = true;
-            this.cboYear.Location = new System.Drawing.Point(425, 19);
+            this.cboYear.Location = new System.Drawing.Point(324, 19);
             this.cboYear.Name = "cboYear";
             this.cboYear.Size = new System.Drawing.Size(121, 21);
             this.cboYear.TabIndex = 12;
@@ -253,7 +278,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 59);
+            this.label4.Location = new System.Drawing.Point(9, 144);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(118, 13);
             this.label4.TabIndex = 5;
@@ -262,7 +287,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 147);
+            this.label3.Location = new System.Drawing.Point(0, 237);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 4;
@@ -287,7 +312,7 @@
             this.groupBox2.Controls.Add(this.btnSSOPathSave);
             this.groupBox2.Controls.Add(this.txtSSOSavePath);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(12, 218);
+            this.groupBox2.Location = new System.Drawing.Point(6, 300);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(814, 369);
             this.groupBox2.TabIndex = 6;
@@ -444,29 +469,61 @@
             this.txtSSOSavePath.Size = new System.Drawing.Size(559, 19);
             this.txtSSOSavePath.TabIndex = 5;
             // 
-            // button1
+            // panel1
             // 
-            this.button1.Location = new System.Drawing.Point(561, 83);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "นำเข้า";
-            this.button1.UseVisualStyleBackColor = true;
+            this.panel1.Controls.Add(this.txtSSOPathAccess);
+            this.panel1.Controls.Add(this.btnPath);
+            this.panel1.Controls.Add(this.chk64);
+            this.panel1.Controls.Add(this.chk32);
+            this.panel1.Location = new System.Drawing.Point(21, 46);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(640, 37);
+            this.panel1.TabIndex = 7;
             // 
-            // button7
+            // chk32
             // 
-            this.button7.Location = new System.Drawing.Point(561, 112);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 32;
-            this.button7.Text = "นำเข้า";
-            this.button7.UseVisualStyleBackColor = true;
+            this.chk32.AutoSize = true;
+            this.chk32.Location = new System.Drawing.Point(7, 10);
+            this.chk32.Name = "chk32";
+            this.chk32.Size = new System.Drawing.Size(37, 17);
+            this.chk32.TabIndex = 0;
+            this.chk32.TabStop = true;
+            this.chk32.Text = "32";
+            this.chk32.UseVisualStyleBackColor = true;
+            // 
+            // chk64
+            // 
+            this.chk64.AutoSize = true;
+            this.chk64.Location = new System.Drawing.Point(78, 10);
+            this.chk64.Name = "chk64";
+            this.chk64.Size = new System.Drawing.Size(37, 17);
+            this.chk64.TabIndex = 1;
+            this.chk64.TabStop = true;
+            this.chk64.Text = "64";
+            this.chk64.UseVisualStyleBackColor = true;
+            // 
+            // btnPath
+            // 
+            this.btnPath.Location = new System.Drawing.Point(181, 7);
+            this.btnPath.Name = "btnPath";
+            this.btnPath.Size = new System.Drawing.Size(49, 23);
+            this.btnPath.TabIndex = 7;
+            this.btnPath.Text = "...";
+            this.btnPath.UseVisualStyleBackColor = true;
+            this.btnPath.Click += new System.EventHandler(this.btnSSOPath_Click);
+            // 
+            // txtSSOPathAccess
+            // 
+            this.txtSSOPathAccess.Location = new System.Drawing.Point(236, 8);
+            this.txtSSOPathAccess.Name = "txtSSOPathAccess";
+            this.txtSSOPathAccess.Size = new System.Drawing.Size(401, 20);
+            this.txtSSOPathAccess.TabIndex = 8;
             // 
             // FrmSSOAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(838, 601);
+            this.ClientSize = new System.Drawing.Size(838, 681);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmSSOAdd";
@@ -477,6 +534,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -522,5 +581,10 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton chk64;
+        private System.Windows.Forms.RadioButton chk32;
+        private System.Windows.Forms.TextBox txtSSOPathAccess;
+        private System.Windows.Forms.Button btnPath;
     }
 }

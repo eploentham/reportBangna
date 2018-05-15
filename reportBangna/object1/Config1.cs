@@ -17,6 +17,15 @@ namespace reportBangna.object1
             c.SelectedIndex = c.FindStringExact( String.Concat(System.DateTime.Now.Year+543));
             return c;
         }
+        public ComboBox setCboPeriod(ComboBox c)
+        {
+            c.Items.Clear();
+            c.Items.Add(1);
+            c.Items.Add(2);
+            
+            c.SelectedIndex = 0;
+            return c;
+        }
         public ComboBox setCboMonth(ComboBox c)
         {
             c.Items.Clear();
@@ -51,6 +60,7 @@ namespace reportBangna.object1
             //c.Items.Add("พ.ญ. อรวรรณ  แซ่เฉิน");
             return c;
         }
+
         public ComboBox setCboBranch(ComboBox c)
         {
             var items = new[]{

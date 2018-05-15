@@ -77,7 +77,8 @@ namespace reportBangna
                 //Application.Run(new FrmCheckDrug());
                 //Application.Run(new FrmLabCheckText());
                 //Application.Run(new FrmCheckNHSOImportNamePatient());
-                Application.Run(new FrmSSOAdd());
+                //Application.Run(new FrmSSOAdd());
+                Application.Run(new FrmBillLabCheckExcel());
             }
             //Application.Run(new FrmMain());
             //Application.Run(new FrmPatientDead());

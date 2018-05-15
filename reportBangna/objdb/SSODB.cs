@@ -43,8 +43,8 @@ namespace reportBangna.objdb
             String sql = "";
             DataTable dt = new DataTable();
             sql = "Select * " +
-                "From outpatient " +
-                "Order By id ";
+                "From OutpatientHdr2 " +
+                "Order By TransactionNumber ";
             dt = conn.selectData(sql);
             return dt;
         }
@@ -87,7 +87,8 @@ namespace reportBangna.objdb
                     time3 += time2[0] + ":" + time2[1] + ":" + time2[2];
                     dtran += time3;
                 }
-                hcode = row["ServiceHospitalCode"].ToString();
+                //hcode = row["ServiceHospitalCode"].ToString();
+                hcode = row["MainHospitalCode"].ToString();
                 invno = row["TransactionNumber"].ToString();
                 billno = row["TransactionNumber"].ToString();
                 hn = row["hn"].ToString();
