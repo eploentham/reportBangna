@@ -58,6 +58,7 @@
             this.chkDrug = new System.Windows.Forms.CheckBox();
             this.dgvAdd = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtDiaSearch = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDrug)).BeginInit();
@@ -68,6 +69,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtDiaSearch);
             this.groupBox1.Controls.Add(this.cboFnType);
             this.groupBox1.Controls.Add(this.btnUpdate);
             this.groupBox1.Controls.Add(this.cboBranch);
@@ -90,7 +92,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(10, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(922, 58);
+            this.groupBox1.Size = new System.Drawing.Size(987, 58);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -450,11 +452,19 @@
             this.groupBox2.Text = "groupBox2";
             this.groupBox2.Visible = false;
             // 
+            // txtDiaSearch
+            // 
+            this.txtDiaSearch.Location = new System.Drawing.Point(860, 33);
+            this.txtDiaSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDiaSearch.Name = "txtDiaSearch";
+            this.txtDiaSearch.Size = new System.Drawing.Size(50, 20);
+            this.txtDiaSearch.TabIndex = 31;
+            // 
             // FrmCheckNHSO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(953, 588);
+            this.ClientSize = new System.Drawing.Size(1114, 588);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgvAdd);
             this.Controls.Add(this.groupBox1);
@@ -509,5 +519,6 @@
         private System.Windows.Forms.ComboBox cboBranch;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.ComboBox cboFnType;
+        private System.Windows.Forms.TextBox txtDiaSearch;
     }
 }

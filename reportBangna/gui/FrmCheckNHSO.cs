@@ -63,6 +63,9 @@ namespace reportBangna.gui
             config1 = new Config1();
             cNhso1db = new CheckNhso1DB();
             bc = new BangnaControl();
+
+            //txtDiaSearch.KeyUp += TxtDiaSearch_KeyUp;
+
             config1.setCboLab(cboLab);
             config1.setCboBranch(cboBranch);
             
@@ -73,6 +76,16 @@ namespace reportBangna.gui
             //sip = new SedanInjuryPerson();
             pageLoad = false;
         }
+
+        //private void TxtDiaSearch_KeyUp(object sender, KeyEventArgs e)
+        //{
+        //    //throw new NotImplementedException();
+        //    if(e.KeyCode == Keys.Enter)
+        //    {
+
+        //    }
+        //}
+
         private void setResize()
         {
             dgvAdd.Width = this.Width - 50;
@@ -284,6 +297,8 @@ namespace reportBangna.gui
             if (drug1.Length == 1)
             {
                 dt = cNhso1db.selectByDate(dateStart1, dateEnd1, chkDrug, txtSearch.Text, txtLabSearch1.Text.Trim(), txtLabSearch2.Text.Trim(), cboLab.Text.Trim(), StatusLabError, StatusDoctorEdit, branchId);
+                DataView dv = new DataView(dt);
+                //dv.Find()
             }
             else
             {
@@ -334,6 +349,15 @@ namespace reportBangna.gui
             pB1.Minimum = 0;
             pB1.Maximum = dt.Rows.Count;
             setGrid(dt.Rows.Count);
+            if (txtDiaSearch.Text.Length > 0)
+            {
+                DataRow[] dr = dt.Select(cNhso1db.cNhso1.dia1+" = '"+txtDiaSearch.Text+"'");
+                foreach(DataRow row in dr)
+                {
+                    dt.Rows.Remove(row);
+                }
+            }
+            dgvAdd.ColumnCount = dt.Rows.Count;
             if (dt.Rows.Count > 0)
             {
                 for (int i = 0; i < dt.Rows.Count; i++)

@@ -1424,6 +1424,190 @@ namespace reportBangna.objdb
             dt = connBua.selectData(sql);
             return dt;
         }
+        public DataTable selectByDate(String dateStart, String dateEnd, String chkDrug,
+            String drugSearch, String labSearch1, String labSearch2, String labId, Boolean StatusLabError, Boolean doctorEdit, String branchId, Boolean statusdiasearch, String diasearch)
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            String[] lab1;
+            String labWhere = "", labFrom = "", drugWhere = "", drugFrom = "", statusActiceWhere = "", visitDateWhere = "", branchIdWhere = "";
+            String doctorWhere = "", diaWhere="";
+            Double aa = 0.0;
+
+            statusActiceWhere = " " + cNhso1.statusActive + "='1' ";
+            visitDateWhere = cNhso1.visitDate + " >='" + dateStart + "' and " + cNhso1.visitDate + "<='" + dateEnd + "' ";
+            branchIdWhere = cNhso1.branchID + " = '" + branchId + "' ";
+            if (!labSearch1.Equals(""))
+            {
+
+            }
+            if (!labId.Equals(""))
+            {
+                if (StatusLabError)
+                {
+                    labWhere = " ((" + visitDateWhere + " and " + cNhso1.labName1 + " like '" + labId + "%') and " + cNhso1.labValue1 + " like '%" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName2 + " like '" + labId + "%') and " + cNhso1.labValue2 + " like '%" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName3 + " like '" + labId + "%') and " + cNhso1.labValue3 + " like '%" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName4 + " like '" + labId + "%') and " + cNhso1.labValue4 + " like '%" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName5 + " like '" + labId + "%') and " + cNhso1.labValue5 + " like '%" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName6 + " like '" + labId + "%') and " + cNhso1.labValue6 + " like '%" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName7 + " like '" + labId + "%') and " + cNhso1.labValue7 + " like '%" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName8 + " like '" + labId + "%') and " + cNhso1.labValue8 + " like '%" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName9 + " like '" + labId + "%') and " + cNhso1.labValue9 + " like '%" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName10 + " like '" + labId + "%') and " + cNhso1.labValue10 + " like '%" + labSearch1 + "%')  ";
+                }
+                else
+                {
+                    if (double.TryParse(labSearch1, out aa))
+                    {
+                        //labWhere = " ((" + visitDateWhere + " and " + cNhso1.labName1 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue1 + ")=1 Then Convert(float," + cNhso1.labValue1 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        //+ " ((" + visitDateWhere + " and " + cNhso1.labName2 + " like '" + labId + "%') and cast(" + cNhso1.labValue2 + " as float)  between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        //+ " ((" + visitDateWhere + " and " + cNhso1.labName3 + " like '" + labId + "%') and cast(" + cNhso1.labValue3 + " as float) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        //+ " ((" + visitDateWhere + " and " + cNhso1.labName4 + " like '" + labId + "%') and cast(" + cNhso1.labValue4 + " as float) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        //+ " ((" + visitDateWhere + " and " + cNhso1.labName5 + " like '" + labId + "%') and cast(" + cNhso1.labValue5 + " as float) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        //+ " ((" + visitDateWhere + " and " + cNhso1.labName6 + " like '" + labId + "%') and cast(" + cNhso1.labValue6 + " as float) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        //+ " ((" + visitDateWhere + " and " + cNhso1.labName7 + " like '" + labId + "%') and cast(" + cNhso1.labValue7 + " as float) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        //+ " ((" + visitDateWhere + " and " + cNhso1.labName8 + " like '" + labId + "%') and cast(" + cNhso1.labValue8 + " as float) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        //+ " ((" + visitDateWhere + " and " + cNhso1.labName9 + " like '" + labId + "%') and cast(" + cNhso1.labValue9 + " as float) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        //+ " ((" + visitDateWhere + " and " + cNhso1.labName10 + " like '" + labId + "%') and cast(" + cNhso1.labValue10 + " as float) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float))  ";
+
+                        labWhere = " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName1 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue1 + ")=1 Then Convert(float," + cNhso1.labValue1 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName2 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue2 + ")=1 Then Convert(float," + cNhso1.labValue2 + ") else NULL end)  between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName3 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue3 + ")=1 Then Convert(float," + cNhso1.labValue3 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName4 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue4 + ")=1 Then Convert(float," + cNhso1.labValue4 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName5 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue5 + ")=1 Then Convert(float," + cNhso1.labValue5 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName6 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue6 + ")=1 Then Convert(float," + cNhso1.labValue6 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName7 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue7 + ")=1 Then Convert(float," + cNhso1.labValue7 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName8 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue8 + ")=1 Then Convert(float," + cNhso1.labValue8 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName9 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue9 + ")=1 Then Convert(float," + cNhso1.labValue9 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName10 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue10 + ")=1 Then Convert(float," + cNhso1.labValue10 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName11 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue11 + ")=1 Then Convert(float," + cNhso1.labValue11 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName12 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue12 + ")=1 Then Convert(float," + cNhso1.labValue12 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName13 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue13 + ")=1 Then Convert(float," + cNhso1.labValue13 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName14 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue14 + ")=1 Then Convert(float," + cNhso1.labValue14 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName15 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue15 + ")=1 Then Convert(float," + cNhso1.labValue15 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName16 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue16 + ")=1 Then Convert(float," + cNhso1.labValue16 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName17 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue17 + ")=1 Then Convert(float," + cNhso1.labValue17 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName18 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue18 + ")=1 Then Convert(float," + cNhso1.labValue18 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName19 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue19 + ")=1 Then Convert(float," + cNhso1.labValue19 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName20 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue20 + ")=1 Then Convert(float," + cNhso1.labValue20 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName21 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue21 + ")=1 Then Convert(float," + cNhso1.labValue21 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName22 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue22 + ")=1 Then Convert(float," + cNhso1.labValue22 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName23 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue23 + ")=1 Then Convert(float," + cNhso1.labValue23 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName24 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue24 + ")=1 Then Convert(float," + cNhso1.labValue24 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName25 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue25 + ")=1 Then Convert(float," + cNhso1.labValue25 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName26 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue26 + ")=1 Then Convert(float," + cNhso1.labValue26 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName27 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue27 + ")=1 Then Convert(float," + cNhso1.labValue27 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName28 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue28 + ")=1 Then Convert(float," + cNhso1.labValue28 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName29 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue29 + ")=1 Then Convert(float," + cNhso1.labValue29 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float)) or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName30 + " like '" + labId + "%') and (Case When Isnumeric(" + cNhso1.labValue30 + ")=1 Then Convert(float," + cNhso1.labValue30 + ") else NULL end) between cast(" + labSearch1 + " as float) and cast(" + labSearch2 + " as float))  ";
+                    }
+                    else
+                    {
+                        labWhere = " ((" + visitDateWhere + " and " + cNhso1.labName1 + " like '" + labId + "%') and " + cNhso1.labValue1 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName2 + " like '" + labId + "%') and " + cNhso1.labValue2 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName3 + " like '" + labId + "%') and " + cNhso1.labValue3 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName4 + " like '" + labId + "%') and " + cNhso1.labValue4 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName5 + " like '" + labId + "%') and " + cNhso1.labValue5 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName6 + " like '" + labId + "%') and " + cNhso1.labValue6 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName7 + " like '" + labId + "%') and " + cNhso1.labValue7 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName8 + " like '" + labId + "%') and " + cNhso1.labValue8 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName9 + " like '" + labId + "%') and " + cNhso1.labValue9 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName10 + " like '" + labId + "%') and " + cNhso1.labValue10 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName11 + " like '" + labId + "%') and " + cNhso1.labValue11 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName12 + " like '" + labId + "%') and " + cNhso1.labValue12 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName13 + " like '" + labId + "%') and " + cNhso1.labValue13 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName14 + " like '" + labId + "%') and " + cNhso1.labValue14 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName15 + " like '" + labId + "%') and " + cNhso1.labValue15 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName16 + " like '" + labId + "%') and " + cNhso1.labValue16 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName17 + " like '" + labId + "%') and " + cNhso1.labValue17 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName18 + " like '" + labId + "%') and " + cNhso1.labValue18 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName19 + " like '" + labId + "%') and " + cNhso1.labValue19 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName20 + " like '" + labId + "%') and " + cNhso1.labValue20 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName21 + " like '" + labId + "%') and " + cNhso1.labValue21 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName22 + " like '" + labId + "%') and " + cNhso1.labValue22 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName23 + " like '" + labId + "%') and " + cNhso1.labValue23 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName24 + " like '" + labId + "%') and " + cNhso1.labValue24 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName25 + " like '" + labId + "%') and " + cNhso1.labValue25 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName26 + " like '" + labId + "%') and " + cNhso1.labValue26 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName27 + " like '" + labId + "%') and " + cNhso1.labValue27 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName28 + " like '" + labId + "%') and " + cNhso1.labValue28 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName29 + " like '" + labId + "%') and " + cNhso1.labValue29 + " like '" + labSearch1 + "%') or "
+                        + " ((" + visitDateWhere + " and " + branchIdWhere + " and " + cNhso1.labName30 + " like '" + labId + "%') and " + cNhso1.labValue30 + " like '" + labSearch1 + "%')  ";
+                    }
+                }
+            }
+            else
+            {
+                labWhere = " (" + cNhso1.visitDate + " >='" + dateStart + "' and " + cNhso1.visitDate + "<='" + dateEnd + "') ";
+            }
+            if (!drugSearch.Equals(""))
+            {
+                drugWhere = " (" + visitDateWhere + " and " + statusActiceWhere + " and " + branchIdWhere + " and " + cNhso1.drug1 + " like '" + drugSearch + "%') or ("
+                    + visitDateWhere + " and " + statusActiceWhere + " and " + branchIdWhere + " and " + cNhso1.drug2 + " like '" + drugSearch + "%') or ("
+                    + visitDateWhere + " and " + statusActiceWhere + " and " + branchIdWhere + " and " + cNhso1.drug3 + " like '" + drugSearch + "%') or ("
+                    + visitDateWhere + " and " + statusActiceWhere + " and " + branchIdWhere + " and " + cNhso1.drug4 + " like '" + drugSearch + "%') or ("
+                    + visitDateWhere + " and " + statusActiceWhere + " and " + branchIdWhere + " and " + cNhso1.drug5 + " like '" + drugSearch + "%') or ("
+                    + visitDateWhere + " and " + statusActiceWhere + " and " + branchIdWhere + " and " + cNhso1.drug6 + " like '" + drugSearch + "%') or ("
+                    + visitDateWhere + " and " + statusActiceWhere + " and " + branchIdWhere + " and " + cNhso1.drug7 + " like '" + drugSearch + "%') or ("
+                    + visitDateWhere + " and " + statusActiceWhere + " and " + branchIdWhere + " and " + cNhso1.drug8 + " like '" + drugSearch + "%') or ("
+                    + visitDateWhere + " and " + statusActiceWhere + " and " + branchIdWhere + " and " + cNhso1.drug9 + " like '" + drugSearch + "%') or ("
+                    + visitDateWhere + " and " + statusActiceWhere + " and " + branchIdWhere + " and " + cNhso1.drug10 + " like '" + drugSearch + "%') or ("
+                    + visitDateWhere + " and " + statusActiceWhere + " and " + branchIdWhere + " and " + cNhso1.drug11 + " like '" + drugSearch + "%') or ("
+                    + visitDateWhere + " and " + statusActiceWhere + " and " + branchIdWhere + " and " + cNhso1.drug12 + " like '" + drugSearch + "%') or ("
+                    + visitDateWhere + " and " + statusActiceWhere + " and " + branchIdWhere + " and " + cNhso1.drug13 + " like '" + drugSearch + "%') or ("
+                    + visitDateWhere + " and " + statusActiceWhere + " and " + branchIdWhere + " and " + cNhso1.drug14 + " like '" + drugSearch + "%') or ("
+                    + visitDateWhere + " and " + statusActiceWhere + " and " + branchIdWhere + " and " + cNhso1.drug15 + " like '" + drugSearch + "%') or ("
+                    + visitDateWhere + " and " + statusActiceWhere + " and " + branchIdWhere + " and " + cNhso1.drug16 + " like '" + drugSearch + "%') or ("
+                    + visitDateWhere + " and " + statusActiceWhere + " and " + branchIdWhere + " and " + cNhso1.drug17 + " like '" + drugSearch + "%') or ("
+                    + visitDateWhere + " and " + statusActiceWhere + " and " + branchIdWhere + " and " + cNhso1.drug18 + " like '" + drugSearch + "%') or ("
+                    + visitDateWhere + " and " + statusActiceWhere + " and " + branchIdWhere + " and " + cNhso1.drug19 + " like '" + drugSearch + "%') or ("
+                    + visitDateWhere + " and " + statusActiceWhere + " and " + branchIdWhere + " and " + cNhso1.drug20 + " like '" + drugSearch + "%') ";
+            }
+            else
+            {
+                drugWhere = visitDateWhere + " and " + statusActiceWhere + " and " + branchIdWhere;
+            }
+            if (doctorEdit)
+            {
+                doctorWhere = " and " + cNhso1.editDia + "<>''";
+            }
+            if (!diasearch.Equals(""))
+            {
+                if (statusdiasearch)
+                {
+                    diaWhere = " and LOWER(" + cNhso1.dia1 + ") <> '" + diasearch.Trim().ToLower() + "' ";
+                    diaWhere += " and LOWER(" + cNhso1.dia2 + ") <> '" + diasearch.Trim().ToLower() + "' ";
+                    diaWhere += " and LOWER(" + cNhso1.dia3 + ") <> '" + diasearch.Trim().ToLower() + "' ";
+                    diaWhere += " and LOWER(" + cNhso1.dia4 + ") <> '" + diasearch.Trim().ToLower() + "' ";
+                    diaWhere += " and LOWER(" + cNhso1.dia5 + ") <> '" + diasearch.Trim().ToLower() + "' ";
+                    diaWhere += " and LOWER(" + cNhso1.dia6 + ") <> '" + diasearch.Trim().ToLower() + "' ";
+                    diaWhere += " and LOWER(" + cNhso1.dia7 + ") <> '" + diasearch.Trim().ToLower() + "' ";
+                    diaWhere += " and LOWER(" + cNhso1.dia8 + ") <> '" + diasearch.Trim().ToLower() + "' ";
+                    diaWhere += " and LOWER(" + cNhso1.dia9 + ") <> '" + diasearch.Trim().ToLower() + "' ";
+                    diaWhere += " and LOWER(" + cNhso1.dia10 + ") <> '" + diasearch.Trim().ToLower() + "' ";
+                }
+                else
+                {
+                    diaWhere = " and LOWER(" + cNhso1.dia1 + ") = '" + diasearch.Trim().ToLower() + "' ";
+                    diaWhere += " and LOWER(" + cNhso1.dia2 + ") = '" + diasearch.Trim().ToLower() + "' ";
+                    diaWhere += " and LOWER(" + cNhso1.dia3 + ") = '" + diasearch.Trim().ToLower() + "' ";
+                    diaWhere += " and LOWER(" + cNhso1.dia4 + ") = '" + diasearch.Trim().ToLower() + "' ";
+                    diaWhere += " and LOWER(" + cNhso1.dia5 + ") = '" + diasearch.Trim().ToLower() + "' ";
+                    diaWhere += " and LOWER(" + cNhso1.dia6 + ") = '" + diasearch.Trim().ToLower() + "' ";
+                    diaWhere += " and LOWER(" + cNhso1.dia7 + ") = '" + diasearch.Trim().ToLower() + "' ";
+                    diaWhere += " and LOWER(" + cNhso1.dia8 + ") = '" + diasearch.Trim().ToLower() + "' ";
+                    diaWhere += " and LOWER(" + cNhso1.dia9 + ") = '" + diasearch.Trim().ToLower() + "' ";
+                    diaWhere += " and LOWER(" + cNhso1.dia10 + ") = '" + diasearch.Trim().ToLower() + "' ";
+                }
+            }
+            sql = "Select * From " + cNhso1.table
+                //+ " Where " + drugWhere+" and "+labWhere+doctorWhere+" and "+cNhso1.statusActive+"='1' "+" and "+cNhso1.branchID+" = '"+branchId+"' "
+                + " Where " + drugWhere + " and " + labWhere + doctorWhere + diaWhere //+ " and " + cNhso1.branchID + " = '" + branchId + "' "
+                + "Order By " + cNhso1.visitDate + "," + cNhso1.rowID;
+            dt = connBua.selectData(sql);
+            return dt;
+        }
         public DataTable selectPatientByDate(String dateStart, String dateEnd, String chkDrug,
             String drugSearch, String labSearch1, String labSearch2, String labId)
         {
