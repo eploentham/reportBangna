@@ -44,6 +44,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.adomdDataAdapter1 = new Microsoft.AnalysisServices.AdomdClient.AdomdDataAdapter();
             this.SuspendLayout();
             // 
             // bthPath
@@ -193,6 +194,10 @@
             this.label5.TabIndex = 15;
             this.label5.Text = "งวด";
             // 
+            // adomdDataAdapter1
+            // 
+            this.adomdDataAdapter1.SelectCommand = null;
+            // 
             // FrmBillLabCheckExcel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,5 +245,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private Microsoft.AnalysisServices.AdomdClient.AdomdDataAdapter adomdDataAdapter1;
     }
 }
