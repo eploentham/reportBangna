@@ -49,6 +49,7 @@ namespace reportBangna.gui
 
         //int colvnSum = 85, colvnSeq = 86, colVn = 87, colRowEdit = 88, colId = 89, colEditDia = 90, colEditDrug = 91, colBranch=145;
         int colvnSum = 146, colvnSeq = 147, colVn = 18, colRowEdit = 149, colId = 150, colEditDia = 151, colEditDrug = 152, colBranch = 145;
+        Boolean chkConn = false;
 
         public FrmCheckNHSOAdd()
         {
@@ -66,10 +67,41 @@ namespace reportBangna.gui
             {
                 btnImport.Enabled = false;
             }
-            
+
+            btnTestConn.Click += BtnTestConn_Click;
+
             //config1.setCboLab(cboLab);
             //sip = new SedanInjuryPerson();
         }
+
+        private void BtnTestConn_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            DataTable dt = new DataTable();
+            if (chk64Bit.Checked)
+            {
+                ConnectDB conn = new ConnectDB("", "D:\\source\\reportBangna\\reportBangna\\DataBase\\reportBangna.mdb", "64");
+                String sql = "";
+                //DataTable dt = new DataTable();
+                sql = "Select * From checknhso_client";
+                dt = conn.selectData(sql);
+                cNhso1db.connClient = conn;
+            }
+            else
+            {
+                ConnectDB conn = new ConnectDB("", "D:\\source\\reportBangna\\reportBangna\\DataBase\\reportBangna.mdb", "32");
+                String sql = "";                
+                sql = "Select * From checknhso_client";
+                dt = conn.selectData(sql);
+                cNhso1db.connClient = conn;
+            }
+            if (dt.Rows.Count > 0)
+            {
+                chkConn = true;
+            }
+            MessageBox.Show("Connect OK "+dt.Rows.Count, "");
+        }
+
         public void setData1(String dateStart, String dateEnd)
         {
             String visitDate = "", preNo="", vn="", hn="";

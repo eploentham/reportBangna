@@ -381,6 +381,33 @@ namespace reportBangna.gui
         {
             bc = new BangnaControl();
             pB1.Visible = false;
+
+            txtAn.KeyUp += TxtAn_KeyUp;
+        }
+
+        private void TxtAn_KeyUp(object sender, KeyEventArgs e)
+        {
+            //throw new NotImplementedException();
+            if(e.KeyCode == Keys.Enter)
+            {
+                int rowIndex = -1;
+                dgvView.ClearSelection();
+                foreach (DataGridViewRow row in dgvView.Rows)
+                {
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        if (cell.Value == DBNull.Value || cell.Value == null)
+                            continue;
+                        if (cell.Value.ToString().Contains(txtAn.Text))
+                        {
+                            rowIndex = row.Index;
+                            cell.Selected = true;
+                            break;
+                        }
+                    }
+                }
+
+            }
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -449,12 +476,14 @@ namespace reportBangna.gui
             dgvView.Columns[colRow].HeaderText = "no";
             dgvView.Columns[colhn].HeaderText = "HN";
             dgvView.Columns[colNameT].HeaderText = "Name";
+
             dgvView.Columns[colvn].HeaderText = "vn";
             dgvView.Columns[colDate].HeaderText = "วันเข้ารักษา";
             dgvView.Columns[colDoctor].HeaderText = "แพทย์ผู้ตรวจ";
             dgvView.Columns[colPdf].HeaderText = " ";
             dgvView.Columns[colDisc].HeaderText = "ds date";
             dgvView.Columns[colFnCD].HeaderText = "สิทธิ";
+            dgvView.Columns[colAn].HeaderText = "an no";
             dt = bc.selectNHSOPrint(datestart, dateend,"");
             pB1.Maximum = dt.Rows.Count;
             //dgvPE.Columns[colPEId].HeaderText = "id";
@@ -476,7 +505,7 @@ namespace reportBangna.gui
                     dgvView[colDisc, i].Value = bc.cf.dateDBtoShowShort(bc.cf.datetoDB(dt.Rows[i]["mnc_ds_date"].ToString()));
                     dgvView[colID, i].Value = dt.Rows[i]["mnc_id_no"].ToString();
                     dgvView[colWeight, i].Value = dt.Rows[i]["mnc_weight"].ToString();
-                    //dgvView[colAn, i].Value = dt.Rows[i]["mnc_weight"].ToString();
+                    dgvView[colAn, i].Value = dt.Rows[i]["mnc_an_no"].ToString();
                     int cnt = bc.selectNHSOPrintHN1(dgvView[colDate, i].Value.ToString(), dgvView[colhn, i].Value.ToString(), dgvView[colpreno, i].Value.ToString(), dgvView[colvn, i].Value.ToString());
                     //if ((i % 2) != 0)
                     dgvView[colChk, i].Value = cnt > 0 ? "1" : "0";
@@ -506,7 +535,7 @@ namespace reportBangna.gui
             dgvView.Columns[colpreno].Visible = false;
             dgvView.Columns[colChk].Visible = false;
             dgvView.Columns[colWeight].Visible = false;
-            dgvView.Columns[colAn].Visible = false;
+            //dgvView.Columns[colAn].Visible = false;
             dgvView.Columns[colID].Visible = false;
             dgvView.Columns[colbirthday].Visible = false;
             //dgvView.Columns[colPdf].Visible = false;

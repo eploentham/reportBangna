@@ -39,13 +39,15 @@
             this.btnImport = new System.Windows.Forms.Button();
             this.chkUnDel = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.chk64Bit = new System.Windows.Forms.CheckBox();
+            this.btnTestConn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).BeginInit();
             this.SuspendLayout();
             // 
             // pB1
             // 
-            this.pB1.Location = new System.Drawing.Point(9, 449);
-            this.pB1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pB1.Location = new System.Drawing.Point(9, 491);
+            this.pB1.Margin = new System.Windows.Forms.Padding(2);
             this.pB1.Name = "pB1";
             this.pB1.Size = new System.Drawing.Size(662, 19);
             this.pB1.TabIndex = 0;
@@ -53,7 +55,7 @@
             // dtpEnd
             // 
             this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEnd.Location = new System.Drawing.Point(205, 21);
+            this.dtpEnd.Location = new System.Drawing.Point(205, 63);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(92, 20);
             this.dtpEnd.TabIndex = 7;
@@ -61,7 +63,7 @@
             // dtpStart
             // 
             this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpStart.Location = new System.Drawing.Point(68, 21);
+            this.dtpStart.Location = new System.Drawing.Point(68, 63);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(94, 20);
             this.dtpStart.TabIndex = 6;
@@ -69,7 +71,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(164, 25);
+            this.label2.Location = new System.Drawing.Point(164, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 5;
@@ -78,7 +80,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 25);
+            this.label1.Location = new System.Drawing.Point(15, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 4;
@@ -86,8 +88,8 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(390, 15);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Location = new System.Drawing.Point(390, 57);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(89, 29);
             this.btnSave.TabIndex = 8;
@@ -98,8 +100,8 @@
             // lB1
             // 
             this.lB1.FormattingEnabled = true;
-            this.lB1.Location = new System.Drawing.Point(17, 49);
-            this.lB1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lB1.Location = new System.Drawing.Point(17, 91);
+            this.lB1.Margin = new System.Windows.Forms.Padding(2);
             this.lB1.Name = "lB1";
             this.lB1.Size = new System.Drawing.Size(655, 394);
             this.lB1.TabIndex = 9;
@@ -111,8 +113,8 @@
             this.dgvAdd.AllowUserToDeleteRows = false;
             this.dgvAdd.AllowUserToResizeRows = false;
             this.dgvAdd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAdd.Location = new System.Drawing.Point(544, 5);
-            this.dgvAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvAdd.Location = new System.Drawing.Point(544, 47);
+            this.dgvAdd.Margin = new System.Windows.Forms.Padding(2);
             this.dgvAdd.MultiSelect = false;
             this.dgvAdd.Name = "dgvAdd";
             this.dgvAdd.RowTemplate.Height = 24;
@@ -121,8 +123,8 @@
             // 
             // btnImport
             // 
-            this.btnImport.Location = new System.Drawing.Point(578, 15);
-            this.btnImport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnImport.Location = new System.Drawing.Point(578, 57);
+            this.btnImport.Margin = new System.Windows.Forms.Padding(2);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(90, 29);
             this.btnImport.TabIndex = 11;
@@ -133,8 +135,8 @@
             // chkUnDel
             // 
             this.chkUnDel.AutoSize = true;
-            this.chkUnDel.Location = new System.Drawing.Point(308, 15);
-            this.chkUnDel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkUnDel.Location = new System.Drawing.Point(308, 57);
+            this.chkUnDel.Margin = new System.Windows.Forms.Padding(2);
             this.chkUnDel.Name = "chkUnDel";
             this.chkUnDel.Size = new System.Drawing.Size(77, 17);
             this.chkUnDel.TabIndex = 12;
@@ -143,7 +145,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(485, 15);
+            this.button1.Location = new System.Drawing.Point(485, 57);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(55, 29);
@@ -152,11 +154,34 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // chk64Bit
+            // 
+            this.chk64Bit.AutoSize = true;
+            this.chk64Bit.Location = new System.Drawing.Point(308, 21);
+            this.chk64Bit.Margin = new System.Windows.Forms.Padding(2);
+            this.chk64Bit.Name = "chk64Bit";
+            this.chk64Bit.Size = new System.Drawing.Size(52, 17);
+            this.chk64Bit.TabIndex = 14;
+            this.chk64Bit.Text = "64 bit";
+            this.chk64Bit.UseVisualStyleBackColor = true;
+            // 
+            // btnTestConn
+            // 
+            this.btnTestConn.Location = new System.Drawing.Point(390, 14);
+            this.btnTestConn.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTestConn.Name = "btnTestConn";
+            this.btnTestConn.Size = new System.Drawing.Size(89, 29);
+            this.btnTestConn.TabIndex = 15;
+            this.btnTestConn.Text = "Test Connect";
+            this.btnTestConn.UseVisualStyleBackColor = true;
+            // 
             // FrmCheckNHSOAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(680, 478);
+            this.ClientSize = new System.Drawing.Size(680, 525);
+            this.Controls.Add(this.btnTestConn);
+            this.Controls.Add(this.chk64Bit);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.chkUnDel);
             this.Controls.Add(this.btnImport);
@@ -168,7 +193,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pB1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmCheckNHSOAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCheckNHSOAdd";
@@ -193,5 +218,7 @@
         private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.CheckBox chkUnDel;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox chk64Bit;
+        private System.Windows.Forms.Button btnTestConn;
     }
 }

@@ -343,21 +343,59 @@ namespace reportBangna.gui
                     }
                     dt.AcceptChanges();
                 }
-                
             }
             
             pB1.Minimum = 0;
             pB1.Maximum = dt.Rows.Count;
-            setGrid(dt.Rows.Count);
+            //setGrid(dt.Rows.Count);
             if (txtDiaSearch.Text.Length > 0)
             {
-                DataRow[] dr = dt.Select(cNhso1db.cNhso1.dia1+" = '"+txtDiaSearch.Text+"'");
-                foreach(DataRow row in dr)
+                String where = "";
+                if (txtDiaSearch.Text.IndexOf(",")<=0)
                 {
-                    dt.Rows.Remove(row);
+                    int len = txtDiaSearch.Text.Trim().Length;
+                    where = "substring(" + cNhso1db.cNhso1.dia1 + ",1," + len + ") = '" + txtDiaSearch.Text + "' " +
+                        "or substring(" + cNhso1db.cNhso1.dia2 + ",1," + len + ") = '" + txtDiaSearch.Text + "' " +
+                        "or substring(" + cNhso1db.cNhso1.dia3 + ",1," + len + ") = '" + txtDiaSearch.Text + "' " +
+                        "or substring(" + cNhso1db.cNhso1.dia4 + ",1," + len + ") = '" + txtDiaSearch.Text + "' " +
+                        "or substring(" + cNhso1db.cNhso1.dia5 + ",1," + len + ") = '" + txtDiaSearch.Text + "' " +
+                        "or substring(" + cNhso1db.cNhso1.dia6 + ",1," + len + ") = '" + txtDiaSearch.Text + "' " +
+                        "or substring(" + cNhso1db.cNhso1.dia7 + ",1," + len + ") = '" + txtDiaSearch.Text + "' " +
+                        "or substring(" + cNhso1db.cNhso1.dia8 + ",1," + len + ") = '" + txtDiaSearch.Text + "' " +
+                        "or substring(" + cNhso1db.cNhso1.dia9 + ",1," + len + ") = '" + txtDiaSearch.Text + "' " +
+                        "or substring(" + cNhso1db.cNhso1.dia10 + ",1," + len + ") = '" + txtDiaSearch.Text + "'";
+                    DataRow[] dr = dt.Select(where);
+                    foreach (DataRow row in dr)
+                    {
+                        dt.Rows.Remove(row);
+                    }
+                }
+                else
+                {
+                    String[] dia = txtDiaSearch.Text.Split(',');
+                    for(int i = 0; i < dia.Length; i++)
+                    {
+                        int len = dia[i].Trim().Length;
+                        where = "substring(" + cNhso1db.cNhso1.dia1 + ",1," + len + ") = '" + dia[i] + "' " +
+                            "or substring(" + cNhso1db.cNhso1.dia2 + ",1," + len + ") = '" + dia[i] + "' " +
+                            "or substring(" + cNhso1db.cNhso1.dia3 + ",1," + len + ") = '" + dia[i] + "' " +
+                            "or substring(" + cNhso1db.cNhso1.dia4 + ",1," + len + ") = '" + dia[i] + "' " +
+                            "or substring(" + cNhso1db.cNhso1.dia5 + ",1," + len + ") = '" + dia[i] + "' " +
+                            "or substring(" + cNhso1db.cNhso1.dia6 + ",1," + len + ") = '" + dia[i] + "' " +
+                            "or substring(" + cNhso1db.cNhso1.dia7 + ",1," + len + ") = '" + dia[i] + "' " +
+                            "or substring(" + cNhso1db.cNhso1.dia8 + ",1," + len + ") = '" + dia[i] + "' " +
+                            "or substring(" + cNhso1db.cNhso1.dia9 + ",1," + len + ") = '" + dia[i] + "' " +
+                            "or substring(" + cNhso1db.cNhso1.dia10 + ",1," + len + ") = '" + dia[i] + "'";
+                        DataRow[] dr = dt.Select(where);
+                        foreach (DataRow row in dr)
+                        {
+                            dt.Rows.Remove(row);
+                        }
+                    }
                 }
             }
-            dgvAdd.ColumnCount = dt.Rows.Count;
+            //dgvAdd.ColumnCount = dt.Rows.Count;
+            setGrid(dt.Rows.Count);
             if (dt.Rows.Count > 0)
             {
                 for (int i = 0; i < dt.Rows.Count; i++)

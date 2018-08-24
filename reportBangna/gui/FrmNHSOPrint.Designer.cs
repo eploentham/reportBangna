@@ -39,6 +39,8 @@
             this.dgvView = new System.Windows.Forms.DataGridView();
             this.btnExport = new System.Windows.Forms.Button();
             this.btnPDF = new System.Windows.Forms.Button();
+            this.txtAn = new System.Windows.Forms.TextBox();
+            this.btnPDFNoDetail = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +48,7 @@
             // 
             this.dtpEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEnd.Location = new System.Drawing.Point(247, 17);
+            this.dtpEnd.Location = new System.Drawing.Point(221, 17);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(101, 22);
             this.dtpEnd.TabIndex = 7;
@@ -55,7 +57,7 @@
             // 
             this.dtpStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpStart.Location = new System.Drawing.Point(82, 17);
+            this.dtpStart.Location = new System.Drawing.Point(69, 17);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(97, 22);
             this.dtpStart.TabIndex = 6;
@@ -64,7 +66,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label2.Location = new System.Drawing.Point(200, 22);
+            this.label2.Location = new System.Drawing.Point(174, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 16);
             this.label2.TabIndex = 5;
@@ -84,7 +86,7 @@
             // 
             this.cboFncd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.cboFncd.FormattingEnabled = true;
-            this.cboFncd.Location = new System.Drawing.Point(423, 18);
+            this.cboFncd.Location = new System.Drawing.Point(371, 18);
             this.cboFncd.Margin = new System.Windows.Forms.Padding(2);
             this.cboFncd.Name = "cboFncd";
             this.cboFncd.Size = new System.Drawing.Size(237, 25);
@@ -94,7 +96,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label14.Location = new System.Drawing.Point(381, 21);
+            this.label14.Location = new System.Drawing.Point(329, 21);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(38, 17);
@@ -152,11 +154,30 @@
             this.btnPDF.UseVisualStyleBackColor = true;
             this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
             // 
+            // txtAn
+            // 
+            this.txtAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAn.Location = new System.Drawing.Point(613, 21);
+            this.txtAn.Name = "txtAn";
+            this.txtAn.Size = new System.Drawing.Size(88, 22);
+            this.txtAn.TabIndex = 57;
+            // 
+            // btnPDFNoDetail
+            // 
+            this.btnPDFNoDetail.Location = new System.Drawing.Point(1084, 12);
+            this.btnPDFNoDetail.Name = "btnPDFNoDetail";
+            this.btnPDFNoDetail.Size = new System.Drawing.Size(75, 38);
+            this.btnPDFNoDetail.TabIndex = 58;
+            this.btnPDFNoDetail.Text = "Export PDF no Detail";
+            this.btnPDFNoDetail.UseVisualStyleBackColor = true;
+            // 
             // FrmNHSOPrint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1110, 690);
+            this.Controls.Add(this.btnPDFNoDetail);
+            this.Controls.Add(this.txtAn);
             this.Controls.Add(this.btnPDF);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.dgvView);
@@ -194,5 +215,7 @@
         private System.Windows.Forms.DataGridView dgvView;
         private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.Button btnPDF;
+        private System.Windows.Forms.TextBox txtAn;
+        private System.Windows.Forms.Button btnPDFNoDetail;
     }
 }

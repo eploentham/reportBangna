@@ -12,8 +12,8 @@ namespace reportBangna.objdb
     {
         Config1 cf;
         public ConnectDB conn;
-        private ConnectDB connBua;
-        private ConnectDB connClient;
+        public ConnectDB connBua;
+        public ConnectDB connClient;
         public CheckNhso1 cNhso1;
         public LogWriter lw;
         public CheckNhso1DB()
