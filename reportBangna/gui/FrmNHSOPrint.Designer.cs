@@ -41,6 +41,8 @@
             this.btnPDF = new System.Windows.Forms.Button();
             this.txtAn = new System.Windows.Forms.TextBox();
             this.btnPDFNoDetail = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.chkOR = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,7 +107,7 @@
             // 
             // pB1
             // 
-            this.pB1.Location = new System.Drawing.Point(788, 21);
+            this.pB1.Location = new System.Drawing.Point(1107, 27);
             this.pB1.Name = "pB1";
             this.pB1.Size = new System.Drawing.Size(94, 23);
             this.pB1.TabIndex = 51;
@@ -113,9 +115,9 @@
             // btnOK
             // 
             this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnOK.Location = new System.Drawing.Point(707, 12);
+            this.btnOK.Location = new System.Drawing.Point(768, 12);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 38);
+            this.btnOK.Size = new System.Drawing.Size(59, 38);
             this.btnOK.TabIndex = 49;
             this.btnOK.Text = "ตกลง";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -136,7 +138,7 @@
             // btnExport
             // 
             this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExport.Location = new System.Drawing.Point(969, 12);
+            this.btnExport.Location = new System.Drawing.Point(911, 12);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(109, 38);
             this.btnExport.TabIndex = 55;
@@ -146,7 +148,7 @@
             // 
             // btnPDF
             // 
-            this.btnPDF.Location = new System.Drawing.Point(888, 12);
+            this.btnPDF.Location = new System.Drawing.Point(830, 12);
             this.btnPDF.Name = "btnPDF";
             this.btnPDF.Size = new System.Drawing.Size(75, 38);
             this.btnPDF.TabIndex = 56;
@@ -157,25 +159,48 @@
             // txtAn
             // 
             this.txtAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAn.Location = new System.Drawing.Point(613, 21);
+            this.txtAn.Location = new System.Drawing.Point(658, 21);
             this.txtAn.Name = "txtAn";
-            this.txtAn.Size = new System.Drawing.Size(88, 22);
+            this.txtAn.Size = new System.Drawing.Size(104, 22);
             this.txtAn.TabIndex = 57;
             // 
             // btnPDFNoDetail
             // 
-            this.btnPDFNoDetail.Location = new System.Drawing.Point(1084, 12);
+            this.btnPDFNoDetail.Location = new System.Drawing.Point(1026, 12);
             this.btnPDFNoDetail.Name = "btnPDFNoDetail";
             this.btnPDFNoDetail.Size = new System.Drawing.Size(75, 38);
             this.btnPDFNoDetail.TabIndex = 58;
             this.btnPDFNoDetail.Text = "Export PDF no Detail";
             this.btnPDFNoDetail.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label3.Location = new System.Drawing.Point(621, 23);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(32, 17);
+            this.label3.TabIndex = 59;
+            this.label3.Text = "an :";
+            // 
+            // chkOR
+            // 
+            this.chkOR.AutoSize = true;
+            this.chkOR.Location = new System.Drawing.Point(1107, 4);
+            this.chkOR.Name = "chkOR";
+            this.chkOR.Size = new System.Drawing.Size(63, 17);
+            this.chkOR.TabIndex = 60;
+            this.chkOR.Text = "สั่งผ่าตัด";
+            this.chkOR.UseVisualStyleBackColor = true;
+            // 
             // FrmNHSOPrint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1110, 690);
+            this.ClientSize = new System.Drawing.Size(1231, 690);
+            this.Controls.Add(this.chkOR);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnPDFNoDetail);
             this.Controls.Add(this.txtAn);
             this.Controls.Add(this.btnPDF);
@@ -217,5 +242,7 @@
         private System.Windows.Forms.Button btnPDF;
         private System.Windows.Forms.TextBox txtAn;
         private System.Windows.Forms.Button btnPDFNoDetail;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox chkOR;
     }
 }
