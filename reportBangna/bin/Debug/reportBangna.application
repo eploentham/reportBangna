@@ -7,14 +7,14 @@
     <framework targetVersion="4.0" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="reportBangna.exe.manifest" size="11083">
+    <dependentAssembly dependencyType="install" codebase="reportBangna.exe.manifest" size="10767">
       <assemblyIdentity name="reportBangna.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>cZXQ7kG9WddtO8a+4OQUqxAb16Y=</dsig:DigestValue>
+        <dsig:DigestValue>vBftsZRP9aaNFftNRZmr0/PxS94=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
