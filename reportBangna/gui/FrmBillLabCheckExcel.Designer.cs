@@ -44,7 +44,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.adomdDataAdapter1 = new Microsoft.AnalysisServices.AdomdClient.AdomdDataAdapter();
+            //this.adomdDataAdapter1 = new Microsoft.AnalysisServices.AdomdClient.AdomdDataAdapter();
             this.SuspendLayout();
             // 
             // bthPath
@@ -196,7 +196,7 @@
             // 
             // adomdDataAdapter1
             // 
-            this.adomdDataAdapter1.SelectCommand = null;
+            //this.adomdDataAdapter1.SelectCommand = null;
             // 
             // FrmBillLabCheckExcel
             // 
@@ -245,6 +245,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private Microsoft.AnalysisServices.AdomdClient.AdomdDataAdapter adomdDataAdapter1;
+        //private Microsoft.AnalysisServices.AdomdClient.AdomdDataAdapter adomdDataAdapter1;
     }
 }

@@ -271,6 +271,34 @@ namespace reportBangna
             dt = connMainHIS5.selectData(sql);
             return int.Parse(dt.Rows[0]["cnt"].ToString());
         }
+        public int selectNHSOPrintHN2(String startDate, String hn, String preno, String vn)
+        {
+            DataTable dt = new DataTable();
+            String sql = "";
+            String[] vn1 = vn.Split('.');
+            int chk = 0;
+            sql = "Select count(1) as cnt " +
+                    " From PATIENT_T01 t01 " +
+                    " left join PHARMACY_T05 phart05 on t01.MNC_PRE_NO = phart05.MNC_PRE_NO and t01.MNC_date = phart05.mnc_date " +
+                    " left join PHARMACY_T06 phart06 on phart05.MNC_CFR_NO = phart06.MNC_CFR_NO and phart05.MNC_CFG_DAT = phart06.MNC_CFR_dat " +
+                    " left join PHARMACY_M01 on phart06.MNC_PH_CD = pharmacy_m01.MNC_PH_CD " +
+                    " left join PHARMACY_M05 on PHARMACY_M05.MNC_PH_CD = PHARMACY_M01.MNC_PH_CD " +
+                    " where " +
+                    //" --t01.MNC_DATE BETWEEN '' AND '' and " +
+                    " phart05.mnc_hn_no = '" + hn + "' " +
+                    //" t01.mnc_hn_no = '"+hn+"' "+
+                    " and phart05.MNC_PRE_NO = '" + preno + "' " +
+                    //" and t01.mnc_vn_no = '" + vn1[0] + "' " +
+                    //" and t01.mnc_vn_seq = '" + vn1[1] + "' " +
+                    //" and t01.mnc_vn_sum = '" + vn1[2] + "' " +
+                    //" --PHARMACY_M01.mnc_ph_typ_flg = 'P' " +
+                    " and pharmacy_m01.MNC_PH_TN like '%' " +
+                    " and phart05.MNC_CFR_STS = 'a' ";
+            //" Group By phart06.MNC_PH_CD, pharmacy_m01.MNC_PH_TN ,PHARMACY_M05.MNC_PH_PRI01,PHARMACY_M05.MNC_PH_PRI02,phart05.MNC_CFG_DAT " +
+            //" Order By phart05.MNC_CFG_DAT,phart06.MNC_PH_CD ";
+            dt = connMainHIS5.selectData(sql);
+            return int.Parse(dt.Rows[0]["cnt"].ToString());
+        }
         public String selectOPDViewOR(String hn)
         {
             DataTable dt = new DataTable();

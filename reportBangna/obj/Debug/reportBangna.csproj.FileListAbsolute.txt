@@ -280,3 +280,4 @@ D:\source\bangna\reportBangna\reportBangna\obj\Debug\reportBangna.exe.manifest
 D:\source\bangna\reportBangna\reportBangna\obj\Debug\reportBangna.application
 D:\source\bangna\reportBangna\reportBangna\obj\Debug\reportBangna.csproj.CopyComplete
 D:\source\bangna\reportBangna\reportBangna\obj\Debug\reportBangna.gui.FrmBillLabCheckExcel.resources
+D:\source\bangna\reportBangna\reportBangna\obj\Debug\reportBangna.csprojAssemblyReference.cache

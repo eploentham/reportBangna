@@ -714,13 +714,17 @@ namespace reportBangna.gui
                         int i = 0;
                         if (dr.Length == 0)
                         {
-                            MessageBox.Show("ไม่พบ AN "+txtAn.Text +" ที่ต้องการค้นหา", "");
+                            MessageBox.Show("ไม่พบ AN "+txtAn.Text +" ที่ต้องการค้นหา", "1.");
                             return;
                         }
                         dgvView.RowCount = dr.Length;
                         
                         foreach (DataRow row in dr)
                         {
+                            if (dr[i]["mnc_an_no"].ToString().Equals("21364"))
+                            {
+                                sql = "";
+                            }
                             dgvView[colRow, i].Value = (i + 1);
                             dgvView[colhn, i].Value = dr[i]["mnc_hn_no"].ToString();
                             dgvView[colNameT, i].Value = dr[i]["MNC_PFIX_DSC"].ToString() + " " + dr[i]["MNC_FNAME_T"].ToString() + " " + dr[i]["MNC_LNAME_T"].ToString() + " [" + dr[i]["MNC_id_no"].ToString() + "]";
@@ -735,7 +739,7 @@ namespace reportBangna.gui
                             dgvView[colID, i].Value = dr[i]["mnc_id_no"].ToString();
                             dgvView[colWeight, i].Value = dr[i]["mnc_weight"].ToString();
                             dgvView[colAn, i].Value = dr[i]["mnc_an_no"].ToString() + "/" + dr[i]["mnc_an_yr"].ToString();
-                            int cnt = bc.selectNHSOPrintHN1(dgvView[colDate, i].Value.ToString(), dgvView[colhn, i].Value.ToString(), dgvView[colpreno, i].Value.ToString(), dgvView[colvn, i].Value.ToString());
+                            int cnt = bc.selectNHSOPrintHN2(dgvView[colDate, i].Value.ToString(), dgvView[colhn, i].Value.ToString(), dgvView[colpreno, i].Value.ToString(), dgvView[colvn, i].Value.ToString());
                             //if ((i % 2) != 0)
                             dgvView[colChk, i].Value = cnt > 0 ? "1" : "0";
                             dgvView.Rows[i].DefaultCellStyle.BackColor = cnt > 0 ? Color.LightSalmon : Color.White;
@@ -765,7 +769,7 @@ namespace reportBangna.gui
                         int i = 0;
                         if (dr.Length == 0)
                         {
-                            MessageBox.Show("ไม่พบ AN " + txtAn.Text + " ที่ต้องการค้นหา", "");
+                            MessageBox.Show("ไม่พบ AN " + txtAn.Text + " ที่ต้องการค้นหา", "2.");
                             return;
                         }
                         dgvView.RowCount = dr.Length;
@@ -785,7 +789,7 @@ namespace reportBangna.gui
                             dgvView[colID, i].Value = dr[i]["mnc_id_no"].ToString();
                             dgvView[colWeight, i].Value = dr[i]["mnc_weight"].ToString();
                             dgvView[colAn, i].Value = dr[i]["mnc_an_no"].ToString() + "/" + dr[i]["mnc_an_yr"].ToString();
-                            int cnt = bc.selectNHSOPrintHN1(dgvView[colDate, i].Value.ToString(), dgvView[colhn, i].Value.ToString(), dgvView[colpreno, i].Value.ToString(), dgvView[colvn, i].Value.ToString());
+                            int cnt = bc.selectNHSOPrintHN2(dgvView[colDate, i].Value.ToString(), dgvView[colhn, i].Value.ToString(), dgvView[colpreno, i].Value.ToString(), dgvView[colvn, i].Value.ToString());
                             //if ((i % 2) != 0)
                             dgvView[colChk, i].Value = cnt > 0 ? "1" : "0";
                             dgvView.Rows[i].DefaultCellStyle.BackColor = cnt > 0 ? Color.LightSalmon : Color.White;
@@ -800,6 +804,10 @@ namespace reportBangna.gui
                     dgvView.RowCount = dt.Rows.Count + 1;
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
+                        if (dt.Rows[i]["mnc_an_no"].ToString().Equals("21364"))
+                        {
+                            sql = "";
+                        }
                         dgvView[colRow, i].Value = (i + 1);
                         dgvView[colhn, i].Value = dt.Rows[i]["mnc_hn_no"].ToString();
                         dgvView[colNameT, i].Value = dt.Rows[i]["MNC_PFIX_DSC"].ToString() + " " + dt.Rows[i]["MNC_FNAME_T"].ToString() + " " + dt.Rows[i]["MNC_LNAME_T"].ToString() + " [" + dt.Rows[i]["MNC_id_no"].ToString() + "]";
@@ -814,7 +822,7 @@ namespace reportBangna.gui
                         dgvView[colID, i].Value = dt.Rows[i]["mnc_id_no"].ToString();
                         dgvView[colWeight, i].Value = dt.Rows[i]["mnc_weight"].ToString();
                         dgvView[colAn, i].Value = dt.Rows[i]["mnc_an_no"].ToString() + "/" + dt.Rows[i]["mnc_an_yr"].ToString();
-                        int cnt = bc.selectNHSOPrintHN1(dgvView[colDate, i].Value.ToString(), dgvView[colhn, i].Value.ToString(), dgvView[colpreno, i].Value.ToString(), dgvView[colvn, i].Value.ToString());
+                        int cnt = bc.selectNHSOPrintHN2(dgvView[colDate, i].Value.ToString(), dgvView[colhn, i].Value.ToString(), dgvView[colpreno, i].Value.ToString(), dgvView[colvn, i].Value.ToString());
                         //if ((i % 2) != 0)
                         dgvView[colChk, i].Value = cnt > 0 ? "1" : "0";
                         dgvView.Rows[i].DefaultCellStyle.BackColor = cnt > 0 ? Color.LightSalmon : Color.White;
