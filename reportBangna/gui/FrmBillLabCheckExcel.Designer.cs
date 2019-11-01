@@ -44,7 +44,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            //this.adomdDataAdapter1 = new Microsoft.AnalysisServices.AdomdClient.AdomdDataAdapter();
             this.SuspendLayout();
             // 
             // bthPath
@@ -194,10 +193,6 @@
             this.label5.TabIndex = 15;
             this.label5.Text = "งวด";
             // 
-            // adomdDataAdapter1
-            // 
-            //this.adomdDataAdapter1.SelectCommand = null;
-            // 
             // FrmBillLabCheckExcel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,6 +217,7 @@
             this.Name = "FrmBillLabCheckExcel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmBillLabCheckExcel";
+            this.Load += new System.EventHandler(this.FrmBillLabCheckExcel_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

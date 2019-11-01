@@ -109,7 +109,7 @@ namespace reportBangna.gui
             //doc.SetMargins(45f, 45f, 60f, 60f);
             try
             {
-                DataTable dt;
+                DataTable dt, dtt12;
                 if (chk.Equals(""))
                 {
                     dt = bc.selectNHSOPrintHN(dgvView[colDate, row].Value.ToString(), dgvView[colhn, row].Value.ToString(), dgvView[colpreno, row].Value.ToString(), dgvView[colvn, row].Value.ToString());
@@ -117,6 +117,51 @@ namespace reportBangna.gui
                 else
                 {
                     dt = bc.selectNHSOPrintHNAll(dgvView[colDate, row].Value.ToString(), dgvView[colhn, row].Value.ToString(), dgvView[colpreno, row].Value.ToString(), dgvView[colvn, row].Value.ToString());
+                }
+                //String an1= "";
+                String[] an1 = an.Split('/');
+                if (an1.Length >= 1)
+                {
+                    dtt12 = bc.selectPatientOR(dgvView[colhn, row].Value.ToString(), dgvView[colpreno, row].Value.ToString(),an1[0]);
+                    if (dtt12.Rows.Count > 0)
+                    {
+                        DateTime dtStart = new DateTime();
+                        DateTime dtStart1 = new DateTime();
+                        DateTime dtEnd = new DateTime();
+                        int time = 0;
+                        String datestart = "", dateend = "";
+                        datestart = dtt12.Rows[0]["MNC_OR_DATE_S"].ToString();
+                        if (datestart.Length >= 10)
+                        {
+                            datestart = datestart.Substring(0, 10);
+                            dateend = datestart;
+                            String time1 = "0" + dtt12.Rows[0]["MNC_OR_TIME_S"].ToString();
+                            if (time1.Length > 2)
+                            {
+                                String time2 = time1.Substring(time1.Length - 2, 2);
+                                String time3 = "";
+                                String time4 = time1.Substring(time1.Length - 4, 2);
+                                time3 = " " + time4 + ":" + time2;
+
+                                if (DateTime.TryParse(datestart + time3, out dtStart))
+                                {
+                                    dtEnd = dtStart;
+                                    String time5 = "";
+                                    time5 = dtt12.Rows[0]["MNC_OR_HOUR"].ToString();
+                                    int cnt = 0;
+                                    if (int.TryParse(time5, out cnt))
+                                    {
+                                        int cnt1 = 0, cnt2 = 0, cnt0 = 0;
+                                        cnt1 = cnt / 60;
+                                        cnt2 = cnt % 60;
+                                        dtEnd = dtEnd.AddHours(cnt1);
+                                        dtEnd = dtEnd.AddMinutes(cnt2);
+                                    }
+                                }
+                            }
+
+                        }
+                    }
                 }
                 
                 FileStream output = new FileStream(Environment.CurrentDirectory + "\\"+hn+".pdf", FileMode.Create);
@@ -149,6 +194,7 @@ namespace reportBangna.gui
                 int i = 0, r = 0, row2=0, rowEnd=24;
                 r = dt.Rows.Count;
                 int next = r / 24;
+                
                 for (int p = 0; p <= next; p++)
                 {
                     PdfContentByte canvas = writer.DirectContent;
@@ -649,10 +695,7 @@ namespace reportBangna.gui
             //groupBox1.Width = this.Width - 50;
             //groupBox1.Height = this.Height = 150;
         }
-        private void FrmNHSOPrint_Load(object sender, EventArgs e)
-        {
-
-        }
+        
         private void setGrd()
         {
             Cursor cursor = Cursor.Current;
@@ -864,6 +907,10 @@ namespace reportBangna.gui
         private void FrmNHSOPrint_Resize(object sender, EventArgs e)
         {
             setResize();
+        }
+        private void FrmNHSOPrint_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

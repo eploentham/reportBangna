@@ -137,6 +137,21 @@ namespace reportBangna
             }
             return c;
         }
+        public DataTable selectPatientOR(String hn, String preno, String an)
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select ptt12.* " +
+                    "From PATIENT_T12 ptt12 " +
+                    //"Left Join patient_m01 m01 on t08.mnc_hn_no = m01.mnc_hn_no " +
+                    //"Left Join patient_m02 m02 on m01.MNC_PFIX_CDT = m02.MNC_PFIX_CD " +
+                    "Where ptt12.MNC_HN_NO='" + hn + "'  " +
+                    "and ptt12.MNC_OR_STS = 'L' " +
+                    "and ptt12.MNC_HN_NO='" + hn + "' and ptt12.mnc_pre_no = '"+preno+"' and ptt12.mnc_an_no = '"+an+"'";
+            dt = connMainHIS5.selectData(sql);
+
+            return dt;
+        }
         public DataTable selectPatientInWard(String wardNo)
         {
             String sql = "";
@@ -192,11 +207,13 @@ namespace reportBangna
             String sql = "";
             String[] vn1 = vn.Split('.');
             sql = "Select phart06.MNC_PH_CD, pharmacy_m01.MNC_PH_TN ,PHARMACY_M05.MNC_PH_PRI01,PHARMACY_M05.MNC_PH_PRI02,sum(phart06.MNC_PH_QTY) as qty, PHARMACY_M05.MNC_PH_PRI01 * sum(phart06.MNC_PH_QTY) as amt,phart05.MNC_CFG_DAT " +
+                //", ptt12.MNC_OR_NO, ptt12.MNC_OR_YR, ptt12.MNC_OR_DATE_S, ptt12.MNC_OR_TIME_S, ptt12.MNC_OR_HOUR " +
                     " From PATIENT_T01 t01 " +
-                    " left join PHARMACY_T05 phart05 on t01.MNC_PRE_NO = phart05.MNC_PRE_NO and t01.MNC_date = phart05.mnc_date " +
-                    " left join PHARMACY_T06 phart06 on phart05.MNC_CFR_NO = phart06.MNC_CFR_NO and phart05.MNC_CFG_DAT = phart06.MNC_CFR_dat " +
+                    " left join PHARMACY_T05 phart05 on t01.MNC_PRE_NO = phart05.MNC_PRE_NO and t01.MNC_date = phart05.mnc_date and t01.mnc_hn_yr = phart05.mnc_hn_yr " +
+                    " left join PHARMACY_T06 phart06 on phart05.MNC_CFR_NO = phart06.MNC_CFR_NO and phart05.MNC_CFG_DAT = phart06.MNC_CFR_dat  and phart05.MNC_CFR_YR = phart06.MNC_CFR_YR " +
                     " left join PHARMACY_M01 on phart06.MNC_PH_CD = pharmacy_m01.MNC_PH_CD " +
                     " left join PHARMACY_M05 on PHARMACY_M05.MNC_PH_CD = PHARMACY_M01.MNC_PH_CD " +
+                    //"left join PATIENT_T12 ptt12 on t01.MNC_HN_NO = ptt12.MNC_HN_NO and t01.MNC_HN_YR = ptt12.MNC_HN_YR and t01.MNC_PRE_NO = ptt12.MNC_PRE_NO and t01.MNC_DATE = ptt12.MNC_DATE and ptt12.mnc_or_sts = 'L' " +
                     " where " +
                     //" --t01.MNC_DATE BETWEEN '' AND '' and " +
                     " t01.mnc_hn_no = '" + hn + "' " +
@@ -209,6 +226,7 @@ namespace reportBangna
                     //" and t01.mnc_vn_no = '58' and t01.MNC_PRE_NO = '61' " +
                     " and phart05.MNC_CFR_STS = 'a' " +
                     " Group By phart06.MNC_PH_CD, pharmacy_m01.MNC_PH_TN ,PHARMACY_M05.MNC_PH_PRI01,PHARMACY_M05.MNC_PH_PRI02,phart05.MNC_CFG_DAT " +
+                    //", ptt12.MNC_OR_NO, ptt12.MNC_OR_YR, ptt12.MNC_OR_DATE_S, ptt12.MNC_OR_TIME_S, ptt12.MNC_OR_HOUR " +
                     " Order By phart05.MNC_CFG_DAT,phart06.MNC_PH_CD ";
             dt = connMainHIS5.selectData(sql);
             return dt;
@@ -219,11 +237,13 @@ namespace reportBangna
             String sql = "";
             String[] vn1 = vn.Split('.');
             sql = "Select phart06.MNC_PH_CD, pharmacy_m01.MNC_PH_TN ,PHARMACY_M05.MNC_PH_PRI01,PHARMACY_M05.MNC_PH_PRI02,sum(phart06.MNC_PH_QTY) as qty, PHARMACY_M05.MNC_PH_PRI01 * sum(phart06.MNC_PH_QTY) as amt,phart05.MNC_CFG_DAT " +
+                //", ptt12.MNC_OR_NO, ptt12.MNC_OR_YR, ptt12.MNC_OR_DATE_S, ptt12.MNC_OR_TIME_S, ptt12.MNC_OR_HOUR " +
                     " From PATIENT_T01 t01 " +
-                    " left join PHARMACY_T05 phart05 on t01.MNC_PRE_NO = phart05.MNC_PRE_NO and t01.MNC_date = phart05.mnc_date " +
-                    " left join PHARMACY_T06 phart06 on phart05.MNC_CFR_NO = phart06.MNC_CFR_NO and phart05.MNC_CFG_DAT = phart06.MNC_CFR_dat " +
+                    " left join PHARMACY_T05 phart05 on t01.MNC_PRE_NO = phart05.MNC_PRE_NO and t01.MNC_date = phart05.mnc_date  and t01.mnc_hn_yr = phart05.mnc_hn_yr " +
+                    " left join PHARMACY_T06 phart06 on phart05.MNC_CFR_NO = phart06.MNC_CFR_NO and phart05.MNC_CFG_DAT = phart06.MNC_CFR_dat and phart05.MNC_CFR_YR = phart06.MNC_CFR_YR " +
                     " left join PHARMACY_M01 on phart06.MNC_PH_CD = pharmacy_m01.MNC_PH_CD " +
                     " left join PHARMACY_M05 on PHARMACY_M05.MNC_PH_CD = PHARMACY_M01.MNC_PH_CD " +
+                    //"left join PATIENT_T12 ptt12 on t01.MNC_HN_NO = ptt12.MNC_HN_NO and t01.MNC_HN_YR = ptt12.MNC_HN_YR and t01.MNC_PRE_NO = ptt12.MNC_PRE_NO and t01.MNC_DATE = ptt12.MNC_DATE and ptt12.mnc_or_sts = 'L'  " +
                     " where " +
                     //" --t01.MNC_DATE BETWEEN '' AND '' and " +
                     " t01.mnc_hn_no = '" + hn + "' " +
@@ -235,7 +255,8 @@ namespace reportBangna
                     //" and pharmacy_m01.MNC_PH_TN like '(%' " +
                     //" and t01.mnc_vn_no = '58' and t01.MNC_PRE_NO = '61' " +
                     " and phart05.MNC_CFR_STS = 'a' " +
-                    " Group By phart06.MNC_PH_CD, pharmacy_m01.MNC_PH_TN ,PHARMACY_M05.MNC_PH_PRI01,PHARMACY_M05.MNC_PH_PRI02,phart05.MNC_CFG_DAT " +
+                    " Group By phart06.MNC_PH_CD, pharmacy_m01.MNC_PH_TN ,PHARMACY_M05.MNC_PH_PRI01,PHARMACY_M05.MNC_PH_PRI02,phart05.MNC_CFG_DAT" +
+                    //", ptt12.MNC_OR_NO, ptt12.MNC_OR_YR, ptt12.MNC_OR_DATE_S, ptt12.MNC_OR_TIME_S, ptt12.MNC_OR_HOUR " +
                     " Order By phart05.MNC_CFG_DAT,phart06.MNC_PH_CD ";
             dt = connMainHIS5.selectData(sql);
             return dt;

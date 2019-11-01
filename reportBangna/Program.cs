@@ -69,13 +69,13 @@ namespace reportBangna
                 //MessageBox.Show("else", "else");
                 //Application.Run(new FrmMain());
                 //Application.Run(new FrmCtScan());
-                Application.Run(new FrmLabExView());
+                //Application.Run(new FrmLabExView());
                 //Application.Run(new FrmCheckNHSO());
                 //Application.Run(new FrmDischargeSearch());
                 //Application.Run(new FrmLabExDoctor());
                 //Application.Run(new FrmCertificatesView());
                 //Application.Run(new FrmStMain());
-                //Application.Run(new FrmNHSOPrint());
+                Application.Run(new FrmNHSOPrint());
                 //Application.Run(new FrmOPDCheckUPView());
                 //Application.Run(new FrmOPD2CheckUPMain());
                 //Application.Run(new FrmLabExView());

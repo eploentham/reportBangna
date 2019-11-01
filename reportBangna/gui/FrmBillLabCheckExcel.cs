@@ -302,5 +302,10 @@ namespace reportBangna.gui
             //excelapp.UserControl = true;
             //excelapp.Visible = true;
         }
+
+        private void FrmBillLabCheckExcel_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
