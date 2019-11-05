@@ -119,27 +119,28 @@ namespace reportBangna.gui
                     dt = bc.selectNHSOPrintHNAll(dgvView[colDate, row].Value.ToString(), dgvView[colhn, row].Value.ToString(), dgvView[colpreno, row].Value.ToString(), dgvView[colvn, row].Value.ToString());
                 }
                 //String an1= "";
+                DateTime dtStart = new DateTime();
+                DateTime dtStart1 = new DateTime();
+                DateTime dtEnd = new DateTime();
+                int time = 0;
+                String datestart = "", dateend = "", time3 = "";
                 String[] an1 = an.Split('/');
                 if (an1.Length >= 1)
                 {
                     dtt12 = bc.selectPatientOR(dgvView[colhn, row].Value.ToString(), dgvView[colpreno, row].Value.ToString(),an1[0]);
                     if (dtt12.Rows.Count > 0)
                     {
-                        DateTime dtStart = new DateTime();
-                        DateTime dtStart1 = new DateTime();
-                        DateTime dtEnd = new DateTime();
-                        int time = 0;
-                        String datestart = "", dateend = "";
+                        
                         datestart = dtt12.Rows[0]["MNC_OR_DATE_S"].ToString();
                         if (datestart.Length >= 10)
                         {
                             datestart = datestart.Substring(0, 10);
-                            dateend = datestart;
+                            //dateend = datestart;
                             String time1 = "0" + dtt12.Rows[0]["MNC_OR_TIME_S"].ToString();
                             if (time1.Length > 2)
                             {
                                 String time2 = time1.Substring(time1.Length - 2, 2);
-                                String time3 = "";
+                                //String time3 = "";
                                 String time4 = time1.Substring(time1.Length - 4, 2);
                                 time3 = " " + time4 + ":" + time2;
 
@@ -156,6 +157,7 @@ namespace reportBangna.gui
                                         cnt2 = cnt % 60;
                                         dtEnd = dtEnd.AddHours(cnt1);
                                         dtEnd = dtEnd.AddMinutes(cnt2);
+                                        dateend = dtEnd.ToString("HH:mm");
                                     }
                                 }
                             }
@@ -267,8 +269,8 @@ namespace reportBangna.gui
                     canvas.MoveTo(40, 110);//Hericental
                     canvas.LineTo(560, 110);
 
-                    canvas.MoveTo(100, 640);//vertical
-                    canvas.LineTo(100, 110);
+                    canvas.MoveTo(115, 640);//vertical
+                    canvas.LineTo(115, 110);
 
                     canvas.MoveTo(400, 640);//vertical
                     canvas.LineTo(400, 110);
@@ -302,9 +304,9 @@ namespace reportBangna.gui
                             //amt = String.Format("{0:#,###,###.00}", dt.Rows[i]["amt"]);
                             total += decimal.Parse(dt.Rows[i]["amt"].ToString());
                             //canvas.ShowTextAligned(Element.ALIGN_LEFT, bc.cf.dateLabExShow(dt.Rows[i]["MNC_CFG_DAT"].ToString()), 45, row1, 0);
-                            canvas.ShowTextAligned(Element.ALIGN_LEFT, bc.cf.dateDBtoShowShort(bc.cf.datetoDB(dt.Rows[i]["MNC_CFG_DAT"].ToString())), 45, row1, 0);
+                            canvas.ShowTextAligned(Element.ALIGN_LEFT, bc.cf.dateDBtoShowShort(bc.cf.datetoDB(dt.Rows[i]["MNC_CFG_DAT"].ToString())) +" "+time3+"-"+ dateend, 45, row1, 0);
                             
-                            canvas.ShowTextAligned(Element.ALIGN_LEFT, dt.Rows[i]["MNC_PH_TN"].ToString() + " [" + dt.Rows[i]["MNC_PH_cd"].ToString() + "]", 105, row1, 0);
+                            canvas.ShowTextAligned(Element.ALIGN_LEFT, dt.Rows[i]["MNC_PH_TN"].ToString() + " [" + dt.Rows[i]["MNC_PH_cd"].ToString() + "]", 120, row1, 0);
                             canvas.ShowTextAligned(Element.ALIGN_LEFT, dt.Rows[i]["qty"].ToString(), 415, row1, 0);
                             canvas.ShowTextAligned(Element.ALIGN_RIGHT, String.Format("{0:#,###,###.00}", dt.Rows[i]["MNC_PH_PRI01"]), 495, row1, 0);
                             canvas.ShowTextAligned(Element.ALIGN_RIGHT, String.Format("{0:#,###,###.00}", dt.Rows[i]["amt"]), 555, row1, 0);
@@ -910,7 +912,7 @@ namespace reportBangna.gui
         }
         private void FrmNHSOPrint_Load(object sender, EventArgs e)
         {
-
+            this.Text = "Last Update 05-11-2019";
         }
     }
 }
