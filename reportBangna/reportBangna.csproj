@@ -104,6 +104,12 @@
     <Compile Include="gui\FrmBillLabCheckExcel.Designer.cs">
       <DependentUpon>FrmBillLabCheckExcel.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\FrmOPDLicenseDriver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmOPDLicenseDriver.Designer.cs">
+      <DependentUpon>FrmOPDLicenseDriver.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\FrmSSDView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -522,6 +528,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmBillLabCheckExcel.resx">
       <DependentUpon>FrmBillLabCheckExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmOPDLicenseDriver.resx">
+      <DependentUpon>FrmOPDLicenseDriver.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmSSDView.resx">
       <DependentUpon>FrmSSDView.cs</DependentUpon>

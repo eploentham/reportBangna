@@ -56,7 +56,7 @@
             this.txtABOGroup = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtVn = new System.Windows.Forms.TextBox();
+            this.txtDOB = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -96,7 +96,49 @@
             this.label29 = new System.Windows.Forms.Label();
             this.txtPassport = new System.Windows.Forms.TextBox();
             this.cboMar = new System.Windows.Forms.ComboBox();
+            this.gbTrueStar = new System.Windows.Forms.GroupBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.chk7AbNormal = new System.Windows.Forms.RadioButton();
+            this.chk7Normal = new System.Windows.Forms.RadioButton();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.chk6Repeat = new System.Windows.Forms.RadioButton();
+            this.chk6AbNormal = new System.Windows.Forms.RadioButton();
+            this.chk6Normal = new System.Windows.Forms.RadioButton();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.chk4AbNormal = new System.Windows.Forms.RadioButton();
+            this.chk4Normal = new System.Windows.Forms.RadioButton();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.chk5Repeat = new System.Windows.Forms.RadioButton();
+            this.chk5AbNormal = new System.Windows.Forms.RadioButton();
+            this.chk5Normal = new System.Windows.Forms.RadioButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.chk3Repeat = new System.Windows.Forms.RadioButton();
+            this.chk3AbNormal = new System.Windows.Forms.RadioButton();
+            this.chk3Normal = new System.Windows.Forms.RadioButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.chk2Repeat = new System.Windows.Forms.RadioButton();
+            this.chk2AbNormal = new System.Windows.Forms.RadioButton();
+            this.chk2Normal = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.chk1Repeat = new System.Windows.Forms.RadioButton();
+            this.chk1AbNormal = new System.Windows.Forms.RadioButton();
+            this.chk1Normal = new System.Windows.Forms.RadioButton();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
+            this.gbTrueStar.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSearch
@@ -107,6 +149,7 @@
             this.btnSearch.TabIndex = 157;
             this.btnSearch.Text = "ดึงข้อมูล";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtDoctorName
             // 
@@ -375,19 +418,19 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label14.Location = new System.Drawing.Point(360, 81);
+            this.label14.Location = new System.Drawing.Point(347, 81);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(28, 16);
+            this.label14.Size = new System.Drawing.Size(43, 16);
             this.label14.TabIndex = 152;
-            this.label14.Text = "vn :";
+            this.label14.Text = "DOB :";
             // 
-            // txtVn
+            // txtDOB
             // 
-            this.txtVn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtVn.Location = new System.Drawing.Point(396, 78);
-            this.txtVn.Name = "txtVn";
-            this.txtVn.Size = new System.Drawing.Size(80, 22);
-            this.txtVn.TabIndex = 151;
+            this.txtDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtDOB.Location = new System.Drawing.Point(396, 78);
+            this.txtDOB.Name = "txtDOB";
+            this.txtDOB.Size = new System.Drawing.Size(80, 22);
+            this.txtDOB.TabIndex = 151;
             // 
             // label6
             // 
@@ -724,7 +767,7 @@
             // 
             // btnPrintOPD2
             // 
-            this.btnPrintOPD2.Location = new System.Drawing.Point(1017, 296);
+            this.btnPrintOPD2.Location = new System.Drawing.Point(1000, 296);
             this.btnPrintOPD2.Name = "btnPrintOPD2";
             this.btnPrintOPD2.Size = new System.Drawing.Size(74, 41);
             this.btnPrintOPD2.TabIndex = 177;
@@ -781,11 +824,383 @@
             this.cboMar.Size = new System.Drawing.Size(362, 24);
             this.cboMar.TabIndex = 182;
             // 
+            // gbTrueStar
+            // 
+            this.gbTrueStar.Controls.Add(this.panel7);
+            this.gbTrueStar.Controls.Add(this.panel6);
+            this.gbTrueStar.Controls.Add(this.panel5);
+            this.gbTrueStar.Controls.Add(this.panel4);
+            this.gbTrueStar.Controls.Add(this.panel3);
+            this.gbTrueStar.Controls.Add(this.panel2);
+            this.gbTrueStar.Controls.Add(this.panel1);
+            this.gbTrueStar.Controls.Add(this.label36);
+            this.gbTrueStar.Controls.Add(this.label35);
+            this.gbTrueStar.Controls.Add(this.label34);
+            this.gbTrueStar.Controls.Add(this.label33);
+            this.gbTrueStar.Controls.Add(this.label32);
+            this.gbTrueStar.Controls.Add(this.label31);
+            this.gbTrueStar.Controls.Add(this.label30);
+            this.gbTrueStar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.gbTrueStar.Location = new System.Drawing.Point(172, 385);
+            this.gbTrueStar.Name = "gbTrueStar";
+            this.gbTrueStar.Size = new System.Drawing.Size(902, 256);
+            this.gbTrueStar.TabIndex = 183;
+            this.gbTrueStar.TabStop = false;
+            this.gbTrueStar.Text = "True Star";
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.chk7AbNormal);
+            this.panel7.Controls.Add(this.chk7Normal);
+            this.panel7.Location = new System.Drawing.Point(537, 224);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(359, 29);
+            this.panel7.TabIndex = 199;
+            // 
+            // chk7AbNormal
+            // 
+            this.chk7AbNormal.AutoSize = true;
+            this.chk7AbNormal.Location = new System.Drawing.Point(125, 6);
+            this.chk7AbNormal.Name = "chk7AbNormal";
+            this.chk7AbNormal.Size = new System.Drawing.Size(60, 20);
+            this.chk7AbNormal.TabIndex = 1;
+            this.chk7AbNormal.TabStop = true;
+            this.chk7AbNormal.Text = "ผิดปกติ";
+            this.chk7AbNormal.UseVisualStyleBackColor = true;
+            // 
+            // chk7Normal
+            // 
+            this.chk7Normal.AutoSize = true;
+            this.chk7Normal.Location = new System.Drawing.Point(8, 6);
+            this.chk7Normal.Name = "chk7Normal";
+            this.chk7Normal.Size = new System.Drawing.Size(46, 20);
+            this.chk7Normal.TabIndex = 0;
+            this.chk7Normal.TabStop = true;
+            this.chk7Normal.Text = "ปกติ";
+            this.chk7Normal.UseVisualStyleBackColor = true;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.chk6Repeat);
+            this.panel6.Controls.Add(this.chk6AbNormal);
+            this.panel6.Controls.Add(this.chk6Normal);
+            this.panel6.Location = new System.Drawing.Point(537, 189);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(359, 29);
+            this.panel6.TabIndex = 198;
+            // 
+            // chk6Repeat
+            // 
+            this.chk6Repeat.AutoSize = true;
+            this.chk6Repeat.Location = new System.Drawing.Point(242, 6);
+            this.chk6Repeat.Name = "chk6Repeat";
+            this.chk6Repeat.Size = new System.Drawing.Size(114, 20);
+            this.chk6Repeat.TabIndex = 2;
+            this.chk6Repeat.TabStop = true;
+            this.chk6Repeat.Text = "ให้ตรวจยืนยันรักษา";
+            this.chk6Repeat.UseVisualStyleBackColor = true;
+            // 
+            // chk6AbNormal
+            // 
+            this.chk6AbNormal.AutoSize = true;
+            this.chk6AbNormal.Location = new System.Drawing.Point(125, 6);
+            this.chk6AbNormal.Name = "chk6AbNormal";
+            this.chk6AbNormal.Size = new System.Drawing.Size(60, 20);
+            this.chk6AbNormal.TabIndex = 1;
+            this.chk6AbNormal.TabStop = true;
+            this.chk6AbNormal.Text = "ผิดปกติ";
+            this.chk6AbNormal.UseVisualStyleBackColor = true;
+            // 
+            // chk6Normal
+            // 
+            this.chk6Normal.AutoSize = true;
+            this.chk6Normal.Location = new System.Drawing.Point(8, 6);
+            this.chk6Normal.Name = "chk6Normal";
+            this.chk6Normal.Size = new System.Drawing.Size(46, 20);
+            this.chk6Normal.TabIndex = 0;
+            this.chk6Normal.TabStop = true;
+            this.chk6Normal.Text = "ปกติ";
+            this.chk6Normal.UseVisualStyleBackColor = true;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.chk4AbNormal);
+            this.panel5.Controls.Add(this.chk4Normal);
+            this.panel5.Location = new System.Drawing.Point(537, 115);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(359, 29);
+            this.panel5.TabIndex = 197;
+            // 
+            // chk4AbNormal
+            // 
+            this.chk4AbNormal.AutoSize = true;
+            this.chk4AbNormal.Location = new System.Drawing.Point(125, 6);
+            this.chk4AbNormal.Name = "chk4AbNormal";
+            this.chk4AbNormal.Size = new System.Drawing.Size(60, 20);
+            this.chk4AbNormal.TabIndex = 1;
+            this.chk4AbNormal.TabStop = true;
+            this.chk4AbNormal.Text = "ผิดปกติ";
+            this.chk4AbNormal.UseVisualStyleBackColor = true;
+            // 
+            // chk4Normal
+            // 
+            this.chk4Normal.AutoSize = true;
+            this.chk4Normal.Location = new System.Drawing.Point(8, 6);
+            this.chk4Normal.Name = "chk4Normal";
+            this.chk4Normal.Size = new System.Drawing.Size(46, 20);
+            this.chk4Normal.TabIndex = 0;
+            this.chk4Normal.TabStop = true;
+            this.chk4Normal.Text = "ปกติ";
+            this.chk4Normal.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.chk5Repeat);
+            this.panel4.Controls.Add(this.chk5AbNormal);
+            this.panel4.Controls.Add(this.chk5Normal);
+            this.panel4.Location = new System.Drawing.Point(537, 155);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(359, 29);
+            this.panel4.TabIndex = 196;
+            // 
+            // chk5Repeat
+            // 
+            this.chk5Repeat.AutoSize = true;
+            this.chk5Repeat.Location = new System.Drawing.Point(242, 6);
+            this.chk5Repeat.Name = "chk5Repeat";
+            this.chk5Repeat.Size = new System.Drawing.Size(114, 20);
+            this.chk5Repeat.TabIndex = 2;
+            this.chk5Repeat.TabStop = true;
+            this.chk5Repeat.Text = "ให้ตรวจยืนยันรักษา";
+            this.chk5Repeat.UseVisualStyleBackColor = true;
+            // 
+            // chk5AbNormal
+            // 
+            this.chk5AbNormal.AutoSize = true;
+            this.chk5AbNormal.Location = new System.Drawing.Point(125, 6);
+            this.chk5AbNormal.Name = "chk5AbNormal";
+            this.chk5AbNormal.Size = new System.Drawing.Size(60, 20);
+            this.chk5AbNormal.TabIndex = 1;
+            this.chk5AbNormal.TabStop = true;
+            this.chk5AbNormal.Text = "ผิดปกติ";
+            this.chk5AbNormal.UseVisualStyleBackColor = true;
+            // 
+            // chk5Normal
+            // 
+            this.chk5Normal.AutoSize = true;
+            this.chk5Normal.Location = new System.Drawing.Point(8, 6);
+            this.chk5Normal.Name = "chk5Normal";
+            this.chk5Normal.Size = new System.Drawing.Size(46, 20);
+            this.chk5Normal.TabIndex = 0;
+            this.chk5Normal.TabStop = true;
+            this.chk5Normal.Text = "ปกติ";
+            this.chk5Normal.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.chk3Repeat);
+            this.panel3.Controls.Add(this.chk3AbNormal);
+            this.panel3.Controls.Add(this.chk3Normal);
+            this.panel3.Location = new System.Drawing.Point(537, 77);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(359, 29);
+            this.panel3.TabIndex = 195;
+            // 
+            // chk3Repeat
+            // 
+            this.chk3Repeat.AutoSize = true;
+            this.chk3Repeat.Location = new System.Drawing.Point(242, 6);
+            this.chk3Repeat.Name = "chk3Repeat";
+            this.chk3Repeat.Size = new System.Drawing.Size(114, 20);
+            this.chk3Repeat.TabIndex = 2;
+            this.chk3Repeat.TabStop = true;
+            this.chk3Repeat.Text = "ให้ตรวจยืนยันรักษา";
+            this.chk3Repeat.UseVisualStyleBackColor = true;
+            // 
+            // chk3AbNormal
+            // 
+            this.chk3AbNormal.AutoSize = true;
+            this.chk3AbNormal.Location = new System.Drawing.Point(125, 6);
+            this.chk3AbNormal.Name = "chk3AbNormal";
+            this.chk3AbNormal.Size = new System.Drawing.Size(60, 20);
+            this.chk3AbNormal.TabIndex = 1;
+            this.chk3AbNormal.TabStop = true;
+            this.chk3AbNormal.Text = "ผิดปกติ";
+            this.chk3AbNormal.UseVisualStyleBackColor = true;
+            // 
+            // chk3Normal
+            // 
+            this.chk3Normal.AutoSize = true;
+            this.chk3Normal.Location = new System.Drawing.Point(8, 6);
+            this.chk3Normal.Name = "chk3Normal";
+            this.chk3Normal.Size = new System.Drawing.Size(46, 20);
+            this.chk3Normal.TabIndex = 0;
+            this.chk3Normal.TabStop = true;
+            this.chk3Normal.Text = "ปกติ";
+            this.chk3Normal.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.chk2Repeat);
+            this.panel2.Controls.Add(this.chk2AbNormal);
+            this.panel2.Controls.Add(this.chk2Normal);
+            this.panel2.Location = new System.Drawing.Point(537, 44);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(359, 29);
+            this.panel2.TabIndex = 194;
+            // 
+            // chk2Repeat
+            // 
+            this.chk2Repeat.AutoSize = true;
+            this.chk2Repeat.Location = new System.Drawing.Point(242, 6);
+            this.chk2Repeat.Name = "chk2Repeat";
+            this.chk2Repeat.Size = new System.Drawing.Size(114, 20);
+            this.chk2Repeat.TabIndex = 2;
+            this.chk2Repeat.TabStop = true;
+            this.chk2Repeat.Text = "ให้ตรวจยืนยันรักษา";
+            this.chk2Repeat.UseVisualStyleBackColor = true;
+            // 
+            // chk2AbNormal
+            // 
+            this.chk2AbNormal.AutoSize = true;
+            this.chk2AbNormal.Location = new System.Drawing.Point(125, 6);
+            this.chk2AbNormal.Name = "chk2AbNormal";
+            this.chk2AbNormal.Size = new System.Drawing.Size(60, 20);
+            this.chk2AbNormal.TabIndex = 1;
+            this.chk2AbNormal.TabStop = true;
+            this.chk2AbNormal.Text = "ผิดปกติ";
+            this.chk2AbNormal.UseVisualStyleBackColor = true;
+            // 
+            // chk2Normal
+            // 
+            this.chk2Normal.AutoSize = true;
+            this.chk2Normal.Location = new System.Drawing.Point(8, 6);
+            this.chk2Normal.Name = "chk2Normal";
+            this.chk2Normal.Size = new System.Drawing.Size(46, 20);
+            this.chk2Normal.TabIndex = 0;
+            this.chk2Normal.TabStop = true;
+            this.chk2Normal.Text = "ปกติ";
+            this.chk2Normal.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.chk1Repeat);
+            this.panel1.Controls.Add(this.chk1AbNormal);
+            this.panel1.Controls.Add(this.chk1Normal);
+            this.panel1.Location = new System.Drawing.Point(537, 11);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(359, 29);
+            this.panel1.TabIndex = 193;
+            // 
+            // chk1Repeat
+            // 
+            this.chk1Repeat.AutoSize = true;
+            this.chk1Repeat.Location = new System.Drawing.Point(242, 6);
+            this.chk1Repeat.Name = "chk1Repeat";
+            this.chk1Repeat.Size = new System.Drawing.Size(114, 20);
+            this.chk1Repeat.TabIndex = 2;
+            this.chk1Repeat.TabStop = true;
+            this.chk1Repeat.Text = "ให้ตรวจยืนยันรักษา";
+            this.chk1Repeat.UseVisualStyleBackColor = true;
+            // 
+            // chk1AbNormal
+            // 
+            this.chk1AbNormal.AutoSize = true;
+            this.chk1AbNormal.Location = new System.Drawing.Point(125, 6);
+            this.chk1AbNormal.Name = "chk1AbNormal";
+            this.chk1AbNormal.Size = new System.Drawing.Size(60, 20);
+            this.chk1AbNormal.TabIndex = 1;
+            this.chk1AbNormal.TabStop = true;
+            this.chk1AbNormal.Text = "ผิดปกติ";
+            this.chk1AbNormal.UseVisualStyleBackColor = true;
+            // 
+            // chk1Normal
+            // 
+            this.chk1Normal.AutoSize = true;
+            this.chk1Normal.Location = new System.Drawing.Point(8, 6);
+            this.chk1Normal.Name = "chk1Normal";
+            this.chk1Normal.Size = new System.Drawing.Size(46, 20);
+            this.chk1Normal.TabIndex = 0;
+            this.chk1Normal.TabStop = true;
+            this.chk1Normal.Text = "ปกติ";
+            this.chk1Normal.UseVisualStyleBackColor = true;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label36.Location = new System.Drawing.Point(13, 224);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(480, 20);
+            this.label36.TabIndex = 172;
+            this.label36.Text = "7. โรคจิตฟั่นเฟือนหรือปัญญาอ่อน (Schizophrenia or Mental Retardation)";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label35.Location = new System.Drawing.Point(13, 194);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(246, 20);
+            this.label35.TabIndex = 171;
+            this.label35.Text = "6. ซิฟิลิสในระยะที่ 3 (Syphilis Latent)";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label34.Location = new System.Drawing.Point(13, 164);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(445, 20);
+            this.label34.TabIndex = 170;
+            this.label34.Text = "5. โรคเท้าช้างในระยะที่ปรากฏอาการที่เป็นที่รังเกียจแก่สังคม (Filariasis)";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label33.Location = new System.Drawing.Point(13, 119);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(271, 20);
+            this.label33.TabIndex = 169;
+            this.label33.Text = "4. โรคพิษสุราเรื้อรัง (Chronic alcoholism)";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label32.Location = new System.Drawing.Point(13, 76);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(283, 20);
+            this.label32.TabIndex = 168;
+            this.label32.Text = "3. โรคติดยาเสพติดให้โทษ (Drug addiction)";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label31.Location = new System.Drawing.Point(13, 46);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(397, 20);
+            this.label31.TabIndex = 167;
+            this.label31.Text = "2. วัณโรคปอดในระยะติดต่อ (Active pulmonary tuberculosis)";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label30.Location = new System.Drawing.Point(13, 16);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(518, 20);
+            this.label30.TabIndex = 166;
+            this.label30.Text = "1. โรคเรื้อนในระยะติดต่อหรือในระยะที่ปรากฏอาการเป็นที่รังเกียจแก่สังคม (Leprosy)";
+            // 
             // FrmOPD21CheckUP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1121, 403);
+            this.ClientSize = new System.Drawing.Size(1085, 653);
+            this.Controls.Add(this.gbTrueStar);
             this.Controls.Add(this.cboMar);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.txtPassport);
@@ -816,7 +1231,7 @@
             this.Controls.Add(this.txtDoctorId);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.txtVn);
+            this.Controls.Add(this.txtDOB);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -838,6 +1253,22 @@
             this.Load += new System.EventHandler(this.FrmOPD21CheckUP_Load);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.gbTrueStar.ResumeLayout(false);
+            this.gbTrueStar.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -873,7 +1304,7 @@
         private System.Windows.Forms.TextBox txtABOGroup;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtVn;
+        private System.Windows.Forms.TextBox txtDOB;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -913,5 +1344,39 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox txtPassport;
         private System.Windows.Forms.ComboBox cboMar;
+        private System.Windows.Forms.GroupBox gbTrueStar;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton chk1Repeat;
+        private System.Windows.Forms.RadioButton chk1AbNormal;
+        private System.Windows.Forms.RadioButton chk1Normal;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.RadioButton chk3Repeat;
+        private System.Windows.Forms.RadioButton chk3AbNormal;
+        private System.Windows.Forms.RadioButton chk3Normal;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.RadioButton chk2Repeat;
+        private System.Windows.Forms.RadioButton chk2AbNormal;
+        private System.Windows.Forms.RadioButton chk2Normal;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.RadioButton chk7AbNormal;
+        private System.Windows.Forms.RadioButton chk7Normal;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.RadioButton chk6Repeat;
+        private System.Windows.Forms.RadioButton chk6AbNormal;
+        private System.Windows.Forms.RadioButton chk6Normal;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.RadioButton chk4AbNormal;
+        private System.Windows.Forms.RadioButton chk4Normal;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.RadioButton chk5Repeat;
+        private System.Windows.Forms.RadioButton chk5AbNormal;
+        private System.Windows.Forms.RadioButton chk5Normal;
     }
 }

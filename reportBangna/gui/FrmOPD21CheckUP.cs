@@ -18,10 +18,13 @@ namespace reportBangna.gui
     {
         BangnaControl bc;
         OPDCheckUP opdc;
-        public FrmOPD21CheckUP(BangnaControl c)
+        String truestar = "";
+        int leftp = 0;
+        public FrmOPD21CheckUP(BangnaControl c, String truestar)
         {
             InitializeComponent();
             bc = c;
+            this.truestar = truestar;
             initConfig();
         }
         private void initConfig()
@@ -29,13 +32,19 @@ namespace reportBangna.gui
             opdc = new OPDCheckUP();
             setControl("");
         }
+
         private void setControl(String hn)
         {
+            gbTrueStar.Visible = false;
+            if (truestar.Length > 0)
+            {
+                gbTrueStar.Visible = true;
+            }
             if (hn.Equals(""))
             {
                 return;
             }
-
+            
             //opdc = bc.opdcdb.selectByHn(hn);
             //if (!opdc.Id.Equals(""))
             //{
@@ -82,6 +91,7 @@ namespace reportBangna.gui
 
                 txtAddr1.Text = dt.Rows[0]["mnc_full_add"].ToString() != "" ? dt.Rows[0]["mnc_full_add"].ToString() : dt.Rows[0]["mnc_dom_add"].ToString() + " " + dt.Rows[0]["mnc_tum_dsc"].ToString() + " " + dt.Rows[0]["mnc_amp_dsc"].ToString() + " " + dt.Rows[0]["mnc_chw_dsc"].ToString() + " " + dt.Rows[0]["mnc_cur_poc"].ToString();
                 txtAddr2.Text = "";
+                txtId.Text = dt.Rows[0]["mnc_id_no"].ToString();
                 txtAge.Text = dt.Rows[0]["MNC_AGE"].ToString();
                 //txtAllergisOther.Text = dt.Rows[0][bc.opdcdb.opdc.AllergicOther].ToString();
                 //txtBloodPressure.Text = dt.Rows[0][bc.opdcdb.opdc.BloodPressure].ToString();
@@ -107,7 +117,7 @@ namespace reportBangna.gui
             int year = 0;
             dt1 = DateTime.Parse(dt.Rows[0]["mnc_bday"].ToString());
             year = dt1.Year;
-            txtVn.Text = dt1.Day.ToString("00")+"/"+ dt1.Month.ToString("00")+"/" + (year + 543);
+            txtDOB.Text = dt1.Day.ToString("00")+"/"+ dt1.Month.ToString("00")+"/" + (year + 543);
             txtAge.Text = String.Concat(System.DateTime.Now.Year - year);
 
             //}
@@ -243,7 +253,9 @@ namespace reportBangna.gui
                     canvas.SetFontAndSize(bfRB, fontSize2);
                     canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 384, linenumber, 0);
                     canvas.SetFontAndSize(bfR, fontSize1);
-                }else {
+                }
+                else
+                {
                     canvas.SetFontAndSize(bfRB, fontSize2);
                     canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 420, linenumber, 0);
                     canvas.SetFontAndSize(bfR, fontSize1);
@@ -277,7 +289,7 @@ namespace reportBangna.gui
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, "วัน/เดือน/ปี เกิด ", 60, linenumber -= 20, 0);
                 canvas.SetFontAndSize(bfR, fontSize1);
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, "........................................ ", 122, linenumber - 3, 0);
-                canvas.ShowTextAligned(Element.ALIGN_LEFT, txtVn.Text, 125, linenumber, 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, bc.datetoShow2(txtDOB.Text), 125, linenumber, 0);
                 canvas.SetFontAndSize(bfRB, fontSize2);
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, "อายุ ", 220, linenumber , 0);
                 canvas.SetFontAndSize(bfR, fontSize1);
@@ -326,13 +338,120 @@ namespace reportBangna.gui
                 canvas.SetFontAndSize(bfR, fontSize1);
                 //canvas.ShowTextAligned(Element.ALIGN_LEFT, "และปราศจากโรคเหล่านี้ ", 60, linenumber -= 20, 0);
                 //linenumber = 580;
-                canvas.ShowTextAligned(Element.ALIGN_LEFT, "1.	โรคเรื้อนในระยะติดต่อหรือในระยะที่ปรากฏอาการเป็นที่รังเกียจแก่สังคม (Leprosy) ", 150, linenumber -= 20, 0);
-                canvas.ShowTextAligned(Element.ALIGN_LEFT, "2.	วัณโรคปอดในระยะติดต่อ (Active pulmonary tuberculosis) ", 150, linenumber -= 20, 0);
-                canvas.ShowTextAligned(Element.ALIGN_LEFT, "3.	โรคติดยาเสพติดให้โทษ (Drug addiction) ", 150, linenumber -= 20, 0);
-                canvas.ShowTextAligned(Element.ALIGN_LEFT, "4.	โรคพิษสุราเรื้อรัง (Chronic alcoholism) ", 150, linenumber -= 20, 0);
-                canvas.ShowTextAligned(Element.ALIGN_LEFT, "5.	โรคเท้าช้างในระยะที่ปรากฏอาการที่เป็นที่รังเกียจแก่สังคม (Filariasis) ", 150, linenumber -= 20, 0);
-                canvas.ShowTextAligned(Element.ALIGN_LEFT, "6.	ซิฟิลิสในระยะที่ 3 (Syphilis Latent)", 150, linenumber -= 20, 0);
-                canvas.ShowTextAligned(Element.ALIGN_LEFT, "7.	โรคจิตฟั่นเฟือนหรือปัญญาอ่อน (Schizophrenia or Mental Retardation)", 150, linenumber -= 20, 0);
+                if (truestar.Equals("truestar"))
+                {
+                    leftp = 60;
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "1.	โรคเรื้อนในระยะติดต่อหรือในระยะที่ปรากฏอาการเป็นที่รังเกียจแก่สังคม (Leprosy) ", leftp, linenumber -= 20, 0);
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "[  ] ปกติ    [  ] ผิดปกติ    [  ] ให้ตรวจยืนยันรักษา", 380, linenumber, 0);
+                    if (chk1Normal.Checked)
+                    {
+                        canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 384, linenumber, 0);
+                    }
+                    else if (chk1AbNormal.Checked)
+                    {
+                        canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 428, linenumber, 0);
+                    }
+                    else if (chk1Repeat.Checked)
+                    {
+                        canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 482, linenumber, 0);
+                    }
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "2.	วัณโรคปอดในระยะติดต่อ (Active pulmonary tuberculosis) ", leftp, linenumber -= 20, 0);
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "[  ] ปกติ    [  ] ผิดปกติ    [  ] ให้ตรวจยืนยันรักษา", 380, linenumber, 0);
+                    if (chk2Normal.Checked)
+                    {
+                        canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 384, linenumber, 0);
+                    }
+                    else if (chk2AbNormal.Checked)
+                    {
+                        canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 428, linenumber, 0);
+                    }
+                    else if (chk2Repeat.Checked)
+                    {
+                        canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 482, linenumber, 0);
+                    }
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "3.	โรคติดยาเสพติดให้โทษ (Drug addiction) ", leftp, linenumber -= 20, 0);
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "[  ] ปกติ    [  ] ผิดปกติ    [  ] ให้ตรวจยืนยันรักษา", 380, linenumber, 0);
+                    if (chk3Normal.Checked)
+                    {
+                        canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 384, linenumber, 0);
+                    }
+                    else if (chk3AbNormal.Checked)
+                    {
+                        canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 428, linenumber, 0);
+                    }
+                    else if (chk3Repeat.Checked)
+                    {
+                        canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 482, linenumber, 0);
+                    }
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "4.	โรคพิษสุราเรื้อรัง (Chronic alcoholism) ", leftp, linenumber -= 20, 0);
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "[  ] ปกติ    [  ] ผิดปกติ", 380, linenumber, 0);
+                    if (chk4Normal.Checked)
+                    {
+                        canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 384, linenumber, 0);
+                    }
+                    else if (chk4AbNormal.Checked)
+                    {
+                        canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 428, linenumber, 0);
+                    }
+                    //else if (chk4Repeat.Checked)
+                    //{
+                    //    canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 482, linenumber, 0);
+                    //}
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "5.	โรคเท้าช้างในระยะที่ปรากฏอาการที่เป็นที่รังเกียจแก่สังคม (Filariasis) ", leftp, linenumber -= 20, 0);
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "[  ] ปกติ    [  ] ผิดปกติ    [  ] ให้ตรวจยืนยันรักษา", 380, linenumber, 0);
+                    if (chk5Normal.Checked)
+                    {
+                        canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 384, linenumber, 0);
+                    }
+                    else if (chk5AbNormal.Checked)
+                    {
+                        canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 428, linenumber, 0);
+                    }
+                    else if (chk5Repeat.Checked)
+                    {
+                        canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 482, linenumber, 0);
+                    }
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "6.	ซิฟิลิสในระยะที่ 3 (Syphilis Latent)", leftp, linenumber -= 20, 0);
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "[  ] ปกติ    [  ] ผิดปกติ    [  ] ให้ตรวจยืนยันรักษา", 380, linenumber, 0);
+                    if (chk6Normal.Checked)
+                    {
+                        canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 384, linenumber, 0);
+                    }
+                    else if (chk6AbNormal.Checked)
+                    {
+                        canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 428, linenumber, 0);
+                    }
+                    else if (chk6Repeat.Checked)
+                    {
+                        canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 482, linenumber, 0);
+                    }
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "7.	โรคจิตฟั่นเฟือนหรือปัญญาอ่อน (Schizophrenia or Mental Retardation)", leftp, linenumber -= 20, 0);
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "[  ] ปกติ    [  ] ผิดปกติ", 380, linenumber, 0);
+                    if (chk7Normal.Checked)
+                    {
+                        canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 384, linenumber, 0);
+                    }
+                    else if (chk7AbNormal.Checked)
+                    {
+                        canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 428, linenumber, 0);
+                    }
+                    //else if (chk7Repeat.Checked)
+                    //{
+                    //    canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 482, linenumber, 0);
+                    //}
+                }
+                else
+                {
+                    leftp = 150;
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "1.	โรคเรื้อนในระยะติดต่อหรือในระยะที่ปรากฏอาการเป็นที่รังเกียจแก่สังคม (Leprosy) ", leftp, linenumber -= 20, 0);
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "2.	วัณโรคปอดในระยะติดต่อ (Active pulmonary tuberculosis) ", leftp, linenumber -= 20, 0);
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "3.	โรคติดยาเสพติดให้โทษ (Drug addiction) ", leftp, linenumber -= 20, 0);
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "4.	โรคพิษสุราเรื้อรัง (Chronic alcoholism) ", leftp, linenumber -= 20, 0);
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "5.	โรคเท้าช้างในระยะที่ปรากฏอาการที่เป็นที่รังเกียจแก่สังคม (Filariasis) ", leftp, linenumber -= 20, 0);
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "6.	ซิฟิลิสในระยะที่ 3 (Syphilis Latent)", leftp, linenumber -= 20, 0);
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "7.	โรคจิตฟั่นเฟือนหรือปัญญาอ่อน (Schizophrenia or Mental Retardation)", leftp, linenumber -= 20, 0);
+                }
+                
                 canvas.SetFontAndSize(bfRB, fontSize2);
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, "หมายเหตุ : สำหรับสตรี", 60, linenumber -= 20, 0);
                 canvas.SetFontAndSize(bfR, fontSize1);
@@ -383,8 +502,6 @@ namespace reportBangna.gui
                     canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 204, linenumber, 0);
                     canvas.SetFontAndSize(bfR, fontSize1);
                 }
-
-
 
                 canvas.EndText();
 
@@ -481,11 +598,6 @@ namespace reportBangna.gui
             }
         }
 
-        private void FrmOPD21CheckUP_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnPrintOPD2_Click(object sender, EventArgs e)
         {
             getPDF();
@@ -577,10 +689,19 @@ namespace reportBangna.gui
                 chk4.Checked = false;
             }
         }
-
+        
         private void cboNation_SelectedIndexChanged(object sender, EventArgs e)
         {
             cboRace.Text = cboNation.Text;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void FrmOPD21CheckUP_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

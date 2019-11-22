@@ -20,8 +20,24 @@ namespace reportBangna.gui
         private void initConfig()
         {
             bc = new BangnaControl();
-
+            btnPrintOPD21TrueStar.Click += BtnPrintOPD21TrueStar_Click;
+            btnPrintLicenseDriver.Click += BtnPrintLicenseDriver_Click;
         }
+
+        private void BtnPrintLicenseDriver_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            FrmOPDLicenseDriver frm = new FrmOPDLicenseDriver(bc);
+            frm.ShowDialog();
+        }
+
+        private void BtnPrintOPD21TrueStar_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            FrmOPD21CheckUP frm = new FrmOPD21CheckUP(bc, "truestar");
+            frm.ShowDialog();
+        }
+
         private void btnPrintOPD2_Click(object sender, EventArgs e)
         {
             FrmOPD2CheckUP frm = new FrmOPD2CheckUP(bc,"");
@@ -30,8 +46,13 @@ namespace reportBangna.gui
 
         private void btnPrintOPD21_Click(object sender, EventArgs e)
         {
-            FrmOPD21CheckUP frm = new FrmOPD21CheckUP(bc);
+            FrmOPD21CheckUP frm = new FrmOPD21CheckUP(bc,"");
             frm.ShowDialog();
+        }
+
+        private void FrmOPD2CheckUPMain_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
