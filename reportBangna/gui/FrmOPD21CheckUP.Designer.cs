@@ -130,6 +130,11 @@
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
+            this.txtXrayRemark = new System.Windows.Forms.TextBox();
+            this.chkXray = new System.Windows.Forms.CheckBox();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.chkXrayAbNormal = new System.Windows.Forms.CheckBox();
+            this.chkXrayNormal = new System.Windows.Forms.CheckBox();
             this.groupBox4.SuspendLayout();
             this.gbTrueStar.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -139,6 +144,7 @@
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSearch
@@ -154,7 +160,7 @@
             // txtDoctorName
             // 
             this.txtDoctorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtDoctorName.Location = new System.Drawing.Point(699, 179);
+            this.txtDoctorName.Location = new System.Drawing.Point(699, 215);
             this.txtDoctorName.Name = "txtDoctorName";
             this.txtDoctorName.Size = new System.Drawing.Size(279, 22);
             this.txtDoctorName.TabIndex = 156;
@@ -164,7 +170,7 @@
             // 
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label37.Location = new System.Drawing.Point(509, 182);
+            this.label37.Location = new System.Drawing.Point(494, 218);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(74, 16);
             this.label37.TabIndex = 155;
@@ -173,7 +179,7 @@
             // txtDoctorId
             // 
             this.txtDoctorId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtDoctorId.Location = new System.Drawing.Point(616, 179);
+            this.txtDoctorId.Location = new System.Drawing.Point(608, 215);
             this.txtDoctorId.Name = "txtDoctorId";
             this.txtDoctorId.Size = new System.Drawing.Size(77, 22);
             this.txtDoctorId.TabIndex = 154;
@@ -608,7 +614,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label23.Location = new System.Drawing.Point(505, 142);
+            this.label23.Location = new System.Drawing.Point(494, 184);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(108, 16);
             this.label23.TabIndex = 162;
@@ -618,7 +624,7 @@
             // 
             this.chkPregOn.AutoSize = true;
             this.chkPregOn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.chkPregOn.Location = new System.Drawing.Point(657, 141);
+            this.chkPregOn.Location = new System.Drawing.Point(608, 183);
             this.chkPregOn.Name = "chkPregOn";
             this.chkPregOn.Size = new System.Drawing.Size(110, 20);
             this.chkPregOn.TabIndex = 163;
@@ -630,7 +636,7 @@
             // 
             this.chkPregOff.AutoSize = true;
             this.chkPregOff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.chkPregOff.Location = new System.Drawing.Point(810, 141);
+            this.chkPregOff.Location = new System.Drawing.Point(810, 183);
             this.chkPregOff.Name = "chkPregOff";
             this.chkPregOff.Size = new System.Drawing.Size(98, 20);
             this.chkPregOff.TabIndex = 164;
@@ -642,7 +648,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label24.Location = new System.Drawing.Point(509, 221);
+            this.label24.Location = new System.Drawing.Point(494, 257);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(89, 16);
             this.label24.TabIndex = 165;
@@ -652,7 +658,7 @@
             // 
             this.chk1.AutoSize = true;
             this.chk1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.chk1.Location = new System.Drawing.Point(616, 222);
+            this.chk1.Location = new System.Drawing.Point(616, 258);
             this.chk1.Name = "chk1";
             this.chk1.Size = new System.Drawing.Size(104, 20);
             this.chk1.TabIndex = 166;
@@ -664,7 +670,7 @@
             // 
             this.chk2.AutoSize = true;
             this.chk2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.chk2.Location = new System.Drawing.Point(616, 245);
+            this.chk2.Location = new System.Drawing.Point(616, 281);
             this.chk2.Name = "chk2";
             this.chk2.Size = new System.Drawing.Size(346, 20);
             this.chk2.TabIndex = 167;
@@ -676,7 +682,7 @@
             // 
             this.chk3.AutoSize = true;
             this.chk3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.chk3.Location = new System.Drawing.Point(616, 268);
+            this.chk3.Location = new System.Drawing.Point(616, 304);
             this.chk3.Name = "chk3";
             this.chk3.Size = new System.Drawing.Size(86, 20);
             this.chk3.TabIndex = 168;
@@ -688,7 +694,7 @@
             // 
             this.chk4.AutoSize = true;
             this.chk4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.chk4.Location = new System.Drawing.Point(616, 291);
+            this.chk4.Location = new System.Drawing.Point(616, 327);
             this.chk4.Name = "chk4";
             this.chk4.Size = new System.Drawing.Size(274, 20);
             this.chk4.TabIndex = 169;
@@ -700,7 +706,7 @@
             // 
             this.chk5.AutoSize = true;
             this.chk5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.chk5.Location = new System.Drawing.Point(616, 314);
+            this.chk5.Location = new System.Drawing.Point(616, 350);
             this.chk5.Name = "chk5";
             this.chk5.Size = new System.Drawing.Size(315, 20);
             this.chk5.TabIndex = 170;
@@ -767,7 +773,7 @@
             // 
             // btnPrintOPD2
             // 
-            this.btnPrintOPD2.Location = new System.Drawing.Point(1000, 296);
+            this.btnPrintOPD2.Location = new System.Drawing.Point(1000, 332);
             this.btnPrintOPD2.Name = "btnPrintOPD2";
             this.btnPrintOPD2.Size = new System.Drawing.Size(74, 41);
             this.btnPrintOPD2.TabIndex = 177;
@@ -1195,11 +1201,64 @@
             this.label30.TabIndex = 166;
             this.label30.Text = "1. โรคเรื้อนในระยะติดต่อหรือในระยะที่ปรากฏอาการเป็นที่รังเกียจแก่สังคม (Leprosy)";
             // 
+            // txtXrayRemark
+            // 
+            this.txtXrayRemark.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtXrayRemark.Location = new System.Drawing.Point(607, 154);
+            this.txtXrayRemark.Name = "txtXrayRemark";
+            this.txtXrayRemark.Size = new System.Drawing.Size(466, 22);
+            this.txtXrayRemark.TabIndex = 187;
+            // 
+            // chkXray
+            // 
+            this.chkXray.AutoSize = true;
+            this.chkXray.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.chkXray.Location = new System.Drawing.Point(493, 131);
+            this.chkXray.Name = "chkXray";
+            this.chkXray.Size = new System.Drawing.Size(112, 20);
+            this.chkXray.TabIndex = 188;
+            this.chkXray.Text = "ผลการตรวจXray ";
+            this.chkXray.UseVisualStyleBackColor = true;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.chkXrayAbNormal);
+            this.panel8.Controls.Add(this.chkXrayNormal);
+            this.panel8.Location = new System.Drawing.Point(608, 127);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(200, 24);
+            this.panel8.TabIndex = 189;
+            // 
+            // chkXrayAbNormal
+            // 
+            this.chkXrayAbNormal.AutoSize = true;
+            this.chkXrayAbNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.chkXrayAbNormal.Location = new System.Drawing.Point(69, 3);
+            this.chkXrayAbNormal.Name = "chkXrayAbNormal";
+            this.chkXrayAbNormal.Size = new System.Drawing.Size(61, 20);
+            this.chkXrayAbNormal.TabIndex = 188;
+            this.chkXrayAbNormal.Text = "ผิดปกติ";
+            this.chkXrayAbNormal.UseVisualStyleBackColor = true;
+            // 
+            // chkXrayNormal
+            // 
+            this.chkXrayNormal.AutoSize = true;
+            this.chkXrayNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.chkXrayNormal.Location = new System.Drawing.Point(3, 3);
+            this.chkXrayNormal.Name = "chkXrayNormal";
+            this.chkXrayNormal.Size = new System.Drawing.Size(47, 20);
+            this.chkXrayNormal.TabIndex = 187;
+            this.chkXrayNormal.Text = "ปกติ";
+            this.chkXrayNormal.UseVisualStyleBackColor = true;
+            // 
             // FrmOPD21CheckUP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1085, 653);
+            this.ClientSize = new System.Drawing.Size(1085, 680);
+            this.Controls.Add(this.panel8);
+            this.Controls.Add(this.chkXray);
+            this.Controls.Add(this.txtXrayRemark);
             this.Controls.Add(this.gbTrueStar);
             this.Controls.Add(this.cboMar);
             this.Controls.Add(this.label29);
@@ -1269,6 +1328,8 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1378,5 +1439,10 @@
         private System.Windows.Forms.RadioButton chk5Repeat;
         private System.Windows.Forms.RadioButton chk5AbNormal;
         private System.Windows.Forms.RadioButton chk5Normal;
+        private System.Windows.Forms.TextBox txtXrayRemark;
+        private System.Windows.Forms.CheckBox chkXray;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.CheckBox chkXrayAbNormal;
+        private System.Windows.Forms.CheckBox chkXrayNormal;
     }
 }

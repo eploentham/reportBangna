@@ -30,7 +30,43 @@ namespace reportBangna.gui
         private void initConfig()
         {
             opdc = new OPDCheckUP();
+            chkXrayAbNormal.Click += ChkXrayAbNormal_Click;
+            chkXray.Click += ChkXray_Click;
+            chkXrayNormal.Click += ChkXrayNormal_Click;
+            
+            chkXray.Checked = true;
+            setGbTxtXrayEnable(true);
             setControl("");
+        }
+        private void ChkXrayNormal_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            if (chkXrayNormal.Checked)
+            {
+                chkXrayAbNormal.Checked = false;
+                setTxtXrayRemarkEnable(false);
+            }
+        }
+
+        private void ChkXray_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            setGbTxtXrayEnable(chkXray.Checked);
+        }
+
+        private void ChkXrayAbNormal_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            if (chkXrayAbNormal.Checked)
+            {
+                chkXrayNormal.Checked = false;
+                setTxtXrayRemarkEnable(true);
+                txtXrayRemark.Focus();
+            }
+            else
+            {
+                setTxtXrayRemarkEnable(false);
+            }
         }
 
         private void setControl(String hn)
@@ -80,9 +116,10 @@ namespace reportBangna.gui
             //{
                 String date = "";
                 date = System.DateTime.Today.Year + "-" + System.DateTime.Today.ToString("MM-dd");
-                System.Data.DataTable dt = bc.vsdb.selectVisitByHn2(hn, date);
-                //DataTable dtor = bc.selectOPDViewOR(hn);
-                if (dt.Rows.Count <= 0)
+                //System.Data.DataTable dt = bc.vsdb.selectVisitByHn2(hn, date);
+            System.Data.DataTable dt = bc.vsdb.selectVisitByHn3(hn, date);
+            //DataTable dtor = bc.selectOPDViewOR(hn);
+            if (dt.Rows.Count <= 0)
                 {
                     clearControl();
                     return;
@@ -119,8 +156,18 @@ namespace reportBangna.gui
             year = dt1.Year;
             txtDOB.Text = dt1.Day.ToString("00")+"/"+ dt1.Month.ToString("00")+"/" + (year + 543);
             txtAge.Text = String.Concat(System.DateTime.Now.Year - year);
-
+            setTxtXrayRemarkEnable(false);
             //}
+        }
+        private void setTxtXrayRemarkEnable(Boolean flag)
+        {
+            txtXrayRemark.Enabled = flag;
+        }
+        private void setGbTxtXrayEnable(Boolean flag)
+        {
+            chkXrayNormal.Enabled = flag;
+            chkXrayAbNormal.Enabled = flag;
+            txtXrayRemark.Enabled = false;
         }
         private void clearControl()
         {
@@ -307,11 +354,11 @@ namespace reportBangna.gui
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, txtAddr1.Text, 128, linenumber, 0);
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, "....................................................................................................................................................................................................................... ", 60, linenumber -= 20, 0);
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, txtAddr2.Text, 63, linenumber+3, 0);
-                canvas.SetFontAndSize(bfRB, fontSize2);
-                canvas.ShowTextAligned(Element.ALIGN_LEFT, "ที่อยู่ต่างประเทศ ", 60, linenumber -= 20, 0);
-                canvas.SetFontAndSize(bfR, fontSize1);
-                canvas.ShowTextAligned(Element.ALIGN_LEFT, "........................................................................................................................................................................................... ", 125, linenumber - 3, 0);
-                canvas.ShowTextAligned(Element.ALIGN_LEFT, txtAddress.Text, 128, linenumber, 0);
+                //canvas.SetFontAndSize(bfRB, fontSize2);
+                //canvas.ShowTextAligned(Element.ALIGN_LEFT, "ที่อยู่ต่างประเทศ ", 60, linenumber -= 20, 0);
+                //canvas.SetFontAndSize(bfR, fontSize1);
+                //canvas.ShowTextAligned(Element.ALIGN_LEFT, "........................................................................................................................................................................................... ", 125, linenumber - 3, 0);
+                //canvas.ShowTextAligned(Element.ALIGN_LEFT, txtAddress.Text, 128, linenumber, 0);
 
                 linenumber -= 20;
                 canvas.SetFontAndSize(bfRB, fontSize2);
@@ -455,14 +502,37 @@ namespace reportBangna.gui
                 canvas.SetFontAndSize(bfRB, fontSize2);
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, "หมายเหตุ : สำหรับสตรี", 60, linenumber -= 20, 0);
                 canvas.SetFontAndSize(bfR, fontSize1);
-                canvas.ShowTextAligned(Element.ALIGN_LEFT, "ผลการตรวจตั้งครรภ์ [  ]ไม่พบการตั้งครรภ์  [  ]พบการตั้งครรภ์", 170, linenumber, 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "ผลการตรวจตั้งครรภ์ [  ] ไม่พบการตั้งครรภ์  [  ] พบการตั้งครรภ์", 155, linenumber, 0);
                 canvas.SetFontAndSize(bfRB, fontSize2);
                 if (chkPregOn.Checked)
-                {                    
-                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 252, linenumber, 0);                    
-                }else if (chkPregOff.Checked){                    
-                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 335, linenumber, 0);                    
+                {
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 237, linenumber, 0);                    
                 }
+                else if (chkPregOff.Checked)
+                {                    
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 325, linenumber, 0);                    
+                }
+                canvas.SetFontAndSize(bfR, fontSize1);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "ผลเอกซเรย์ทรวงอก   [  ] ปกติ    [  ] ผิดปกติ", 155, linenumber -= 20, 0);
+                canvas.SetFontAndSize(bfRB, fontSize2);
+                //if (chkXray.Checked)
+                //{
+                //    canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 159, linenumber, 0);
+                //}
+                if (chkXrayNormal.Checked)
+                {
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 239, linenumber, 0);
+                    canvas.SetFontAndSize(bfR, fontSize1);
+                    //canvas.ShowTextAligned(Element.ALIGN_LEFT, txtXrayRemark.Text.Trim(), 204, linenumber -= 20, 0);
+                }
+                if (chkXrayAbNormal.Checked)
+                {
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 283, linenumber, 0);
+                    canvas.SetFontAndSize(bfR, fontSize1);
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, txtXrayRemark.Text.Trim(), 336, linenumber, 0);
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "............................................................................", 334, linenumber - 2, 0);
+                }
+                //linenumber -= 20;
                 //canvas.SetFontAndSize(bfR, fontSize1);
                 //canvas.SetFontAndSize(bfRB, fontSize2);
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, "สรุปผลการตรวจ", 60, linenumber -= 20, 0);
@@ -502,20 +572,27 @@ namespace reportBangna.gui
                     canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 204, linenumber, 0);
                     canvas.SetFontAndSize(bfR, fontSize1);
                 }
+                //Boolean chkXray = false;
+                //chkXray = chkXrayNormal.Checked ? true : chkXrayAbNormal.Checked ? true : false;
+                //if (chkXray.Checked)
+                //{
+                
+                canvas.SetFontAndSize(bfR, fontSize1);
+                //}
 
                 canvas.EndText();
 
                 //canvas.BeginText();
                 //canvas.SaveState();
                 canvas.SetLineWidth(0.05f);
-                canvas.MoveTo(80, 140);//vertical
-                canvas.LineTo(80, 225);
-                canvas.MoveTo(80, 140);//Hericental
-                canvas.LineTo(150, 140);
-                canvas.MoveTo(80, 225);//Hericental
-                canvas.LineTo(150, 225);
-                canvas.MoveTo(150, 140);//vertical
-                canvas.LineTo(150, 225);
+                canvas.MoveTo(80, 150);//vertical
+                canvas.LineTo(80, 200);
+                canvas.MoveTo(80, 150);//Hericental
+                canvas.LineTo(130, 150);
+                canvas.MoveTo(80, 200);//Hericental
+                canvas.LineTo(130, 200);
+                canvas.MoveTo(130, 150);//vertical
+                canvas.LineTo(130, 200);
 
                 //canvas.MoveTo(560, 640);//vertical
                 //canvas.LineTo(560, 110);
@@ -523,15 +600,16 @@ namespace reportBangna.gui
                 //canvas.RestoreState();
 
                 canvas.BeginText();
-                linenumber -= 20;
+                //linenumber -= 20;
                 linenumber -= 20;
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, "ผู้เข้ารับการตรวจ ...................................................  ", 60, linenumber -= 20, 0);
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, "แพทย์ผู้ตรวจ ...................................................", colCenter+180, linenumber , 0);
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, "(.....................................................)", 120, linenumber -= 20, 0);
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, "(.........................................................)", colCenter + 220, linenumber , 0);
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, txtDoctorName.Text.Trim(), colCenter + 225, linenumber+3, 0);
-                canvas.ShowTextAligned(Element.ALIGN_LEFT, "ใบรับรองแพทย์ฉบับนี้ให้ใช้ได้ 60 วันนับแต่วันที่ตรวจร่างกาย", 60, linenumber -= 20, 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "ใบรับรองแพทย์ฉบับนี้ให้ใช้ได้ 60 วันนับตั้งแต่วันที่ตรวจร่างกาย", 60, linenumber -= 20, 0);
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, "วันที่ .........................................................", colCenter + 200, linenumber, 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, dtpDate.Value.Day.ToString() + " " + bc.cf.getMonth(dtpDate.Value.Month.ToString("00")) + " พ.ศ. " + (dtpDate.Value.Year + 543), colCenter + 230, linenumber+6, 0);
                 //canvas.SetFontAndSize(bfRB, fontSize2);
                 //canvas.ShowTextAligned(Element.ALIGN_LEFT, cboCompany.Text.Trim(), colCenter, linenumber + 5, 0);
                 //canvas.ShowTextAligned(Element.ALIGN_LEFT, "ตรวจสมรรถภาพการทำงานของปอด  ", 60, linenumber -= 20, 0);
@@ -701,7 +779,7 @@ namespace reportBangna.gui
         }
         private void FrmOPD21CheckUP_Load(object sender, EventArgs e)
         {
-
+            this.Text = "Last Update 23-02-2021";
         }
     }
 }

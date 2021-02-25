@@ -117,7 +117,22 @@ namespace reportBangna.objdb
             passwordMainHIS5 = iniFile.Read("password");
             databaseNameMainHIS5 = iniFile.Read("database_name");
 
-            
+            //lw.WriteLog("iniFile.Path " + iniFile.Path);
+            //lw.WriteLog("hostNameMainHIS5 " + hostNameMainHIS5);
+            //lw.WriteLog("databaseNameMainHIS5 " + databaseNameMainHIS5);
+            //lw.WriteLog("userNameMainHIS5 " + userNameMainHIS5);
+            //lw.WriteLog("passwordMainHIS5 " + passwordMainHIS5);
+
+            hostNameMainHIS5 = hostNameMainHIS5.Length <= 0 ? "172.25.10.5" : hostNameMainHIS5;
+            userNameMainHIS5 = userNameMainHIS5.Length <= 0 ? "sa" : userNameMainHIS5;
+            passwordMainHIS5 = passwordMainHIS5.Length <= 0 ? "" : passwordMainHIS5;
+            databaseNameMainHIS5 = databaseNameMainHIS5.Length <= 0 ? "bng5_dbms_front" : databaseNameMainHIS5;
+
+            //lw.WriteLog("iniFile.Path1 " + iniFile.Path);
+            //lw.WriteLog("hostNameMainHIS51 " + hostNameMainHIS5);
+            //lw.WriteLog("databaseNameMainHIS51 " + databaseNameMainHIS5);
+            //lw.WriteLog("userNameMainHIS51 " + userNameMainHIS5);
+            //lw.WriteLog("passwordMainHIS51 " + passwordMainHIS5);
 
             databaseNameBua = iniFile.Read("database_name_bua");
             hostNameBua = iniFile.Read("host_name_bua");
@@ -226,6 +241,7 @@ namespace reportBangna.objdb
             DataTable toReturn = new DataTable();
             if ((hostname == "mainhis") || (hostname=="bangna"))
             {
+                lw.WriteLog("selectData " + connMainHIS5.ConnectionString);
                 SqlCommand comMainhis = new SqlCommand();
                 comMainhis.CommandText = sql;
                 comMainhis.CommandType = CommandType.Text;

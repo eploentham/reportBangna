@@ -268,7 +268,7 @@ namespace reportBangna.gui
                 linenumber = 720;
                 canvas.BeginText();
                 canvas.SetFontAndSize(bfR, fontSize3);
-                canvas.ShowTextAligned(Element.ALIGN_CENTER, "ใบรับรองแพทย์", PageSize.A4.Width / 2, linenumber+40, 0);
+                canvas.ShowTextAligned(Element.ALIGN_CENTER, "ใบรับรองแพทย์  (สำหรับใบอนุญาตขับรถ)", PageSize.A4.Width / 2, linenumber+40, 0);
                 canvas.SetFontAndSize(bfRB, fontSize2);
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, "ส่วนที่ 1", 50, linenumber+=10, 0);
                 canvas.SetFontAndSize(bfR, fontSize1);
@@ -293,7 +293,7 @@ namespace reportBangna.gui
 
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, "หมายเลขบัตรประจำตัวประชาชน", 50, linenumber -= 20, 0);
                 canvas.SetFontAndSize(bfRB, fontSize2);
-                canvas.ShowTextAligned(Element.ALIGN_LEFT, txtId.Text, 172, linenumber, 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, txtId.Text, 175, linenumber, 0);
                 canvas.SetFontAndSize(bfR, fontSize1);
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, "................................................................... ", 170, linenumber - 5, 0);
 
@@ -341,11 +341,43 @@ namespace reportBangna.gui
                     canvas.ShowTextAligned(Element.ALIGN_LEFT, txt3AbNormal.Text, 290, linenumber+5, 0);
                 }
                 canvas.SetFontAndSize(bfR, fontSize1);
-                canvas.ShowTextAligned(Element.ALIGN_LEFT, "4. ประวัติอื่นที่สำคัญ", 50, linenumber -= 20, 0);
-                canvas.ShowTextAligned(Element.ALIGN_LEFT, "..................................................................................................................................................................................  ", 130, linenumber - 5, 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "4. โรคลมชัก", 50, linenumber -= 20, 0);
+                //canvas.ShowTextAligned(Element.ALIGN_LEFT, "..................................................................................................................................................................................  ", 130, linenumber - 5, 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "[  ] ไม่มี     [  ] มี  ระบุ ........................................................................................................................", 200, linenumber, 0);
                 canvas.SetFontAndSize(bfRB, fontSize2);
-                canvas.ShowTextAligned(Element.ALIGN_LEFT, txtOther.Text, 133, linenumber, 0);
-                
+                //canvas.ShowTextAligned(Element.ALIGN_LEFT, txtOther.Text, 133, linenumber, 0);
+                if (chk4Normal.Checked)
+                {
+                    canvas.SetFontAndSize(bfRB, fontSize2);
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 205, linenumber, 0);
+                }
+                else if (chk4AbNormal.Checked)
+                {
+                    canvas.SetFontAndSize(bfRB, fontSize2);
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 248, linenumber, 0);
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, txt4AbNormal.Text, 290, linenumber + 5, 0);
+                }
+
+                canvas.SetFontAndSize(bfR, fontSize1);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "5. ประวัติอื่นที่สำคัญ", 50, linenumber -= 20, 0);
+                //canvas.ShowTextAligned(Element.ALIGN_LEFT, "..................................................................................................................................................................................  ", 130, linenumber - 5, 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "[  ] ไม่มี     [  ] มี  ระบุ ........................................................................................................................", 200, linenumber, 0);
+                canvas.SetFontAndSize(bfRB, fontSize2);
+                //canvas.ShowTextAligned(Element.ALIGN_LEFT, txtOther.Text, 133, linenumber, 0);
+                if (chk5Normal.Checked)
+                {
+                    canvas.SetFontAndSize(bfRB, fontSize2);
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 205, linenumber, 0);
+                }
+                else if (chk5AbNormal.Checked)
+                {
+                    canvas.SetFontAndSize(bfRB, fontSize2);
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 248, linenumber, 0);
+                    canvas.ShowTextAligned(Element.ALIGN_LEFT, txt5AbNormal.Text, 290, linenumber + 5, 0);
+                }
+                canvas.SetFontAndSize(bfR, fontSize1);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "* ในกรณีมีโรคลมชัก  ให้แนบประวัติการรักษาจากแพทย์ผู้รักษาว่า ท่านปลอดภัยจากอาการชัก มากกว่า 1 ปี เพื่ออนุญาตให้ขับรถได้", 50, linenumber -= 20, 0);
+
                 canvas.SetFontAndSize(bfR, fontSize1);
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, "ลงชื่อ .............................................................. วันที่ .............. เดือน .............................. พ.ศ. ...............", 150, linenumber -= 40, 0);
                 canvas.SetFontAndSize(bfRB, fontSize2);
@@ -353,7 +385,7 @@ namespace reportBangna.gui
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, bc.getMonth(DateTime.Now.ToString("MM")), 400, linenumber + 5, 0);
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, DateTime.Now.ToString("yyyy"), 490, linenumber + 5, 0);
                 canvas.SetFontAndSize(bfRB, fontSize1);
-                canvas.ShowTextAligned(Element.ALIGN_CENTER, "ในกรณีเด็กทีไม่สามารถรับรองตนเองได้ ให้ผู้ปกครองลงนามรับรองแทนได้", PageSize.A4.Width / 2, linenumber -= 20, 0);
+                //canvas.ShowTextAligned(Element.ALIGN_CENTER, "ในกรณีเด็กทีไม่สามารถรับรองตนเองได้ ให้ผู้ปกครองลงนามรับรองแทนได้", PageSize.A4.Width / 2, linenumber -= 20, 0);
 
                 canvas.SetFontAndSize(bfRB, fontSize2);
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, "ส่วนที่ 2   ของแพทย์", 50, linenumber -= 20, 0);
@@ -404,7 +436,7 @@ namespace reportBangna.gui
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, txtPatientName.Text, 187, linenumber, 0);
                 canvas.SetFontAndSize(bfR, fontSize1);
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, "..................................................................................................................  ", 182, linenumber - 5, 0);
-                canvas.ShowTextAligned(Element.ALIGN_LEFT, "แล้วเมื่อ     วันที่", 50, linenumber -= 20, 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "เมื่อ     วันที่", 50, linenumber -= 20, 0);
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, "..........", 120, linenumber - 5, 0);
                 canvas.SetFontAndSize(bfRB, fontSize2);
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, DateTime.Now.ToString("dd"), 123, linenumber, 0);
@@ -480,12 +512,12 @@ namespace reportBangna.gui
                     canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 124, linenumber, 0);
                 }
                 canvas.SetFontAndSize(bfR, fontSize1);
-                canvas.ShowTextAligned(Element.ALIGN_LEFT, "[  ]  " + chk3.Text, 120, linenumber -= 20, 0);
-                if (chk3.Checked)
-                {
-                    canvas.SetFontAndSize(bfRB, fontSize2);
-                    canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 124, linenumber, 0);
-                }
+                //canvas.ShowTextAligned(Element.ALIGN_LEFT, "[  ]  " + chk3.Text, 120, linenumber -= 20, 0);
+                //if (chk3.Checked)
+                //{
+                //    canvas.SetFontAndSize(bfRB, fontSize2);
+                //    canvas.ShowTextAligned(Element.ALIGN_LEFT, "/ ", 124, linenumber, 0);
+                //}
                 canvas.SetFontAndSize(bfR, fontSize1);
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, "[  ]  " + chk4.Text, 120, linenumber -= 20, 0);
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, "...................................................................................", 178, linenumber - 5, 0);
@@ -507,7 +539,7 @@ namespace reportBangna.gui
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, "หมายเหตุ (1) ต้องเป็นแพทย์ซึ่งได้ขึ้นทะเบียนรับใบอนุญาตประกอบวิชาชีพเวชกรรม ", 50, linenumber -= 10, 0);
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, "(2) ให้แสดงว่าเป็นผู้มีร่างกายสมบูรณ์เพียงใด ใบรับรองแพทย์ฉบับนี้ให้ใช้ได้ 1 เดือน นับแต่วันที่ตรวจร่างกาย ", 72, linenumber -= 10, 0);
                 canvas.ShowTextAligned(Element.ALIGN_LEFT, "(3) คำรับรองนี้เป็นการตรวจวินิจฉัยเบื้องต้น ", 72, linenumber -= 10, 0);
-                canvas.ShowTextAligned(Element.ALIGN_LEFT, "แบบฟอร์มนี้ได้รับการรับรองจากมติคณะกรรมการแพทยสภาในการประชุมครั้งที่ ค/2561 วันที่ 14 สิงหาคม 2561 ", 50, linenumber -= 10, 0);
+                canvas.ShowTextAligned(Element.ALIGN_LEFT, "แบบฟอร์มนี้ได้รับการรับรองจากมติคณะกรรมการแพทยสภาในการประชุมครั้งที่ 2/2564 วันที่ 4 กุมภาพันธ์ 2564 ", 50, linenumber -= 10, 0);
 
                 canvas.EndText();
                 
@@ -538,7 +570,7 @@ namespace reportBangna.gui
         }
         private void FrmOPDLicenseDriver_Load(object sender, EventArgs e)
         {
-
+            this.Text = "Last Update 2021-02-25";
         }
     }
 }

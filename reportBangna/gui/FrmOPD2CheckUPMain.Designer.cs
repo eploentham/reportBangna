@@ -32,6 +32,12 @@
             this.btnPrintOPD21 = new System.Windows.Forms.Button();
             this.btnPrintOPD21TrueStar = new System.Windows.Forms.Button();
             this.btnPrintLicenseDriver = new System.Windows.Forms.Button();
+            this.cboDept = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnRpt = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
+            this.btnGrf = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnPrintOPD2
@@ -76,11 +82,75 @@
             this.btnPrintLicenseDriver.Text = "Print ใบรับรองแพทย์ ใบขับขี่";
             this.btnPrintLicenseDriver.UseVisualStyleBackColor = true;
             // 
+            // cboDept
+            // 
+            this.cboDept.FormattingEnabled = true;
+            this.cboDept.Items.AddRange(new object[] {
+            "OPD1",
+            "OPD2",
+            "OPD3",
+            "ER",
+            "Dental"});
+            this.cboDept.Location = new System.Drawing.Point(210, 357);
+            this.cboDept.Name = "cboDept";
+            this.cboDept.Size = new System.Drawing.Size(191, 21);
+            this.cboDept.TabIndex = 134;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(114, 360);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.TabIndex = 135;
+            this.label1.Text = "แผนก";
+            // 
+            // btnRpt
+            // 
+            this.btnRpt.Location = new System.Drawing.Point(326, 384);
+            this.btnRpt.Name = "btnRpt";
+            this.btnRpt.Size = new System.Drawing.Size(75, 23);
+            this.btnRpt.TabIndex = 136;
+            this.btnRpt.Text = "OK";
+            this.btnRpt.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(114, 329);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(28, 13);
+            this.label2.TabIndex = 137;
+            this.label2.Text = "วันที่";
+            // 
+            // dtpDate
+            // 
+            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDate.Location = new System.Drawing.Point(284, 329);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(117, 20);
+            this.dtpDate.TabIndex = 138;
+            // 
+            // btnGrf
+            // 
+            this.btnGrf.Location = new System.Drawing.Point(245, 384);
+            this.btnGrf.Name = "btnGrf";
+            this.btnGrf.Size = new System.Drawing.Size(75, 23);
+            this.btnGrf.TabIndex = 139;
+            this.btnGrf.Text = "View";
+            this.btnGrf.UseVisualStyleBackColor = true;
+            // 
             // FrmOPD2CheckUPMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(539, 465);
+            this.Controls.Add(this.btnGrf);
+            this.Controls.Add(this.dtpDate);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnRpt);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cboDept);
             this.Controls.Add(this.btnPrintLicenseDriver);
             this.Controls.Add(this.btnPrintOPD21TrueStar);
             this.Controls.Add(this.btnPrintOPD21);
@@ -90,6 +160,7 @@
             this.Text = "FrmOPD2CheckUPMain";
             this.Load += new System.EventHandler(this.FrmOPD2CheckUPMain_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -99,5 +170,11 @@
         private System.Windows.Forms.Button btnPrintOPD21;
         private System.Windows.Forms.Button btnPrintOPD21TrueStar;
         private System.Windows.Forms.Button btnPrintLicenseDriver;
+        private System.Windows.Forms.ComboBox cboDept;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnRpt;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dtpDate;
+        private System.Windows.Forms.Button btnGrf;
     }
 }

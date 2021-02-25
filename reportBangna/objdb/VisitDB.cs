@@ -321,5 +321,64 @@ namespace reportBangna.objdb
             dt = conn.selectData(sql);
             return dt;
         }
+        public DataTable selectVisitByDate(String visitDate, String dept)
+        {
+            DataTable dt = new DataTable();
+            String sql = "", wheredept="";
+            // opd 1 = 101 147  opd 2 = 107 131 opd 3 = 103 302 er = 104 144
+            if (dept.ToLower().Equals("opd2"))
+            {
+                wheredept = " and t01.mnc_dep_no = '107' and t01.mnc_sec_no = '131' ";
+            }
+            else if (dept.ToLower().Equals("opd1"))
+            {
+                wheredept = " and t01.mnc_dep_no = '101' and t01.mnc_sec_no = '147' ";
+            }
+            else if (dept.ToLower().Equals("opd3"))
+            {
+                wheredept = " and  t01.mnc_dep_no = '103' and t01.mnc_sec_no = '302' ";
+            }
+            else if (dept.ToLower().Equals("er"))
+            {
+                wheredept = " and  t01.mnc_dep_no = '104' and t01.mnc_sec_no = '144' ";
+            }
+            sql = "Select   t01.MNC_HN_NO,m02.MNC_PFIX_DSC as prefix, " +
+                "m01.MNC_FNAME_T,m01.MNC_LNAME_T,m01.MNC_AGE,t01.MNC_VN_NO,t01.MNC_VN_SEQ,t01.MNC_VN_SUM, " +
+                "Case f02.MNC_FN_TYP_DSC " +
+                    "When 'ประกันสังคม (บ.1)' Then 'ปกส(บ.1)' " +
+                    "When 'ประกันสังคม (บ.2)' Then 'ปกส(บ.2)' " +
+                    "When 'ประกันสังคม (บ.5)' Then 'ปกส(บ.5)' " +
+                    "When 'ประกันสังคมอิสระ (บ.1)' Then 'ปกต(บ.1)' " +
+                    "When 'ประกันสังคมอิสระ (บ.5)' Then 'ปกต(บ.5)' " +
+                    "When 'ตรวจสุขภาพ (เงินสด)' Then 'ตส(เงินสด)' " +
+                    "When 'ตรวจสุขภาพ (บริษัท)' Then 'ตส(บริษัท)' " +
+                    "When 'ตรวจสุขภาพ (PACKAGE)' Then 'ตส(PACKAGE)' " +
+                    "When 'ลูกหนี้ประกันสังคม รพ.เมืองสมุทรปากน้ำ' Then 'ลูกหนี้(ปากน้ำ)' " +
+
+
+                    "When 'ลูกหนี้บางนา 1' Then 'ลูกหนี้(บ.1)' " +
+                    "When 'บริษัทประกัน' Then 'บ.ประกัน' " +
+                    "When '' Then '' " +
+                    "When '' Then '' " +
+                    "When '' Then '' " +
+                    "Else MNC_FN_TYP_DSC " +
+                    "End as MNC_FN_TYP_DSC, " +
+                " t01.MNC_SHIF_MEMO,t01.MNC_FN_TYP_CD, t01.mnc_pre_no, t01.mnc_breath, t01.mnc_high,t01.mnc_bp1_l,t01.mnc_temp,t01.mnc_weight,m01.*, t01.mnc_ratios,finance_t01.MNC_SUM_PRI,convert(VARCHAR(20),t01.mnc_date,23) as mnc_date " +
+                "From patient_t01 t01 " +
+                " inner join patient_m01 m01 on t01.MNC_HN_NO = m01.MNC_HN_NO " +
+                " inner join patient_m02 m02 on m01.MNC_PFIX_CDT =m02.MNC_PFIX_CD " +
+                " inner join FINANCE_M02 f02 ON t01.MNC_FN_TYP_CD = f02.MNC_FN_TYP_CD " +
+                //" left join patient_m07 m07 ON m01.MNC_cur_tum = m07.MNC_tum_cd " +
+                //" left join patient_m08 m08 ON m01.MNC_cur_amp = m08.MNC_amp_cd " +
+                //" left join patient_m09 m09 ON m01.MNC_cur_chw = m09.MNC_chw_cd " +
+                "inner join finance_t01 on t01.MNC_HN_NO = finance_t01.MNC_HN_NO and t01.MNC_DATE = finance_t01.MNC_DATE and t01.MNC_PRE_NO = finance_t01.MNC_PRE_NO " +
+                " Where t01.MNC_date = '" + visitDate + "' " +
+                "and t01.MNC_STS <> 'C' " + wheredept +
+                //"and t01.mnc_shif_memo like '%สุขภาพ%'" +
+                " Order by t01.MNC_HN_NO ";
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
     }
 }

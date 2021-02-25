@@ -106,12 +106,23 @@
             this.chk1 = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txt4Other = new System.Windows.Forms.TextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.txt4AbNormal = new System.Windows.Forms.TextBox();
+            this.chk4AbNormal = new System.Windows.Forms.RadioButton();
+            this.chk4Normal = new System.Windows.Forms.RadioButton();
+            this.label23 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.txt5AbNormal = new System.Windows.Forms.TextBox();
+            this.chk5AbNormal = new System.Windows.Forms.RadioButton();
+            this.chk5Normal = new System.Windows.Forms.RadioButton();
             this.groupBox4.SuspendLayout();
             this.gbTrueStar.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // label29
@@ -566,6 +577,9 @@
             // 
             // gbTrueStar
             // 
+            this.gbTrueStar.Controls.Add(this.panel6);
+            this.gbTrueStar.Controls.Add(this.panel5);
+            this.gbTrueStar.Controls.Add(this.label23);
             this.gbTrueStar.Controls.Add(this.txtOther);
             this.gbTrueStar.Controls.Add(this.panel3);
             this.gbTrueStar.Controls.Add(this.panel2);
@@ -577,17 +591,18 @@
             this.gbTrueStar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.gbTrueStar.Location = new System.Drawing.Point(12, 213);
             this.gbTrueStar.Name = "gbTrueStar";
-            this.gbTrueStar.Size = new System.Drawing.Size(902, 167);
+            this.gbTrueStar.Size = new System.Drawing.Size(902, 197);
             this.gbTrueStar.TabIndex = 216;
             this.gbTrueStar.TabStop = false;
             // 
             // txtOther
             // 
             this.txtOther.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtOther.Location = new System.Drawing.Point(185, 119);
+            this.txtOther.Location = new System.Drawing.Point(185, 153);
             this.txtOther.Name = "txtOther";
-            this.txtOther.Size = new System.Drawing.Size(606, 22);
+            this.txtOther.Size = new System.Drawing.Size(37, 22);
             this.txtOther.TabIndex = 216;
+            this.txtOther.Visible = false;
             // 
             // panel3
             // 
@@ -596,7 +611,7 @@
             this.panel3.Controls.Add(this.chk3Normal);
             this.panel3.Location = new System.Drawing.Point(284, 82);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(510, 29);
+            this.panel3.Size = new System.Drawing.Size(612, 29);
             this.panel3.TabIndex = 195;
             // 
             // txt3AbNormal
@@ -604,7 +619,7 @@
             this.txt3AbNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txt3AbNormal.Location = new System.Drawing.Point(164, 4);
             this.txt3AbNormal.Name = "txt3AbNormal";
-            this.txt3AbNormal.Size = new System.Drawing.Size(343, 22);
+            this.txt3AbNormal.Size = new System.Drawing.Size(445, 22);
             this.txt3AbNormal.TabIndex = 215;
             // 
             // chk3AbNormal
@@ -636,7 +651,7 @@
             this.panel2.Controls.Add(this.chk2Normal);
             this.panel2.Location = new System.Drawing.Point(284, 49);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(510, 29);
+            this.panel2.Size = new System.Drawing.Size(612, 29);
             this.panel2.TabIndex = 194;
             // 
             // txt2AbNormal
@@ -644,7 +659,7 @@
             this.txt2AbNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txt2AbNormal.Location = new System.Drawing.Point(164, 3);
             this.txt2AbNormal.Name = "txt2AbNormal";
-            this.txt2AbNormal.Size = new System.Drawing.Size(343, 22);
+            this.txt2AbNormal.Size = new System.Drawing.Size(445, 22);
             this.txt2AbNormal.TabIndex = 215;
             // 
             // chk2AbNormal
@@ -676,7 +691,7 @@
             this.panel1.Controls.Add(this.chk1Normal);
             this.panel1.Location = new System.Drawing.Point(284, 16);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(510, 29);
+            this.panel1.Size = new System.Drawing.Size(612, 29);
             this.panel1.TabIndex = 193;
             // 
             // txt1AbNormal
@@ -684,7 +699,7 @@
             this.txt1AbNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txt1AbNormal.Location = new System.Drawing.Point(164, 3);
             this.txt1AbNormal.Name = "txt1AbNormal";
-            this.txt1AbNormal.Size = new System.Drawing.Size(343, 22);
+            this.txt1AbNormal.Size = new System.Drawing.Size(445, 22);
             this.txt1AbNormal.TabIndex = 214;
             // 
             // chk1AbNormal
@@ -713,11 +728,11 @@
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label33.Location = new System.Drawing.Point(13, 119);
+            this.label33.Location = new System.Drawing.Point(13, 153);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(132, 20);
             this.label33.TabIndex = 169;
-            this.label33.Text = "4. ประวัติอื่นที่ส าคัญ";
+            this.label33.Text = "5. ประวัติอื่นที่ส าคัญ";
             // 
             // label32
             // 
@@ -822,7 +837,7 @@
             // 
             this.chk4.AutoSize = true;
             this.chk4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.chk4.Location = new System.Drawing.Point(304, 455);
+            this.chk4.Location = new System.Drawing.Point(304, 485);
             this.chk4.Name = "chk4";
             this.chk4.Size = new System.Drawing.Size(69, 20);
             this.chk4.TabIndex = 226;
@@ -833,7 +848,7 @@
             // 
             this.chk3.AutoSize = true;
             this.chk3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.chk3.Location = new System.Drawing.Point(304, 432);
+            this.chk3.Location = new System.Drawing.Point(304, 462);
             this.chk3.Name = "chk3";
             this.chk3.Size = new System.Drawing.Size(253, 20);
             this.chk3.TabIndex = 225;
@@ -844,29 +859,29 @@
             // 
             this.chk2.AutoSize = true;
             this.chk2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.chk2.Location = new System.Drawing.Point(304, 409);
+            this.chk2.Location = new System.Drawing.Point(304, 439);
             this.chk2.Name = "chk2";
-            this.chk2.Size = new System.Drawing.Size(146, 20);
+            this.chk2.Size = new System.Drawing.Size(258, 20);
             this.chk2.TabIndex = 224;
-            this.chk2.Text = "สุขภาพไม่สมบูรณ์แข็งแรง";
+            this.chk2.Text = "ร่างกายไม่สมบูรณ์ อาจส่งผลต่อการขับชี่ยานพาหนะ";
             this.chk2.UseVisualStyleBackColor = true;
             // 
             // chk1
             // 
             this.chk1.AutoSize = true;
             this.chk1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.chk1.Location = new System.Drawing.Point(304, 386);
+            this.chk1.Location = new System.Drawing.Point(304, 416);
             this.chk1.Name = "chk1";
             this.chk1.Size = new System.Drawing.Size(141, 20);
             this.chk1.TabIndex = 223;
-            this.chk1.Text = "สุขภาพสมบูรณ์แข็งแรงดี";
+            this.chk1.Text = "ร่างกายสมบูรณ์แข็งแรงดี";
             this.chk1.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label7.Location = new System.Drawing.Point(81, 387);
+            this.label7.Location = new System.Drawing.Point(81, 417);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(207, 16);
             this.label7.TabIndex = 222;
@@ -875,16 +890,106 @@
             // txt4Other
             // 
             this.txt4Other.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txt4Other.Location = new System.Drawing.Point(379, 453);
+            this.txt4Other.Location = new System.Drawing.Point(379, 483);
             this.txt4Other.Name = "txt4Other";
             this.txt4Other.Size = new System.Drawing.Size(424, 22);
             this.txt4Other.TabIndex = 227;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.txt4AbNormal);
+            this.panel5.Controls.Add(this.chk4AbNormal);
+            this.panel5.Controls.Add(this.chk4Normal);
+            this.panel5.Location = new System.Drawing.Point(284, 114);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(612, 29);
+            this.panel5.TabIndex = 218;
+            // 
+            // txt4AbNormal
+            // 
+            this.txt4AbNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txt4AbNormal.Location = new System.Drawing.Point(164, 4);
+            this.txt4AbNormal.Name = "txt4AbNormal";
+            this.txt4AbNormal.Size = new System.Drawing.Size(445, 22);
+            this.txt4AbNormal.TabIndex = 215;
+            // 
+            // chk4AbNormal
+            // 
+            this.chk4AbNormal.AutoSize = true;
+            this.chk4AbNormal.Location = new System.Drawing.Point(125, 6);
+            this.chk4AbNormal.Name = "chk4AbNormal";
+            this.chk4AbNormal.Size = new System.Drawing.Size(33, 20);
+            this.chk4AbNormal.TabIndex = 1;
+            this.chk4AbNormal.TabStop = true;
+            this.chk4AbNormal.Text = "มี";
+            this.chk4AbNormal.UseVisualStyleBackColor = true;
+            // 
+            // chk4Normal
+            // 
+            this.chk4Normal.AutoSize = true;
+            this.chk4Normal.Location = new System.Drawing.Point(8, 6);
+            this.chk4Normal.Name = "chk4Normal";
+            this.chk4Normal.Size = new System.Drawing.Size(45, 20);
+            this.chk4Normal.TabIndex = 0;
+            this.chk4Normal.TabStop = true;
+            this.chk4Normal.Text = "ไม่มี";
+            this.chk4Normal.UseVisualStyleBackColor = true;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label23.Location = new System.Drawing.Point(13, 118);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(85, 20);
+            this.label23.TabIndex = 217;
+            this.label23.Text = "4. โรคลมชัก";
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.txt5AbNormal);
+            this.panel6.Controls.Add(this.chk5AbNormal);
+            this.panel6.Controls.Add(this.chk5Normal);
+            this.panel6.Location = new System.Drawing.Point(284, 146);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(612, 29);
+            this.panel6.TabIndex = 219;
+            // 
+            // txt5AbNormal
+            // 
+            this.txt5AbNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txt5AbNormal.Location = new System.Drawing.Point(164, 4);
+            this.txt5AbNormal.Name = "txt5AbNormal";
+            this.txt5AbNormal.Size = new System.Drawing.Size(445, 22);
+            this.txt5AbNormal.TabIndex = 215;
+            // 
+            // chk5AbNormal
+            // 
+            this.chk5AbNormal.AutoSize = true;
+            this.chk5AbNormal.Location = new System.Drawing.Point(125, 6);
+            this.chk5AbNormal.Name = "chk5AbNormal";
+            this.chk5AbNormal.Size = new System.Drawing.Size(33, 20);
+            this.chk5AbNormal.TabIndex = 1;
+            this.chk5AbNormal.TabStop = true;
+            this.chk5AbNormal.Text = "มี";
+            this.chk5AbNormal.UseVisualStyleBackColor = true;
+            // 
+            // chk5Normal
+            // 
+            this.chk5Normal.AutoSize = true;
+            this.chk5Normal.Location = new System.Drawing.Point(8, 6);
+            this.chk5Normal.Name = "chk5Normal";
+            this.chk5Normal.Size = new System.Drawing.Size(45, 20);
+            this.chk5Normal.TabIndex = 0;
+            this.chk5Normal.TabStop = true;
+            this.chk5Normal.Text = "ไม่มี";
+            this.chk5Normal.UseVisualStyleBackColor = true;
             // 
             // FrmOPDLicenseDriver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1068, 498);
+            this.ClientSize = new System.Drawing.Size(1068, 550);
             this.Controls.Add(this.txt4Other);
             this.Controls.Add(this.chk4);
             this.Controls.Add(this.chk3);
@@ -937,6 +1042,10 @@
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1021,5 +1130,14 @@
         private System.Windows.Forms.CheckBox chk1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt4Other;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TextBox txt4AbNormal;
+        private System.Windows.Forms.RadioButton chk4AbNormal;
+        private System.Windows.Forms.RadioButton chk4Normal;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.TextBox txt5AbNormal;
+        private System.Windows.Forms.RadioButton chk5AbNormal;
+        private System.Windows.Forms.RadioButton chk5Normal;
     }
 }

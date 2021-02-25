@@ -10,7 +10,7 @@ namespace reportBangna.object1
 {
     class IniFile
     {
-        string Path;
+        public string Path;
         string EXE = Assembly.GetExecutingAssembly().GetName().Name;
 
         [DllImport("kernel32")]

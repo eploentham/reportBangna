@@ -531,3 +531,46 @@ Parameter name: length
 23/12/2558 16:38->FrmStGoodsView.dgvView_CellDoubleClick 
 23/12/2558 16:38->FrmStVendorView.dgvView_CellDoubleClick 
 23/12/2558 16:39->FrmStGoodsView.dgvView_CellDoubleClick 
+23/02/2021 11:27 AM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+23/02/2021 3:01 PM->FrmOPD2CheckUPMain BtnRpt_Click dtpDate.Text 23/02/2021
+23/02/2021 3:01 PM->FrmOPD2CheckUPMain BtnRpt_Click vsdate 2021-02-23
+23/02/2021 3:01 PM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+23/02/2021 3:02 PM->FrmOPD2CheckUPMain BtnRpt_Click dtpDate.Text 23/02/2021
+23/02/2021 3:02 PM->FrmOPD2CheckUPMain BtnRpt_Click vsdate 2021-02-23
+23/02/2021 3:02 PM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+23/02/2021 3:03 PM->FrmOPD2CheckUPMain BtnRpt_Click dtpDate.Text 23/02/2021
+23/02/2021 3:03 PM->FrmOPD2CheckUPMain BtnRpt_Click vsdate 2021-02-23
+23/02/2021 3:03 PM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;
+23/02/2021 3:06 PM->FrmOPD2CheckUPMain BtnRpt_Click dtpDate.Text 23/02/2021
+23/02/2021 3:06 PM->FrmOPD2CheckUPMain BtnRpt_Click vsdate 2021-02-23
+23/02/2021 3:06 PM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+23/02/2021 3:15 PM->FrmOPD2CheckUPMain BtnRpt_Click dtpDate.Text 23/02/2021
+23/02/2021 3:15 PM->FrmOPD2CheckUPMain BtnRpt_Click vsdate 2021-02-23
+23/02/2021 3:15 PM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+23/02/2021 3:16 PM->FrmOPD2CheckUPMain BtnRpt_Click dtpDate.Text 23/02/2021
+23/02/2021 3:16 PM->FrmOPD2CheckUPMain BtnRpt_Click vsdate 2021-02-23
+23/02/2021 3:16 PM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+23/02/2021 4:30 PM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+23/02/2021 4:32 PM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+23/02/2021 4:32 PM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+23/02/2021 4:36 PM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+23/02/2021 4:37 PM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+23/02/2021 5:32 PM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+23/02/2021 5:52 PM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+23/02/2021 5:59 PM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+23/02/2021 6:01 PM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+23/02/2021 6:02 PM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;
+23/02/2021 6:07 PM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+23/02/2021 6:08 PM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+23/02/2021 6:10 PM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+23/02/2021 6:11 PM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+23/02/2021 6:11 PM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+23/02/2021 6:13 PM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+24/02/2021 11:37 AM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+25/02/2021 11:01 AM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+25/02/2021 2:31 PM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+25/02/2021 2:46 PM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+25/02/2021 3:03 PM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+25/02/2021 3:06 PM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;
+25/02/2021 3:07 PM->selectData Server=;Database=;Uid=;Pwd=;
+25/02/2021 3:08 PM->selectData Server=;Database=;Uid=;Pwd=;
