@@ -69,8 +69,9 @@ namespace reportBangna.gui
             menuGw.MenuItems.Add("case ฝากครรภ์", new EventHandler(ContextMenu_case_preg));
             menuGw.MenuItems.Add("case ตรวจสุขภาพ", new EventHandler(ContextMenu_casepackage));
             menuGw.MenuItems.Add("ไม่สนใจ", new EventHandler(ContextMenu_nocase));
+            menuGw.MenuItems.Add("Export Excel ฝากครรภ์", new EventHandler(ContextMenu_case_preg_export));
+            menuGw.MenuItems.Add("Export Excel ตรวจสุขภาพ", new EventHandler(ContextMenu_casepackage_export));
             grf.ContextMenu = menuGw;
-
             
             grf.Rows.Count = 1;
             //grfQue.Rows.Count = 1;
@@ -155,6 +156,50 @@ namespace reportBangna.gui
             frm.WindowState = FormWindowState.Maximized;
             frm.ShowDialog(this);
         }
+        private void ContextMenu_case_preg_export(object sender, System.EventArgs e)
+        {
+            if (grf.Rows.Count > 0)
+            {
+                LogWriter lw = new LogWriter();
+                String vsdate = "";
+                DateTime dtDate = new DateTime();
+                DateTime.TryParse(dtpDate.Text, out dtDate);
+                if (dtDate.Year > 2500)
+                {
+                    dtDate = dtDate.AddYears(-543);
+                }
+                else if (dtDate.Year < 2000)
+                {
+                    dtDate = dtDate.AddYears(543);
+                }
+                lw.WriteLog("FrmOPD2CheckUPMain ContextMenu_case_preg_export dtpDate.Text " + dtpDate.Text);
+                vsdate = dtDate.ToString("yyyy-MM-dd", new CultureInfo("en-US"));
+
+                CreateExcelFile(grf, vsdate, "preg");
+            }
+        }
+        private void ContextMenu_casepackage_export(object sender, System.EventArgs e)
+        {
+            if (grf.Rows.Count > 0)
+            {
+                LogWriter lw = new LogWriter();
+                String vsdate = "";
+                DateTime dtDate = new DateTime();
+                DateTime.TryParse(dtpDate.Text, out dtDate);
+                if (dtDate.Year > 2500)
+                {
+                    dtDate = dtDate.AddYears(-543);
+                }
+                else if (dtDate.Year < 2000)
+                {
+                    dtDate = dtDate.AddYears(543);
+                }
+                lw.WriteLog("FrmOPD2CheckUPMain ContextMenu_case_preg_export dtpDate.Text " + dtpDate.Text);
+                vsdate = dtDate.ToString("yyyy-MM-dd", new CultureInfo("en-US"));
+
+                CreateExcelFile(grf, vsdate,"package");
+            }
+        }
         private void ContextMenu_case_preg(object sender, System.EventArgs e)
         {
             grf.Rows[grf.Row].StyleNew.BackColor = ColorTranslator.FromHtml("#EADBC4");
@@ -206,6 +251,56 @@ namespace reportBangna.gui
                 CreateExcelFile(dt, vsdate);
             }
         }
+        private string CreateExcelFile(C1FlexGrid  grf, String vsdate,String flag)
+        {
+            C1.C1Excel.C1XLBook _c1xl = new C1.C1Excel.C1XLBook();
+            XLStyle _styTitle;
+            XLStyle _styHeader;
+            XLStyle _styMoney;
+            XLStyle _styOrder;
+            _c1xl.Clear();
+            _c1xl.Sheets.Clear();
+            _c1xl.DefaultFont = new Font("Tahoma", 8);
+
+            //create Excel styles
+            _styTitle = new XLStyle(_c1xl);
+            _styHeader = new XLStyle(_c1xl);
+            _styMoney = new XLStyle(_c1xl);
+            _styOrder = new XLStyle(_c1xl);
+
+            //set up styles
+            _styTitle.Font = new Font(_c1xl.DefaultFont.Name, 15, FontStyle.Bold);
+            _styTitle.ForeColor = Color.Blue;
+            _styHeader.Font = new Font(_c1xl.DefaultFont, FontStyle.Bold);
+            _styHeader.ForeColor = Color.White;
+            _styHeader.BackColor = Color.DarkGray;
+            _styMoney.Format = XLStyle.FormatDotNetToXL("c");
+            _styOrder.Font = _styHeader.Font;
+            _styOrder.ForeColor = Color.Red;
+
+            //create report with one sheet per category
+            //DataTable dt = GetCategories();
+            //foreach (DataRow dr in dt.Rows)
+            //{
+            //    CreateSheet(_c1xl,dr);
+            //}
+            CreateSheet(_c1xl, _styTitle, _styHeader, _styOrder, _styMoney, grf, vsdate, flag);
+            //save xls file
+            String datetick = "", pathfile = "";
+            pathfile = Application.StartupPath;
+            datetick = DateTime.Now.Ticks.ToString();
+            pathfile = pathfile + "\\excel\\";
+            if (!Directory.Exists(pathfile))
+            {
+                Directory.CreateDirectory(pathfile);
+                Application.DoEvents();
+            }
+
+            string filename = pathfile + "\\daily"+ flag +"_"+ vsdate + ".xls";
+            _c1xl.Save(filename);
+            Process.Start("explorer.exe", pathfile);
+            return filename;
+        }
         private string CreateExcelFile(DataTable dt, String vsdate)
         {
             //clear Excel book, remove the single blank sheet
@@ -256,6 +351,95 @@ namespace reportBangna.gui
             _c1xl.Save(filename);
             Process.Start("explorer.exe", pathfile);
             return filename;
+        }
+        private void CreateSheet(C1XLBook _c1xl, XLStyle _styTitle, XLStyle _styHeader, XLStyle _styOrder, XLStyle _styMoney, C1FlexGrid grf, String vsdate, String flag)
+        {
+            //get current category name
+            string catName = flag;
+
+            //add a new worksheet to the workbook 
+            //('/' is invalid in sheet names, so replace it with '+')
+            string sheetName = catName.Replace("/", " + ");
+            XLSheet sheet = _c1xl.Sheets.Add(sheetName);
+
+            //add title to worksheet
+            sheet[0, 0].Value = catName;
+            sheet.Rows[0].Style = _styTitle;
+
+            // set column widths (in twips)
+            sheet.Columns[0].Width = 1000;
+            sheet.Columns[1].Width = 500;
+            sheet.Columns[2].Width = 1000;
+            sheet.Columns[3].Width = 500;
+            sheet.Columns[4].Width = 500;
+            sheet.Columns[5].Width = 500;
+            sheet.Columns[6].Width = 500;
+            sheet.Columns[7].Width = 500;
+            sheet.Columns[8].Width = 500;
+            sheet.Columns[9].Width = 500;
+            sheet.Columns[10].Width = 500;
+            sheet.Columns[11].Width = 500;
+            sheet.Columns[12].Width = 500;
+            sheet.Columns[13].Width = 500;
+            sheet.Columns[14].Width = 500;
+            sheet.Columns[15].Width = 500;
+            sheet.Columns[16].Width = 2000;
+            sheet.Columns[17].Width = 500;
+            //add column headers
+            int row = 0;
+            sheet.Rows[row].Style = _styHeader;
+
+            sheet[row, 0].Value = "Date";
+            sheet[row, 1].Value = "no";
+            sheet[row, 2].Value = "HN";
+            sheet[row, 3].Value = "com";
+            sheet[row, 4].Value = "cash";
+            sheet[row, 5].Value = "C1";
+            sheet[row, 6].Value = "C2";
+            sheet[row, 7].Value = "C3";
+            sheet[row, 8].Value = "C4";
+            sheet[row, 9].Value = "LAB";
+            sheet[row, 10].Value = "VA";
+            sheet[row, 11].Value = "eye";
+            sheet[row, 12].Value = "CXR";
+            sheet[row, 13].Value = "EKG";
+            sheet[row, 14].Value = "com";
+            sheet[row, 15].Value = "cash";
+            sheet[row, 16].Value = "paid type";
+            sheet[row, 17].Value = "paid code";
+            //loop through products in this category
+            //DataRow[] products = dr.GetChildRows("Categories_Products");
+            foreach (Row drow in grf.Rows)
+            {
+                if (drow[colstatus] == null) continue;
+                if(drow[colstatus].ToString().Equals(flag))
+                {
+                    row++;
+                    sheet[row, 0].Value = vsdate;
+                    sheet[row, 1].Value = row;
+                    sheet[row, 2].Value = drow[colhn].ToString();
+                    sheet[row, colpcom].Value = drow[colpcom] != null ? drow[colpcom].ToString() : "";
+                    sheet[row, colpcash].Value = drow[colpcash] != null ? drow[colpcash].ToString() : "";
+                    sheet[row, colc1].Value = drow[colc1] != null ? drow[colc1].ToString() : "";
+                    sheet[row, colc2].Value = drow[colc2] != null ? drow[colc2].ToString() : "";
+                    sheet[row, colc3].Value = drow[colc3] != null ? drow[colc3].ToString() : "";
+                    sheet[row, colc4].Value = drow[colc4] != null ? drow[colc4].ToString() : "";
+                    sheet[row, collab].Value = drow[collab] != null ? drow[collab].ToString() : "";
+                    sheet[row, colva].Value = drow[colva] != null ? drow[colva].ToString() : "";
+                    sheet[row, colcxr].Value = drow[colcxr] != null ? drow[colcxr].ToString() : "";
+                    sheet[row, colekg].Value = drow[colekg] != null ? drow[colekg].ToString() : "";
+                    sheet[row, colcom].Value = drow[colcom] != null ? drow[colcom].ToString() : "";
+                    sheet[row, 15].Value = drow[colcash].ToString();
+                    sheet[row, 16].Value = drow[colpaidname].ToString();
+                    sheet[row, 17].Value = drow[colpaidcode].ToString();
+                    //sheet[row, 6].Value = drow["price_total"].ToString();
+                }
+            }
+            //if (products.Length == 0)
+            //{
+            //    row++;
+            //    sheet[row, 1].Value = "No products in this category";
+            //}
         }
         private void CreateSheet(C1XLBook _c1xl, XLStyle _styTitle, XLStyle _styHeader, XLStyle _styOrder, XLStyle _styMoney, DataTable dt, String vsdate)
         {

@@ -863,7 +863,7 @@
             this.chk2.Name = "chk2";
             this.chk2.Size = new System.Drawing.Size(258, 20);
             this.chk2.TabIndex = 224;
-            this.chk2.Text = "ร่างกายไม่สมบูรณ์ อาจส่งผลต่อการขับชี่ยานพาหนะ";
+            this.chk2.Text = "ร่างกายไม่สมบูรณ์ อาจส่งผลต่อการขับขี่ยานพาหนะ";
             this.chk2.UseVisualStyleBackColor = true;
             // 
             // chk1

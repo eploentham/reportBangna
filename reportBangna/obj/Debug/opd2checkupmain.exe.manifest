@@ -223,14 +223,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="opd2checkupmain.exe" size="1659904">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="opd2checkupmain.exe" size="1669632">
       <assemblyIdentity name="opd2checkupmain" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>1eH/iM4wd4I3HHYr0pdyLh2B0t0=</dsig:DigestValue>
+        <dsig:DigestValue>TqSjpy1SpqBZs1OPBtVa/O3UMow=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -574,3 +574,18 @@ Parameter name: length
 25/02/2021 3:06 PM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;
 25/02/2021 3:07 PM->selectData Server=;Database=;Uid=;Pwd=;
 25/02/2021 3:08 PM->selectData Server=;Database=;Uid=;Pwd=;
+01/03/2021 8:56 AM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+01/03/2021 8:57 AM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+01/03/2021 8:57 AM->FrmOPD2CheckUPMain ContextMenu_case_preg_export dtpDate.Text 01/03/2021
+01/03/2021 9:01 AM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+01/03/2021 9:01 AM->FrmOPD2CheckUPMain ContextMenu_case_preg_export dtpDate.Text 28/02/2021
+01/03/2021 9:02 AM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+01/03/2021 9:02 AM->FrmOPD2CheckUPMain ContextMenu_case_preg_export dtpDate.Text 28/02/2021
+01/03/2021 9:02 AM->FrmOPD2CheckUPMain ContextMenu_case_preg_export dtpDate.Text 28/02/2021
+01/03/2021 9:03 AM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+01/03/2021 9:06 AM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+01/03/2021 9:09 AM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+01/03/2021 9:09 AM->FrmOPD2CheckUPMain ContextMenu_case_preg_export dtpDate.Text 28/02/2021
+02/03/2021 1:54 PM->selectData Server=172.25.10.5;Database=bng5_dbms_front;Uid=sa;Pwd=;
+02/03/2021 1:54 PM->FrmOPD2CheckUPMain ContextMenu_case_preg_export dtpDate.Text 02/03/2021
+02/03/2021 1:56 PM->FrmOPD2CheckUPMain ContextMenu_case_preg_export dtpDate.Text 02/03/2021

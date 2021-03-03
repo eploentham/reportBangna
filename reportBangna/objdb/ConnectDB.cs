@@ -51,6 +51,7 @@ namespace reportBangna.objdb
             hostNameBua = iniFile.Read("host_name_bua");
             userNameBua = iniFile.Read("user_password_bua");
             passwordBua = iniFile.Read("password_bua");
+            server = iniFile.Read("server");
 
             _mainConnection = new OleDbConnection();
             //_mainConnection.ConnectionString = GetConfig("Main.ConnectionString");
@@ -66,6 +67,7 @@ namespace reportBangna.objdb
             hostNameMainHIS5 = iniFile.Read("host_name");
             userNameMainHIS5 = iniFile.Read("user_password");
             passwordMainHIS5 = iniFile.Read("password");
+            server = iniFile.Read("server");
 
             hostNameMainHIS1 = iniFile.Read("host_name1");
             userNameMainHIS1 = iniFile.Read("user_name1");
@@ -116,6 +118,7 @@ namespace reportBangna.objdb
             userNameMainHIS5 = iniFile.Read("user_name");
             passwordMainHIS5 = iniFile.Read("password");
             databaseNameMainHIS5 = iniFile.Read("database_name");
+            server = iniFile.Read("server");
 
             //lw.WriteLog("iniFile.Path " + iniFile.Path);
             //lw.WriteLog("hostNameMainHIS5 " + hostNameMainHIS5);
@@ -123,10 +126,10 @@ namespace reportBangna.objdb
             //lw.WriteLog("userNameMainHIS5 " + userNameMainHIS5);
             //lw.WriteLog("passwordMainHIS5 " + passwordMainHIS5);
 
-            hostNameMainHIS5 = hostNameMainHIS5.Length <= 0 ? "172.25.10.5" : hostNameMainHIS5;
-            userNameMainHIS5 = userNameMainHIS5.Length <= 0 ? "sa" : userNameMainHIS5;
-            passwordMainHIS5 = passwordMainHIS5.Length <= 0 ? "" : passwordMainHIS5;
-            databaseNameMainHIS5 = databaseNameMainHIS5.Length <= 0 ? "bng5_dbms_front" : databaseNameMainHIS5;
+            //hostNameMainHIS5 = hostNameMainHIS5.Length <= 0 ? "172.25.10.5" : hostNameMainHIS5;
+            //userNameMainHIS5 = userNameMainHIS5.Length <= 0 ? "sa" : userNameMainHIS5;
+            //passwordMainHIS5 = passwordMainHIS5.Length <= 0 ? "" : passwordMainHIS5;
+            //databaseNameMainHIS5 = databaseNameMainHIS5.Length <= 0 ? "bng5_dbms_front" : databaseNameMainHIS5;
 
             //lw.WriteLog("iniFile.Path1 " + iniFile.Path);
             //lw.WriteLog("hostNameMainHIS51 " + hostNameMainHIS5);
