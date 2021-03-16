@@ -960,7 +960,7 @@ namespace reportBangna.gui
         }
         private void FrmOPDLicenseDriver_Load(object sender, EventArgs e)
         {
-            this.Text = "Last Update 2021-03-01";
+            this.Text = "Last Update 2021-03-04";
         }
     }
 }

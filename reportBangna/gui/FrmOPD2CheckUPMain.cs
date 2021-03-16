@@ -80,10 +80,10 @@ namespace reportBangna.gui
             grf.Cols[colhn].Caption = "HN";
             grf.Cols[colpcom].Caption = "pcom";
             grf.Cols[colpcash].Caption = "pcash";
-            grf.Cols[colc1].Caption = "C1";
+            grf.Cols[colc1].Caption = "C1";     //c1 คือ 
             grf.Cols[colc2].Caption = "C2";
             grf.Cols[colc3].Caption = "C3";
-            grf.Cols[colc4].Caption = "C4";
+            grf.Cols[colc4].Caption = "C4";     //c4 คือ 
             grf.Cols[collab].Caption = "LAB";
             grf.Cols[colva].Caption = "VA";
             grf.Cols[colcxr].Caption = "CXR";
@@ -202,13 +202,13 @@ namespace reportBangna.gui
         }
         private void ContextMenu_case_preg(object sender, System.EventArgs e)
         {
-            grf.Rows[grf.Row].StyleNew.BackColor = ColorTranslator.FromHtml("#EADBC4");
-            grf[grf.Row, colstatus] = "package";
+            grf.Rows[grf.Row].StyleNew.BackColor = ColorTranslator.FromHtml("#b7e1cd");
+            grf[grf.Row, colstatus] = "preg";
         }
         private void ContextMenu_casepackage(object sender, System.EventArgs e)
         {
-            grf.Rows[grf.Row].StyleNew.BackColor = ColorTranslator.FromHtml("#b7e1cd");
-            grf[grf.Row, colstatus] = "preg";
+            grf.Rows[grf.Row].StyleNew.BackColor = ColorTranslator.FromHtml("#EADBC4");
+            grf[grf.Row, colstatus] = "package";
         }
         private void ContextMenu_nocase(object sender, System.EventArgs e)
         {
@@ -220,7 +220,16 @@ namespace reportBangna.gui
             //throw new NotImplementedException();
             if (grf.Row <= 0) return;
             if (grf.Col <= 0) return;
-            grf[grf.Row, grf.Col] = "1";
+            if (grf[grf.Row, grf.Col] == null)
+                grf[grf.Row, grf.Col] = "";
+            if(grf[grf.Row, grf.Col].ToString().Equals("1"))
+            {
+                grf[grf.Row, grf.Col] = "1";
+            }
+            else
+            {
+                grf[grf.Row, grf.Col] = "";
+            }
         }
 
         private void BtnRpt_Click(object sender, EventArgs e)
