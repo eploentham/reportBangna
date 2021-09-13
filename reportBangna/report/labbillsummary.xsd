@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="labbillsummary" targetNamespace="http://tempuri.org/labbillsummary.xsd" xmlns:mstns="http://tempuri.org/labbillsummary.xsd" xmlns="http://tempuri.org/labbillsummary.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="labbillsummary" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="labbillsummary" msprop:Generator_UserDSName="labbillsummary">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="labbillsummary" msprop:Generator_TableClassName="labbillsummaryDataTable" msprop:Generator_TableVarName="tablelabbillsummary" msprop:Generator_TablePropName="_labbillsummary" msprop:Generator_RowDeletingName="labbillsummaryRowDeleting" msprop:Generator_RowChangingName="labbillsummaryRowChanging" msprop:Generator_RowEvHandlerName="labbillsummaryRowChangeEventHandler" msprop:Generator_RowDeletedName="labbillsummaryRowDeleted" msprop:Generator_UserTableName="labbillsummary" msprop:Generator_RowChangedName="labbillsummaryRowChanged" msprop:Generator_RowEvArgName="labbillsummaryRowChangeEvent" msprop:Generator_RowClassName="labbillsummaryRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="typepaid_code" msdata:Caption="DataColumn1" msprop:Generator_ColumnVarNameInTable="columntypepaid_code" msprop:Generator_ColumnPropNameInRow="typepaid_code" msprop:Generator_ColumnPropNameInTable="typepaid_codeColumn" msprop:Generator_UserColumnName="typepaid_code" type="xs:string" minOccurs="0" />
+              <xs:element name="typepaid_name" msdata:Caption="DataColumn1" msprop:Generator_ColumnVarNameInTable="columntypepaid_name" msprop:Generator_ColumnPropNameInRow="typepaid_name" msprop:Generator_ColumnPropNameInTable="typepaid_nameColumn" msprop:Generator_UserColumnName="typepaid_name" type="xs:string" minOccurs="0" />
+              <xs:element name="qty" msdata:Caption="DataColumn1" msprop:Generator_ColumnVarNameInTable="columnqty" msprop:Generator_ColumnPropNameInRow="qty" msprop:Generator_ColumnPropNameInTable="qtyColumn" msprop:Generator_UserColumnName="qty" type="xs:string" minOccurs="0" />
+              <xs:element name="amount" msdata:Caption="DataColumn1" msprop:Generator_ColumnVarNameInTable="columnamount" msprop:Generator_ColumnPropNameInRow="amount" msprop:Generator_ColumnPropNameInTable="amountColumn" msprop:Generator_UserColumnName="amount" type="xs:string" minOccurs="0" />
+              <xs:element name="nettotal" msprop:Generator_ColumnVarNameInTable="columnnettotal" msprop:Generator_ColumnPropNameInRow="nettotal" msprop:Generator_ColumnPropNameInTable="nettotalColumn" msprop:Generator_UserColumnName="nettotal" type="xs:string" minOccurs="0" />
+              <xs:element name="discount" msprop:Generator_ColumnVarNameInTable="columndiscount" msprop:Generator_ColumnPropNameInRow="discount" msprop:Generator_ColumnPropNameInTable="discountColumn" msprop:Generator_UserColumnName="discount" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

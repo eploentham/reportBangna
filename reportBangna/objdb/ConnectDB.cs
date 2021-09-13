@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using reportBangna.object1;
+using MySql.Data.MySqlClient;
 
 namespace reportBangna.objdb
 {
@@ -29,6 +30,7 @@ namespace reportBangna.objdb
         public String hostNameMainHIS5 = "", hostNameMainHIS1 = "", hostNameMainHIS2 = "";
         public String userNameMainHIS5 = "", userNameMainHIS1 = "", userNameMainHIS2 = "";
         public String passwordMainHIS5 = "", passwordMainHIS1 = "", passwordMainHIS2 = "";
+        public String hostDBMySQL = "", userDBMySQL = "", passDBMySQL = "", nameDBMySQL = "", portDBMySQL = "";
         public String databaseNameBua = "";
         public String hostNameBua = "";
         public String userNameBua = "";
@@ -37,7 +39,7 @@ namespace reportBangna.objdb
         public String isBranch = "";
         private LogWriter lw;
         public String pathLabEx = "";
-
+        public MySqlConnection connMySQL;
         public String pathSSO = "";
         public ConnectDB()
         {
@@ -65,7 +67,7 @@ namespace reportBangna.objdb
 
             databaseNameMainHIS5 = iniFile.Read("database_name");
             hostNameMainHIS5 = iniFile.Read("host_name");
-            userNameMainHIS5 = iniFile.Read("user_password");
+            userNameMainHIS5 = iniFile.Read("user_name");
             passwordMainHIS5 = iniFile.Read("password");
             server = iniFile.Read("server");
 
@@ -84,12 +86,22 @@ namespace reportBangna.objdb
             userNameBua = iniFile.Read("user_password_bua");
             passwordBua = iniFile.Read("password_bua");
 
+            hostDBMySQL = iniFile.Read("hostDBMySQL");
+            nameDBMySQL = iniFile.Read("nameDBMySQL");
+            userDBMySQL = iniFile.Read("userDBMySQL");
+            passDBMySQL = iniFile.Read("passDBMySQL");
+            portDBMySQL = iniFile.Read("portDBMySQL");
+
             connMainHIS5 = new SqlConnection();
             connMainHIS2 = new SqlConnection();
             connMainHIS1 = new SqlConnection();
             connMainHIS5.ConnectionString = "Server=" + hostNameMainHIS5 + ";Database=" + databaseNameMainHIS5.ToString() + ";Uid=" + userNameMainHIS5 + ";Pwd=" + passwordMainHIS5 + ";";
             connMainHIS1.ConnectionString = "Server=" + hostNameMainHIS1 + ";Database=" + databaseNameMainHIS1.ToString() + ";Uid=" + userNameMainHIS1 + ";Pwd=" + passwordMainHIS1 + ";";
             connMainHIS2.ConnectionString = "Server=" + hostNameMainHIS2 + ";Database=" + databaseNameMainHIS2.ToString() + ";Uid=" + userNameMainHIS2 + ";Pwd=" + passwordMainHIS2 + ";";
+
+            connMySQL = new MySqlConnection();
+            connMySQL.ConnectionString = "Server=" + hostDBMySQL + ";Database=" + nameDBMySQL + ";Uid=" + userDBMySQL + ";Pwd=" + passDBMySQL +";port = " + portDBMySQL + "; SslMode=None";
+            //connMySQL.ConnectionString = "Server=" + hostDBMySQL + ";Database=" + nameDBMySQL + ";Uid=" + userDBMySQL + ";Pwd=" + passDBMySQL + ";port = " + portDBMySQL + ";";
 
             if (flag.Equals("1"))
             {
@@ -238,6 +250,136 @@ namespace reportBangna.objdb
             AppSettingsReader _configReader = new AppSettingsReader();
             // Set connection string of the sqlconnection object
             return _configReader.GetValue(key, "".GetType()).ToString();
+        }
+        public String ExecuteNonQuery(MySqlConnection con, String sql)
+        {
+            String toReturn = "";
+
+            MySqlCommand com = new MySqlCommand();
+            com.CommandText = sql;
+            com.CommandType = CommandType.Text;
+            com.Connection = con;
+            try
+            {
+                con.Open();
+                _rowsAffected = com.ExecuteNonQuery();
+                //_rowsAffected = (int)com.ExecuteScalar();
+                toReturn = sql.Substring(0, 1).ToLower() == "i" ? com.LastInsertedId.ToString() : _rowsAffected.ToString();
+                if (sql.IndexOf("Insert Into Visit") >= 0)        //old program
+                {
+                    toReturn = _rowsAffected.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("ExecuteNonQuery::Error occured.", ex);
+                toReturn = ex.Message;
+            }
+            finally
+            {
+                //_mainConnection.Close();
+                con.Close();
+                com.Dispose();
+            }
+
+            return toReturn;
+        }
+        public String ExecuteNonQueryNoClose(MySqlConnection con, String sql)
+        {
+            String toReturn = "";
+
+            MySqlCommand com = new MySqlCommand();
+            com.CommandText = sql;
+            com.CommandType = CommandType.Text;
+            com.Connection = con;
+            try
+            {
+                //con.Open();
+                _rowsAffected = com.ExecuteNonQuery();
+                //_rowsAffected = (int)com.ExecuteScalar();
+                toReturn = sql.Substring(0, 1).ToLower() == "i" ? com.LastInsertedId.ToString() : _rowsAffected.ToString();
+                if (sql.IndexOf("Insert Into Visit") >= 0)        //old program
+                {
+                    toReturn = _rowsAffected.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("ExecuteNonQuery::Error occured.", ex);
+                toReturn = ex.Message;
+            }
+            finally
+            {
+                //_mainConnection.Close();
+                //con.Close();
+                com.Dispose();
+            }
+
+            return toReturn;
+        }
+        public DataTable selectDataMySQLNoClose(MySqlConnection con, String sql)
+        {
+            DataTable toReturn = new DataTable();
+
+            MySqlCommand comMainhis = new MySqlCommand();
+            comMainhis.CommandText = sql;
+            comMainhis.CommandType = CommandType.Text;
+            comMainhis.Connection = con;
+            MySqlDataAdapter adapMainhis = new MySqlDataAdapter(comMainhis);
+            try
+            {
+                //con.Open();
+                adapMainhis.Fill(toReturn);
+                //return toReturn;
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("HResult " + ex.HResult + "\n" + "Message" + ex.Message + "\n" + sql, "Error");
+                if (con.State == ConnectionState.Open)
+                {
+                    //con.Close();
+                }
+                throw new Exception(ex.Message, ex);
+            }
+            finally
+            {
+                con.Close();
+                comMainhis.Dispose();
+                adapMainhis.Dispose();
+            }
+            return toReturn;
+        }
+        public DataTable selectDataMySQL(MySqlConnection con, String sql)
+        {
+            DataTable toReturn = new DataTable();
+
+            MySqlCommand comMainhis = new MySqlCommand();
+            comMainhis.CommandText = sql;
+            comMainhis.CommandType = CommandType.Text;
+            comMainhis.Connection = con;
+            MySqlDataAdapter adapMainhis = new MySqlDataAdapter(comMainhis);
+            try
+            {
+                con.Open();
+                adapMainhis.Fill(toReturn);
+                //return toReturn;
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("HResult " + ex.HResult + "\n" + "Message" + ex.Message + "\n" + sql, "Error");
+                if (con.State == ConnectionState.Open)
+                {
+                    //con.Close();
+                }
+                throw new Exception(ex.Message, ex);
+            }
+            finally
+            {
+                con.Close();
+                comMainhis.Dispose();
+                adapMainhis.Dispose();
+            }
+            return toReturn;
         }
         public DataTable selectData(String sql)
         {

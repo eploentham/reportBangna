@@ -44,6 +44,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnInsert = new System.Windows.Forms.Button();
+            this.btnPrnSum = new System.Windows.Forms.Button();
+            this.btnPrnDetail = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtEmailTo = new System.Windows.Forms.TextBox();
+            this.btnEmail = new System.Windows.Forms.Button();
+            this.txtEmailSubject = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnPrnDetailItem = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bthPath
@@ -75,7 +84,7 @@
             // pB1
             // 
             this.pB1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pB1.Location = new System.Drawing.Point(0, 206);
+            this.pB1.Location = new System.Drawing.Point(0, 278);
             this.pB1.Name = "pB1";
             this.pB1.Size = new System.Drawing.Size(816, 23);
             this.pB1.TabIndex = 3;
@@ -193,11 +202,101 @@
             this.label5.TabIndex = 15;
             this.label5.Text = "งวด";
             // 
+            // btnInsert
+            // 
+            this.btnInsert.Location = new System.Drawing.Point(193, 150);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(109, 33);
+            this.btnInsert.TabIndex = 16;
+            this.btnInsert.Text = "Insert Data";
+            this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+            // 
+            // btnPrnSum
+            // 
+            this.btnPrnSum.Location = new System.Drawing.Point(415, 150);
+            this.btnPrnSum.Name = "btnPrnSum";
+            this.btnPrnSum.Size = new System.Drawing.Size(109, 33);
+            this.btnPrnSum.TabIndex = 17;
+            this.btnPrnSum.Text = "Print สรุป";
+            this.btnPrnSum.UseVisualStyleBackColor = true;
+            this.btnPrnSum.Click += new System.EventHandler(this.btnPrnSum_Click);
+            // 
+            // btnPrnDetail
+            // 
+            this.btnPrnDetail.Location = new System.Drawing.Point(556, 150);
+            this.btnPrnDetail.Name = "btnPrnDetail";
+            this.btnPrnDetail.Size = new System.Drawing.Size(109, 33);
+            this.btnPrnDetail.TabIndex = 18;
+            this.btnPrnDetail.Text = "Print รายละเอียดบุคคล";
+            this.btnPrnDetail.UseVisualStyleBackColor = true;
+            this.btnPrnDetail.Click += new System.EventHandler(this.btnPrnDetail_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(28, 203);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Email TO :";
+            // 
+            // txtEmailTo
+            // 
+            this.txtEmailTo.Location = new System.Drawing.Point(100, 200);
+            this.txtEmailTo.Name = "txtEmailTo";
+            this.txtEmailTo.Size = new System.Drawing.Size(298, 20);
+            this.txtEmailTo.TabIndex = 20;
+            // 
+            // btnEmail
+            // 
+            this.btnEmail.Location = new System.Drawing.Point(422, 213);
+            this.btnEmail.Name = "btnEmail";
+            this.btnEmail.Size = new System.Drawing.Size(109, 33);
+            this.btnEmail.TabIndex = 21;
+            this.btnEmail.Text = "send email";
+            this.btnEmail.UseVisualStyleBackColor = true;
+            this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
+            // 
+            // txtEmailSubject
+            // 
+            this.txtEmailSubject.Location = new System.Drawing.Point(100, 226);
+            this.txtEmailSubject.Name = "txtEmailSubject";
+            this.txtEmailSubject.Size = new System.Drawing.Size(298, 20);
+            this.txtEmailSubject.TabIndex = 23;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(28, 229);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 13);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Subject :";
+            // 
+            // btnPrnDetailItem
+            // 
+            this.btnPrnDetailItem.Location = new System.Drawing.Point(689, 150);
+            this.btnPrnDetailItem.Name = "btnPrnDetailItem";
+            this.btnPrnDetailItem.Size = new System.Drawing.Size(115, 33);
+            this.btnPrnDetailItem.TabIndex = 24;
+            this.btnPrnDetailItem.Text = "Print รายละเอียดItem";
+            this.btnPrnDetailItem.UseVisualStyleBackColor = true;
+            // 
             // FrmBillLabCheckExcel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(816, 229);
+            this.ClientSize = new System.Drawing.Size(816, 301);
+            this.Controls.Add(this.btnPrnDetailItem);
+            this.Controls.Add(this.txtEmailSubject);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.btnEmail);
+            this.Controls.Add(this.txtEmailTo);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.btnPrnDetail);
+            this.Controls.Add(this.btnPrnSum);
+            this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -241,6 +340,15 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnInsert;
+        private System.Windows.Forms.Button btnPrnSum;
+        private System.Windows.Forms.Button btnPrnDetail;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtEmailTo;
+        private System.Windows.Forms.Button btnEmail;
+        private System.Windows.Forms.TextBox txtEmailSubject;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnPrnDetailItem;
         //private Microsoft.AnalysisServices.AdomdClient.AdomdDataAdapter adomdDataAdapter1;
     }
 }

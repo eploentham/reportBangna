@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -8,8 +8,8 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>reportBangna</RootNamespace>
-    <AssemblyName>opd2checkupmain</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <AssemblyName>reportBangna</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -38,6 +38,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,6 +48,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>AEF5D6B13C9A419CF41DC7A81585B4FF1330772F</ManifestCertificateThumbprint>
@@ -72,9 +74,20 @@
     <Reference Include="C1.C1Pdf.4, Version=4.0.20182.314, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
     <Reference Include="C1.C1Zip.4, Version=4.0.20182.314, Culture=neutral, PublicKeyToken=79882d576c6336da" />
     <Reference Include="C1.Win.4, Version=4.0.20182.314, Culture=neutral, PublicKeyToken=944ae1ea0e47ca04" />
+    <Reference Include="C1.Win.BarCode.4, Version=4.0.20182.314, Culture=neutral, PublicKeyToken=79882d576c6336da" />
     <Reference Include="C1.Win.Bitmap.4, Version=4.0.20182.314, Culture=neutral, PublicKeyToken=944ae1ea0e47ca04" />
+    <Reference Include="C1.Win.C1Command.4, Version=4.0.20182.314, Culture=neutral, PublicKeyToken=e808566f358766d8, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Document.4, Version=4.0.20182.314, Culture=neutral, PublicKeyToken=944ae1ea0e47ca04" />
     <Reference Include="C1.Win.C1DX.4, Version=4.0.20182.314, Culture=neutral, PublicKeyToken=944ae1ea0e47ca04" />
     <Reference Include="C1.Win.C1FlexGrid.4, Version=4.0.20182.314, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Input.4, Version=4.0.20182.314, Culture=neutral, PublicKeyToken=7e7ff60f0c214f9a" />
+    <Reference Include="C1.Win.C1InputPanel.4, Version=4.0.20182.314, Culture=neutral, PublicKeyToken=79882d576c6336da" />
+    <Reference Include="C1.Win.C1List.4, Version=4.0.20182.314, Culture=neutral, PublicKeyToken=6b24f8f981dbd7bc, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Ribbon.4, Version=4.0.20182.314, Culture=neutral, PublicKeyToken=79882d576c6336da" />
+    <Reference Include="C1.Win.Calendar.4, Version=4.0.20182.314, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.FlexChart.4, Version=4.0.20182.314, Culture=neutral, PublicKeyToken=3aa2920c09e0aefd" />
+    <Reference Include="C1.Win.FlexViewer.4, Version=4.0.20182.314, Culture=neutral, PublicKeyToken=944ae1ea0e47ca04, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.ImportServices.4, Version=4.0.20182.314, Culture=neutral, PublicKeyToken=944ae1ea0e47ca04" />
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -85,7 +98,10 @@
       <HintPath>..\..\..\lib\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
-    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=5.0.8.1, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector Net 8.0.25\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -126,6 +142,12 @@
     </Compile>
     <Compile Include="gui\FrmOPDLicenseDriver.Designer.cs">
       <DependentUpon>FrmOPDLicenseDriver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmShowPdf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmShowPdf.designer.cs">
+      <DependentUpon>FrmShowPdf.cs</DependentUpon>
     </Compile>
     <Compile Include="gui\FrmSSDView.cs">
       <SubType>Form</SubType>
@@ -510,6 +532,11 @@
     <Compile Include="object1\StVendor.cs" />
     <Compile Include="object1\Visit.cs" />
     <Compile Include="object1\WriteText.cs" />
+    <Compile Include="report\labbillsummary.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labbillsummary.xsd</DependentUpon>
+    </Compile>
     <Compile Include="report\xraySummary.cs">
       <DependentUpon>xraySummary.xsd</DependentUpon>
     </Compile>
@@ -551,6 +578,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmOPDLicenseDriver.resx">
       <DependentUpon>FrmOPDLicenseDriver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmShowPdf.resx">
+      <DependentUpon>FrmShowPdf.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmSSDView.resx">
       <DependentUpon>FrmSSDView.cs</DependentUpon>
@@ -731,6 +761,9 @@
     <EmbeddedResource Include="report\DailySummaryDoctor.rdlc" />
     <EmbeddedResource Include="report\xraysummary.rdlc" />
     <EmbeddedResource Include="report\xray_SummaryMount.rdlc" />
+    <None Include="reportbangna.ini">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="report\DailypatientsumPaid.xsc">
       <DependentUpon>DailypatientsumPaid.xsd</DependentUpon>
     </None>
@@ -774,6 +807,17 @@
     </None>
     <None Include="report\DailySummaryDoctor.xss">
       <DependentUpon>DailySummaryDoctor.xsd</DependentUpon>
+    </None>
+    <None Include="report\labbillsummary.xsc">
+      <DependentUpon>labbillsummary.xsd</DependentUpon>
+    </None>
+    <None Include="report\labbillsummary.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>labbillsummary.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="report\labbillsummary.xss">
+      <DependentUpon>labbillsummary.xsd</DependentUpon>
     </None>
     <None Include="report\xraySummary.xsc">
       <DependentUpon>xraySummary.xsd</DependentUpon>
@@ -893,6 +937,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Paomedia-Small-N-Flat-Floppy.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\atta.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\atta60-48.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
