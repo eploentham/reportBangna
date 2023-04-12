@@ -29,6 +29,8 @@ namespace reportBangna.gui
         {
             opdc = new OPDCheckUP();
             btnPrintLicenseDriver.Click += BtnPrintLicenseDriver_Click;
+            btnSearch.Click += BtnSearch_Click;
+
             txtHn.KeyUp += TxtHn_KeyUp;
             txtDoctorId.KeyUp += TxtDoctorId_KeyUp;
             chk1.CheckedChanged += Chk1_CheckedChanged;
@@ -37,6 +39,12 @@ namespace reportBangna.gui
             chk4.CheckedChanged += Chk4_CheckedChanged;
 
             setControl("");
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            setControl(txtHn.Text.Trim());
         }
 
         private void Chk4_CheckedChanged(object sender, EventArgs e)
@@ -101,7 +109,7 @@ namespace reportBangna.gui
             //throw new NotImplementedException();
             if (e.KeyCode == Keys.Enter)
             {
-                setControl(txtHn.Text);
+                setControl(txtHn.Text.Trim());
             }
         }
 
@@ -135,7 +143,8 @@ namespace reportBangna.gui
             }
             txtABOGroup.Text = dt.Rows[0]["mnc_blo_grp"].ToString();
             txtId.Text = dt.Rows[0]["mnc_id_no"].ToString();
-            txtAddr1.Text = dt.Rows[0]["mnc_full_add"].ToString() != "" ? dt.Rows[0]["mnc_full_add"].ToString() : dt.Rows[0]["mnc_dom_add"].ToString() + " ต." + dt.Rows[0]["mnc_tum_dsc"].ToString() + " อ." + dt.Rows[0]["mnc_amp_dsc"].ToString() + " จ." + dt.Rows[0]["mnc_chw_dsc"].ToString() + " " + dt.Rows[0]["mnc_cur_poc"].ToString();
+            //txtAddr1.Text = dt.Rows[0]["mnc_full_add"].ToString() != "" ? dt.Rows[0]["mnc_full_add"].ToString() : dt.Rows[0]["mnc_dom_add"].ToString() + " ต." + dt.Rows[0]["mnc_tum_dsc"].ToString() + " อ." + dt.Rows[0]["mnc_amp_dsc"].ToString() + " จ." + dt.Rows[0]["mnc_chw_dsc"].ToString() + " " + dt.Rows[0]["mnc_cur_poc"].ToString();
+            txtAddr1.Text = dt.Rows[0]["mnc_full_add"].ToString() != "" ? dt.Rows[0]["mnc_full_add"].ToString() : dt.Rows[0]["mnc_cur_add"].ToString()+" "+ dt.Rows[0]["mnc_cur_soi"].ToString() + " ต." + dt.Rows[0]["mnc_tum_dsc"].ToString() + " อ." + dt.Rows[0]["mnc_amp_dsc"].ToString() + " จ." + dt.Rows[0]["mnc_chw_dsc"].ToString() + " " + dt.Rows[0]["mnc_cur_poc"].ToString();
             txtAddr2.Text = "";
             txtAge.Text = dt.Rows[0]["MNC_AGE"].ToString();
             //txtAllergisOther.Text = dt.Rows[0][bc.opdcdb.opdc.AllergicOther].ToString();
@@ -960,7 +969,7 @@ namespace reportBangna.gui
         }
         private void FrmOPDLicenseDriver_Load(object sender, EventArgs e)
         {
-            this.Text = "Last Update 2021-03-04";
+            this.Text = "Last Update 2022-09-14";
         }
     }
 }

@@ -27,6 +27,10 @@ namespace reportBangna.object1
         public string Read(string Key, string Section = null)
         {
             var RetVal = new StringBuilder(255);
+            //LogWriter lw = new LogWriter();
+            //lw.WriteLog("iniFile.Path " + Path);
+            //lw.WriteLog("iniFile.EXE " + EXE);
+            //lw.WriteLog("iniFile.Key " + Key);
             GetPrivateProfileString(Section ?? EXE, Key, "", RetVal, 255, Path);
             return RetVal.ToString();
         }

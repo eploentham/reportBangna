@@ -1,4 +1,4 @@
-﻿using CrystalDecisions.CrystalReports.Engine;
+﻿//using CrystalDecisions.CrystalReports.Engine;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,16 +25,16 @@ namespace reportBangna.gui
         public void setReportLabBillSummary(DataTable dt)
         {
             String chk = "";
-            ReportDocument rpt = new ReportDocument();
+            //ReportDocument rpt = new ReportDocument();
             try
             {
                 //cc.lw.WriteLog("rpt.setReportResult OK ");
-                rpt.Load(Environment.CurrentDirectory + "\\repor\\LabBillSummary.rpt");
+                //rpt.Load(Environment.CurrentDirectory + "\\repor\\LabBillSummary.rpt");
                 //rpt.SetDataSource(dt);
                 DataSet ds = new DataSet();
                 ds.Tables.Add(dt);
                 //ds.Tables[0].TableName = "patientdead";
-                rpt.SetDataSource(ds);
+                //rpt.SetDataSource(ds);
                 //cc.lw.WriteLog("rpt.setReportResult OK SetDataSource");
 
                 //rpt.SetParameterValue("compName", cc.cp.NameT);
@@ -66,8 +66,8 @@ namespace reportBangna.gui
                 //rpt.SetParameterValue("staffplacerecordname", inv.StaffPlaceRecordName);
                 //rpt.SetParameterValue("line3", "ลูกค้า/ผู้ประสานงาน/ผู้รัลผิดชอบการตรวจ");
 
-                this.crystalReportViewer1.ReportSource = rpt;
-                this.crystalReportViewer1.Refresh();
+                //this.crystalReportViewer1.ReportSource = rpt;
+                //this.crystalReportViewer1.Refresh();
             }
             catch (Exception ex)
             {
@@ -78,16 +78,16 @@ namespace reportBangna.gui
         public void setReportPatientDead(DataTable dt)
         {
             String chk = "";
-            ReportDocument rpt = new ReportDocument();
+            //ReportDocument rpt = new ReportDocument();
             try
             {
                 //cc.lw.WriteLog("rpt.setReportResult OK ");
-                rpt.Load(Environment.CurrentDirectory + "\\ReportCrystal\\PatientDeadPrint.rpt");
+                //rpt.Load(Environment.CurrentDirectory + "\\ReportCrystal\\PatientDeadPrint.rpt");
                 //rpt.SetDataSource(dt);
                 DataSet ds = new DataSet();
                 ds.Tables.Add(dt);
                 //ds.Tables[0].TableName = "patientdead";
-                rpt.SetDataSource(ds);
+                //rpt.SetDataSource(ds);
                 //cc.lw.WriteLog("rpt.setReportResult OK SetDataSource");
 
                 //rpt.SetParameterValue("compName", cc.cp.NameT);
@@ -119,8 +119,8 @@ namespace reportBangna.gui
                 //rpt.SetParameterValue("staffplacerecordname", inv.StaffPlaceRecordName);
                 //rpt.SetParameterValue("line3", "ลูกค้า/ผู้ประสานงาน/ผู้รัลผิดชอบการตรวจ");
 
-                this.crystalReportViewer1.ReportSource = rpt;
-                this.crystalReportViewer1.Refresh();
+                //this.crystalReportViewer1.ReportSource = rpt;
+                //this.crystalReportViewer1.Refresh();
             }
             catch (Exception ex)
             {

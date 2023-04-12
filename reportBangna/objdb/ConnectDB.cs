@@ -43,8 +43,9 @@ namespace reportBangna.objdb
         public String pathSSO = "";
         public ConnectDB()
         {
+            lw = new LogWriter();
             iniFile = new IniFile("reportbangna.ini");
-            
+            //lw.WriteLog("ConnectDB ");
             databaseNameMainHIS5 = iniFile.Read("database_name");
             hostNameMainHIS5 = iniFile.Read("host_name");
             userNameMainHIS5 = iniFile.Read("user_password");
@@ -62,9 +63,10 @@ namespace reportBangna.objdb
         }
         public ConnectDB(String hostName, String flag)
         {
+            lw = new LogWriter();
             hostname = "mainhis";
             iniFile = new IniFile("reportbangna.ini");
-
+            //lw.WriteLog("ConnectDB(String hostName, String flag) ");
             databaseNameMainHIS5 = iniFile.Read("database_name");
             hostNameMainHIS5 = iniFile.Read("host_name");
             userNameMainHIS5 = iniFile.Read("user_name");
@@ -124,14 +126,17 @@ namespace reportBangna.objdb
         {
             lw = new LogWriter();
             iniFile = new IniFile("reportbangna.ini");
-
+            //lw.WriteLog("ConnectDB(String hostName) ");
             //iniFile.Write("aaaa", "bbbb");
             hostNameMainHIS5 = iniFile.Read("host_name");
             userNameMainHIS5 = iniFile.Read("user_name");
             passwordMainHIS5 = iniFile.Read("password");
             databaseNameMainHIS5 = iniFile.Read("database_name");
             server = iniFile.Read("server");
-
+            hostNameMainHIS5 = hostNameMainHIS5.Length == 0 ? "172.1.1.1" : hostNameMainHIS5;
+            userNameMainHIS5 = userNameMainHIS5.Length == 0 ? "sa" : userNameMainHIS5;
+            passwordMainHIS5 = passwordMainHIS5.Length == 0 ? "" : passwordMainHIS5;
+            databaseNameMainHIS5 = databaseNameMainHIS5.Length == 0 ? "bng1_dbms_front" : databaseNameMainHIS5;
             //lw.WriteLog("iniFile.Path " + iniFile.Path);
             //lw.WriteLog("hostNameMainHIS5 " + hostNameMainHIS5);
             //lw.WriteLog("databaseNameMainHIS5 " + databaseNameMainHIS5);
@@ -386,7 +391,7 @@ namespace reportBangna.objdb
             DataTable toReturn = new DataTable();
             if ((hostname == "mainhis") || (hostname=="bangna"))
             {
-                lw.WriteLog("selectData " + connMainHIS5.ConnectionString);
+                //lw.WriteLog("selectData " + connMainHIS5.ConnectionString);
                 SqlCommand comMainhis = new SqlCommand();
                 comMainhis.CommandText = sql;
                 comMainhis.CommandType = CommandType.Text;

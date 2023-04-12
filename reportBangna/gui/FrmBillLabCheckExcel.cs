@@ -313,7 +313,7 @@ namespace reportBangna.gui
         private MemoryStream printBillDetail(String flagDetail)
         {
             DataTable dt = new DataTable();
-            int gapLine = 20, gapLine1 = 15, gapX = 40, gapY = 20, xCol2 = 100, xCol1 = 20, xCol11 = 45, xCol3 = 200, xCol4 = 300, xCol41 = 400, xCol5 = 400, xCol6 = 500;
+            int gapLine = 20, gapLine1 = 15, gapX = 40, gapY = 20, xCol2 = 100, xCol1 = 20, xCol11 = 45, xCol3 = 200-20, xCol4 = 300, xCol41 = 400, xCol5 = 400-20, xCol6 = 500-20;
             String sql = "", flagBr = "", paidname = "", paidnameold = "";
             int year = 0;
             flagBr = chkBn1.Checked ? "1" : chkBn2.Checked ? "2" : chkBn5.Checked ? "5" : "";
@@ -422,11 +422,16 @@ namespace reportBangna.gui
             if (flagDetail.Equals("item"))
             {
                 txt = "รายละเอียด lab item ประจำ งวด " + aaa + cboMonth.Text + " ปี " + cboYear.Text;
-                sql = "Select paid_type_name, sum(price3) as price3, sum(discount) as discount, sum(netprice) as netprice, lab_code, lab_name  " +
+                //sql = "Select paid_type_name, sum(price3) as price3,price3 as price31, sum(discount) as discount, discount as discount1, sum(netprice) as netprice,netprice as netprice1, lab_code, lab_name, count(1) as cnt  " +
+                //"From lab_t_data " +
+                //"Where branch_id = '" + flagBr + "' and year_id = '" + year + "' and month_id = '" + month.ToString("00") + "' and period_id = '" + period + "'  " +
+                //"Group By paid_type_name, lab_code, lab_name " +
+                //"Order By paid_type_name, lab_code, lab_name; ";
+                sql = "Select paid_type_name, sum(price3) as price3,price3 as price31, sum(discount) as discount, discount as discount1, sum(netprice) as netprice,netprice as netprice1, lab_code, lab_name, count(1) as cnt  " +
                 "From lab_t_data " +
                 "Where branch_id = '" + flagBr + "' and year_id = '" + year + "' and month_id = '" + month.ToString("00") + "' and period_id = '" + period + "'  " +
                 "Group By paid_type_name, lab_code, lab_name " +
-                "Order By paid_type_name, lab_code, lab_name; ";
+                "Order By paid_type_name,  lab_name; ";
                 ConnectDB conn = new ConnectDB("mainhis", flagBr);
                 dt = conn.selectDataMySQL(conn.connMySQL, sql);
             }
@@ -438,6 +443,11 @@ namespace reportBangna.gui
                 "Where branch_id = '" + flagBr + "' and year_id = '" + year + "' and month_id = '" + month.ToString("00") + "' and period_id = '" + period + "'  " +
                 //"Group By paid_type_name" +
                 "Order By paid_type_name, full_name,lab_code; ";
+                //sql = "Select paid_type_name, price3, discount, netprice, full_name, lab_code, lab_name, lab_date  " +
+                //"From lab_t_data " +
+                //"Where branch_id = '" + flagBr + "' and year_id = '" + year + "' and month_id = '" + month.ToString("00") + "' and period_id = '" + period + "'  " +
+                ////"Group By paid_type_name" +
+                //"Order By paid_type_name, full_name,lab_name; ";
                 ConnectDB conn = new ConnectDB("mainhis", flagBr);
                 dt = conn.selectDataMySQL(conn.connMySQL, sql);
             }
@@ -450,7 +460,7 @@ namespace reportBangna.gui
             if (dt.Rows.Count > 0)
             {
                 int page = 0, rowinpage = 0, i = 0, rowingroup = 0;
-                decimal sumnetpricepergroup = 0, netprice = 0, price3 = 0, discount = 0, sumnetprice = 0, sumdiscount = 0;
+                decimal sumnetpricepergroup = 0, netprice = 0, price3 = 0, discount = 0, sumnetprice = 0, sumdiscount = 0, price31=0, netprice1 = 0;
                 page = (dt.Rows.Count % 43) + 1;
                 gapLine = 17;
                 foreach (DataRow drow in dt.Rows)
@@ -462,6 +472,11 @@ namespace reportBangna.gui
                     decimal.TryParse(drow["netprice"].ToString(), out netprice);
                     decimal.TryParse(drow["price3"].ToString(), out price3);
                     decimal.TryParse(drow["discount"].ToString(), out discount);
+                    if (flagDetail.Equals("item"))
+                    {
+                        decimal.TryParse(drow["price31"].ToString(), out price31);
+                        decimal.TryParse(drow["netprice1"].ToString(), out netprice1);
+                    }
 
                     if (i == 1)
                     {
@@ -554,6 +569,25 @@ namespace reportBangna.gui
                         size = MeasureString(txt, txtFonts);
                         rcPage.Width = size.Width;
                         pdf.DrawString(txt, txtFonts, Brushes.Black, rcPage);
+
+                        rcPage.X = xCol5 - 15;
+                        txt = drow["cnt"].ToString();
+                        size = MeasureString(txt, txtFonts);
+                        rcPage.Width = size.Width;
+                        pdf.DrawString(txt, txtFonts, Brushes.Black, rcPage);
+
+                        rcPage.X = xCol5 + 50;
+                        txt = price31.ToString("#,###.00");
+                        size = MeasureString(txt, txtFont);
+                        rcPage.Width = size.Width;
+                        pdf.DrawString(txt, txtFont, Brushes.Black, rcPage);
+
+                        //rcPage.X = xCol5 + 50;
+                        rcPage.X = xCol6;
+                        txt = (netprice1).ToString("#,###.00");
+                        size = MeasureString(txt, txtFont);
+                        rcPage.Width = size.Width;
+                        pdf.DrawString(txt, txtFont, Brushes.Black, rcPage);
                     }
                     else
                     {
@@ -568,19 +602,19 @@ namespace reportBangna.gui
                         size = MeasureString(txt, txtFonts);
                         rcPage.Width = size.Width;
                         pdf.DrawString(txt, txtFonts, Brushes.Black, rcPage);
+
+                        rcPage.X = xCol5 + 50;
+                        txt = price3.ToString("#,###.00");
+                        size = MeasureString(txt, txtFont);
+                        rcPage.Width = size.Width;
+                        pdf.DrawString(txt, txtFont, Brushes.Black, rcPage);
+
+                        rcPage.X = xCol6;
+                        txt = discount.ToString("#,###.00");
+                        size = MeasureString(txt, txtFont);
+                        rcPage.Width = size.Width;
+                        pdf.DrawString(txt, txtFont, Brushes.Black, rcPage);
                     }
-
-                    rcPage.X = xCol5 + 50;
-                    txt = price3.ToString("#,###.00");
-                    size = MeasureString(txt, txtFont);
-                    rcPage.Width = size.Width;
-                    pdf.DrawString(txt, txtFont, Brushes.Black, rcPage);
-
-                    rcPage.X = xCol6;
-                    txt = discount.ToString("#,###.00");
-                    size = MeasureString(txt, txtFont);
-                    rcPage.Width = size.Width;
-                    pdf.DrawString(txt, txtFont, Brushes.Black, rcPage);
 
                     rcPage.X = xCol6 + 50;
                     txt = netprice.ToString("#,###.00");
@@ -601,7 +635,70 @@ namespace reportBangna.gui
                 }
 
                 //พิมพ์ สุดท้าย 
+                if (gapY >= 800)
+                {
+                    pdf.NewPage();
+                    rowinpage = 0;
+                    gapY = 20;
+                }
                 gapY += gapLine;
+                gapY += gapLine;
+                gapY += gapLine;
+                rcPage.Y = gapY;
+                rcPage.X = xCol4;
+
+                if (gapY >= 835)
+                {
+                    flagNewPage = true;
+                }
+                if (flagNewPage)
+                {
+                    rowinpage = 0;
+                    gapY = 20;
+                    pdf.NewPage();
+                    pdf.DrawImage(loadedImage, recf);//logo
+
+                    txt = " บริษัท เอทีทีเอ2016 จำกัด  56/49 หมู่บ้านโครงการทาวร์พลัส เทพารักษ์ หมู่4 ถ.เทพารักษ์ ต.บางพลีใหญ่ อ.บางพลี จ.สมุทรปราการ 10540 ";
+                    rcPage.Y = gapY;
+                    rcPage.X = xCol1 + loadedImage.Width + 10;
+                    size = MeasureString(txt, txtFonts);
+                    rcPage.Width = size.Width;
+                    pdf.DrawString(txt, txtFonts, Brushes.Black, rcPage);
+
+                    gapY += gapLine;
+                    rcPage.Y = gapY;
+                    rcPage.X = xCol1 + loadedImage.Width + 10;
+                    txt = "โทร.0813518454 โทรสาร 02-1381165  เลขประจำตัวผู้เสียภาษี 0115559018740";
+                    size = MeasureString(txt, txtFonts);
+                    rcPage.Width = size.Width;
+                    pdf.DrawString(txt, txtFonts, Brushes.Black, rcPage);
+
+                    //gapY += gapLine;
+                    gapY += gapLine;
+                    rcPage.Y = gapY;
+                    rcPage.X = xCol2;
+                    aaa = cboPeriod.Text.Equals("1") ? "ต้นเดือน " : "สิ้นเดือน ของเดือน ";
+                    if (flagDetail.Equals("item"))
+                    {
+                        txt = "รายละเอียด lab item ประจำ งวด " + aaa + cboMonth.Text + " ปี " + cboYear.Text;
+                    }
+                    else
+                    {
+                        txt = "รายละเอียด lab patient ประจำ งวด " + aaa + cboMonth.Text + " ปี " + cboYear.Text;
+                    }
+                    size = MeasureString(txt, hdrFont);
+                    rcPage.Width = size.Width;
+                    pdf.DrawString(txt, hdrFont, Brushes.Black, rcPage);
+
+                    rcPage.X = xCol5 + 50;
+                    txt = paidname;
+                    size = MeasureString(txt, hdrFont);
+                    rcPage.Width = size.Width;
+                    pdf.DrawString(txt, hdrFont, Brushes.Black, rcPage);
+                    flagNewPage = false;
+                }
+
+
                 gapY += gapLine;
                 gapY += gapLine;
                 rcPage.Y = gapY;
@@ -1023,7 +1120,7 @@ namespace reportBangna.gui
                         String hn = worksheet.Cells[i, 3].Value != null ? worksheet.Cells[i, 3].Value.ToString() : "";
                         String labdate = worksheet.Cells[i, 2].Value != null ? worksheet.Cells[i, 2].Value.ToString() : "";
                         String labcode = worksheet.Cells[i, 6].Value != null ? worksheet.Cells[i, 6].Value.ToString() : "";
-
+                        err = "001";
                         discPer = "";
                         doc = worksheet.Cells[i, 1].Value != null ? worksheet.Cells[i, 1].Value.ToString() : "";
                         date = worksheet.Cells[i, 2].Value != null ? worksheet.Cells[i, 2].Value.ToString() : "";
@@ -1033,6 +1130,7 @@ namespace reportBangna.gui
                         price11 = worksheet.Cells[i, 8].Value != null ? worksheet.Cells[i, 8].Value.ToString() : "";
                         price21 = worksheet.Cells[i, 9].Value != null ? worksheet.Cells[i, 9].Value.ToString() : "";
                         price31 = worksheet.Cells[i, 10].Value != null ? worksheet.Cells[i, 10].Value.ToString() : "";
+                        err = "002";
                         decimal.TryParse(price31, out price3);
                         decimal.TryParse(price21, out price2);
                         decimal.TryParse(price11, out price1);
@@ -1551,7 +1649,7 @@ namespace reportBangna.gui
         }
         private void FrmBillLabCheckExcel_Load(object sender, EventArgs e)
         {
-            this.Text = "Update 2021-09-07";
+            this.Text = "Update 2023-04-12 check new page on end page รวมสรุปสุดท้าย ตกหน้า ให้ขึ้นหน้าใหม่ ";
 
             Rectangle screenRect = Screen.GetBounds(Bounds);
             //lbLoading.Location = new Point((screenRect.Width / 2) - 100, (screenRect.Height / 2) - 300);

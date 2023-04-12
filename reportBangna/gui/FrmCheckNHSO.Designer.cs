@@ -416,7 +416,7 @@
             this.chkDrug.AutoSize = true;
             this.chkDrug.Checked = true;
             this.chkDrug.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkDrug.Location = new System.Drawing.Point(44, 30);
+            this.chkDrug.Location = new System.Drawing.Point(31, 30);
             this.chkDrug.Margin = new System.Windows.Forms.Padding(2);
             this.chkDrug.Name = "chkDrug";
             this.chkDrug.Size = new System.Drawing.Size(69, 17);

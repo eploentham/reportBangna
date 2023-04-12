@@ -76,6 +76,15 @@
             this.txtAddr2 = new System.Windows.Forms.TextBox();
             this.txtAddr1 = new System.Windows.Forms.TextBox();
             this.gbTrueStar = new System.Windows.Forms.GroupBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.txt5AbNormal = new System.Windows.Forms.TextBox();
+            this.chk5AbNormal = new System.Windows.Forms.RadioButton();
+            this.chk5Normal = new System.Windows.Forms.RadioButton();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.txt4AbNormal = new System.Windows.Forms.TextBox();
+            this.chk4AbNormal = new System.Windows.Forms.RadioButton();
+            this.chk4Normal = new System.Windows.Forms.RadioButton();
+            this.label23 = new System.Windows.Forms.Label();
             this.txtOther = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txt3AbNormal = new System.Windows.Forms.TextBox();
@@ -106,23 +115,14 @@
             this.chk1 = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txt4Other = new System.Windows.Forms.TextBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.txt4AbNormal = new System.Windows.Forms.TextBox();
-            this.chk4AbNormal = new System.Windows.Forms.RadioButton();
-            this.chk4Normal = new System.Windows.Forms.RadioButton();
-            this.label23 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.txt5AbNormal = new System.Windows.Forms.TextBox();
-            this.chk5AbNormal = new System.Windows.Forms.RadioButton();
-            this.chk5Normal = new System.Windows.Forms.RadioButton();
             this.groupBox4.SuspendLayout();
             this.gbTrueStar.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // label29
@@ -173,17 +173,17 @@
             // txtDoctorName
             // 
             this.txtDoctorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtDoctorName.Location = new System.Drawing.Point(682, 154);
+            this.txtDoctorName.Location = new System.Drawing.Point(775, 154);
             this.txtDoctorName.Name = "txtDoctorName";
             this.txtDoctorName.Size = new System.Drawing.Size(279, 22);
             this.txtDoctorName.TabIndex = 198;
-            this.txtDoctorName.Text = "นายแพทย์ อรรถสิทธิ์ ทองปลาเค้า";
+            this.txtDoctorName.Text = "พญ. อรชุมา ชมเดช";
             // 
             // label37
             // 
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label37.Location = new System.Drawing.Point(492, 157);
+            this.label37.Location = new System.Drawing.Point(613, 157);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(74, 16);
             this.label37.TabIndex = 197;
@@ -192,11 +192,11 @@
             // txtDoctorId
             // 
             this.txtDoctorId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtDoctorId.Location = new System.Drawing.Point(599, 154);
+            this.txtDoctorId.Location = new System.Drawing.Point(692, 154);
             this.txtDoctorId.Name = "txtDoctorId";
             this.txtDoctorId.Size = new System.Drawing.Size(77, 22);
             this.txtDoctorId.TabIndex = 196;
-            this.txtDoctorId.Text = "24738";
+            this.txtDoctorId.Text = "23271";
             // 
             // groupBox4
             // 
@@ -570,9 +570,9 @@
             // txtAddr1
             // 
             this.txtAddr1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtAddr1.Location = new System.Drawing.Point(121, 157);
+            this.txtAddr1.Location = new System.Drawing.Point(79, 157);
             this.txtAddr1.Name = "txtAddr1";
-            this.txtAddr1.Size = new System.Drawing.Size(362, 22);
+            this.txtAddr1.Size = new System.Drawing.Size(528, 22);
             this.txtAddr1.TabIndex = 213;
             // 
             // gbTrueStar
@@ -594,6 +594,96 @@
             this.gbTrueStar.Size = new System.Drawing.Size(902, 197);
             this.gbTrueStar.TabIndex = 216;
             this.gbTrueStar.TabStop = false;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.txt5AbNormal);
+            this.panel6.Controls.Add(this.chk5AbNormal);
+            this.panel6.Controls.Add(this.chk5Normal);
+            this.panel6.Location = new System.Drawing.Point(284, 146);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(612, 29);
+            this.panel6.TabIndex = 219;
+            // 
+            // txt5AbNormal
+            // 
+            this.txt5AbNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txt5AbNormal.Location = new System.Drawing.Point(164, 4);
+            this.txt5AbNormal.Name = "txt5AbNormal";
+            this.txt5AbNormal.Size = new System.Drawing.Size(445, 22);
+            this.txt5AbNormal.TabIndex = 215;
+            // 
+            // chk5AbNormal
+            // 
+            this.chk5AbNormal.AutoSize = true;
+            this.chk5AbNormal.Location = new System.Drawing.Point(125, 6);
+            this.chk5AbNormal.Name = "chk5AbNormal";
+            this.chk5AbNormal.Size = new System.Drawing.Size(33, 20);
+            this.chk5AbNormal.TabIndex = 1;
+            this.chk5AbNormal.TabStop = true;
+            this.chk5AbNormal.Text = "มี";
+            this.chk5AbNormal.UseVisualStyleBackColor = true;
+            // 
+            // chk5Normal
+            // 
+            this.chk5Normal.AutoSize = true;
+            this.chk5Normal.Location = new System.Drawing.Point(8, 6);
+            this.chk5Normal.Name = "chk5Normal";
+            this.chk5Normal.Size = new System.Drawing.Size(45, 20);
+            this.chk5Normal.TabIndex = 0;
+            this.chk5Normal.TabStop = true;
+            this.chk5Normal.Text = "ไม่มี";
+            this.chk5Normal.UseVisualStyleBackColor = true;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.txt4AbNormal);
+            this.panel5.Controls.Add(this.chk4AbNormal);
+            this.panel5.Controls.Add(this.chk4Normal);
+            this.panel5.Location = new System.Drawing.Point(284, 114);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(612, 29);
+            this.panel5.TabIndex = 218;
+            // 
+            // txt4AbNormal
+            // 
+            this.txt4AbNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txt4AbNormal.Location = new System.Drawing.Point(164, 4);
+            this.txt4AbNormal.Name = "txt4AbNormal";
+            this.txt4AbNormal.Size = new System.Drawing.Size(445, 22);
+            this.txt4AbNormal.TabIndex = 215;
+            // 
+            // chk4AbNormal
+            // 
+            this.chk4AbNormal.AutoSize = true;
+            this.chk4AbNormal.Location = new System.Drawing.Point(125, 6);
+            this.chk4AbNormal.Name = "chk4AbNormal";
+            this.chk4AbNormal.Size = new System.Drawing.Size(33, 20);
+            this.chk4AbNormal.TabIndex = 1;
+            this.chk4AbNormal.TabStop = true;
+            this.chk4AbNormal.Text = "มี";
+            this.chk4AbNormal.UseVisualStyleBackColor = true;
+            // 
+            // chk4Normal
+            // 
+            this.chk4Normal.AutoSize = true;
+            this.chk4Normal.Location = new System.Drawing.Point(8, 6);
+            this.chk4Normal.Name = "chk4Normal";
+            this.chk4Normal.Size = new System.Drawing.Size(45, 20);
+            this.chk4Normal.TabIndex = 0;
+            this.chk4Normal.TabStop = true;
+            this.chk4Normal.Text = "ไม่มี";
+            this.chk4Normal.UseVisualStyleBackColor = true;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label23.Location = new System.Drawing.Point(13, 118);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(85, 20);
+            this.label23.TabIndex = 217;
+            this.label23.Text = "4. โรคลมชัก";
             // 
             // txtOther
             // 
@@ -831,7 +921,7 @@
             this.TxtHospitalName.Name = "TxtHospitalName";
             this.TxtHospitalName.Size = new System.Drawing.Size(403, 22);
             this.TxtHospitalName.TabIndex = 221;
-            this.TxtHospitalName.Text = "โรงพยาบาล ทั่วไปขนาดใหญ่ บางนา5";
+            this.TxtHospitalName.Text = "โรงพยาบาล บางนา1";
             // 
             // chk4
             // 
@@ -895,96 +985,6 @@
             this.txt4Other.Size = new System.Drawing.Size(424, 22);
             this.txt4Other.TabIndex = 227;
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.txt4AbNormal);
-            this.panel5.Controls.Add(this.chk4AbNormal);
-            this.panel5.Controls.Add(this.chk4Normal);
-            this.panel5.Location = new System.Drawing.Point(284, 114);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(612, 29);
-            this.panel5.TabIndex = 218;
-            // 
-            // txt4AbNormal
-            // 
-            this.txt4AbNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txt4AbNormal.Location = new System.Drawing.Point(164, 4);
-            this.txt4AbNormal.Name = "txt4AbNormal";
-            this.txt4AbNormal.Size = new System.Drawing.Size(445, 22);
-            this.txt4AbNormal.TabIndex = 215;
-            // 
-            // chk4AbNormal
-            // 
-            this.chk4AbNormal.AutoSize = true;
-            this.chk4AbNormal.Location = new System.Drawing.Point(125, 6);
-            this.chk4AbNormal.Name = "chk4AbNormal";
-            this.chk4AbNormal.Size = new System.Drawing.Size(33, 20);
-            this.chk4AbNormal.TabIndex = 1;
-            this.chk4AbNormal.TabStop = true;
-            this.chk4AbNormal.Text = "มี";
-            this.chk4AbNormal.UseVisualStyleBackColor = true;
-            // 
-            // chk4Normal
-            // 
-            this.chk4Normal.AutoSize = true;
-            this.chk4Normal.Location = new System.Drawing.Point(8, 6);
-            this.chk4Normal.Name = "chk4Normal";
-            this.chk4Normal.Size = new System.Drawing.Size(45, 20);
-            this.chk4Normal.TabIndex = 0;
-            this.chk4Normal.TabStop = true;
-            this.chk4Normal.Text = "ไม่มี";
-            this.chk4Normal.UseVisualStyleBackColor = true;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label23.Location = new System.Drawing.Point(13, 118);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(85, 20);
-            this.label23.TabIndex = 217;
-            this.label23.Text = "4. โรคลมชัก";
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.txt5AbNormal);
-            this.panel6.Controls.Add(this.chk5AbNormal);
-            this.panel6.Controls.Add(this.chk5Normal);
-            this.panel6.Location = new System.Drawing.Point(284, 146);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(612, 29);
-            this.panel6.TabIndex = 219;
-            // 
-            // txt5AbNormal
-            // 
-            this.txt5AbNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txt5AbNormal.Location = new System.Drawing.Point(164, 4);
-            this.txt5AbNormal.Name = "txt5AbNormal";
-            this.txt5AbNormal.Size = new System.Drawing.Size(445, 22);
-            this.txt5AbNormal.TabIndex = 215;
-            // 
-            // chk5AbNormal
-            // 
-            this.chk5AbNormal.AutoSize = true;
-            this.chk5AbNormal.Location = new System.Drawing.Point(125, 6);
-            this.chk5AbNormal.Name = "chk5AbNormal";
-            this.chk5AbNormal.Size = new System.Drawing.Size(33, 20);
-            this.chk5AbNormal.TabIndex = 1;
-            this.chk5AbNormal.TabStop = true;
-            this.chk5AbNormal.Text = "มี";
-            this.chk5AbNormal.UseVisualStyleBackColor = true;
-            // 
-            // chk5Normal
-            // 
-            this.chk5Normal.AutoSize = true;
-            this.chk5Normal.Location = new System.Drawing.Point(8, 6);
-            this.chk5Normal.Name = "chk5Normal";
-            this.chk5Normal.Size = new System.Drawing.Size(45, 20);
-            this.chk5Normal.TabIndex = 0;
-            this.chk5Normal.TabStop = true;
-            this.chk5Normal.Text = "ไม่มี";
-            this.chk5Normal.UseVisualStyleBackColor = true;
-            // 
             // FrmOPDLicenseDriver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1034,6 +1034,10 @@
             this.groupBox4.PerformLayout();
             this.gbTrueStar.ResumeLayout(false);
             this.gbTrueStar.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -1042,10 +1046,6 @@
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
