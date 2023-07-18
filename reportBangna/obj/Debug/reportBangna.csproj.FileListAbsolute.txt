@@ -211,7 +211,6 @@ C:\source\bangna\reportBangna\reportBangna\bin\Debug\MySql.Data.xml
 C:\source\bangna\reportBangna\reportBangna\obj\Debug\reportBangna.csproj.ResolveComReference.cache
 C:\source\bangna\reportBangna\reportBangna\obj\Debug\reportBangna.exe.manifest
 C:\source\bangna\reportBangna\reportBangna\obj\Debug\reportBangna.application
-D:\source\bangna\reportBangna\reportBangna\obj\Debug\reportBangna.csproj.AssemblyReference.cache
 D:\source\bangna\reportBangna\reportBangna\obj\Debug\reportBangna.csproj.ResolveComReference.cache
 D:\source\bangna\reportBangna\reportBangna\obj\Debug\reportBangna.FrmLabCheckText.resources
 D:\source\bangna\reportBangna\reportBangna\obj\Debug\reportBangna.FrmMain.resources

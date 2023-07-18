@@ -68,6 +68,7 @@ namespace reportBangna
             {
                 //MessageBox.Show("labexdoctor", "labexdoctor");
                 Application.Run(new FrmOPD2CheckUPMain());
+                //Application.Run(new FrmCheckDrug());
             }
             else
             {
@@ -88,7 +89,8 @@ namespace reportBangna
                 //Application.Run(new FrmLabCheckText());
                 //Application.Run(new FrmCheckNHSOImportNamePatient());
                 //Application.Run(new FrmSSOAdd());
-                Application.Run(new FrmBillLabCheckExcel());
+                //Application.Run(new FrmBillLabCheckExcel());
+                Application.Run(new FrmCheckDrug());
             }
             //Application.Run(new FrmMain());
             //Application.Run(new FrmPatientDead());
